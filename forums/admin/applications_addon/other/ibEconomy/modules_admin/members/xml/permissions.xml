@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Members</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_members_edit</key>
+				<string>Can manage members in ibEconomy?</string>
+			</item>	
+			<item>
+				<key>ibEconomy_send_items</key>
+				<string>Can send items to members in ibEconomy?</string>
+			</item>				
+		</items>
+	</group>
+	<group>		
+		<grouptitle>Portfolio</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_portfolio_edit</key>
+				<string>Can edit portfolio items in ibEconomy?</string>
+			</item>
+			<item>
+				<key>ibEconomy_portfolio_view</key>
+				<string>Can view portfolio items in ibEconomy?</string>
+			</item>	
+			<item>
+				<key>ibEconomy_portfolio_delete</key>
+				<string>Can delete portfolio items in ibEconomy?</string>
+			</item>			
+		</items>
+	</group>
+	<group>		
+		<grouptitle>Mass Edit Tools</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_mass_donate</key>
+				<string>Can MASS send points to groups of members?</string>
+			</item>
+			<item>
+				<key>ibEconomy_mass_convert</key>
+				<string>Can MASS convert points from other systems into ibEconomy Points?</string>
+			</item>	
+			<item>
+				<key>ibEconomy_mass_delete</key>
+				<string>Can MASS delete assets in ibEconomy?</string>
+			</item>			
+		</items>		
+	</group>
+</permissions>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="123flashchat" templategroups="a:2:{s:13:&quot;skin_123flashchat&quot;;s:5:&quot;exact&quot;;s:19:&quot;skin_123flashchat_hooks&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_123flashchat">
+    <template>
+      <template_group>skin_123flashchat</template_group>
+      <template_content><![CDATA[<if test="$this->settings['fc_client'] == 1">
+<div  align="center"  >
+    <iframe id="frame" HSPACE="0" VSPACE="0" frameborder="0"  style="height:{$this->settings['fc_client_height']}<if test="$this->settings['fc_client_height'] != '100%'">px</if>; width:{$this->settings['fc_client_width']}<if test="$this->settings['fc_client_height'] != '100%'">px</if>;" src="{$u}"></iframe>
+</div>
+<else />
+<if test="$this->settings['fc_server'] == 2">
+<div  align="center"  >
+<script language="javascript" src="{$u}&width={$this->settings['fc_client_width']}&height={$this->settings['fc_client_height']}"></script>
+</div>
+<else />
+<div   align="center"  >
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,19,0" width="{$this->settings['fc_client_width']}" height="{$this->settings['fc_client_height']}" id="topcmm_123flashchat" type="application/x-shockwave-flash">
+    <param name=movie value="{$u}">
+    <param name=quality value="high">
+    <param name="menu" value="false">
+     <param name="allowScriptAccess" value="always">
+    <embed src="{$u}" quality="high" menu="false" allowScriptAccess="always"  width="{$this->settings['fc_client_width']}" height="{$this->settings['fc_client_height']}" type="application/x-shockwave-flash" pluginspace="http://www.macromedia.com/go/getflashplayer" name="topcmm_123flashchat"></embed>
+</object>
+<script src="{$this->settings['fc_client_loc']}123flashchat.js"></script>
+</div>
+</if>
+</if>]]></template_content>
+      <template_name>chat</template_name>
+      <template_data><![CDATA[$u='']]></template_data>
+      <template_updated>1275419165</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

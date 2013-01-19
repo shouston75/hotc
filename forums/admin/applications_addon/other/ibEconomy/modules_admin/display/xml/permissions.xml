@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Sidebar Blocks</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_blocks_view</key>
+				<string>Can view ibEconomy Sidebar Blocks?</string>
+			</item>
+			<item>
+				<key>ibEconomy_blocks_edit</key>
+				<string>Can edit ibEconomy Sidebar Blocks?</string>
+			</item>
+			<item>
+				<key>ibEconomy_blocks_delete</key>
+				<string>Can delete ibEconomy Sidebar Blocks?</string>
+			</item>			
+			<item>
+				<key>ibEconomy_block_settings_edit</key>
+				<string>Can edit ibEconomy Sidebar Blocks Settings?</string>
+			</item>		
+		</items>
+	</group>
+</permissions>

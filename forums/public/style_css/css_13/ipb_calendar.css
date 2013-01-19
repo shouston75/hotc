@@ -1,0 +1,47 @@
+table.ipb_table{border:0
+!important}div#calendar_list{width:92%;padding:10px;border:1px
+solid #ccc;margin:8px
+0 15px 0}div#calendar_list.wweek{width:18%}div#calendar_list
+ol{margin-top:10px;margin-bottom:15px}#calendar_list
+li{margin:2px
+0;text-align:left}#calendar_list li
+a{background:#fff4f1;text-decoration:none;padding:5px
+7px;display:block}div#current_calendar{width:77%;margin-top: -20px}div#current_calendar .maintitle,
+#mini_calendars
+.maintitle{color:#e4e4e4;padding:6px
+8px !important;font-size:1.0em}div#current_calendar
+table{border-top:0;margin-bottom:10px;clear:both;border-collapse:collapse}div#current_calendar table
+td{font-size:0.9em;vertical-align:top;border:1px
+solid #d7d7d7;padding:5px;height:85px;width:14%}div#current_calendar table
+td.selected{background-color:#fff}div#current_calendar table td
+ul{margin:5px}#current_calendar table th,
+#mini_calendars table
+th{border:1px
+solid #ccc}.calendar_wrap table
+td.blank{background-color:#e7e7e7}#ipboard_body .calendar_wrap table
+td.today{border:2px
+solid #800000;color:#5f2424;background-color:#fff4f1}.calendar_wrap table td
+strong{font-size:0.9em;font-weight:bold}#ipboard_body table
+th.head_week{width:2% !important}#ipboard_body table
+th.view_week{background-color:#fff;text-align:center;border:1px
+solid #ccc}ol#week_view{background-color:#fff}div#current_calendar ol#week_view
+li.day{margin-bottom:2px}div#current_calendar ol#week_view li.day
+div{padding:4px
+10px 4px 75px;background-color:#fff;min-height:60px;position:relative}div#current_calendar ol#week_view li.day
+.date{color:#111;font-size:1.2em;text-align:center;padding-top:10px;top:0px;bottom:0px;left:0px;width:65px;display:block;position:absolute}div#mini_calendars{margin:20px
+0 15px 0;width:20%}div#mini_calendars table,.mini_cal{border-top:0}.mini-cal-wrap{width:100%}div#mini_calendars
+th.view_week{padding:6px
+2px}div#mini_calendars th, div#mini_calendars td,
+.mini_cal th, .mini_cal
+td{font-size:0.85em;text-align:center;padding:6px}div#mini_calendars td,
+.mini_cal
+td{border:1px
+solid #ccc;padding:6px
+0}.cal_color{margin-right:8px;padding:0
+7px;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px}.cal{background-color:#fff;color:#5f2424;font-size:0.8em;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;padding:2px
+5px;margin-bottom:3px}#ipboard_body .cal
+a{text-decoration:underline}.today
+.cal{background-color:#800000}.today .cal
+a{color:#fff}.today .cal a:hover{color:#f1f1f1}.cal_1{background-color:#971a48}.cal_2{background-color:#3fa711}.cal_3{background-color:#957e5b}.post_wrap
+p.posted_info{padding:10px
+5px 7px 12px;position:absolute;left:238px}.post_block{margin-bottom:5px}

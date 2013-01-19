@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Manage Blocks</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Custom Blocks</subitemtitle>
+					<subsection>core</subsection>
+					<subitemurl>do=blocks</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>	
+		<item>
+			<title>Manage Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Settings</subitemtitle>
+					<subsection>core</subsection>
+					<subitemurl>do=settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>		
+		<item>
+			<title>Add New Block</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Add Block</subitemtitle>
+					<subsection>core</subsection>
+					<subitemurl>do=block_form</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>plugin_settings</word_key>
+      <word_default>Plugin Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_settings</word_key>
+      <word_default>Portal Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_pop_desc</word_key>
+      <word_default>Tag Description</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_pop_name</word_key>
+      <word_default>Tag Name</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_main_key</word_key>
+      <word_default>Plug-in Title</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_pop_tags</word_key>
+      <word_default>Exportable Tags:</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_main_title</word_key>
+      <word_default>Portal Plug-ins</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>main_title</word_key>
+      <word_default>Manage Portal Plug-ins</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>view_template_tag</word_key>
+      <word_default>View Template Tag</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>error_no_dir</word_key>
+      <word_default><![CDATA[The directory '{app_name}/extensions/portalPlugins' does not exist. Create it and try again.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>error_no_key</word_key>
+      <word_default>There is no matching plug-in for the key used to find it.</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name><![CDATA[(e&#036;30) Custom Sidebar Blocks]]></hook_name>
+      <hook_desc><![CDATA[Create as many custom content blocks for your board&#39;s index sidebar.  For use with the (e&#036;30) Custom Sidebar Blocks Application]]></hook_desc>
+      <hook_author>emoney</hook_author>
+      <hook_email>admin@ibbookie.com</hook_email>
+      <hook_website>http://ibbookie.com</hook_website>
+      <hook_update_check>http://www.invisionmodding.com/mod_updates/updatecheck.php?mod=e_csb</hook_update_check>
+      <hook_requirements><![CDATA[a:4:{s:20:"hook_ipb_version_min";i:0;s:20:"hook_ipb_version_max";i:0;s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>1.1.0</hook_version_human>
+      <hook_version_long>110</hook_version_long>
+      <hook_extra_data><![CDATA[a:4:{s:9:"templates";a:1:{s:11:"skin_boards";a:1:{s:0:"";s:18:"customSidebarBlock";}}s:7:"display";a:2:{s:9:"templates";s:36:"From skin_boards: customSidebarBlock";s:8:"settings";s:49:"Setting groups: (e&#036;30) Custom Sidebar Blocks";}s:13:"settingGroups";a:1:{s:0:"";s:2:"40";}s:8:"settings";a:0:{}}]]></hook_extra_data>
+      <hook_key>customSidebarBlocksHook</hook_key>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>customSidebarBlocks.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>customSidebarBlocksHook</hook_classname>
+      <hook_data><![CDATA[a:6:{s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_boards";s:12:"skinFunction";s:18:"boardIndexTemplate";s:4:"type";s:7:"foreach";s:2:"id";s:11:"side_blocks";s:8:"position";s:9:"outer.pre";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class customSidebarBlocksHook
+{
+    public $registry;
+    
+    public function __construct()
+    {
+        $this->registry     =  ipsRegistry::instance();
+        $this->DB           =  $this->registry->DB();
+        $this->settings     =& $this->registry->fetchSettings();
+        $this->request      =& $this->registry->fetchRequest();
+        $this->lang         =  $this->registry->getClass('class_localization');
+        $this->member       =  $this->registry->member();
+        $this->memberData     =& $this->registry->member()->fetchMemberData();
+        $this->cache        =  $this->registry->cache();
+        $this->caches       =& $this->registry->cache()->fetchCaches(); 
+ 
+        IPSText::getTextClass('bbcode')->parse_html		= 1;
+    }
+    
+	public function getOutput()
+	{
+		$blocks = "";
+		if ( $this->settings['e_CSB_on'] )
+		{
+			#grab blocks from cache
+			if ( !is_array( $this->caches['custom_sidebar_blocks'] ) )
+			{
+				$this->cache->rebuildCache('custom_sidebar_blocks','customSidebarBlocks');
+			}
+
+			foreach ( $this->caches['custom_sidebar_blocks'] AS $block )
+			{
+				if ( !$block['csb_on'] )
+				{
+					continue;		
+				}			
+				if ( $block['csb_use_perms'] && !$this->registry->permissions->check( 'view', $block ) )
+				{
+					continue;		
+				}
+
+				#format content
+				$block['csb_content'] = ( !$block['csb_raw'] ) ? IPSText::getTextClass('bbcode')->preDisplayParse( $block['csb_content'] ) : $block['csb_content'];
+
+				#add block
+				$blocks .= $this->registry->getClass('output')->getTemplate('boards')->customSidebarBlock( $block );
+			}
+
+			#output!
+			return $blocks;
+		}
+	}
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates>
+    <templates>
+      <template_set_id>0</template_set_id>
+      <template_group>skin_boards</template_group>
+      <template_content> <![CDATA[<if test="$data['csb_use_box']">
+	<div class='general_box clearfix'>
+		<h3><if test="$data['csb_image']"><img src='{$this->settings['img_url']}/{$data['csb_image']}' alt='{$this->lang->words['icon']}' /></if> {$data['csb_title']}</h3>
+		{$data['csb_content']}
+	</div>
+<else />
+	<div style='padding: 10px;'>
+		{$data['csb_content']}
+	</div>
+</if>]]> </template_content>
+      <template_name>customSidebarBlock</template_name>
+      <template_data> <![CDATA[$data='']]></template_data>
+      <template_updated>1247586320</template_updated>
+      <template_removable>1</template_removable>
+      <template_added_to>1</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>1</template_user_edited>
+    </templates>
+  </hookextras_templates>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

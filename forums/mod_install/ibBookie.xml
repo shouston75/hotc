@@ -1,0 +1,1982 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mod_data>
+    <mod_info>
+        <title>(e$23) ibBookie</title>
+        <version>1.0.1</version>
+        <author>emoney</author>
+        <website>http://www.fantasyfootballhaven.com</website>
+        <ipbver>2.3</ipbver>
+		<version_file>http://fantasyfootballhaven.com/e$mods.xml</version_file>
+    </mod_info>
+    <sections_group>
+        <section>
+            <conf_title_title>(e$23) ibBookie</conf_title_title>
+            <conf_title_desc><![CDATA[Settings for the (e$) bookie System by emoney of fantasyfootballhaven.com.]]></conf_title_desc>
+            <conf_title_keyword>bookie</conf_title_keyword>
+            <conf_title_noshow>0</conf_title_noshow>
+        </section>
+	</sections_group>
+	<settings_group>
+		<setting>
+			<conf_title>System On?</conf_title>
+			<conf_description>Turn bookie On?</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>ibbookie_on</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>1</conf_position>
+			<conf_start_group>ibBookie Administration</conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>
+		<setting>
+			<conf_title>Show help?</conf_title>
+			<conf_description>Turn the helpful footers about spreads and odds on the mod/admin pages on?</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>show_ibbookie_helpers</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>2</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>			
+		<setting>
+			<conf_title>Bet once only?</conf_title>
+			<conf_description>If set to YES only 1 bet per user will be allowed, including adminds, mods, etc</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>ibbookie_bet_once</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>3</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>	
+		<setting>
+			<conf_id></conf_id>
+			<conf_title>Number of rows per page</conf_title>
+			<conf_description>How many games/bets/losers/winners/etc do you wish to display per page?</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>ibbookie_num_pages</conf_key>
+			<conf_value></conf_value>
+			<conf_default>10</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>4</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>			
+		<setting>
+			<conf_id></conf_id>
+			<conf_title>Points System</conf_title>
+			<conf_description>Which points sytem do you use?  The default system or a pre-existing points system?</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>ibbookie_points</conf_key>
+			<conf_value>other</conf_value>
+			<conf_default>ibbookie_points</conf_default>
+			<conf_extra>ibbookie_points=Built in System (ibBookie)
+			points=iPoints/IBstore/ibMarket/Perfect Points
+			money=IBProBattle
+			utr_points=Ultimate Referrals
+			posts=Post Count</conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>5</conf_position>
+			<conf_start_group>ibBookie Points</conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+		<setting>
+			<conf_id></conf_id>
+			<conf_title>Name for points within the component</conf_title>
+			<conf_description>What do you want your ibBookie "points" to be named in the component itself, not in topics?</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>ibbookie_point_name</conf_key>
+			<conf_value></conf_value>
+			<conf_default>Points</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>6</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>	
+		<setting>
+			<conf_id></conf_id>
+			<conf_title>Short name for points within the component</conf_title>
+			<conf_description>What do you want to abbreviate the above points name to within the component itself, not in topics?</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>ibbookie_point_abbrev</conf_key>
+			<conf_value></conf_value>
+			<conf_default>pts</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>7</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>		
+		<setting>
+			<conf_title>Show winnings in topics?</conf_title>
+			<conf_description>Show the total number of points won from ibBookie wagers in topics?</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>show_bookie_points</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>8</conf_position>
+			<conf_start_group>ibBookie in Topics</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>
+		<setting>
+			<conf_id></conf_id>
+			<conf_title>Name for member's bookie winnings</conf_title>
+			<conf_description>What do you want your ibBookie "points won" to be named in topics?</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>bookie_points_name</conf_key>
+			<conf_value></conf_value>
+			<conf_default>Bookie Winnings</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>9</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>		
+		<setting>
+			<conf_title>Show bets in topics?</conf_title>
+			<conf_description>Show and link to each member's ibBookie bets in topics?</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>show_member_bets</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>10</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>
+		<setting>
+			<conf_id></conf_id>
+			<conf_title>Name for member's bets</conf_title>
+			<conf_description>What do you want your ibBookie bets to be named in topics?</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>member_bets</conf_key>
+			<conf_value></conf_value>
+			<conf_default>Bets</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>11</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>			
+		<setting>
+			<conf_title>Show ibBookie system total points in topics?</conf_title>
+			<conf_description>Show member's ibBookie Points in topics?  Select NO if you use another points system besides the one built into ibBookie.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>show_ibbookie_points</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>12</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>		
+		<setting>
+			<conf_id></conf_id>
+			<conf_title>Name for ibBookie Points</conf_title>
+			<conf_description>What do you want your ibBookie System "points" to be named in topics?</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>ibbookie_points_name</conf_key>
+			<conf_value></conf_value>
+			<conf_default>Points</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>13</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>		
+		<setting>
+			<conf_title>Welcome Message</conf_title>
+			<conf_description>Page displayed on the ibBookie start page</conf_description>
+			<conf_type>editor</conf_type>
+			<conf_key>bookie_welcome</conf_key>
+			<conf_value></conf_value>
+			<conf_default>Welcome!</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>14</conf_position>
+			<conf_start_group>Welcome</conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>
+		<setting>
+			<conf_title>PM Reciever on Transaction</conf_title>
+			<conf_description>If on, winner will receive a PM informing them of their wager won</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>bookie_pm_on</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>15</conf_position>
+			<conf_start_group>PM</conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>		
+		<setting>
+			<conf_title>PM Message</conf_title>
+			<conf_description><![CDATA[PM message sent to user upon winning their wager<br />Replaceable Macros:<br />1st '%s' - Number of points won (total profit + wager)<br />2nd '%s' - Winner picked (team/player) ]]></conf_description>
+			<conf_type>editor</conf_type>
+			<conf_key>bookie_pm</conf_key>
+			<conf_value></conf_value>
+			<conf_default>You won %s Points from your bet on %s.  Congratulations!</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>16</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+		</setting>	
+		<setting>
+			<conf_title>Delete old paid games</conf_title>
+			<conf_description>After how many days after a game is marked as completed/paid do you want them to be deleted from your database?<br/><br/>0 will turn the delete task OFF!</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>ibbookie_prune_games</conf_key>
+			<conf_value></conf_value>
+			<conf_default>30</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>17</conf_position>
+			<conf_start_group>Database Cleanup</conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_help_key></conf_help_key>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>bookie</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>		
+	</settings_group>
+	<components_group>
+		<component>
+			<com_title>(e$23) ibBookie</com_title>
+			<com_author>emoney</com_author>
+			<com_url>http://www.fantasyfootballhaven.com</com_url>
+			<com_version>0.0.1</com_version>
+			<com_menu_data><![CDATA[a:2:{i:1;a:5:{s:9:"menu_text";s:15:"Manage Settings";s:8:"menu_url";s:13:"code=settings";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:8:"settings";s:13:"menu_permlang";s:15:"Manage Settings";}i:2;a:5:{s:9:"menu_text";s:14:"Group Settings";s:8:"menu_url";s:11:"code=groups";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:6:"groups";s:13:"menu_permlang";s:14:"Group Settings";}}]]></com_menu_data>
+			<com_enabled>1</com_enabled>
+			<com_safemode>0</com_safemode>
+			<com_section>bookie</com_section>
+			<com_filename>bookie</com_filename>
+			<com_description><![CDATA[Awesome sports betting system.]]></com_description>
+			<com_url_title>Bookie</com_url_title>
+			<com_url_uri>{ipb.base_url}autocom=bookie</com_url_uri>
+		</component>
+	</components_group>
+	<tables_group>
+		<table>
+			<name>bookie_bets</name>
+			<data><![CDATA[bid int(25) NOT NULL auto_increment,
+				username varchar(50) NOT NULL,
+				userid int(25) NOT NULL,
+				mgroup smallint(6) NOT NULL,
+				members_display_name varchar(50) NOT NULL,
+				gid int(11) NOT NULL,
+				cat_image varchar(50),
+				home_team varchar(50) NOT NULL,
+				home_odds decimal(10,2) NOT NULL default '1.00',
+				home_spread decimal(10,1) NOT NULL,
+				away_team varchar(50) NOT NULL,
+				away_odds decimal(10,2) NOT NULL default '1.00',
+				away_spread decimal(10,1) NOT NULL,
+				amount int(15) NOT NULL,
+				pick varchar(50) NOT NULL,
+				start datetime NOT NULL,
+				odds decimal(10,2) NOT NULL,
+				payout int(25) default -2,
+				time int(10) default NULL,
+				PRIMARY KEY  (`bid`)]]></data>
+			<type>MyISAM</type>
+		</table>
+		<table>
+			<name>bookie_cats</name>
+			<data><![CDATA[id smallint(6) NOT NULL auto_increment,
+				cat_name varchar(50) NOT NULL,
+				cat_image varchar(50) NOT NULL,
+				PRIMARY KEY  (`id`)]]></data>
+			<type>MyISAM</type>
+		</table>
+		<table>
+			<name>bookie_games</name>
+			<data><![CDATA[id int(25) NOT NULL auto_increment,
+				sport varchar(50) NOT NULL,
+				cat_name varchar(50) NOT NULL,
+				home_team varchar(50) NOT NULL,
+				home_odds decimal(10,2) NOT NULL default '1.00',
+				home_spread decimal(10,1) NOT NULL,
+				away_team varchar(50) NOT NULL,
+				away_odds decimal(10,2) NOT NULL default '1.00',
+				away_spread decimal(10,1) NOT NULL,
+				start datetime NOT NULL,
+				cat_image varchar(50) NOT NULL,
+				winner varchar(50) NOT NULL,				
+				time_paid int(10) NOT NULL default '2147483647',
+				PRIMARY KEY  (`id`)]]></data>
+			<type>MyISAM</type>
+		</table>
+	</tables_group>
+	<alters_group>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>ibbookie_points</field_name>
+			<field_type>int(25)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>ibbookie_won</field_name>
+			<field_type>int(25)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>ibbookie_bets</field_name>
+			<field_type>int(11)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>ibbookie_add</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>ibbookie_mod</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>ibbookie_admin</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>		
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>ibbookie_banned</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>ibbookie_groups</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>ibbookie_add_groups</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>ibbookie_mod_groups</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>ibbookie_admin_groups</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>ibbookie_max_pts</field_name>
+			<field_type>int(25)</field_type>
+			<field_default>'0'</field_default>
+		</alter>		
+	</alters_group>
+	<templates_group>
+  <template>
+  <group_name>skin_bookie</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['welcome']},&nbsp;{$this->ipsclass->member['members_display_name']}!</p></div><table class="ipbtable" cellspacing="1"><tr>
+			<td class='row1' width='100%'>$data</td>
+		</tr>
+	</table>]]> 
+  </section_content>
+  <func_name>welcome</func_name> 
+   <func_data><![CDATA[$data=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['all_games']}</p></div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['category']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['id']}</th>
+		<th width="20%" style='text-align: left;'>{$this->ipsclass->lang['home_team']}&nbsp</th>
+		<th width="20%" style='text-align: left;'>{$this->ipsclass->lang['away_team']}&nbsp</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['start']}</th>
+		<th width="13%" style='text-align: center;'>{$this->ipsclass->lang['pick']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['bet']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' height='61' style='text-align: center;'><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['id']}</strong></td>		
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['home_team']}</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['away_team']}</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['start']}</strong></td>
+		<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_bet&amp;id={$row['id']}" method='post'>
+		<td class='row1' style='text-align: center;'>
+		<select name='pick'>
+		<option value ='{$row['home_team']}'>{$row['home_team']}</option>
+		<option value ='{$row['away_team']}'>{$row['away_team']}</option>
+		</select>
+		</td>
+		<td class='row1' style='text-align: center;'><input type='text' name='amount' value="{$this->ipsclass->input['bet']}" size='10' /></td>
+		<input type="hidden" name="gid" value="{$row['id']} " />
+		<input type="hidden" name="mgroup" value="{$this->ipsclass->member['mgroup']} " />
+		<input type="hidden" name="members_display_name" value="{$this->ipsclass->member['members_display_name']} " />
+		<input type="hidden" name="time" value="{$row['time']} " />
+		<input type="hidden" name="cat_image" value="{$row[cat_image]} " />
+		<input type="hidden" name="long_start" value="{$row[long_start]} " />
+		<input type="hidden" name="start" value="{$row['start']} " />
+		<input type="hidden" name="home_team" value="{$row['home_team']} " />
+		<input type="hidden" name="away_team" value="{$row['away_team']} " />
+		<input type="hidden" name="home_odds" value="{$row['home_odds']} " />
+		<input type="hidden" name="away_odds" value="{$row['away_odds']} " />
+		<input type="hidden" name="home_spread" value="{$row['home_spread']} " />
+		<input type="hidden" name="away_spread" value="{$row['away_spread']} " />
+		<td class='button' align='center' colspan='2'><input type='submit' name='submit' value="Bet" /></td>
+		</form>
+	</tr>
+	</foreach>
+	</if>	
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>all_games</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+  	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['current_bets']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['category']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['wager']}</th>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['username']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['start']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['member_group']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['winner']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'><strong><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['amount']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['name']}</strong></td>
+	<if="$row['home_team'] == $row['pick']">
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2 style="border: 2px double;">&nbsp;{$row['home_team']}&nbsp;</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+	</if>
+	<if="$row['home_team'] != $row['pick']">
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['home_team']}</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+	</if>
+	<if="$row['away_team'] == $row['pick']">	
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2 style="border: 2px double;">&nbsp;{$row['away_team']}&nbsp;</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+	</if>
+	<if="$row['away_team'] != $row['pick']">	
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['away_team']}</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+	</if>	
+	    <td class='row1' style='text-align: center;'><strong>{$row['start']}</strong></td>
+		<td class='row1' style='text-align: center;'>{$row['group']}</td>		
+	   	<if="$row['payout'] > 0">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/winner.png' /><br />{$row['payout']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</td>		
+		</if>
+		<if="!$row['payout']">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/loser.png' /><br />{$this->ipsclass->lang['loser_undec']}</td>		
+		</if>
+		<if="$row['payout'] == '-1'">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/draw.png' /><br />{$this->ipsclass->lang['draw_tie']}</td>		
+		</if>
+		<if="$row['payout'] == '-2'">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'></td>		
+		</if>			
+	</tr>
+		</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>current_bets</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+  	    <template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td valign="top" class="nopad" width="17%">
+			<div id="ucpmenu">
+			<div class="maintitle"><center>{$this->ipsclass->lang['bookie_top_menu']}</center></div>
+	<div class='nopad' style='padding:2px'>
+	<div class='borderwrap'>
+	<div class='row2' style='padding:3px' align='center'>
+	Current {$this->ipsclass->vars['ibbookie_point_name']}: $current <br />
+	<if="$this->ipsclass->member['ibbookie_max_pts'] ">
+	{$this->ipsclass->lang['max_wager']}: $max_to_bet {$this->ipsclass->vars['ibbookie_point_name']}
+	</if>
+	</div></div></div>
+			<p>
+			<if="$this->ipsclass->member['ibbookie_admin_groups'] || $this->ipsclass->member['ibbookie_admin']">
+				<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['admin_menu']}</u></b><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=input_winners">{$this->ipsclass->lang['input_winners']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=tools">{$this->ipsclass->lang['donate_tools']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=find_member">{$this->ipsclass->lang['find_member']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=show_member_perms">{$this->ipsclass->lang['show_member_perms']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=find_member_bets">{$this->ipsclass->lang['find_member_bets']}</a><br />
+			</if>
+			<if="$this->ipsclass->member['ibbookie_add_groups'] || $this->ipsclass->member['ibbookie_add']">
+				<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['mod_menu']}</u></b><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=add_games">{$this->ipsclass->lang['add_game']}</a><br />
+			</if>				
+			<if="$this->ipsclass->member['ibbookie_mod_groups'] || $this->ipsclass->member['ibbookie_mod']">			
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=edit_games">{$this->ipsclass->lang['edit_games']}</a><br />		
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=add_cats">{$this->ipsclass->lang['add_cats']}</a><br />	
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=edit_cats">{$this->ipsclass->lang['edit_cats']}</a><br />
+			</if>
+
+			<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['bookie_menu']}</u></b><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=bookie_stats">{$this->ipsclass->lang['bookie_stats']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=winningest">{$this->ipsclass->lang['winningest']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=losingest">{$this->ipsclass->lang['losingest']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=current_bets">{$this->ipsclass->lang['current_bets']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=my_bets">{$this->ipsclass->lang['my_bets']}</a><br />
+			<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['bet_menu']}</u></b><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=all_games">{$this->ipsclass->lang['all_games']}</a><br />	
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=sport_selector_full">{$this->ipsclass->lang['sport_selector']}</a><br />	
+		</p>
+		</td>
+		<td class="nopad" width="1%"><!-- --></td>
+		<td valign="top" class="nopad" width="75%">
+			<div id="ucpcontent">]]> 
+  </section_content>
+  <func_name>menu</func_name> 
+   <func_data><![CDATA[$current="", $perms="", $max_to_bet=""]]></func_data>
+  </template>
+  	    <template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['unpaid_games']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['sport']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['game_id']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['start']}</th>
+		<th width="15%" style='text-align: center;'><font color=red><strong>{$this->ipsclass->lang['pay_winner']}</strong></font></th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' height='61' style='text-align: center;'><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' style='text-align: center;'>{$row['id']}</td>
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['home_team']}</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['away_team']}</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>	
+		<td class='row1' style='text-align: center;'><strong>{$row['start']}</strong></td>
+
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_pay&amp;id={$row['id']}" method='post'>
+	<td class='row1' style='text-align: center;'>
+	<select name='winner'>
+	<option value ='draw'>Draw/Tie</option>
+	<option value ='{$row['home_team']}'>{$row['home_team']}</option>
+	<option value ='{$row['away_team']}'>{$row['away_team']}</option>
+	</select>
+	</td>
+	<input type="hidden" name="id" value="{$row['id']} " />
+	<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="Pay" /></td>
+	</form>
+	</tr>
+		</foreach>
+	</if>
+	</table>			
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>
+	<if="$this->ipsclass->vars['show_ibbookie_helpers']">	
+	<table>
+	<br />
+	<font color=red><strong>*{$this->ipsclass->lang['spread']}:</strong></font>
+	{$this->ipsclass->lang['spread_explained_input_winners']}
+	</table>
+	</if>	]]> 
+  </section_content>
+  <func_name>input_winners</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['add_game']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="6%" style='text-align: center;'>{$this->ipsclass->lang['category']}</th>
+		<th width="9%" style='text-align: center;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width="5%" style='text-align: center;'><font color=green><strong>{$this->ipsclass->lang['payout_odds_home']}</strong></font></th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width="5%" style='text-align: center;'><font color=green><strong>{$this->ipsclass->lang['payout_odds_away']}</strong></font></th>
+		<th width="9%" style='text-align: center;'><font color=red><strong>{$this->ipsclass->lang['spread_home']}</strong></font></th>
+		<th width="15%" style='text-align: center;'><font color=orange><strong>{$this->ipsclass->lang['starting_time']}</strong></font></th>
+		<th width="5%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<tr>
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_add_games" method='post'>
+	<td class='row1' style='text-align: center;'>
+	<select name='sport'>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<option value ='{$row['id']}'>{$row['cat_name']}</option>
+		</foreach>
+	</if>
+	</select>
+	</td>
+	<!--<td class='row1' style='text-align: center;'><input type='text' name='sport' value="{$this->ipsclass->input['sport']}" size='10' /></td>-->
+	<td class='row1' style='text-align: center;'><input type='text' name='home_team' value="{$this->ipsclass->input['home_team']}" size='10' /></td>
+	<td class='row1' style='text-align: center;'><input type='text' name='home_odds' value="{$this->ipsclass->input['home_odds']}" size='4' /></td>
+	<td class='row1' style='text-align: center;'><input type='text' name='away_team' value="{$this->ipsclass->input['away_team']}" size='10' /></td>
+	<td class='row1' style='text-align: center;'><input type='text' name='away_odds' value="{$this->ipsclass->input['away_odds']}" size='4' /></td>
+	<td class='row1' style='text-align: center;'><input type='text' name='home_spread' value="{$this->ipsclass->input['home_spread']}" size='4' /></td>
+	<td class='row1' style='text-align: center;'><input type='text' name='start' value="YYYY-MM-DD HH:MM:SS" size='21' /></td>
+	<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="Add Game" /></td>
+	</form>
+	</tr>
+	</table>
+	<if="$this->ipsclass->vars['show_ibbookie_helpers'] ">	
+	<table>
+	<br />
+	<font color=orange><strong>*{$this->ipsclass->lang['starting_time']}:</strong></font>
+	{$this->ipsclass->lang['time_explained']}
+	<font color=red><strong>*{$this->ipsclass->lang['spread']}:</strong></font>
+	{$this->ipsclass->lang['spread_explained']}
+	<font color=green><strong>*{$this->ipsclass->lang['payout_odds']}:</strong></font>
+	{$this->ipsclass->lang['payout_odds_explained']}
+	</if>
+	</table>	]]> 
+  </section_content>
+  <func_name>add_games</func_name> 
+   <func_data><![CDATA[$content=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['edit_games']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="2%" style='text-align: center;'>{$this->ipsclass->lang['id']}</th>
+		<th width="9%" style='text-align: center;'>{$this->ipsclass->lang['category']}</th>
+		<th width="8%" style='text-align: center;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width="7%" style='text-align: center;'><font color=green><strong>{$this->ipsclass->lang['home_odds']}</strong></font></th>
+		<th width="7%" style='text-align: center;'><font color=red><strong>{$this->ipsclass->lang['home_spread']}</strong></font></th>
+		<th width="8%" style='text-align: center;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width="7%" style='text-align: center;'><font color=green><strong>{$this->ipsclass->lang['away_odds']}</strong></font></th>
+		<th width="7%" style='text-align: center;'><font color=red><strong>{$this->ipsclass->lang['away_spread']}</strong></font></th>
+		<th width="15%" style='text-align: center;'><font color=orange><strong>{$this->ipsclass->lang['starting_time']}</strong></font></th>
+		<th width="7%" style='text-align: center;'>Delete?</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'>{$row['id']}</td>
+		<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_edit_games&amp;id={$row['id']}" method='post'>
+		<td class='row1' style='text-align: center;'>
+		<select name='sport'>
+		<option value ='{$row['sport']}'>leave as is</option>
+	<if="is_array( $contentcat ) and count( $contentcat )">
+	<foreach="$contentcat as $row">
+	<option value ='{$row['cat_id']}'>{$row['cat_name']}</option>
+		</foreach>
+	</if>
+		</select>
+		</td>
+		<td class='row1' style='text-align: center;'><input type='text' name='home_team' value="{$row['home_team']}" size='10' /></td>
+		<td class='row1' style='text-align: center;'><input type='text' name='home_odds' value="{$row['home_odds']}" size='3' /></td>
+		<td class='row1' style='text-align: center;'><input type='text' name='home_spread' value="{$row['home_spread']}" size='3' /></td>
+		<td class='row1' style='text-align: center;'><input type='text' name='away_team' value="{$row['away_team']}" size='10' /></td>
+		<td class='row1' style='text-align: center;'><input type='text' name='away_odds' value="{$row['away_odds']}" size='3' /></td>
+		<td class='row1' style='text-align: center;'><input type='text' name='away_spread' value="{$row['away_spread']}" size='3' /></td>
+		<td class='row1' style='text-align: center;'><input type='text' name='start' value="{$row['start']}" size='20' /></td>
+		<td class='row1' style='text-align: center;'><input type='checkbox' name='delete' value="1" /></td>
+		<input type="hidden" name="gid" value="{$row['id']} " />
+		<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="Edit" /></td>
+		</form>
+	</tr>
+		</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>
+	<if="$this->ipsclass->vars['show_ibbookie_helpers']">	
+	<table>
+	<br />
+	<font color=orange><strong>*{$this->ipsclass->lang['starting_time']}:</strong></font>
+	{$this->ipsclass->lang['time_explained']}
+	<font color=red><strong>*{$this->ipsclass->lang['spread']}:</strong></font>
+	{$this->ipsclass->lang['spread_explained']}
+	<font color=green><strong>*{$this->ipsclass->lang['payout_odds']}:</strong></font>
+	{$this->ipsclass->lang['payout_odds_explained']}
+	</table>
+	</if>]]> 
+  </section_content>
+  <func_name>edit_games</func_name> 
+   <func_data><![CDATA[$content="", $contentcat="", $pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[
+	<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp; {$this->ipsclass->lang['bookie_stats']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+		<tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['total_bets']}</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$data['total_bets']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['total_waged']}</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$data['total_waged']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</b></td>
+		</tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['total_payout']}</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$data['total_payout']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['per_bet']}</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$data['per_bet']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['total_games']}</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$row['id']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['largest_wager']}:</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$bet['amount']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}<br />
+			By:&nbsp;{$bet['name']}&nbsp;of&nbsp;the&nbsp;{$bet['group']}&nbsp;group&nbsp;<br />
+			On:&nbsp;{$bet['away_team']}&nbsp;@&nbsp;{$bet['home_team']}&nbsp;at&nbsp;{$bet['start']} </b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['largest_payout']}:</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$pay['payout']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}<br />
+			To:&nbsp;{$pay['name']}&nbsp;of&nbsp;the&nbsp;{$pay['group']}&nbsp;group&nbsp;<br />
+			On:&nbsp;{$pay['away_team']}&nbsp;@&nbsp;{$pay['home_team']}&nbsp;at&nbsp;{$pay['start']} </b></td>
+		</tr>	
+		<tr>
+			<td class='row1' width='25%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['most_active_game']}:</b></td>
+			<td class='row1' width='75%' height='55px' style='text-align: left;'><b>{$mode['qty']}&nbsp;{$this->ipsclass->vars['member_bets']}<br />
+			On:&nbsp;{$mode['away_team']}&nbsp;@&nbsp;{$mode['home_team']}&nbsp;at&nbsp;{$mode['start']}<br />
+			Total won: {$paid['total_paid']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</b></td>
+		</tr>		
+	</table>]]> 
+  </section_content>
+  <func_name>bookie_stats</func_name> 
+   <func_data><![CDATA[$data="",$row="", $bet="", $pay="", $mode="", $paid=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['my_bets']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="5%" style='text-align: center;'>{$this->ipsclass->lang['category']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['wager']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['start']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['winner']}</th>		
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'><strong><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' height='32' style='text-align: center;'><strong>{$row['amount']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</strong></td>		
+	<if="$row['home_team'] == $row['pick']">
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2 style="border: 2px double;">&nbsp;{$row['home_team']}&nbsp;</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+	</if>
+	<if="$row['home_team'] != $row['pick']">
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['home_team']}</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+	</if>
+	<if="$row['away_team'] == $row['pick']">	
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2 style="border: 2px double;">&nbsp;{$row['away_team']}&nbsp;</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+	</if>
+	<if="$row['away_team'] != $row['pick']">	
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['away_team']}</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+	</if>
+		<td class='row1' height='32' style='text-align: center;'><strong>{$row['start']}</strong></td>		
+	   	<if="$row['payout'] > 0">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/winner.png' /><br />{$row['payout']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</td>		
+		</if>
+		<if="!$row['payout']">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/loser.png' /><br />{$this->ipsclass->lang['loser_undec']}</td>		
+		</if>
+		<if="$row['payout'] == '-1'">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/draw.png' /><br />{$this->ipsclass->lang['draw_tie']}</td>		
+		</if>	
+		<if="$row['payout'] == '-2'">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'></td>		
+		</if>		
+		</tr>
+			</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>my_bets</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$data['title']}</p>
+	</div>
+	<script type="text/javascript" src='jscripts/ipb_xhr_findnames.js'></script>
+	<div id='ipb-get-members' style='border:1px solid #000; background:#FFF; padding:2px;position:absolute;width:210px;display:none;z-index:1'></div>
+	<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd={$data['form_code']}" method='post' id='postingform'>
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><b>{$data['text']}</b></td>
+			<td class='row1' width='50%'><input type='text' name='mem_name' value="{$this->ipsclass->input['name']}" autocomplete='off' id='entered_name' /></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['find_member']}" /></td>
+		</tr>
+	</form>
+	</table>
+	<script type="text/javascript">
+	init_js( 'postingform', 'entered_name', 'get-member-names');
+	setTimeout( 'main_loop()', 10 );
+	</script>]]> 
+  </section_content>
+  <func_name>find_member</func_name> 
+   <func_data><![CDATA[$data=array()]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['banning']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_ban_member&amp;userid={$data['id']}" method='post'>
+		<input type="hidden" name="username" value="{$data['name']} " />
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><strong>User:</a></strong></td>
+			<td class='row1' width='50%' style='text-align: left;'><strong><a href='{$this->ipsclass->base_url}showuser={$data['id']}'>{$data['name']}</a></strong></td>
+		</tr>
+	<tr>
+		<td class='row1' width='50%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['ban?']}</b></td>
+		<td class='row1' width='50%' height='55px' style='text-align: left;'>
+		<select name='ban'>
+		<if="$data['ibbookie_banned']">
+		<option value ='0'>Allow</option>
+		<option value ='1' selected='selected'>BAN!</option>
+		</if>
+		<if="!$data['ibbookie_banned']">
+		<option value ='0' selected='selected'>Allow</option>
+		<option value ='1'>BAN!</option>
+		</if>	
+		</select></td>
+	</tr>
+	<tr>
+		<td class='row1' width='50%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['give_add_perms']}
+		<td class='row1' width='50%' height='55px' style='text-align: left;'>
+		<if="$data['ibbookie_add']">
+		<input type='radio' name='add_games' value= '1' checked='checked'> Yes	
+		<input type='radio' name='add_games' value= '0'>  No
+		</if>
+		<if="!$data['ibbookie_add']">		
+		<input type='radio' name='add_games' value= '1'> Yes	
+		<input type='radio' name='add_games' value= '0' checked='checked'>  No	
+		</if>
+		</td>
+	</tr>
+	<tr>
+		<td class='row1' width='50%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['give_mod_perms']}
+		<td class='row1' width='50%' height='55px' style='text-align: left;'>
+		<if="$data['ibbookie_mod']">
+		<input type='radio' name='mod_games' value= '1' checked='checked'> Yes	
+		<input type='radio' name='mod_games' value= '0'>  No
+		</if>	
+		<if="!$data['ibbookie_mod']">
+		<input type='radio' name='mod_games' value= '1'> Yes	
+		<input type='radio' name='mod_games' value= '0' checked='checked'>  No	
+		</if>
+		</td>
+	</tr>	
+	<tr>
+		<td class='row1' width='50%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['give_admin_perms']}
+		<td class='row1' width='50%' height='55px' style='text-align: left;'>
+		<if="$data['ibbookie_admin']">
+		<input type='radio' name='admin_games' value= '1' checked='checked'> Yes	
+		<input type='radio' name='admin_games' value= '0'>  No
+		</if>	
+		<if="!$data['ibbookie_admin']">
+		<input type='radio' name='admin_games' value= '1'> Yes	
+		<input type='radio' name='admin_games' value= '0' checked='checked'>  No	
+		</if>
+		</td>
+	</tr>
+	<tr>			
+		<td class='row1' width='50%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['total_points']}		
+		<td class='row1' width='50%' height='55px' style='text-align: left;'>				
+		<input type='text' name='ibbookie_points' value="{$data['ibbookie_points']}" size='7' />				
+		</td>		
+	</tr>		
+	<tr>			
+		<td class='row1' width='50%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['member_bets']}		
+		<td class='row1' width='50%' height='55px' style='text-align: left;'>				
+		<input type='text' name='ibbookie_bets' value="{$data['ibbookie_bets']}" size='7' />			
+		</td>		
+	</tr>		
+	<tr>			
+		<td class='row1' width='50%' height='55px' style='text-align: right;'><b>{$this->ipsclass->lang['total_won']}		
+		<td class='row1' width='50%' height='55px' style='text-align: left;'>				
+		<input type='text' name='ibbookie_won' value="{$data['ibbookie_won']}" size='7' />				
+		</td>		
+	</tr>		
+	<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['submit']}" /></td>
+	</tr>
+	</form>
+	</table>]]> 
+  </section_content>
+  <func_name>ban_link</func_name> 
+   <func_data><![CDATA[$data]]></func_data>
+  </template>
+<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['sport_search_results']}&nbsp;{$row['cat_name']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['id']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['start']}</th>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['pick']}</th>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['bet']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['id']}</strong></td>		
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['home_team']}</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['away_team']}</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['start']}</strong></td>
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_bet&amp;id={$row['id']}" method='post'>
+	<td class='row1' style='text-align: center;'>
+	<select name='pick'>
+	<option value ='{$row['home_team']}'>{$row['home_team']}</option>
+	<option value ='{$row['away_team']}'>{$row['away_team']}</option>
+	</select>
+	</td>
+	<td class='row1' style='text-align: center;'><input type='text' name='amount' value="{$this->ipsclass->input['bet']}" size='10' /></td>
+	<input type="hidden" name="gid" value="{$row['id']} " />
+	<input type="hidden" name="mgroup" value="{$this->ipsclass->member['mgroup']} " />
+	<input type="hidden" name="members_display_name" value="{$this->ipsclass->member['members_display_name']} " />
+	<input type="hidden" name="time" value="{$row['time']} " />
+	<input type="hidden" name="cat_image" value="{$row[cat_image]} " />
+	<input type="hidden" name="long_start" value="{$row[long_start]} " />
+	<input type="hidden" name="start" value="{$row['start']} " />
+	<input type="hidden" name="home_team" value="{$row['home_team']} " />
+	<input type="hidden" name="away_team" value="{$row['away_team']} " />
+	<input type="hidden" name="home_odds" value="{$row['home_odds']} " />
+	<input type="hidden" name="away_odds" value="{$row['away_odds']} " />
+	<input type="hidden" name="home_spread" value="{$row['home_spread']} " />
+	<input type="hidden" name="away_spread" value="{$row['away_spread']} " />
+	<td class='button' align='center' colspan='2'><input type='submit' name='submit' value="Bet" /></td>
+	</form>
+	</tr>
+	</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>show_sport</func_name> 
+   <func_data><![CDATA[$content="",$sport=""]]></func_data>
+  </template>
+<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['add_cats']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['cat_name']}</th>
+		<th width="75%" style='text-align: center;'>{$this->ipsclass->lang['cat_image_ext']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<tr>
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_add_cats" method='post'>
+	<td class='row1' style='text-align: center;'><input type='text' name='cat_name' value="{$this->ipsclass->input['cat_name']}" size='10' /></td>
+	<td class='row1' style='text-align: center;'><input type='text' name='cat_image' value="default.gif" size='10' /></td>
+	<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='Add Category' value="Add Cat" /></td>
+	</form>
+	</tr>
+	</table>]]> 
+  </section_content>
+  <func_name>add_cats</func_name> 
+   <func_data><![CDATA[$content=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['edit_cats']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['image']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['id']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['cat_name']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['cat_image']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['delete']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' height='61' style='text-align: center;'><strong><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' height='61' style='text-align: center;'>{$row['id']}</td>
+		<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_edit_cats&amp;id={$row['id']}" method='post'>
+		<td class='row1' height='61' style='text-align: center;'><input type='text' name='cat_name' value="{$row['cat_name']}" size='10' /></td>
+		<td class='row1' height='61' style='text-align: center;'><input type='text' name='cat_image' value="{$row['cat_image']}" size='10' /></td>
+		<td class='row1' height='61' style='text-align: center;'><input type='checkbox' name='delete' value="1" /></td>
+		<input type="hidden" name="gid" value="{$row['id']} " />
+		<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="Edit" /></td>
+		</form>
+	</tr>
+		</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>edit_cats</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p>$title</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+		<tr>
+			<td class='row1' width='100%' align='center'>$data</td>
+		</tr>
+	</table>]]> 
+  </section_content>
+  <func_name>none</func_name> 
+   <func_data><![CDATA[$title="",$data=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['winningest']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['mem_name']}</th>
+		<th width="25%" style='text-align: center;'>{$this->ipsclass->lang['mem_group']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['total_won']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+		<tr>
+		<td class='row1' style='text-align: center;'><strong>{$row['name']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['group']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['points']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</strong></td>
+	</tr>
+		</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>winningest</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['losingest']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['mem_name']}</th>
+		<th width="25%" style='text-align: center;'>{$this->ipsclass->lang['mem_group']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['total_won']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+		<tr>
+		<td class='row1' style='text-align: center;'><strong>{$row['name']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['group']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['points']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</strong></td>
+	</tr>
+		</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>losingest</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['member_bets']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="5%" style='text-align: center;'>{$this->ipsclass->lang['category']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['wager']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width="15%" style='text-align: left;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width="15%" style='text-align: center;'>{$this->ipsclass->lang['start']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['winner']}</th>		
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'><strong><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' height='32' style='text-align: center;'><strong>{$row['amount']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</strong></td>		
+	<if="$row['home_team'] == $row['pick']">
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2 style="border: 2px double;">&nbsp;{$row['home_team']}&nbsp;</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+	</if>
+	<if="$row['home_team'] != $row['pick']">
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['home_team']}</font></strong>
+		<if="$row['home_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['home_spread']}</font></font></strong>
+		</if>
+		<if="$row['home_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['home_spread']}</font></font></strong>
+		</if>	
+		<if="$row['home_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['home_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['home_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['home_odds']}/1</font></font></strong>
+		</if>		
+		</td>
+	</if>
+	<if="$row['away_team'] == $row['pick']">	
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2 style="border: 2px double;">&nbsp;{$row['away_team']}&nbsp;</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+	</if>
+	<if="$row['away_team'] != $row['pick']">	
+		<td class='row1' height='61' style='text-align: left;'>
+		<strong><font size = 2>{$row['away_team']}</font></strong>
+		<if="$row['away_spread'] > 0">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=green>{$row['away_spread']}</font></font></strong>
+		</if>
+		<if="$row['away_spread'] < 0 ">
+		<br/><br/>Spread:&nbsp;<font size = 1><font color=red>{$row['away_spread']}</font></font></strong>
+		</if>	
+		<if="$row['away_odds'] > 1">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=green>{$row['away_odds']}/1</font></font></strong>
+		</if>
+		<if="$row['away_odds'] < 1 ">
+		<br/><br/>Odds:&nbsp;<font size = 1><font color=red>{$row['away_odds']}/1</font></font></strong>
+		</if>	
+		</td>
+	</if>  
+		<td class='row1' height='32' style='text-align: center;'><strong>{$row['start']}</strong></td>		
+	   	<if="$row['payout'] > 0">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/winner.png' /><br />{$row['payout']}&nbsp;{$this->ipsclass->vars['ibbookie_point_abbrev']}</td>		
+		</if>
+		<if="!$row['payout']">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/loser.png' /><br />{$this->ipsclass->lang['loser_undec']}</td>		
+		</if>
+		<if="$row['payout'] == '-1'">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'><img src='style_images/ibbookie_imgs/draw.png' /><br />{$this->ipsclass->lang['draw_tie']}</td>		
+		</if>
+		<if="$row['payout'] == '-2'">		
+	    <td class='row1' height='32' width='10%' style='text-align: center;'></td>		
+		</if>	
+		</tr>
+			</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>member_bets</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['show_member_perms']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['id']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['mem_name']}&nbsp</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['mem_group']}&nbsp</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['banned?']}</th>
+		<th width="13%" style='text-align: center;'>{$this->ipsclass->lang['perms']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['edit_mem']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['id']}</strong></td>		
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['name']}</strong></td>
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['group']}</strong></td>
+		<if="$row['ibbookie_banned'] > 0">
+		<td class='row1' height='61' style='text-align: center;'><strong><font color=red>Yes</font></strong></td>
+		</if>
+		<if="!$row['ibbookie_banned']">
+		<td class='row1' height='61' style='text-align: center;'><strong><font color=green>No</font></strong></td>
+		</if>
+		<td class='row1' height='61' style='text-align: center;'>
+		<if="!$row['ibbookie_add'] && !$row['ibbookie_mod'] && !$row['ibbookie_admin']">
+		Group based</strong><br />
+		</if>
+		<if="$row['ibbookie_add']">
+		Add Games</strong><br />
+		</if>
+		<if="$row['ibbookie_mod']">
+		Moderate</strong><br />
+		</if>
+		<if="$row['ibbookie_admin']">
+		Administrate</strong>
+		</if>		
+		</td>
+		<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=ban_link&amp;userid={$row['id']}" method='post'>
+		<input type="hidden" name="userid" value="{$row['id']} " />
+		<td class='button' align='center' colspan='2'><input type='submit' name='submit' value="Edit Member" /></td>
+		</form>
+	</tr>
+	</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>show_member_perms</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['sport_selector']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['cat_image']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['id']}</th>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['cat_name']}</th>
+		<th width="7%" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+		<tr>
+		<td class='row1' height='61' style='text-align: center;'><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row['id']}</strong></td>		
+		<td class='row1' height='61' style='text-align: center;'><strong>{$row[cat_name]}</strong></td>
+		<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=show_sport&amp;id={$row['cat_name']}" method='post'>
+		<input type="hidden" name="id" value="{$row['id']} " />
+		<td class='button' align='center' colspan='2'><input type='submit' name='submit' value="Search" /></td>
+		</form>
+	</tr>
+		</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>sport_selector_full</func_name> 
+   <func_data><![CDATA[$content="",$pages=""]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$data['title']}</p>
+	</div>
+	<script type="text/javascript" src='jscripts/ipb_xhr_findnames.js'></script>
+	<div id='ipb-get-members' style='border:1px solid #000; background:#FFF; padding:2px;position:absolute;width:210px;display:none;z-index:1'></div>
+	<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd={$data['form_code']}" method='post' id='postingform'>
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><b>{$data['text']}</b></td>
+			<td class='row1' width='50%'><input type='text' name='mem_name' value="{$this->ipsclass->input['name']}" autocomplete='off' id='entered_name' /></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['find_mem']}" /></td>
+		</tr>
+	</form>
+	</table>
+	<script type="text/javascript">
+	init_js( 'postingform', 'entered_name', 'get-member-names');
+	setTimeout( 'main_loop()', 10 );
+	</script>
+	]]> 
+  </section_content>
+  <func_name>find_member_bets</func_name> 
+   <func_data><![CDATA[$data=array()]]></func_data>
+  </template>
+	<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['edit_bets']}</p>
+	</div>
+	<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width=\"2%\" style='text-align: center;'>{$this->ipsclass->lang['id']}</th>
+		<th width=\"5%\" style='text-align: center;'>{$this->ipsclass->lang['game_id']}</th>
+		<th width=\"7%\" style='text-align: center;'>{$this->ipsclass->lang['category']}</th>
+		<th width=\"8%\" style='text-align: center;'>{$this->ipsclass->lang['home_team']}</th>
+		<th width=\"8%\" style='text-align: center;'>{$this->ipsclass->lang['away_team']}</th>
+		<th width=\"8%\" style='text-align: center;'>{$this->ipsclass->lang['pick']}</th>
+		<th width=\"6%\" style='text-align: center;'>{$this->ipsclass->lang['wager']}</th>
+		<th width=\"6%\" style='text-align: center;'>{$this->ipsclass->lang['odds']}</th>
+		<th width=\"6%\" style='text-align: center;'>Delete?</th>
+		<th width=\"7%\" style='text-align: center;'>{$this->ipsclass->lang['submit']}</th>
+	</tr>
+	<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+		<tr>
+		<td class='row1' style='text-align: center;'>{$row['bid']}</td>
+		<td class='row1' style='text-align: center;'>{$row['gid']}</td>
+		<td class='row1' height='61' style='text-align: center;'><img src='style_images/ibbookie_imgs/{$row[cat_image]}' /></td>
+		<td class='row1' style='text-align: center;'>{$row['home_team']}</td>
+		<td class='row1' style='text-align: center;'>{$row['away_team']}</td>
+		<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=do_edit_bets&amp;bet={$row['bid']}" method='post'>
+		<td class='row1' style='text-align: center;'>
+		<select name='pick'>
+		<if="$row['home_team'] == $row['pick']">
+		<option value ='{$row['home_team']}' selected='selected'>{$row['home_team']}</option>
+		<option value ='{$row['away_team']}'>{$row['away_team']}</option>
+		</if>
+		<if="$row['away_team'] == $row['pick']">
+		<option value ='{$row['home_team']}'>{$row['home_team']}</option>
+		<option value ='{$row['away_team']}' selected='selected'>{$row['away_team']}</option>
+		</if>	
+		</select>
+		</td>
+		<td class='row1' style='text-align: center;'><input type='text' name='amount' value="{$row['amount']}" size='10' /></td>
+		<td class='row1' style='text-align: center;'><input type='text' name='odds' value="{$row['odds']}" size='9' /></td>
+		<td class='row1' style='text-align: center;'><input type='checkbox' name='delete' value="1" /></td>
+		<input type="hidden" name="bid" value="{$row['bid']}" />
+		<input type="hidden" name="userid" value="{$row['userid']}" />
+		<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="Edit" /></td>
+		</form>
+	</tr>
+		</foreach>
+	</if>
+	</table>
+	<div class='catend'></div>
+	<div class='row2' style='padding:5px'>{$pages}</div>
+	]]> 
+  </section_content>
+  <func_name>edit_bets</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_bookie</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['atools']}</p>
+	</div>
+	<if="$status != """>
+	<div class='darkrow1' style='padding:2px'>
+	<table class="ipbtable" cellspacing="1">
+		<tr>
+		<td id="userlinksguest" width="100%" style='text-align: center;'>
+	<div style='padding:3px'>
+	{$status}
+	</div>
+	</td>
+		</tr>
+	</table>
+	</div>
+	</if>
+	<table class="ipbtable" cellspacing="1">
+		<tr>
+		<th width="100%" style='text-align: center;'>{$this->ipsclass->lang['atools']}</th>
+		</tr>
+	</table>
+	<table class="ipbtable" cellspacing="0">
+		<tr>
+		<td class='row1' style='text-align: left;' width='25%'>{$this->ipsclass->lang['mass_donate']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=mass_donate" method='post'>
+		<input type="hidden" name="status" value="1" />
+		<td class='row1' style='text-align: left;' width='50%'><strong>{$this->ipsclass->lang['points']}</strong>&nbsp;&nbsp;<input type='text' name='points' size='10' value="0" /></td>
+		<td class='row1' style='text-align: right;' width='25%'><input type='submit' name='submit' value="{$this->ipsclass->lang['mass_donate']}" /></td>
+	</form>
+		</tr>
+	</table>
+	<table class="ipbtable" cellspacing="1">
+		<tr>
+		<td class='row1' style='text-align: left;' width='25%'>{$this->ipsclass->lang['mass_donate_groups']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=bookie&amp;cmd=group_donate" method='post'>
+		<input type="hidden" name="status" value="2" />
+		<td class='row1' style='text-align: left;' width='15%'><strong>{$this->ipsclass->lang['points']}</strong>&nbsp;&nbsp;<input type='text' name='points' size='10' value="0" /></td>
+		<td class='row1' style='text-align: left;' width='35%'>{$groups}</td>
+		<td class='row1' style='text-align: right;' width='25%'><input type='submit' name='submit' value="{$this->ipsclass->lang['mass_donate_groups']}" /></td>
+	</form>
+		</tr>
+	</table>]]> 
+  </section_content>
+  <func_name>tools</func_name> 
+   <func_data><![CDATA[$groups, $status]]></func_data>
+  </template>	 
+<template>
+  <group_name>skin_bookie</group_name>
+   <section_content>
+	<![CDATA[</div>
+		</td>
+	</tr>
+	</table>
+	<br style="clear: all;" />
+	<div class="copyright" align="center">
+	ibBookie 1.0.1 Copyright &copy; 2008 <a href="http://www.fantasyfootballhaven.com" target="_blank"><b>emoney</b></a>
+	</div>]]> 
+  </section_content>
+  <func_name>footer</func_name> 
+   <func_data></func_data>
+  </template>
+<template>
+	<group_name>skin_topic</group_name> 
+	<section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_bookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+        		{$this->ipsclass->vars['bookie_points_name']}: $points
+	<br /></if>  ]]> 
+  </section_content>
+  <func_name>member_bookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_mlist</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_bookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+        		{$this->ipsclass->vars['bookie_points_name']}: $points
+	<br /></if>  ]]> 
+  </section_content>
+  <func_name>member_bookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_msg</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_bookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+        		{$this->ipsclass->vars['bookie_points_name']}: $points
+	<br /></if>  ]]> 
+  </section_content>
+  <func_name>member_bookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_search</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_bookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+        		{$this->ipsclass->vars['bookie_points_name']}: $points
+	<br /></if>  ]]> 
+  </section_content>
+  <func_name>member_bookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_calendar</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_bookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+        		{$this->ipsclass->vars['bookie_points_name']}: $points
+	<br /></if>  ]]> 
+  </section_content>
+  <func_name>member_bookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+	<template>
+	<group_name>skin_topic</group_name> 
+	<section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_member_bets'] && !$this->ipsclass->member['ibbookie_banned'] && $bets > 0">
+	{$this->ipsclass->vars['member_bets']}: <a href='{$this->ipsclass->base_url}autocom=bookie&cmd=member_bets&memberid=$id'>$bets</a>
+	<br />
+	</if>  ]]> 
+  </section_content>
+  <func_name>member_bets</func_name> 
+  <func_data><![CDATA[$bets=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_mlist</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_member_bets'] && !$this->ipsclass->member['ibbookie_banned'] && $bets > 0">
+	{$this->ipsclass->vars['member_bets']}: <a href='{$this->ipsclass->base_url}autocom=bookie&cmd=member_bets&memberid=$id'>$bets</a>
+	<br />
+	</if> ]]> 
+  </section_content>
+  <func_name>member_bets</func_name> 
+  <func_data><![CDATA[$bets=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_msg</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_member_bets'] && !$this->ipsclass->member['ibbookie_banned'] && $bets > 0">
+	{$this->ipsclass->vars['member_bets']}: <a href='{$this->ipsclass->base_url}autocom=bookie&cmd=member_bets&memberid=$id'>$bets</a>
+	<br />
+	</if>  ]]> 
+  </section_content>
+  <func_name>member_bets</func_name> 
+  <func_data><![CDATA[$bets=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_search</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_member_bets'] && !$this->ipsclass->member['ibbookie_banned'] && $bets > 0">
+	{$this->ipsclass->vars['member_bets']}: <a href='{$this->ipsclass->base_url}autocom=bookie&cmd=member_bets&memberid=$id'>$bets</a>
+	<br />
+	</if>  ]]> 
+  </section_content>
+  <func_name>member_bets</func_name> 
+  <func_data><![CDATA[$bets=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_calendar</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_member_bets'] && !$this->ipsclass->member['ibbookie_banned'] && $bets > 0">
+	{$this->ipsclass->vars['member_bets']}: <a href='{$this->ipsclass->base_url}autocom=bookie&cmd=member_bets&memberid=$id'>$bets</a>
+	<br />
+	</if> ]]> 
+  </section_content>
+  <func_name>member_bets</func_name> 
+  <func_data><![CDATA[$bets=0, $id=0]]></func_data>
+  </template>
+  	<template>
+	<group_name>skin_topic</group_name> 
+	<section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_ibbookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+	{$this->ipsclass->vars['ibbookie_points_name']}: $points
+	<br />
+	</if>  ]]> 
+  </section_content>
+  <func_name>member_ibbookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_mlist</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_ibbookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+	{$this->ipsclass->vars['ibbookie_points_name']}: $points
+	<br />
+	</if> ]]> 
+  </section_content>
+  <func_name>member_ibbookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_msg</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_ibbookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+	{$this->ipsclass->vars['ibbookie_points_name']}: $points
+	<br />
+	</if>  ]]> 
+  </section_content>
+  <func_name>member_ibbookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_search</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_ibbookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+	{$this->ipsclass->vars['ibbookie_points_name']}: $points
+	<br />
+	</if>  ]]> 
+  </section_content>
+  <func_name>member_ibbookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_calendar</group_name> 
+   <section_content>
+	<![CDATA[   <if="$this->ipsclass->vars['ibbookie_on'] == 1 && $this->ipsclass->member['id'] && $this->ipsclass->member['ibbookie_groups'] && $this->ipsclass->vars['show_ibbookie_points'] && !$this->ipsclass->member['ibbookie_banned'] && $points != 0">
+	{$this->ipsclass->vars['ibbookie_points_name']}: $points
+	<br />
+	</if> ]]> 
+  </section_content>
+  <func_name>member_ibbookie_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+	</templates_group>
+	<inserts_group>
+		<insert>
+			<table>bookie_cats</table>
+			<fields>
+				<cat_name>Default</cat_name>
+				<cat_image>multi.png</cat_image>
+			</fields>
+			<delete_key><![CDATA[cat_name='Default']]></delete_key>
+		</insert>
+	</inserts_group>	
+  	<tasks_group>
+		<task>
+			<task_title>ibBookie - AutoPrune old/paid games</task_title>
+			<task_file>bookie.php</task_file>
+			<task_week_day>-1</task_week_day>
+			<task_month_day>-1</task_month_day>
+			<task_hour>2</task_hour>
+			<task_minute>15</task_minute>
+			<task_log>1</task_log>
+			<task_description>This task deletes any old/paid games after X number of days.  Default is 30 days, to change see the DB Cleanup section of the ibBookie Settings page in ACP</task_description>
+			<task_enabled>1</task_enabled>
+			<task_key>ibbookie_prune_games</task_key>
+			<task_safemode>0</task_safemode>
+		</task>
+	</tasks_group>
+</mod_data>

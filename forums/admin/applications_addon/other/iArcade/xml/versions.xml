@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<versions>
+	<version>
+		<human>1.0.0 RC1</human>
+		<long>10017</long>
+	</version>
+	<version>
+		<human>1.0.0 RC2</human>
+		<long>10018</long>
+	</version>
+	<version>
+		<human>1.0.0 FINAL</human>
+		<long>10019</long>
+	</version>
+</versions>

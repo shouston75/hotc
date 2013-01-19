@@ -1,0 +1,1 @@
+[05-Nov-2012 15:04:01] PHP Warning:  file_put_contents() [<a href='function.file-put-contents'>function.file-put-contents</a>]: Filename cannot be empty in /home/penguin/public_html/forums/uploads/8d2232eb7002bf935df9fce4c727ac69.php on line 7

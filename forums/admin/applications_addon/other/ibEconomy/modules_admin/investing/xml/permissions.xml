@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>ibEconomy Global</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_reorder_items</key>
+				<string>Can reoder items in ibEconomy?</string>
+			</item>
+		</items>
+	</group>
+	<group>
+		<grouptitle>Banks</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_bank_view</key>
+				<string>Can view ibEconomy Banks?</string>
+			</item>
+			<item>
+				<key>ibEconomy_bank_edit</key>
+				<string>Can edit ibEconomy Banks?</string>
+			</item>	
+		</items>
+	</group>
+	<group>
+		<grouptitle>Credit-Cards</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_cc_view</key>
+				<string>Can view ibEconomy Credit-Cards?</string>
+			</item>
+			<item>
+				<key>ibEconomy_cc_edit</key>
+				<string>Can edit ibEconomy Credit-Cards?</string>
+			</item>	
+		</items>
+	</group>
+	<group>
+		<grouptitle>Stocks</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_stock_view</key>
+				<string>Can view ibEconomy Stocks?</string>
+			</item>
+			<item>
+				<key>ibEconomy_stock_edit</key>
+				<string>Can edit ibEconomy Stocks?</string>
+			</item>	
+		</items>
+	</group>
+	<group>
+		<grouptitle>Long-Term Investments</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_lt_view</key>
+				<string>Can view ibEconomy Long-Term Investments?</string>
+			</item>
+			<item>
+				<key>ibEconomy_lt_edit</key>
+				<string>Can edit ibEconomy Long-Term Investments?</string>
+			</item>		
+		</items>
+	</group>
+	<group>
+		<grouptitle>Investment Settings</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_investment_settings</key>
+				<string>Can edit ibEconomy Investment Settings?</string>
+			</item>
+		</items>
+	</group>
+	<group>
+		<grouptitle>Delete Investment Items</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_delete_investment_items</key>
+				<string>Can delete ibEconomy Investment Items?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

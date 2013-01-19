@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>(e32) ibEconomy Member Pane</hook_name>
+      <hook_desc>Displays an ibEconomy pt total/donate/profile link for each member in topics and PMs</hook_desc>
+      <hook_author>emoney</hook_author>
+      <hook_email/>
+      <hook_website/>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:4:{s:20:"hook_ipb_version_min";i:0;s:20:"hook_ipb_version_max";i:0;s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>0.5.0</hook_version_human>
+      <hook_version_long>050</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";a:1:{s:8:"language";s:53:"From public_global: stats_and_donate_me_some, view_my";}s:8:"language";a:1:{s:13:"public_global";a:2:{s:0:"";s:24:"stats_and_donate_me_some";i:1;s:7:"view_my";}}}]]></hook_extra_data>
+      <hook_key>ibEconomyMemberPane</hook_key>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>ibEconomyMemberPane.php</hook_file_real>
+      <hook_type>skinHooks</hook_type>
+      <hook_classname>ibEconomyMemberPane</hook_classname>
+      <hook_data><![CDATA[a:6:{s:15:"classToOverload";s:11:"skin_global";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[class ibEconomyMemberPane extends skin_global(~id~)
+{
+	public function userInfoPane( $author, $contentid, $options )
+	{	
+		$output = parent::userInfoPane( $author, $contentid, $options );
+		
+		#need to add new setting to show shop item box in topics or not
+		#perms and what not...
+		if ( !$author['member_id'] || !$this->settings['eco_general_on'] || !$this->settings['eco_shopitems_on'] || !$author['g_eco'] || !$this->memberData['g_eco'] || !$this->settings['eco_show_my_items_on'])
+		{
+			return $output;	
+		}
+		
+		#load eco queries (which also loads ecoclass)
+		if( !isset($this->registry->mysql_ibEconomy) )
+		{
+			require_once( IPSLib::getAppDir( 'ibEconomy' ) . "/sql/mysql_ibEconomy.php" );
+			$this->registry->setClass( 'mysql_ibEconomy', new ibEconomyMySQL( $this->registry ) );	
+		}
+		
+		
+		$zeroOrTwo 				= ( $this->settings['eco_pts_button_decimal'] ) ? 2 : 0;
+		$author['eco_points'] 	= ( $this->request['app'] == 'members' ) ? $author[$this->settings['eco_general_pts_field']] : $author['eco_points'];
+		$author['eco_points'] 	= $this->registry->getClass('class_localization')->formatNumber($author['eco_points'], $zeroOrTwo);	
+		
+		#this is where we will display shop items....................
+		$miniShopItemsBox = $this->registry->ecoclass->miniBoxedShopItems($author['member_id'], $this->settings['eco_show_my_items_max']);
+		
+		$output .= $this->registry->output->getTemplate('ibEconomy')->memberInfoPane($author, $miniShopItemsBox);
+
+		return $output;		
+	}
+
+	public function includeJS( $jsModules )
+	{	
+		$output = parent::includeJS ( $jsModules );
+
+		$output .= "<script type='text/javascript' src='{$this->settings['public_dir']}js/3rd_party/ibEconomy/hookJS/ips.ibEconomyMemPane.js'></script>";
+
+		return $output;
+	}
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_global</word_pack>
+      <word_key>view_my</word_key>
+      <word_default>View My</word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_global</word_pack>
+      <word_key>stats_and_donate_me_some</word_key>
+      <word_default>Stats or Send Me</word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>
+  </hookextras_language>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

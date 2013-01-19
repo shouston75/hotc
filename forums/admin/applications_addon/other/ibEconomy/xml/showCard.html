@@ -1,0 +1,76 @@
+<div class='vcard userpopup'>
+	<h3><a href="{parse url="showuser={$member['member_id']}" seotitle="{$member['members_seo_name']}" template="showuser" base="public"}" class="fn nickname url">{$member['members_display_name']}</a></h3>
+	<div class='side left ipsPad'>
+		<a href="{parse url="showuser={$member['member_id']}" seotitle="{$member['members_seo_name']}" template="showuser" base="public"}" class="ipsUserPhotoLink">
+			<img src="{$member['pp_small_photo']}" alt="{$this->lang->words['get_photo']}" class='ipsUserPhoto ipsUserPhoto_large' />
+		</a>
+		<br />
+		<if test="cardRep:|:$this->settings['reputation_enabled'] && $this->settings['reputation_show_profile']">
+			<if test="cardRepPos:|:$member['pp_reputation_points'] > 0">
+				<div class='reputation positive'>
+			</if>
+			<if test="cardRepNeg:|:$member['pp_reputation_points'] < 0">
+				<div class='reputation negative'>
+			</if>
+			<if test="cardRepZero:|:$member['pp_reputation_points'] == 0">
+				<div class='reputation zero'>
+			</if>
+					<span class='number'>{$member['pp_reputation_points']}</span>
+				</div>
+		</if>
+		<a href='{parse url="app=core&amp;module=search&amp;do=user_activity&amp;mid={$member['member_id']}" base="public"}' title='{$this->lang->words['gbl_find_my_content']}' class='ipsButton_secondary ipsType_smaller'>{$this->lang->words['gbl_find_my_content']}</a>
+		<if test="cardSendPm:|:$this->memberData['member_id'] AND $this->memberData['member_id'] != $member['member_id'] AND $this->memberData['g_use_pm'] AND $this->memberData['members_disable_pm'] == 0 AND IPSLib::moduleIsEnabled( 'messaging', 'members' )">
+			<br /><a href='{parse url="app=members&amp;module=messaging&amp;section=send&amp;do=form&amp;fromMemberID={$member['member_id']}" base="public"}' title='{$this->lang->words['pm_this_member']}' id='pm_xxx_{$member['member_id']}' class='pm_button ipsButton_secondary ipsType_smaller'>{$this->lang->words['pm_this_member']}</a>
+		</if>
+	</div>
+	<div class='ipsPad'>
+		<if test="cardStatus:|:$member['_status']['status_content']">
+			<p class='message user_status'>{$member['_status']['status_content']}</p>
+		</if>
+		<div class='info'>			
+			<dl>
+				<dt>{$this->lang->words['m_group']}</dt>
+				<dd>{$member['_group_formatted']}</dd>
+				<dt>{$this->lang->words['m_posts']}</dt>
+				<dd title='{$member['_posts_day']} {$this->lang->words['posts_per_day']}'>{parse format_number="$member['posts']"}</dd>
+				<dt>{$this->lang->words['m_member_since']}</dt>
+				<dd>{parse date="$member['joined']" format="joined"}</dd>
+				<dt>{$this->lang->words['m_last_active']}</dt>
+				<dd><if test="cardOnline:|:$member['_online']"><span class='ipsBadge ipsBadge_green'>{$this->lang->words['online_online']}</span><else /><span class='ipsBadge ipsBadge_grey'>{$this->lang->words['online_offline']}</span></if> {$member['_last_active']}</dd>
+				<dt>{$this->lang->words['m_currently']}</dt>
+				<dd><if test="cardWhere:|:$member['_online']">
+						{$member['online_extra']}
+					<else />
+						{$this->lang->words['online_offline']}
+					</if>
+				</dd>
+				<if test="isadmin:|:$this->memberData['g_access_cp'] == 1">
+					<dt>{$this->lang->words['m_email']}</dt>
+					<dd><a href='mailto:{$member['email']}'>{$member['email']}</a></dd>
+				</if>
+			</dl>
+		</div>
+		<ul class='user_controls clear'>
+			<if test="authorspammer:|:$member['spamStatus'] !== NULL && $member['member_id'] != $this->memberData['member_id']">
+				<if test="authorspammerinner:|:$member['spamStatus'] === TRUE">
+					<li><a href='#' title='{$this->lang->words['spm_on']}' onclick="return ipb.global.toggleFlagSpammer({$member['member_id']}, false)">{parse replacement="spammer_on"}</a></li>
+				<else />
+					<li><a title='{$this->lang->words['spm_off']}' href='{$this->settings['base_url']}app=core&amp;module=modcp&amp;section=editmember&amp;do=setAsSpammer&amp;member_id={$member['member_id']}&amp;auth_key={$this->member->form_hash}' onclick="return ipb.global.toggleFlagSpammer({$member['member_id']}, true)">{parse replacement="spammer_off"}</a></li>
+				</if>
+			</if>
+			<if test="cardFriend:|:$this->memberData['member_id'] AND $this->memberData['member_id'] != $member['member_id'] && $this->settings['friends_enabled'] AND $this->memberData['g_can_add_friends']">
+				<if test="cardIsFriend:|:IPSMember::checkFriendStatus( $member['member_id'] )">
+					<li><a href='{parse url="app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id={$member['member_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['remove_friend']}'>{parse replacement="remove_friend"}</a></li>
+				<else />
+					<li><a href='{parse url="app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id={$member['member_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['add_friend']}'>{parse replacement="add_friend"}</a></li>								
+				</if>
+			</if>			
+			<if test="cardBlog:|:$member['has_blog'] AND IPSLib::appIsInstalled( 'blog' ) && $member['has_blog'] != 'recache'">
+				<li><a href='{parse url="app=blog&amp;module=display&amp;section=blog&amp;mid={$member['member_id']}" base="public"}' title='{$this->lang->words['view_blog']}'>{parse replacement="blog_link"}</a></li>
+			</if>
+			<if test="cardGallery:|:$member['has_gallery'] AND IPSLib::appIsInstalled( 'gallery' )">
+				<li><a href='{parse url="app=gallery&amp;module=user&amp;section=user&amp;user={$member['member_id']}" base="public"}' title='{$this->lang->words['view_gallery']}'>{parse replacement="gallery_link"}</a></li>
+			</if>
+		</ul>
+	</div>
+</div>

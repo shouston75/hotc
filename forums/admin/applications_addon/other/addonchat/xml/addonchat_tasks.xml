@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<export>
+  <group>
+    <row>
+      <task_id>22</task_id>
+      <task_title><![CDATA[Who&#39;s Chatting Update]]></task_title>
+      <task_file>whoschatting.php</task_file>
+      <task_next_run>1280263320</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>5</task_minute>
+      <task_cronkey>bed14f93e5b6faa2ee4556a988adfe3d</task_cronkey>
+      <task_log>0</task_log>
+      <task_description><![CDATA[Update AddonChat Who&#39;s Chatting Table]]></task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>addonchatwc</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>addonchat</task_application>
+    </row>
+  </group>
+</export>

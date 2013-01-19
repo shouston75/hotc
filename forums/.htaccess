@@ -1,0 +1,15 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^chiefschat.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.chiefschat.com$
+RewriteRule ^/?(.*)$ "http\:\/\/www\.homeofthechiefs\.com\/$1" [R=301,L]
+RewriteRule ^/forums/forum/22-kansas-city-chiefs/(.*) http://www.homeofthechiefs.com/forums/forum/44-the-jungle/ [R=301,L]
+
+<IfModule mod_rewrite.c>
+Options -MultiViews
+RewriteEngine On
+RewriteBase /forums/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /forums/index.php [L]
+</IfModule>

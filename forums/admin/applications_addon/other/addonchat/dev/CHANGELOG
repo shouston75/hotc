@@ -1,0 +1,37 @@
+
+v1.0.0 (AddonChat v8.x support for IP.Board 3.1.x)
+	Initial release.
+	Automated Setup Support
+	SSL Detection & Integration
+	Remote Authentication, integrated IP.Board chat privileges
+	IP.Board User Profile Launch via Right Click menu
+	Basic height & width customization
+	Automatic Log-in
+	Unregistered Guest Access support
+	Ability to ban on individual user basis via user setting		
+
+v1.0.3 (AddonChat v8.x support for IP.Board 3.1.x)
+	Minor bug fixes.
+	Language updates.
+
+v1.1.0 (AddonChat v9.x support for IP.Board 3.1.x) 
+	Signed Applet Support
+	Avatar & Photo Integration support
+	Bug fix: right-click profile integration.
+	Added new privileges for profile features
+	Updated can_view_transcript privilege text (real time log) 
+	Bug fix: beta client server
+	Removed SQL uninstaller (setup/sql/addonchat_mysql_uninstall.php) as it appeared to be causing problems (?)
+	Bug fix: added missing index.html litter
+	Bug fix: versions.xml
+		
+v1.2.0 (AddonChat v9.x support for IP.Board 3.2)    
+	Updates to reflect minor internal IPB design changes.
+		Credit and thanks for much of this to: 
+		http://community.invisionpower.com/topic/343000-ipb-320-addonchat-heres-how-to-make-it-work/
+	Various template updates to reflect new IPB 3.2 style sheets
+   Removed unnecessary padding above chat applet
+   bug fix: duplicate UIDs no longer stored in who's chatting list
+   bug fix: non-register users are no longer updated in who's chatting list during authentication   
+		
+//CHANGELOG

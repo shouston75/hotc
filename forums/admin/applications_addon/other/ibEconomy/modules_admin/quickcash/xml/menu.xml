@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Loan Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Loan settings</subitemtitle>
+					<subsection>quickcash</subsection>
+					<subitemurl>do=loan_settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Welfare Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Welfare Settings</subitemtitle>
+					<subsection>quickcash</subsection>
+					<subitemurl>do=welfare_settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+		<item>
+			<title>Lottery Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Lottery Settings</subitemtitle>
+					<subsection>quickcash</subsection>
+					<subitemurl>do=lottery_settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>		
+	</tabitems>
+</menu>

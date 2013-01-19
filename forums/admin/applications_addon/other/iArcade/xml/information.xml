@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<name>iArcade</name>
+		<public_name>Arcade</public_name>
+		<author>Andy Rixon &amp; Collin1000</author>
+		<description>Advanced Arcade System for your IP.Board</description>
+		<templategroups>
+			<template match="exact">skin_iArcade</template>
+		</templategroups>
+	</data>
+</information>

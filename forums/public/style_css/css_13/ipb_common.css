@@ -1,0 +1,25 @@
+#lightbox{position:absolute;left:0;width:100%;z-index:16000 !important;text-align:center;line-height:0}#lightbox
+img{width:auto;height:auto}#lightbox a
+img{border:none}#outerImageContainer{position:relative;background-color:#fff;width:250px;height:250px;margin:0
+auto}#imageContainer{padding:10px}#loading{position:absolute;top:40%;left:0%;height:25%;width:100%;text-align:center;line-height:0}#hoverNav{position:absolute;top:0;left:0;height:100%;width:100%;z-index:10}#imageContainer>#hoverNav{left:0}#hoverNav
+a{outline:none}#prevLink,#nextLink{width:49%;height:100%;background-image:url(http://www.homeofthechiefs.com/forums/public/style_images/light/spacer.gif);display:block}#prevLink{left:0;float:left}#nextLink{right:0;float:right}#prevLink:hover,#prevLink:visited:hover{background:url(http://www.homeofthechiefs.com/forums/public/style_images/light/lightbox/prevlabel.gif) left 15% no-repeat}#nextLink:hover,#nextLink:visited:hover{background:url(http://www.homeofthechiefs.com/forums/public/style_images/light/lightbox/nextlabel.gif) right 15% no-repeat}#imageDataContainer{font:10px Verdana, Helvetica, sans-serif;background-color:#fff;margin:0
+auto;line-height:1.4em;overflow:auto;width:100%}#imageData{padding:0
+10px;color:#666}#imageData
+#imageDetails{width:70%;float:left;text-align:left}#imageData
+#caption{font-weight:bold}#imageData
+#numberDisplay{display:block;clear:left;padding-bottom:1.0em}#imageData
+#bottomNavClose{width:66px;float:right;padding-bottom:0.7em;outline:none}#overlay{position:fixed;top:0;left:0;z-index:15000 !important;width:100%;height:500px;background-color:#000}strong.bbc{font-weight:bold !important}em.bbc{font-style:italic !important}span.bbc_underline{text-decoration:underline !important}acronym.bbc{border-bottom:1px dotted #000}span.bbc_center,div.bbc_center{text-align:center;display:block}span.bbc_left,div.bbc_left{text-align:left;display:block}span.bbc_right,div.bbc_right{text-align:right;display:block}div.bbc_indent{margin-left:50px}del.bbc{text-decoration:line-through !important}ul.bbc{list-style:disc outside;margin-left:30px}ul.bbc
+ul.bbc{list-style-type:circle}ul.bbc ul.bbc
+ul.bbc{list-style-type:square}ul.bbcol.decimal{margin-left:30px;list-style-type:decimal}ul.bbcol.lower-alpha{margin-left:30px;list-style-type:lower-alpha}ul.bbcol.upper-alpha{margin-left:30px;list-style-type:upper-alpha}ul.bbcol.lower-roman{margin-left:30px;list-style-type:lower-roman}ul.bbcol.upper-roman{margin-left:30px;list-style-type:upper-roman}hr.bbc{display:block;border-top:2px solid #777}div.bbc_spoiler{}div.bbc_spoiler
+span{font-weight:bold}div.bbc_spoiler_wrapper{border:1px
+inset #777;padding:4px}div.bbc_spoiler_content{}input.bbc_spoiler_show{width:45px;font-size: .7em;margin:0px;padding:0px}pre.prettyprint{padding:5px;background:#f8f8f8;border:1px
+solid #c9c9c9;overflow:auto;margin-left:10px;font-size:11px;line-height:140%}.bbc_member,.bbc_url{color:inherit}p.citation{background:#f2e7e4 url(http://www.homeofthechiefs.com/forums/public/style_images/light/citation_bg.png) no-repeat right;color:#5b4141;font-size:0.9em;font-weight:bold;border-width:1px;border-style:solid;border-color:#b28c82;padding:5px
+8px;-moz-border-radius:5px 5px 0 0;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px}div.blockquote{background:#fff;color:#5b4141;font-size:0.9em;border-width:1px;border-style:solid;border-color:#f2e7e4 #b28c82 #b28c82 #b28c82;margin:0px;margin-top:0px;-moz-border-radius:0 0 5px 5px;-webkit-border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px}div.blockquote
+p.citation{background-color:#e5d2e9;color:#413544;border-color:#ae7eb9}div.blockquote
+div.blockquote{background:#f9f5fa;font-size:1em;border-color:#ae7eb9;margin: -0px 15px 0px 15px;border-color:#e2d4c1;border-top:1px solid #fff}div.blockquote div.blockquote
+p.citation{background-color:#e9e7d1;color:#474534;border-color:#b2ab72}div.blockquote div.blockquote
+div.blockquote{background:#f9f8f3;border-color:#b2ab72;border-top:1px solid #fff}div.blockquote
+p.citation{margin:6px
+15px 0 15px;font-size:1em}div.quote{padding:12px}div.quote
+p.blockquote{margin-left: -12px}cite{display:block;font-weight:bold}blockquote
+cite{font-size:1em}

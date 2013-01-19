@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Items</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Shop Items</subitemtitle>
+					<subsection>shop</subsection>
+					<subitemurl>do=items</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Categories</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Shop Categories</subitemtitle>
+					<subsection>shop</subsection>
+					<subitemurl>do=cats</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>			
+		<item>
+			<title>Shop Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Shop Settings</subitemtitle>
+					<subsection>shop</subsection>
+					<subitemurl>do=shop_settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

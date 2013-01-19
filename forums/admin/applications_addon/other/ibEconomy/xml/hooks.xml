@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hooks>
+	<hook>
+		<file>ibEconomyIndexSidebarBlocks.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>ibEconomyMemberPane.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>ibEconomyPointsPerPost.xml</file>
+		<enabled>1</enabled>
+	</hook>	
+	<hook>
+		<file>ibEconomyMemberProfile.xml</file>
+		<enabled>1</enabled>
+	</hook>	
+	<hook>
+		<file>ibEconomyPointsPerRep.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>ibEconomyPointsButton.xml</file>
+		<enabled>1</enabled>
+	</hook>	
+	<hook>
+		<file>ibEconomyPointsPerProfCom.xml</file>
+		<enabled>1</enabled>
+	</hook>		
+</hooks>

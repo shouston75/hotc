@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Manage Settings</grouptitle>
+		<items>
+			<item>
+				<key>iArcade-manageSettings</key>
+				<string>Can alter the settings for the tasks?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

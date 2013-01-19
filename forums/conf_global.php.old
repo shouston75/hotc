@@ -1,0 +1,21 @@
+<?php
+$INFO['sql_driver']			=	'mysql';
+$INFO['sql_host']			=	'localhost';
+$INFO['sql_database']			=	'ad187420_chiefschat';
+$INFO['sql_user']			=	'ad187420_chiefsc';
+$INFO['sql_pass']			=	'Shlitty!@#';
+$INFO['sql_tbl_prefix']			=	'ibf_';
+$INFO['sql_debug']			=	'1';
+$INFO['board_start']			=	'1223502209';
+$INFO['installed']			=	'1';
+$INFO['php_ext']			=	'php';
+$INFO['safe_mode']			=	'0';
+$INFO['board_url']			=	'http://www.chiefschat.com';
+$INFO['banned_group']			=	'5';
+$INFO['admin_group']			=	'4';
+$INFO['guest_group']			=	'2';
+$INFO['member_group']			=	'3';
+$INFO['auth_group']			=	'1';
+$INFO['mysql_tbl_type']			=	'MyISAM';
+
+?>

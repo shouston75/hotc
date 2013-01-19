@@ -1,0 +1,3079 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="ibEconomy" templategroups="a:1:{s:14:&quot;skin_ibEconomy&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_ibEconomy">
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<if test="$this->settings['eco_general_ance_on'] && $this->settings['eco_general_ance']">
+<div class='maintitle' style='text-align:center'><img src='{$this->settings['img_url']}/transmit_blue.png' />  {$this->settings['eco_general_name']} {$this->lang->words['global_announcement']}</div>
+		<table class='ipb_table' id='eco_announcement' style='text-align:center'>
+			<tr>
+				<td class='row2'>{$announcement}</td>
+			</tr>
+		</table><br />
+</if>]]></template_content>
+      <template_name>announce</template_name>
+      <template_data>$announcement</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[				<li <if test="area_is_active:|:$isActive">class='active'</if>>
+						<a href='{$this->settings['base_url']}{$moreURL}' title='{$title}'>{$areaLangName}</a>
+				</li>]]></template_content>
+      <template_name>area_side_bar</template_name>
+      <template_data>$isActive, $areaLangName, $title, $moreURL</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<div class='ipsVerticalTabbed_tabs ipsLayout_left'>
+	<ul>
+		{$areas}
+	</ul>
+</div>]]></template_content>
+      <template_name>area_side_bars</template_name>
+      <template_data>$areas</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[			<tr id='{$asset['p_id']}'>
+				<td>
+					<img src='{$this->settings['img_url']}/eco_images/{$asset['image']}' title='{$asset['type']}' alt='type' />
+				</td>
+				<td>
+					{parse template="userHoverCard" group="global" params="$asset"}
+				</td>				
+				<td>
+					<span style='font-weight:bolder'>
+						{$asset['title']} <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type={$asset['p_type']}&amp;id={$asset['p_type_id']}' class='__item __id{$asset['p_type_id']}__type_{$asset['p_type']}_{$asset['p_type_class']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a>
+					</span>
+				</td>			
+				<td>
+					<span style='font-size:0.85em'>{$asset['type']}</span>
+				</td>
+				<td>
+					<span style='font-size:0.85em'>{$asset['quantity']}</span>
+				</td>
+				<td>
+					<span style='font-size:0.85em'>{$asset['purchase_date']}</span>
+				</td>
+			</tr>]]></template_content>
+      <template_name>asset_row</template_name>
+      <template_data>$asset</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[			<div class='maintitle ipsFilterbar'>
+				<ul class='ipsList_inline ipsType_smaller'>
+					<li <if test="$this->request['sort'] == 'members_display_name'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=portfolio&amp;member_id={$this->request['member_id']}&amp;mname={$memName}&amp;p_type={$this->request['p_type']}&amp;sort=members_display_name&amp;sw={$otherSW}'>{$this->lang->words['member']}</a></li>
+					<li <if test="$this->request['sort'] == 'p_type_id'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=portfolio&amp;member_id={$this->request['member_id']}&amp;mname={$memName}&amp;p_type={$this->request['p_type']}&amp;sort=p_type_id&amp;sw={$otherSW}'>{$this->lang->words['name']}</a></li>
+					<li <if test="$this->request['sort'] == 'p_type'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=portfolio&amp;member_id={$this->request['member_id']}&amp;mname={$memName}&amp;p_type={$this->request['p_type']}&amp;sort=p_type&amp;sw={$otherSW}'>{$this->lang->words['type']}</a></li>
+					<li <if test="$this->request['sort'] == 'p_amount'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=portfolio&amp;member_id={$this->request['member_id']}&amp;mname={$memName}&amp;p_type={$this->request['p_type']}&amp;sort=p_amount&amp;sw={$otherSW}'>{$this->lang->words['Quantity']}</a></li>
+					<li <if test="$this->request['sort'] == 'p_purch_date'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=portfolio&amp;member_id={$this->request['member_id']}&amp;mname={$memName}&amp;p_type={$this->request['p_type']}&amp;sort=p_purch_date&amp;sw={$otherSW}'>{$this->lang->words['aquired']}</a></li>
+					<li <if test="$memName || $this->request['p_type']"> class='active'</if>><a href='#custom_menucontent' id='custom'>Custom</a></li>
+				</ul>
+			</div>
+			<div id='custom_menucontent' class='ipbmenu_content ipsPad'>
+				<form action='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=portfolio' method='post'>
+				<strong>{$this->lang->words['member']}</strong><br />
+				<input type="text" class='input_text' id='mem_name1' name="mem_name" value="{$memName}" />
+				<br /><br />
+				<strong>{$this->lang->words['type']}</strong><br />
+				{$assetsDD}
+				<br /><br />
+				<input type="submit" value="Submit" class="input_submit" />
+				</form>
+			</div>
+			<script type='text/javascript'>
+				new ipb.Menu( $('custom'), $('custom_menucontent'), { stopClose: true } );
+			</script>
+			<table class='ipb_table'>
+			<tr class='header'>
+				<th scope='col' width='5%'>&nbsp;</th>
+				<th scope='col' width='15%'>{$this->lang->words['member']}</th>
+				<th scope='col' width='25%'>{$this->lang->words['name']}</th>
+				<th scope='col' width='15%'>{$this->lang->words['type']}</th>
+				<th scope='col' width='15%'>{$this->lang->words['Quantity']}</th>
+				<th scope='col' width='20%'>{$this->lang->words['aquired']}</th>
+			</tr>
+            {$content}
+		</table>
+		<div style='margin:10px;'>
+			{$pages}
+		</div>
+<!--		
+<script type="text/javascript">
+	document.observe("dom:loaded", function(){
+		var url = ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=';
+		new ipb.Autocomplete( $('mem_name1'), { multibox: false, url: url, templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+	});
+</script>	
+-->]]></template_content>
+      <template_name>asset_wrapper</template_name>
+      <template_data><![CDATA[$content, $otherSW, $memName, $pages, $assetsDD]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<if test="$block['sb_boxed']">
+	<div class='ipsSideBlock clearfix' style='background-color:{$block['sb_bg_color']};color:{$block['sb_font_color']}'>
+	<h3><if test="$block['sb_pic']"><img src='{$this->settings['img_url']}/eco_images/{$block['sb_pic']}' alt='{$this->lang->words['icon']}' /></if> {$block['sb_title']}</h3>
+		<div class='_sbcollapsable'>
+			<ul class='ipsList_withminiphoto'>
+				{$content}
+			</ul>
+		</div>
+	</div>		
+<else />
+	<div style='margin-bottom:10px;padding:10px;background-color:{$block['sb_bg_color']};color:{$block['sb_font_color']}'>
+		<div class='_sbcollapsable'>	
+			<ul class='ipsList_withminiphoto'>
+				{$content}
+			</ul>
+		</div>
+	</div>	
+</if>]]></template_content>
+      <template_name>block</template_name>
+      <template_data><![CDATA[$content='',$block='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<if test="$block['sb_boxed']">
+	<div class='ipsSideBlock clearfix'>
+		<h3><if test="$block['sb_pic']"><img src='{$this->settings['img_url']}/eco_images/{$block['sb_pic']}' alt='{$this->lang->words['icon']}' /></if> {$block['sb_title']}</h3>
+		<div class='_sbcollapsable'>
+			<ul class='ipsList_withminiphoto'>
+			{$content}
+			</ul>
+		</div>
+	</div>
+<else />
+	<div style='margin-bottom:10px;padding:10px;background-color:{$block['sb_bg_color']};color:{$block['sb_font_color']};'>
+		<ul class='ipsList_withminiphoto'>
+		{$content}
+		</ul>
+	</div>
+</if>]]></template_content>
+      <template_name>blockMem</template_name>
+      <template_data><![CDATA[$content='',$block='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	<li class='clearfix' style='background-color:{$block['sb_bg_color']}'><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab={$row['tab']}&amp;area=single&amp;type={$row['type']}&amp;id={$row['id']}&amp;bank_type={$row['s_type']}">{$row['title']}</a> <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab={$row['tab']}&amp;area=single&amp;type={$row['type']}&amp;id={$row['id']}&amp;bank_type={$row['s_type']}' class='__item __id{$row['id']}__type_{$row['type']}_{$row['s_type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a>
+		<span style='font-size:0.85em'><if test="$block['sb_show_text']"><br />{$block['text']}</if>: {$row['figure']} </span><br />
+		<span class='date'><abbr class="published" title="{$this->lang->words['added_on']}">{$this->lang->words['added_on']}: {$row['start_date']}</abbr></span></li>]]></template_content>
+      <template_name>blockRow</template_name>
+      <template_data><![CDATA[$row='',$block='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<li class='clearfix' style='background-color:{$block['sb_bg_color']}'>
+		<if test="was_last_lotto_winner:|:$row['prevWinnerMemData']['member_id'] > 0">
+			<a href='{parse url="showuser={$row['prevWinnerMemData']['member_id']}" seotitle="{$row['prevWinnerMemData']['members_seo_name']}" template="showuser" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhotoLink left'><img src='{$row['prevWinnerMemData']['pp_mini_photo']}' alt="{$row['prevWinnerMemData']['members_display_name']}{$this->lang->words['users_photo']}" class='ipsUserPhoto ipsUserPhoto_mini' /></a>
+			<div class='list_content'>
+				<if test="$row['prevWinnerMemData']['members_display_name']">{parse template="userHoverCard" group="global" params="$row['prevWinnerMemData']"}<else />{$this->settings['guest_name_pre']}{$row['prevWinnerMemData']['starter_name']}{$this->settings['guest_name_suf']}</if> &middot; {$this->settings['eco_general_cursymb']}{$row['prevWinnings']}<br />
+				<p class='desc ipsType_smaller'>
+					{$this->lang->words['last_winner']}
+				</p>
+			</div>		
+		</if>
+	</li>
+	<li class='clearfix' style='background-color:{$block['sb_bg_color']}'>
+		<div class='info'>
+			<dt>{$this->lang->words['draw']}</dt>
+			<dd><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=cash&amp;area=single&amp;type=lotto&amp;id={$row['id']}&amp;type=lottery&amp;id={$row['l_id']}">{$row['l_draw_date_no_time']}</a> <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=cash&amp;area=single&amp;type=lotto&amp;id={$row['id']}&amp;bank_type={$row['s_type']}' class='__item __id{$row['l_id']}__type_lottery_Item' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></dd>
+			<dt>{$this->lang->words['pot_size']}</dt>
+			<dd>{$this->settings['eco_general_cursymb']}{$row['l_final_pot_size']}</dd>                   
+			<dt>{$this->lang->words['price']}</dt>			
+			<dd>{$this->settings['eco_general_cursymb']}{$row['cost']}</dd>
+			<dt>{$this->lang->words['yours']}</dt>
+			<dd>{$row['your_num_total_tix_formatted']}</dd>
+			<dt>{$this->lang->words['sold']}</dt>
+			<dd>{$row['l_tix_purchased']}</dd>
+			<if test="eco_lottery_still_open:|:$row['tix_still_4_sale']">
+				<form action='{$this->settings['base_url']}app=ibEconomy&do=add_to_cart' method='post'>
+				<input type='hidden' name='item_id' value='lottery_{$row['l_id']}' />
+				<dt><input type='text' name='quantity' size='2' /></dt>			
+					<dd><input type='submit' class='input_submit' name='submit' value='{$this->lang->words['add_to_cart']}' /></dd>
+				</form>
+			</if>
+		</div>
+	</li>]]></template_content>
+      <template_name>blockRowLotto</template_name>
+      <template_data><![CDATA[$row='',$block='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>	
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[		<li class='clearfix'>
+			<a href='{parse url="showuser={$r['member_id']}" seotitle="{$r['members_seo_name']}" template="showuser" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhotoLink left'><img src='{$r['pp_mini_photo']}' alt="{$r['members_display_name']}{$this->lang->words['users_photo']}" class='ipsUserPhoto ipsUserPhoto_mini' /></a>
+			<div class='list_content'>
+				<if test="$block['sb_show_text']"> {$block['text']}: </if>{$r['figure']}<br />
+				<p class='desc ipsType_smaller'>
+					<if test="$r['members_display_name']">{parse template="userHoverCard" group="global" params="$r"}<else />{$this->settings['guest_name_pre']}{$r['starter_name']}{$this->settings['guest_name_suf']}</if>
+				</p>
+			</div>
+		</li>]]></template_content>
+      <template_name>blockRowMem</template_name>
+      <template_data><![CDATA[$r='',$block='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<div id='index_stats' class='ipsLayout_right clearfix' <if test="sidebarclosed2:|:IPSCookie::get('hide_sidebar') == '1'">style='display: none'</if>>
+	{$blocks}
+</div>
+<if test="sidebarEnabled:|:$this->settings['eco_display_sidebar_on'] && !in_array($this->registry->output->skin['set_id'], explode(',', $this->settings['eco_display_sb_skins']))">
+	<a href='#' id='toggle_sidebar' title='' data-closed="&laquo;" data-open="&times;">&nbsp;</a>
+</if>]]></template_content>
+      <template_name>blocks</template_name>
+      <template_data><![CDATA[$blocks]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>		
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<div class='topic_controls'> 
+	<ul class='topic_buttons'>
+		<if test="$this->settings['eco_cashier_on']">
+			<li><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=buy&amp;area=cart' title='{$this->lang->words['view_cart']}'><img src='{$this->settings['img_url']}/eco_images/cart.png' alt='Icon' /> {$this->lang->words['shopping_cart']}</a></li>
+		</if>
+			<li class='non_button'><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=me' title='{$this->lang->words['my_portfolio']}'><img src='{$this->settings['img_url']}/eco_images/money.png' alt='Icon' /> {$this->lang->words['my_points']}: {$my_points}</a></li>
+
+	</ul>
+	<if test="donationsOn:|:$this->settings['eco_dons_on'] && in_array('don', explode(',',$this->settings['eco_left_buttons']))"><li class='ipsButton_secondary'><a class='ibEconomy_popup' id='do_donate' href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=find_member' title='{$this->lang->words['quick_donate']}'><img src='{$this->settings['img_url']}/eco_images/group_go.png' alt='Icon' /> {$this->lang->words['quick_donate']}</a></li></if>
+{$leftButtons}
+	</div><br />]]></template_content>
+      <template_name>button_row</template_name>
+      <template_data>$my_points, $leftButtons</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[			<tr id='{$item['c_id']}'>
+				<td>
+					{$item['image_thumb_link']}
+				</td>
+				<td>
+					<span style='font-weight:bolder'>
+						{$item['title_line']}
+					</span>
+				</td>
+				<td>
+					{$item['desc_line']}
+				</td>				
+				<td class=' short'>
+					<if test="intval($item['cost']) > 0">{$this->settings['eco_general_cursymb']}</if>{$item['cost']}
+				</td>
+				<td class='short'>
+					<table class='ipb_table'>
+						<tr>
+							<td style='text-align:right'>
+								<span class='desc'>{$item['pre_amount_text']} </span>
+							</td>
+							<td style='text-align:right'>
+								<input type='hidden' name='item_id_{$item['c_id']}' value='{$item['c_type_id']}' />
+								<input type='hidden' name='bank_type_{$item['c_id']}' value='{$item['c_type_class']}' />
+								<input type='hidden' name='item_type_{$item['c_id']}' value='{$item['l_type']}' />
+								<input type='hidden' name='old_amount_{$item['c_id']}' value='{$item['amount']}' />
+								<input type='text' size='5' name='new_amount_{$item['c_id']}' value='{$item['amount']}' />
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class=' short'>
+					{$this->settings['eco_general_cursymb']}{$item['total']}
+				</td>
+				<td class=' short'>
+					<input type='checkbox' class='input_check item_check' name='update_me[]' id='item_{$item['c_id']}' value='{$item['c_id']}' />
+				</td>
+			</tr>]]></template_content>
+      <template_name>cart_row</template_name>
+      <template_data>$item</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=update_cart' method='post' onsubmit="return confirm('{$this->lang->words['confirm_cart_update']}');">
+		<div class='maintitle'>{$this->lang->words['items']}</div>
+		<table class='ipb_table' id='message_table'>
+			<tr class='header'>
+				<th scope='col'>&nbsp;</th>
+				<th scope='col'>{$this->lang->words['name']}</th>
+				<th scope='col'>{$this->lang->words['type']}</th>
+				<th scope='col' class=' short'>{$this->lang->words['cost']}</th>
+				<th scope='col' class=' short'>{$this->lang->words['amount']}</th>
+				<th scope='col' class=' short'>{$this->lang->words['total']}</th>
+				<th scope='col' class=' short'><input type='checkbox' class='input_check' id='item_checkall' value='1' /></th>
+			</tr>
+            {$content}
+		</table>
+		<div class='moderation_bar rounded with_action'>
+			<select name='method' class='input_select'>
+				<optgroup label='{$this->lang->words['with_selected']}...'>
+					<option value='delete'>{$this->lang->words['delete']}</option>
+					<option value='update_quantity'>{$this->lang->words['update_quantity']}</option>
+			</select>
+			<input type='submit' class='input_submit' value='{$this->lang->words['go']}' />
+		</div>
+	</form>
+	<table class='ipb_table' id='message_table'>
+		<tr style='text-align:right;'>
+			<td style='width:75%'>
+				{$this->lang->words['subtotal']}
+			</td>
+			<td>
+				{$this->settings['eco_general_cursymb']}{$totals['sub']}
+			</td>
+		</tr>				
+		<tr style='text-align:right;'>				
+			<td style='width:75%'>
+				{$this->lang->words['fees_and_taxes']}
+			</td>
+			<td>
+				{$this->settings['eco_general_cursymb']}{$totals['fees']}
+			</td>
+		</tr>
+		<tr style='text-align:right;'>				
+			<td style='width:75%'>
+				<strong>{$this->lang->words['grand_total']}</strong>
+			</td>
+			<td>
+				<strong>{$totals['grand']} {$this->settings['eco_general_currency']}</strong>
+			</td>				
+		</tr>
+	</table>
+	<fieldset class='submit'>
+		<form method='post' action='{$this->settings['base_url']}app=ibEconomy&amp;tab=buy&amp;area=checkout'>
+			<if test="show_one_click_buy:|:$this->settings['eco_general_one_click_buy'] != 'only'">
+				<input type='submit' name="submit" class='input_submit alt' value='{$this->lang->words['checkout']}' />
+			</if>
+			<if test="show_one_click_buy:|:$this->settings['eco_general_one_click_buy'] == 'on'">
+				&nbsp;&nbsp;{$this->lang->words['or']}&nbsp;&nbsp;
+			</if>
+			<if test="show_one_click_buy:|:in_array($this->settings['eco_general_one_click_buy'], array('only', 'on'))">
+				<a href='{$this->settings['base_url']}app=ibEconomy&amp;do=purchase&amp;one_click_buy=true' name="one_click_buy" class='input_submit' id='one_click_buy'  value='one_click_buy'>{$this->lang->words['one_click_buy']}</a>
+			</if>
+		</form>
+	</fieldset>]]></template_content>
+      <template_name>cart_wrapper</template_name>
+      <template_data><![CDATA[$content='', $totals='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<script type='text/javascript' src='{$this->settings['js_app_url']}ips.payment.js'></script>
+<div id='question_#1_wrap' style='display: show; text-align:right'>
+							<span >
+								{$payment_dd}
+								<input type='text' name='payment_amt' size='10' />
+							</span>
+</div>
+<fieldset id='payment_fieldset' style='display: none'>
+<script type='text/javascript'>
+//<!#^#|CDATA|
+	ipb.payment.maxQuestions = parseInt( 1 );
+	ipb.payment.maxChoices = parseInt( 5 );
+	ipb.payment.isPublicpayment = parseInt( 5 );
+	ipb.payment.showOnLoad = 0;
+	
+	ipb.templates['payment_question'] = 	new Template("<li class='field question' id='question_#{qid}_wrap' style='display: none'>" +
+											"	<div>" + 
+											"		<ol style='text-align:right' id='choices_for_#{qid}'></ol>" + 
+											"		<br /><ul style='text-align:right;padding-top:2px;padding-bottom:15px;'>" +
+											"			<li><a href='#' style='text-decoration: none;outline: none;' id='add_choice_#{qid}' title='{$this->lang->words['add_payment_option']}'>{parse replacement="add_poll_choice"} {$this->lang->words['add_payment_option']}</a></li>" +
+											"		</ul>" +
+											"	</div>" +
+											"</li>");
+	ipb.templates['payment_choice'] = 		new Template("<li id='payment_#{qid}_#{cid}_wrap' style='display: none;padding-bottom:5px'><input type='hidden' value='#{cid}' name='payment_ids[]' /> {$payment_dd}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' id='payment_#{qid}_#{cid}_votes' name='amount_#{cid}' value='#{votes}' class='input_text' size='5' /> <a href='#' id='remove_#{qid}_#{cid}' title='{$this->lang->words['remove_payment']}'>{parse replacement="remove_poll_choice"}</a></li>");
+//|#^#]>
+</script>
+<div id='payment_form'>
+	<div id='add_payment' style='display: none'>
+		<ul class='topic_buttons'>
+			<li><a href='#'><img src='{$this->settings['img_url']}/eco_images/money_add.png'> {$this->lang->words['open_payment_options']}</a></li>
+		</ul>
+	</div>
+	<fieldset id='payment_wrap' style='display: none' class='clear'>
+		<ul id='payment_container'>
+		</ul>
+		<div>
+			<ul class='topic_buttons'>
+				<li id='close_payment'><a href='#'>{parse replacement="close_poll_form"} {$this->lang->words['close_payment_options']}</a></li>
+			</ul>
+		</div>
+	</fieldset>
+</div>
+</fieldset>
+<script type='text/javascript'>
+	$('payment_fieldset').show();
+	document.getElementById("question_#1_wrap").style.display = 'none';	
+</script>]]></template_content>
+      <template_name>checkOut_row</template_name>
+      <template_data>$payment_dd</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[		<div class='maintitle'>{$this->lang->words['payment_options']}</div>
+		<table class='ipb_table' id='message_table'>
+			<tr class='header'>
+				<th style='width:45%'>&nbsp;</th>
+				<th style='width:35%;padding-right:45px;text-align:right'>{$this->lang->words['payment_type']}</th>				
+				<th style='width:20%;padding-right:20px;text-align:right'>{$this->lang->words['charge_amount']}</th>
+			</tr>
+			<tr>
+				<td>
+					<span style='font-weight:bolder'>
+						{$this->lang->words['total_due']}: {$totals['grand']} {$this->settings['eco_general_currency']}
+					</span>
+				</td>
+				<td colspan='2'>
+					<table>
+						<tr>
+							<td>
+								<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=purchase' method='post' onsubmit="return confirm('{$this->lang->words['purchase_conf']}');">
+								{$content}
+							</td>
+						</tr>					
+					</table>
+				</td>
+			</tr>
+		</table>
+		<fieldset class='submit'>
+				<input type='submit' class='input_submit' value='{$this->lang->words['purchase']}' />
+		</form>
+	</fieldset>]]></template_content>
+      <template_name>checkOut_wrapper</template_name>
+      <template_data><![CDATA[$content='', $totals='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=donate' method='post'>
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th colspan='2' style='text-align:center'><img src='{$this->settings['img_url']}/eco_images/group_go.png' alt='Icon' /> {$this->lang->words['making_donation']}</th>
+			</tr>
+			<tr class='row1'>
+				<td style='text-align:right'>
+					{$this->lang->words['don_recip']}:
+				</td>
+				<td style='text-align:left'>
+					<input type="text" class='input_text' id='mem_name1' name="mem_name" size="30" value="{$mem_name}" tabindex="0" />
+				</td>				
+			</tr>
+			<tr class='row2'>
+				<td style='text-align:right'>
+					{$this->lang->words['reason']}:
+				</td>
+				<td style='text-align:left'>
+					<input type='text' size='50%' maxlength='100' name='donation_reason' />
+				</td>				
+			</tr>
+			<tr class='row1'>
+				<td style='text-align:right'>
+					{$this->lang->words['amount']}:
+				</td>
+				<td style='text-align:left'>
+					<input type='text' size='5' maxlength='20' name='donation_amount' />
+				</td>				
+			</tr>			
+		</table>
+		<fieldset class='submit'>
+				<input type='submit' class='input_submit' value='{$this->lang->words['donate']}' />
+		</form>		
+		</fieldset>]]></template_content>
+      <template_name>donatePop</template_name>
+      <template_data/>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<div class='message error' style='margin:15px'>{$text}</div>]]></template_content>
+      <template_name>error</template_name>
+      <template_data><![CDATA[$text='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<div class='ipsBox'>
+	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=do_find_member' method='post'>
+	<div class='ipsBox_container ipsPad'>
+		<ul class='ipsForm ipsForm_vertical'>
+		<li class='ipsField'>
+			<label class='ipsField_title'>{$this->lang->words['input_member_name']} <spanclass='ipsForm_required'>*</span></label>
+			<div class='ipsField_content'>
+				<input type="text" class='input_text' id='mem_name1' name="mem_name" size="30" value="{$mem_name}" tabindex="0" /><br />
+			</div>
+		</li>
+		</ul>
+	</div>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['find_member']}' />
+	</fieldset>
+	</form>
+</div>
+
+<script type="text/javascript">
+	document.observe("dom:loaded", function(){
+		var url = ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=';
+		new ipb.Autocomplete( $('mem_name1'), { multibox: false, url: url, templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+	});
+</script>]]></template_content>
+      <template_name>find_member</template_name>
+      <template_data><![CDATA[$content='', $totals='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<br class='clear' />
+<div id='board_footer' style='min-height:15px;'>
+<p id='copyright' class='right'>
+	ibEconomy {$this->caches['app_cache']['ibEconomy']['app_version']} &copy; 2011 &nbsp;<a href='http://emoneycodes.com/forums/' title='emoneyCodes.com - (e$) Mods'>emoney - (e$) Mods</a>.
+</p>
+</div>]]></template_content>
+      <template_name>footer</template_name>
+      <template_data/>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<!--JS-->
+<script type='text/javascript' src='{$this->settings['js_app_url']}ips.ibEconomy.js'></script>
+<!--CSS-->
+<if test="useMinify:|:$this->settings['use_minify']">
+	<link rel="stylesheet" type="text/css" media='screen' href="{$this->settings['board_url']}/public/min/index.php?f=public/style_css/{$this->registry->output->skin['_csscacheid']}/ipb_ucp.css,public/style_css/{$this->registry->output->skin['_csscacheid']}/ipb_mlist.css" />
+<else />
+	<link rel="stylesheet" type="text/css" media='screen' href="{$this->settings['board_url']}/public/style_css/{$this->registry->output->skin['_csscacheid']}/ipb_ucp.css" />
+	<link rel="stylesheet" type="text/css" media='screen' href="{$this->settings['board_url']}/public/style_css/{$this->registry->output->skin['_csscacheid']}/ipb_mlist.css" />
+</if>
+
+<!--RTL FIX-->
+<script type='text/javascript'>
+	var isRTL	= false;
+	var rtlIe	= '';
+	var rtlFull	= '';
+</script>
+
+<if test="importrtlcss:|:$this->lang->words['_isRtl'] AND file_exists( DOC_IPS_ROOT_PATH . '/' . PUBLIC_DIRECTORY . '/style_css/' . $this->registry->output->skin['_csscacheid'] . '/ipb_rtl.css' )">
+	<link rel="stylesheet" type="text/css" media="screen" href="{$this->settings['public_dir']}style_css/{$this->registry->output->skin['_csscacheid']}/ipb_rtl.css" />
+	<script type='text/javascript'>
+		var rtlFull	= "{$this->settings['public_dir']}style_css/{$this->registry->output->skin['_csscacheid']}/ipb_rtl.css";
+		var isRTL	= true;
+	</script>
+<else />
+	<if test="importrtlcss:|:$this->lang->words['_isRtl'] AND file_exists( DOC_IPS_ROOT_PATH . '/' . PUBLIC_DIRECTORY . '/style_css/ipb_rtl.css' )">
+		<link rel="stylesheet" type="text/css" media="screen" href="{$this->settings['public_dir']}style_css/ipb_rtl.css" />
+		<script type='text/javascript'>
+			var rtlFull	= "{$this->settings['public_dir']}style_css/ipb_rtl.css";
+			var isRTL	= true;
+		</script>
+	</if>
+</if>
+<if test="importrtlcss:|:$this->lang->words['_isRtl'] AND file_exists( DOC_IPS_ROOT_PATH . '/' . PUBLIC_DIRECTORY . '/style_css/' . $this->registry->output->skin['_csscacheid'] . '/ipb_rtl_ie.css' )">
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" media="screen" href="{$this->settings['public_dir']}style_css/{$this->registry->output->skin['_csscacheid']}/ipb_rtl_ie.css" />
+	<![endif]-->
+	<script type='text/javascript'>
+		var rtlIe	= "{$this->settings['public_dir']}style_css/{$this->registry->output->skin['_csscacheid']}/ipb_rtl_ie.css";
+	</script>
+<else />
+	<if test="importrtlcss:|:$this->lang->words['_isRtl'] AND file_exists( DOC_IPS_ROOT_PATH . '/' . PUBLIC_DIRECTORY . '/style_css/ipb_rtl_ie.css' )">
+		<!--[if lte IE 7]>
+		<link rel="stylesheet" type="text/css" media="screen" href="{$this->settings['public_dir']}style_css/ipb_rtl_ie.css" />
+		<![endif]-->
+		<script type='text/javascript'>
+			var rtlIe	= "{$this->settings['public_dir']}style_css/ipb_rtl_ie.css";
+		</script>
+	</if>
+</if>]]></template_content>
+      <template_name>init_js_css</template_name>
+      <template_data/>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<li class='ipsButton_secondary' style='margin-left:3px;'><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab={$button['tab']}&amp;area={$button['area']}' title='{$button['text']}'><img src='{$this->settings['img_url']}/eco_images/{$button['image']}' alt='Icon' /> {$button['text']}</a> </li>]]></template_content>
+      <template_name>leftButton</template_name>
+      <template_data>$button</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	{parse js_module="memberlist"}		
+	<table class='ipb_table'>
+		<div class='ipsBox_container ipsPad' id='mlist_content'>
+			<ul class='ipsMemberList'>
+				{$memberRow}
+			</ul>		
+		</div>		
+	</table>
+	<div style=padding:10px;'>
+		{$member['eco_stats']}
+	</div>]]></template_content>
+      <template_name>member</template_name>
+      <template_data>$memberRow, $member</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	<if test="hasShopItems:|:$miniShopItemBox">
+		<br />{$miniShopItemBox}
+	</if>]]></template_content>
+      <template_name>memberInfoPane</template_name>
+      <template_data>$member, $miniShopItemBox</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<if test="eco_donations_on:|:$this->settings['eco_dons_on']">
+	<li class='ibEconomy_MemPanePop ipsButton_secondary' id='do_member_{$memberID}_{$this->request['app']}_{$this->request['showuser']}_{$this->request['module']}'><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=member&amp;id={$memberID}' title='{$this->lang->words['view_my']} {$this->settings['eco_general_name']} {$this->lang->words['stats_and_donate_me_some']} {$this->settings['eco_general_currency']}!'><img src='{$this->settings['img_url']}/eco_images/money_add.png' /> {$this->lang->words['donate']} {$this->settings['eco_general_currency']}</a>
+	</li>
+</if>
+<if test="eco_can_edit_pts:|:$this->memberData['g_eco_edit_pts']">
+	<li class='ibEconomy_MemPanePop ipsButton_secondary' id='do_edit_{$memberID}_{$this->request['app']}_{$this->request['showuser']}_{$this->request['module']}'><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=member&amp;id={$memberID}' title='{$this->lang->words['edit_my']} {$this->settings['eco_general_currency']}'><img src='{$this->settings['img_url']}/eco_images/wrench_orange.png' /> {$this->lang->words['edit']} {$this->settings['eco_general_currency']}</a>
+	</li>
+</if>]]></template_content>
+      <template_name>memberProfileDonate</template_name>
+      <template_data>$memberID</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<li> 
+	<span class='row_title'>{$this->settings['eco_general_currency']}:</span> 
+	<span class='row_data'>{parse format_number="$member['pts'],$this->registry->ecoclass->decimal"}<if test="$member['rank'] > 0 && $this->settings['eco_rankings_on']"> <span title='{$this->lang->words['my_ranking']}'>(#{parse format_number="$member['rank']"})</span></if></span> 
+</li>]]></template_content>
+      <template_name>memberProfilePts</template_name>
+      <template_data>$member</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=donate' method='post'>
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th colspan='2' style='text-align:center'><img src='{$this->settings['img_url']}/eco_images/group_go.png' alt='Icon' /> {$this->lang->words['making_donation']}</th>
+			</tr>
+			<tr>
+				<td style='text-align:center'>
+				<input type='hidden' name='id' value='{$member['member_id']}' />
+				<input type='hidden' name='to_name' value='{$member['members_display_name']}' />
+				<input type='hidden' name='from_url' value='{$url}' />
+					<a style='font-weight:bolder' href="{$this->settings['base_url']}app=ibEconomy&tab=global&area=member&id={$member['member_id']}" title='{$this->lang->words['view_eco_profile']}'>{$member['formatted_name']}</a><br /><br />
+					<a href='{parse url="showuser={$member['member_id']}" template="showuser" seotitle="{$member['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'><img src='{$member['pp_main_photo']}' width='{$member['pp_main_width']}' height='{$member['pp_main_height']}' alt="{$member['members_display_name']}{$this->lang->words['users_photo']}" class='photo' /></a>
+				</td>
+				<td style='text-align:left'>
+				<if test="eco_worth_on:|:$this->settings['eco_worth_on'] && $this->settings['eco_rankings_on']">	
+					<p class='message user_status'><img src='{$this->settings['img_url']}/eco_images/money.png' alt='{$this->lang->words['total_worth']}' title='{$this->lang->words['total_worth']}' />&nbsp;<strong>{$this->lang->words['total_worth']} {$this->lang->words['rank']}: <span style='font-size:1.25em'>#{parse format_number="$member['eco_worth_rank']"}</span></strong></p>
+				</if>
+				<table class='ipb_table'>
+					<tr>
+						<td style='font-weight:bold'>{$this->lang->words['total']} {$this->settings['eco_general_currency']}</td>
+						<td>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_points'], $this->registry->ecoclass->decimal"}</td>
+					</tr>
+					<if test="eco_worth_on:|:$this->settings['eco_worth_on']">	
+						<tr>
+							<td style='font-weight:bold'>{$this->lang->words['total_worth']}</td>
+							<td>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_worth'], $this->registry->ecoclass->decimal"} </td>
+						</tr>
+					</if>
+					<if test="eco_welfare_on:|:$this->settings['eco_welfare_on']">
+						<tr>
+							<td style='font-weight:bold'>{$this->lang->words['total_welfare_short']}</td>
+							<td>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_welfare'], $this->registry->ecoclass->decimal"}</td>
+						</tr>
+					</if>
+					<br />
+				</table>
+				</td>				
+			</tr>
+			<tr>
+				<td style='text-align:right'>
+					{$this->lang->words['reason']}:
+				</td>
+				<td style='text-align:left'>
+					<input type='text' size='50%' maxlength='100' name='donation_reason' />
+				</td>				
+			</tr>
+			<tr>
+				<td style='text-align:right'>
+					{$this->lang->words['amount']}:
+				</td>
+				<td style='text-align:left'>
+					<input type='text' size='5' maxlength='20' name='donation_amount' />
+				</td>				
+			</tr>			
+		</table>
+		<fieldset class='submit'>
+				<input type='submit' class='input_submit' value='{$this->lang->words['donate']}' />
+		</form>		
+		</fieldset>]]></template_content>
+      <template_name>memPanePop</template_name>
+      <template_data>$member, $url</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=edit_member_pts' method='post'>
+	<table class='ipb_table'>
+		<tr class='header'>
+			<th colspan='2' style='text-align:center'><img src='{$this->settings['img_url']}/eco_images/wrench_orange.png' alt='Icon' /> {$this->lang->words['editing']} {$this->settings['eco_general_currency']}</th>
+		</tr>
+		<tr>
+			<td style='text-align:center'>
+			<input type='hidden' name='id' value='{$member['member_id']}' />
+			<input type='hidden' name='to_name' value='{$member['members_display_name']}' />
+			<input type='hidden' name='from_url' value='{$url}' />
+			<input type='hidden' name='old_point_total' value='{$member['eco_points']}' />
+				<a style='font-weight:bolder' href="{$this->settings['base_url']}app=ibEconomy&tab=global&area=member&id={$member['member_id']}" title='{$this->lang->words['view_eco_profile']}'>{$member['formatted_name']}</a><br /><br />
+				<a href='{parse url="showuser={$member['member_id']}" template="showuser" seotitle="{$member['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'><img src='{$member['pp_main_photo']}' width='{$member['pp_main_width']}' height='{$member['pp_main_height']}' alt="{$member['members_display_name']}{$this->lang->words['users_photo']}" class='photo' /></a>
+			</td>
+			<td style='text-align:left'>
+			<if test="eco_worth_on:|:$this->settings['eco_worth_on'] && $this->settings['eco_rankings_on']">
+			<p class='message user_status'><img src='{$this->settings['img_url']}/eco_images/money.png' alt='{$this->lang->words['total_worth']}' title='{$this->lang->words['total_worth']}' />&nbsp;<strong>{$this->lang->words['total_worth']} {$this->lang->words['rank']}: <span style='font-size:1.25em'>#{parse format_number="$member['eco_worth_rank']"}</span></strong></p>
+			</if>
+			<table class='ipb_table'>
+				<tr>
+					<td style='font-weight:bold'>{$this->lang->words['total']} {$this->settings['eco_general_currency']}</td>
+					<td><input type='text' size='8' maxlength='20' name='new_point_total' value='{$member['eco_points']}' /></td>
+				</tr>
+				<br />
+			</table>
+			</td>				
+		</tr>
+		<tr>
+			<td style='text-align:right'>
+				{$this->lang->words['or_add_amount']}:
+			</td>
+			<td style='text-align:left'>
+				<input type='text' size='5' maxlength='20' name='edit_amount' />
+			</td>				
+		</tr>		
+		<tr>
+			<td style='text-align:right'>
+				{$this->lang->words['reason']}:
+			</td>
+			<td style='text-align:left'>
+				<input type='text' size='50%' maxlength='100' name='edit_reason' />
+			</td>				
+		</tr>			
+	</table>
+	<fieldset class='submit'>
+			<input type='submit' class='input_submit' value='{$this->lang->words['edit']} {$this->settings['eco_general_currency']}' />
+	</form>		
+	</fieldset>]]></template_content>
+      <template_name>editMemPtsPop</template_name>
+      <template_data>$member, $url</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>	
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[			<tr class='header'>
+				<th>
+					<th colspan='5'>{$words['title']}</th>
+				</th>
+			</tr>
+			<tr>
+				<td style='width:4%'>
+					<img src='{$this->settings['img_url']}/eco_images/{$words['image']}' alt='type' />
+				</td>
+				<td style='width:24%'>
+					<span style='font-weight:bolder'>
+						{$words['words1']}
+					</span>
+				</td>
+				<td style='width:24%'>
+					{$item['value1']}
+				</td>				
+				<td style='width:24%'>
+					<span style='font-weight:bolder'>
+						{$words['words2']}
+					</span>
+				</td>
+				<td style='width:24%'>
+					{$item['value2']}
+				</td>
+			</tr>]]></template_content>
+      <template_name>overviewRow</template_name>
+      <template_data><![CDATA[$item='', $words='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[		<div class='maintitle'>{$this->lang->words['totals']}</div>
+		<table class='ipb_table'>
+			{$content}
+		</table>]]></template_content>
+      <template_name>overviewWrapper</template_name>
+      <template_data><![CDATA[$content='']]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<if test="eco_class_button:|:!$this->settings['eco_pts_button_normal']">
+<li class='post_count desc lighter'>
+	<a class='post_count desc lighter <if test="eco_dons_on:|:$this->settings['eco_dons_on']"> ibEconomy_MemPanePop' title='{$this->lang->words['view_my']} {$this->settings['eco_general_name']} {$this->lang->words['stats_and_donate_me_some']} {$this->settings['eco_general_currency']}'<else />' title='{$this->lang->words['view_my']} {$this->settings['eco_general_name']} {$this->lang->words['profile']}' </if> id='do_member_{$member['member_id']}_{$this->request['app']}_{$this->request['showtopic']}{$this->request['topicID']}_{$this->request['st']}' href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=member&amp;id={$member['member_id']}'>{$member['eco_points']}</a> {$this->settings['eco_general_currency']}
+</li>
+<else />
+<div class='ipsLikeBar right clearfix' id='{$member['member_id']}'>
+	<ul class='ipsList_inline'>
+		<a class='ipsLikeButton ipsLikeButton_enabled rep_up <if test="eco_dons_on:|:$this->settings['eco_dons_on']"> ibEconomy_MemPanePop' title='{$this->lang->words['view_my']} {$this->settings['eco_general_name']} {$this->lang->words['stats_and_donate_me_some']} {$this->settings['eco_general_currency']}'<else />' title='{$this->lang->words['view_my']} {$this->settings['eco_general_name']} {$this->lang->words['profile']}' </if> style='background: #acacac url({$this->settings['img_url']}/eco_images/money_add.png ) no-repeat top left;' id='do_member_{$member['member_id']}_{$this->request['app']}_{$this->request['showtopic']}{$this->request['topicID']}_{$this->request['st']}' href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=member&amp;id={$member['member_id']}'> {$this->settings['eco_general_currency']}: {$this->settings['eco_general_cursymb']}{$member['eco_points']}</a>
+	</ul>
+</div>
+</if>]]></template_content>
+      <template_name>pointButton</template_name>
+      <template_data>$member</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>	
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<div id='pane_core:info' class='ipsLayout ipsLayout_withright ipsLayout_largeright clearfix' >						
+	<div class='ipsLayout_content'> 
+		<div class='general_box clearfix'> 
+		<h3>{$this->lang->words['latest_purchases']}</h3><br />								
+			<ul class='ipsList_data clearfix'>
+				<if test="hasAssets:|:$assets AND $this->settings['eco_assets_on']">
+					{$assets}
+					<br />
+					<div class='right'>
+						<a href='{parse url="app=ibEconomy&amp;tab=global&amp;area=portfolio&amp;member_id={$member['member_id']}&amp;mname={$member['members_display_name']}" seotitle="true" base="public"}'>{$this->lang->words['view_more_assets']}&rarr;</a>
+					</div>
+				<else />
+					<p class='desc'>
+						{$this->lang->words['none_to_show_ass']}
+					</p>
+				</if> 
+			</ul><br /> 
+		</div>  
+	</div> 
+	<div class='ipsLayout_right'>
+		<if test="ecoWorthOn:|:$this->settings['eco_worth_on']">
+			<if test="ptsPositive:|:$member['eco_worth'] > 0">
+				<div class='reputation positive' data-tooltip="{$this->lang->words['on_hand']}&nbsp; {$this->settings['eco_general_currency']}">
+					<span class='number'>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_worth'],$this->registry->ecoclass->decimal"}</span>
+				</div>
+			</if>
+			<if test="ptsZero:|:$member['eco_worth'] < 0">
+				<div class='reputation negative' data-tooltip="{$this->lang->words['on_hand']}&nbsp; {$this->settings['eco_general_currency']}">
+					<span class='number'>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_worth'],$this->registry->ecoclass->decimal"}</span>
+				</div>		
+			</if>
+			<if test="ptsZero:|:$member['eco_worth'] == 0">
+				<div class='reputation zero' data-tooltip="{$this->lang->words['on_hand']}&nbsp; {$this->settings['eco_general_currency']}">
+					<span class='number'>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_worth'],$this->registry->ecoclass->decimal"}</span>
+				</div>		
+			</if>
+		<else />
+			<if test="ptsPositive:|:$member['eco_points'] > 0">
+				<div class='reputation positive' data-tooltip="{$this->lang->words['on_hand']}&nbsp; {$this->settings['eco_general_currency']}">
+					<span class='number'>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_points'],$this->registry->ecoclass->decimal"}</span>
+				</div>
+			</if>
+			<if test="ptsZero:|:$member['eco_points'] < 0">
+				<div class='reputation negative' data-tooltip="{$this->lang->words['on_hand']}&nbsp; {$this->settings['eco_general_currency']}">
+					<span class='number'>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_points'],$this->registry->ecoclass->decimal"}</span>
+				</div>		
+			</if>
+			<if test="ptsZero:|:$member['eco_points'] == 0">
+				<div class='reputation zero' data-tooltip="{$this->lang->words['on_hand']}&nbsp; {$this->settings['eco_general_currency']}">
+					<span class='number'>{$this->settings['eco_general_cursymb']}{parse format_number="$member['eco_points'],$this->registry->ecoclass->decimal"}</span>
+				</div>		
+			</if>		
+		</if>
+		<br /> 
+		<if test="shopItemsOn:|:$this->settings['eco_shopitems_on']">
+			<div class='general_box clearfix' id='friends_overview'> 
+				<h3>{$this->lang->words['my_shopitems_area']}</h3> 
+				<div class='ipsPad'> 
+					<if test="hasShopItems:|:$shopItems">
+						{$shopItems}
+					<else />
+						<p class='desc'>
+							{$this->lang->words['none_to_show_shopitems']}
+						</p>
+					</if>
+				</div> 
+			</div>
+		</if>
+		<if test="transactionsOn:|:$this->settings['eco_transactions_on']">
+			<div class='general_box clearfix'> 
+			<h3>{$this->lang->words['latest_transactions']}</h3> 
+				<ul class='ipsPad'>	
+					<if test="hasLogs:|:$transactions">
+						{$transactions}
+						<br />
+						<div class='right' style='padding-bottom:10px;'>
+							<a href='{parse url="app=ibEconomy&amp;tab=global&amp;area=transactions&amp;member_id={$member['member_id']}&amp;mname={$member['members_display_name']}" seotitle="true" base="public"}'>{$this->lang->words['view_more_transactions']}&rarr;</a>
+						</div>
+					<else />
+						<p class='desc'>
+							{$this->lang->words['none_to_show_trans']}
+						</p>
+					</if>
+				</ul> 
+			</div>
+		</if>
+		<br /><br /> 
+	</div>
+ </div>]]></template_content>
+      <template_name>profileTab</template_name>
+      <template_data><![CDATA[$assets, $transactions, $member, $shopItems]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	<div class="ipsBox_container ipsPad">
+		<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab={$asset['tab']}&amp;area=single&amp;type={$asset['p_type']}&amp;id={$asset['p_type_id']}&amp;bank_type={$asset['p_type_class']}' title='{$this->lang->words['view_item']}' class='ipsUserPhotoLink left'>{$asset['image_link_prf_tab']}</a>
+		<div class="left"></div>
+		<div class="ipsBox_withphoto status_content">
+			<div>
+				<h4>
+					<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab={$asset['tab']}&amp;area=single&amp;type={$asset['p_type']}&amp;id={$asset['p_type_id']}&amp;bank_type={$asset['p_type_class']}' />{$asset['title']} </a>
+					<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab={$asset['tab']}&amp;area=single&amp;type={$asset['p_type']}&amp;id={$asset['p_type_id']}&amp;bank_type={$asset['p_type_class']}'' class='__item __id{$asset['p_type_id']}__type_{$asset['p_type']}_{$asset['p_type_class']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a>
+				</h4>
+				<span class="desc lighter blend_links">
+					{$asset['purchased_text']}:&nbsp;{$asset['purchase_date']}&nbsp;({$asset['quantity']})
+				</span>
+			</div>
+			<div class="status_feedback">
+				<div style='padding-left:10px'>
+					<ul class="ipsList_withtinyphoto reply row2 ipsPad">
+						<li>
+							{$this->lang->words['cost']}:&nbsp;{$asset['cost']} &middot; {$asset['total_text']}:&nbsp;{$asset['total_bought']}
+						</li>
+					</ul>
+				</div>
+				<div class="status_mini_wrap row2 altrow" id="statusMaxWrap-32" style="display: none;">
+					<img src="http://testib3two.ibbookie.com/public/style_images/master/locked_replies.png" title="This status update has reached the maximum number of replies allowed" alt="x"> This status update has reached the maximum number of replies allowed
+				</div>
+			</div>
+		</div>
+	</div><br>]]></template_content>
+      <template_name>profileTabItemRow</template_name>
+      <template_data><![CDATA[$asset]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+	<template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<li><img src='{$this->settings['img_url']}/eco_images/{$log['l_image']}' title='{$log['l_action']}' alt='type' /> {$log['l_action']}
+<span class='desc'>{$log['l_log']}<br />{$log['l_date']}</span></li><br />]]></template_content>
+      <template_name>profileTabLogRow</template_name>
+      <template_data><![CDATA[$log]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$setting['image_link']}' /> {$setting['title']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			{$settingRows}		
+		</table>]]></template_content>
+      <template_name>setting_group</template_name>
+      <template_data><![CDATA[$setting, $settingRows]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[						<tr>
+							<td>{$setting['words']}</td>
+							<td>{$setting['value']}</td>
+						</tr>]]></template_content>
+      <template_name>setting_row</template_name>
+      <template_data><![CDATA[$setting]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+
+	
+	
+	
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[		<div class='maintitle'>{$this->lang->words['settings']}</div>
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/money.png' /> {$this->lang->words['global']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access']} {$this->settings['eco_general_name']}</td>
+				<td><img src='{$this->settings['img_url']}/accept.png' /></td>
+			</tr>
+			<if test="eco_transactions_area:|:$this->settings['eco_transactions_on']">	
+			<tr>
+				<td>{$this->lang->words['can_access_transactions']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['transaction']['image']}' /></td>
+			</tr>
+			</if>
+			<if test="eco_portfolio_area:|:$this->settings['eco_assets_on']">	
+			<tr>
+				<td>{$this->lang->words['can_access_assets']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['asset']['image']}' /></td>
+			</tr>
+			</if>
+			<tr>
+				<td>{$this->lang->words['my_max']} {$this->settings['eco_general_currency']}</td>
+				<td><if test="$this->memberData['g_eco_max_pts'] > 0 ">{$this->settings['eco_general_cursymb']}{parse format_number="$this->memberData['g_eco_max_pts'], $this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->settings['eco_general_currency']} {$this->lang->words['per_new_topic']}</td>
+				<td><if test="$this->settings['eco_pts_per_topic']"><img src='{$this->settings['img_url']}/accept.png' /><else /><img src='{$this->settings['img_url']}/cross.png' /></if></td>
+			</tr>	
+			<tr>
+				<td>{$this->settings['eco_general_currency']} {$this->lang->words['per_reply']}</td>
+				<td><if test="$this->settings['eco_pts_per_reply']"><img src='{$this->settings['img_url']}/accept.png' /><else /><img src='{$this->settings['img_url']}/cross.png' /></if></td>
+			</tr>	
+			<tr>
+				<td>{$this->settings['eco_general_currency']} {$this->lang->words['per_reply_to_own_thread']}</td>
+				<td><if test="$this->settings['eco_pts_per_get_reply']"><img src='{$this->settings['img_url']}/accept.png' /><else /><img src='{$this->settings['img_url']}/cross.png' /></if></td>
+			</tr>							
+			<tr>
+				<td>{$this->lang->words['my']} {$this->settings['eco_general_currency']} {$this->lang->words['forum_pts_multiplier']}</td>
+				<td><if test="$this->memberData['g_eco_frm_ptsx'] > 0 ">{parse format_number="$this->memberData['g_eco_frm_ptsx'], 2"}{$this->lang->words['%']}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>	
+			<tr>
+				<td>{$this->lang->words['minimum_ppd_for_interest']}</td>
+				<td>{parse format_number="$this->settings['eco_interest_restrict_ppd'], 2"}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['recent_activity']}</td>
+				<td>{parse format_number="$this->settings['eco_interest_restrict_act']"} {$this->lang->words['days']}</td>
+			</tr>
+		</table>
+		<if test="eco_bank_area:|:$this->settings['eco_banks_on']">	
+		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/building_key.png' /> {$this->lang->words['banks']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access_banks']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['bank']['image']}' /></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['my_max_balance_per_account']}</td>
+				<td><if test="$this->memberData['g_eco_bank_max']">{$this->settings['eco_general_cursymb']}{parse format_number="$this->memberData['g_eco_bank_max'], $this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['bank_interest_cycle']}</td>
+				<td>{parse format_number="$this->settings['eco_banks_cycle']"} {$this->lang->words['days']}</td>
+			</tr>
+		</table>
+		</if>
+		<if test="eco_stock_areas:|:$this->settings['eco_stocks_on']">	
+		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/chart_curve.png' /> {$this->lang->words['stocks']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access_stocks']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['stock']['image']}' /></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max_shares']}</td>
+				<td><if test="$this->memberData['g_eco_stock_max']">{parse format_number="$this->memberData['g_eco_stock_max']"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['stock_value_cycle']}</td>
+				<td>{parse format_number="$this->settings['eco_stocks_cycle']"} {$this->lang->words['minutes']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['stock_purch_tax']}</td>
+				<td>{parse format_number="$this->settings['eco_stocks_buy_fee'], 2"}{$this->lang->words['%']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['stock_sell_tax']} </td>
+				<td>{parse format_number="$this->settings['eco_stocks_sell_fee'], 2"}{$this->lang->words['%']}</td>
+			</tr>
+		</table>
+		</if>
+		<if test="eco_cc_areas:|:$this->settings['eco_ccs_on']">
+		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/creditcards.png' /> {$this->lang->words['credit_cards']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access_ccs']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['cc']['image']}' /></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max_debt_total']}</td>
+				<td><if test="$this->memberData['g_eco_max_cc_debt']">{$this->settings['eco_general_cursymb']}{parse format_number="$this->memberData['g_eco_max_cc_debt'],$this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['min_payment_due_cycle']}</td>
+				<td>{parse format_number="$this->settings['eco_ccs_bill_rate']"} {$this->lang->words['days']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max_balance_transfer_per_card']}</td>
+				<td><if test="$this->memberData['g_eco_bal_trnsfr_max']">{$this->settings['eco_general_cursymb']}{parse format_number="$this->memberData['g_eco_bal_trnsfr_max'],$this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max_cash_advance_per_card']}</td>
+				<td><if test="$this->memberData['g_eco_cash_adv_max']">{$this->settings['eco_general_cursymb']}{parse format_number="$this->memberData['g_eco_cash_adv_max'],$this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['min_due_at_cycle']} </td>
+				<td>{parse format_number="$this->settings['eco_ccs_min_pay'], 2"}{$this->lang->words['%']}</td>
+			</tr>
+		</table>
+		</if>
+		<if test="eco_lt_areas:|:$this->settings['eco_lts_on']">
+		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/bar_graph.png' /> {$this->lang->words['lts']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access_lts']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['lt']['image']}' /></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max_invest_per_invest']}</td>
+				<td><if test="$this->memberData['g_eco_lt_max']">{$this->settings['eco_general_cursymb']}{parse format_number="$this->memberData['g_eco_lt_max'], $this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['invest_balance_cycle']}</td>
+				<td>{parse format_number="$this->settings['eco_lts_cycle']"} {$this->lang->words['days']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['investing_tax']}</td>
+				<td>{parse format_number="$this->settings['eco_lts_buy_fee'], 2"}{$this->lang->words['%']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['invest_cashout_tax']} </td>
+				<td>{parse format_number="$this->settings['eco_lts_sell_fee'], 2"}{$this->lang->words['%']}</td>
+			</tr>
+		</table>
+		</if>
+		<if test="eco_shopitem_area:|:$this->settings['eco_shopitems_on']">
+		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/tag_blue.png' /> {$this->lang->words['shop']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access_shopitems']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['shopitem']['image']}' /></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['item_sales_tax']}</td>
+				<td>{parse format_number="$this->settings['eco_shop_tax'],2"}{$this->lang->words['%']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['item_sell_back_tax']}</td>
+				<td>{parse format_number="$this->settings['eco_shop_sell_fee'],2"}{$this->lang->words['%']}</td>
+			</tr>
+			<if test="eco_trading_area:|:$this->settings['eco_shop_trading']">
+			<tr>
+				<td>{$this->lang->words['item_trade_tax']}</td>
+				<td>{parse format_number="$this->settings['eco_shop_trade_tax'],2"}{$this->lang->words['%']}</td>
+			</tr>
+			</if>
+		</table>
+		</if>
+		<if test="eco_cash_area:|:$this->settings['eco_welfare_on']">
+		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/coins_add.png' /> {$this->lang->words['welfare']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access_welfare']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['welfare']['image']}' /></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max_welfare_per_check']}</td>
+				<td><if test="$this->memberData['g_eco_welfare_max']">{$this->settings['eco_general_cursymb']}{parse format_number="$this->memberData['g_eco_welfare_max'], $this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max']} {$this->settings['eco_general_currency']} {$this->lang->words['to_qualify']}</td>
+				<td>{$this->settings['eco_general_cursymb']}{parse format_number="$this->settings['eco_welfare_max_pts'],$this->registry->ecoclass->decimal"}</td>
+			</tr>
+			<if test="eco_worth_on:|:$this->settings['eco_worth_on']">	
+				<tr>
+					<td>{$this->lang->words['max_worth']} {$this->lang->words['to_qualify']}</td>
+					<td>{$this->settings['eco_general_cursymb']}{parse format_number="$this->settings['eco_welfare_max_worth'],$this->registry->ecoclass->decimal"}</td>
+				</tr>
+			</if>
+			<tr>
+				<td>{$this->lang->words['max_welfare_recieved']} {$this->lang->words['to_qualify']}</td>
+				<td>{$this->settings['eco_general_cursymb']}{parse format_number="$this->settings['eco_welfare_max_wf']"}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['min_posts']} {$this->lang->words['to_qualify']}</td>
+				<td>{parse format_number="$this->settings['eco_welfare_min_posts']"}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['min_ppd']} {$this->lang->words['to_qualify']}</td>
+				<td>{parse format_number="$this->settings['eco_welfare_min_ppd'],2"}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['min_days_as_mem']} {$this->lang->words['to_qualify']}</td>
+				<td>{parse format_number="$this->settings['eco_welfare_min_join']"} {$this->lang->words['days']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['welfare_activity']} {$this->lang->words['to_qualify']}</td>
+				<td>{parse format_number="$this->settings['eco_welfare_act']"} {$this->lang->words['days']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['qualifications_above_apply_every_check']}</td>
+				<td><if test="$this->settings['eco_welfare_res_alwys']"><img src='{$this->settings['img_url']}/accept.png' /><else /><img src='{$this->settings['img_url']}/cross.png' /></if></td>
+			</tr>						
+			<tr>
+				<td>{$this->lang->words['welfare_cycle']}</td>
+				<td>{parse format_number="$this->settings['eco_welfare_cycle']"} {$this->lang->words['days']}</td>
+			</tr>
+		</table>
+		</if>
+		<if test="eco_loans_area:|:$this->settings['eco_loans_on']">
+		<br />
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/money_add.png' /> {$this->lang->words['loans']}</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['can_access_loans']}</td>
+				<td><img src='{$this->settings['img_url']}/{$mySettings['loan']['image']}' /></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['max_loan_debt']}</td>
+				<td><if test="$this->memberData['g_eco_welfare_max']">{$this->settings['g_eco_max_loan_debt']}{parse format_number="$this->memberData['g_eco_max_loan_debt'], $this->registry->ecoclass->decimal"}<else />{$this->lang->words['n_a']}</if></td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['loan_apr_cycle']}</td>
+				<td>{parse format_number="$this->settings['eco_loans_apr_cycle']"} {$this->lang->words['days']}</td>
+			</tr>
+			<tr>
+				<td>{$this->lang->words['loan_pen_cycle']}</td>
+				<td>{parse format_number="$this->settings['eco_loans_pen_cycle']"} {$this->lang->words['days']}</td>
+			</tr>
+		</table>
+		</if>
+		<if test="eco_loans_area:|:$this->settings['eco_lotterys_on']">
+		<br />
+		<table class='ipb_table'>			
+			<tr class='header'>
+				<th width='75%'><img src='{$this->settings['img_url']}/eco_images/lotto.png' /> {$this->lang->words['lottery']}</th>
+				<th>&nbsp;</th>
+			</tr>
+				<tr>
+					<td>{$this->lang->words['can_buy_lotto_tickets']}</td>
+					<td><img src='{$this->settings['img_url']}/{$mySettings['lottery']['image']}' /></td>
+				</tr>
+				<tr>
+					<td>{$this->lang->words['max_lotto_tickets']}</td>
+					<td><if test="$this->memberData['g_eco_lottery_tix']">{parse format_number="$this->memberData['g_eco_lottery_tix']"}<else />{parse format_number="$this->settings['eco_lotto_def_max_tix']"}</if></td>
+				</tr>
+				<tr>
+					<td>{$this->lang->words['my_chances_of_winning_a_lotto']}</td>
+					<td>{$this->memberData['g_eco_lottery_odds']}</td>
+				</tr>		
+		</table>
+		</if>
+		{$myPluginSettings}]]></template_content>
+      <template_name>settings</template_name>
+      <template_data><![CDATA[$mySettings, $myPluginSettings]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[	<li id='member_id_{$member['member_id']}' class='ipsPad clearfix member_entry {$member['row_style']}'>
+		<a href='{parse url="showuser={$member['member_id']}" template="showuser" seotitle="{$member['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhotoLink left'><img src='{$member['pp_small_photo']}' alt="{$member['members_display_name']}{$this->lang->words['users_photo']}" class='ipsUserPhoto ipsUserPhoto_medium' /></a>
+		<div class='ipsBox_withphoto'>
+			<ul class='ipsList_inline right'>
+				<if test="notus:|:$this->memberData['member_id'] AND $this->memberData['member_id'] != $member['member_id'] && $this->settings['friends_enabled'] AND $this->memberData['g_can_add_friends']">
+					<if test="addfriend:|:IPSMember::checkFriendStatus( $member['member_id'] )">
+						<li class='mini_friend_toggle is_friend' id='friend_mlist_{$member['member_id']}'><a href='{parse url="app=members&amp;module=list&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id={$member['member_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['remove_friend']}' class='ipsButton_secondary'>{parse replacement="remove_friend"}</a></li>
+					<else />
+						<li class='mini_friend_toggle is_not_friend' id='friend_mlist_{$member['member_id']}'><a href='{parse url="app=members&amp;module=list&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id={$member['member_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['add_friend']}' class='ipsButton_secondary'>{parse replacement="add_friend"}</a></li>								
+					</if>
+				</if>
+				<if test="sendpm:|:$this->memberData['g_use_pm'] AND $this->memberData['members_disable_pm'] == 0 AND IPSLib::moduleIsEnabled( 'messaging', 'members' ) && $member['member_id'] != $this->memberData['member_id']">
+					<li class='pm_button' id='pm_xxx_{$member['pp_member_id']}'><a href='{parse url="app=members&amp;module=list&amp;module=messaging&amp;section=send&amp;do=form&amp;fromMemberID={$member['pp_member_id']}" base="public"}' title='{$this->lang->words['pm_member']}' class='ipsButton_secondary'>{parse replacement="send_msg"}</a></li>
+				</if>
+				<if test="showassets:|:$this->settings['eco_assets_on'] AND $this->memberData['g_eco_asset']">
+					<li><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&area=portfolio&amp;member_id={$member['member_id']}&amp;mname={$member['members_display_name']}' class='ipsButton_secondary' title='{$this->lang->words['view_assets']}'>{parse replacement="find_topics_link"}</a></li>
+				</if>
+				<if test="showTransactions:|:$this->settings['eco_transactions_on'] AND $this->memberData['g_eco_transaction'] AND (!$this->settings['eco_general_only_my_trans'] || $this->memberData['g_eco_edit_pts'])">
+					<li><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&area=transactions&amp;member_id={$member['member_id']}&amp;mname={$member['members_display_name']}' class='ipsButton_secondary' title='{$this->lang->words['view_transactions']}'>{parse replacement="blog_link"}</a></li>
+				</if>				
+			</ul>
+			
+			<h3 class='ipsType_subtitle'>
+				{parse template="userHoverCard" group="global" params="$member"}
+			</h3>
+			<if test="eco_worth_on:|:$this->settings['eco_worth_on']">
+				<if test="norep:|:$member['eco_worth'] == 0 || !$member['eco_worth']">
+					<p class='reputation zero ipsType_small left' data-tooltip="{parse expression="sprintf( $this->lang->words['member_has_x_pts_total_worth'], $member['members_display_name'], $member['formatted_worth'], $this->settings['eco_general_currency'] )"}">
+				</if>
+				<if test="posrep:|:$member['eco_worth'] > 0">
+					<p class='reputation positive ipsType_small left' data-tooltip="{parse expression="sprintf( $this->lang->words['member_has_x_pts_total_worth'], $member['members_display_name'], $member['formatted_worth'], $this->settings['eco_general_currency'] )"}">
+				</if>
+				<if test="negrep:|:$member['eco_worth'] < 0">
+					<p class='reputation negative ipsType_small left' data-tooltip="{parse expression="sprintf( $this->lang->words['member_has_x_pts_total_worth'], $member['members_display_name'], $member['formatted_worth'], $this->settings['eco_general_currency'] )"}">
+				</if>							
+						<span class='number'>{$this->settings['eco_general_cursymb']}{$member['formatted_worth']}</span>
+					</p>
+			<else />
+				<if test="norep:|:$member['eco_points'] == 0 || !$member['eco_points']">
+					<p class='reputation zero ipsType_small left' data-tooltip="{parse expression="sprintf( $this->lang->words['member_has_x_pts'], $member['members_display_name'], $member['formatted_pts'], $this->settings['eco_general_currency'] )"}">
+				</if>
+				<if test="posrep:|:$member['eco_points'] > 0">
+					<p class='reputation positive ipsType_small left' data-tooltip="{parse expression="sprintf( $this->lang->words['member_has_x_pts'], $member['members_display_name'], $member['formatted_pts'], $this->settings['eco_general_currency'] )"}">
+				</if>
+				<if test="negrep:|:$member['eco_points'] < 0">
+					<p class='reputation negative ipsType_small left' data-tooltip="{parse expression="sprintf( $this->lang->words['member_has_x_pts'], $member['members_display_name'], $member['formatted_pts'], $this->settings['eco_general_currency'] )"}">
+				</if>							
+						<span class='number'>{$this->settings['eco_general_cursymb']}{$member['formatted_pts']}</span>
+					</p>
+			</if>			
+			<span class='desc'>
+				<if test="eco_worth_on:|:$this->settings['eco_worth_on']">
+					{$member['formatted_pts']} {$this->lang->words['on_hand']} {$this->settings['eco_general_currency']}
+					<if test="!$this->settings['eco_rankings_on']"><br />{$this->lang->words['member_joined']} {parse date="$member['joined']" format="joined"}</if>
+				<else />
+					{$this->lang->words['member_joined']} {parse date="$member['joined']" format="joined"}
+				</if>
+				<if test="$this->settings['eco_rankings_on']"><br />{$member['eco_worth_rank']}</if>
+			</span>
+		</div>
+	</li>]]></template_content>
+      <template_name>standings_row</template_name>
+      <template_data>$member</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[			{parse js_module="memberlist"}
+			<div class='maintitle ipsFilterbar'>
+				<ul class='ipsList_inline ipsType_smaller'>
+					<li <if test="filtermembers:|:$this->request['sort'] == 'members_display_name'">class='active'</if>>
+						<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=rankings&amp;sort=members_display_name&amp;sw={$active['sw']}' title='{$this->lang->words['sort_by_member_name']}'>{$this->lang->words['member_name']}</a> <if test="$this->request['sort'] == 'members_display_name'"><img src='{$this->settings['img_url']}/eco_images/{$active['sw']}.png' title='{$this->lang->words['currently_sorted']}: {$this->request['sw']}' /></if>
+					</li>
+					<if test="$this->settings['eco_welfare_on']">
+						<li <if test="filterwelfare:|:$this->request['sort'] == 'eco_welfare'">class='active'</if>>
+							<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=rankings&amp;sort=eco_welfare&amp;sw={$active['sw']}' title='{$this->lang->words['sort_by_total_welfare']}'>{$this->lang->words['total_welfare_received']}</a> <if test="$this->request['sort'] == 'eco_welfare'"><img src='{$this->settings['img_url']}/eco_images/{$this->request['sw']}.png' title='{$this->lang->words['currently_sorted']}: {$this->request['sw']}' /></if>
+						</li>
+					</if>
+					<li <if test="filterpoints:|:$this->request['sort'] == 'points' || !$this->settings['eco_worth_on'] && !$this->request['sort']">class='active'</if>>
+						<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=rankings&amp;sort=points&amp;sw={$active['sw']}' title='{$this->lang->words['sort_by_total']} {$this->settings['eco_general_currency']}'>{$this->lang->words['total']} {$this->settings['eco_general_currency']}</a> <if test="$this->request['sort'] == 'points'"><img src='{$this->settings['img_url']}/eco_images/{$this->request['sw']}.png' title='{$this->lang->words['currently_sorted']}: {$this->request['sw']}' /></if>		
+					</li>
+					<if test="eco_worth_on:|:$this->settings['eco_worth_on']">
+						<li <if test="filterworth:|:$this->request['sort'] == 'eco_worth' || $this->settings['eco_worth_on'] && !$this->request['sort']">class='active'</if>>
+							<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=rankings&amp;sort=eco_worth&amp;sw={$active['sw']}' title='{$this->lang->words['sort_by_total_worth']}'>{$this->lang->words['total_worth']}</a> <if test="$this->request['sort'] == 'eco_worth' || $this->request['sort'] == ''"><img src='{$this->settings['img_url']}/eco_images/{$this->request['sw']}.png' title='{$this->lang->words['currently_sorted']}: {$this->request['sw']}' /></if>
+						</li>
+					</if>
+				</ul>
+			</div>		
+			<table class='ipb_table'>
+				<div class='ipsBox_container ipsPad' id='mlist_content'>
+					<ul class='ipsMemberList'>
+						{$content}
+					</ul>
+				</div>				
+			</table>
+<script type='text/javascript'>
+	$("mlist_content").setStyle( { minHeight: $('mlist_tabs').measure('margin-box-height') + 5 + "px" } );
+</script>			
+			<div style='margin:10px;'>
+				{$pages}
+			</div>]]></template_content>
+      <template_name>standings_wrapper</template_name>
+      <template_data><![CDATA[$content, $pages, $active]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<if test="$this->settings['eco_general_show_stats']"><br />
+	<if test="showEcoTotals:|:$this->settings['eco_general_show_totals']">
+		<div id='board_stats'>		
+			<ul class='ipsType_small ipsList_inline'> 
+				<li class='clear'> 
+					<span class='value'>{$totals['total_points']}</span> 
+					{$this->lang->words['total']} {$this->settings['eco_general_currency']}
+				</li> 
+				<if test="eco_worth_on:|:$this->settings['eco_worth_on']">
+					<li class='clear'> 
+						<span class='value'>{$totals['total_worth']}</span> 
+						{$this->lang->words['total_worth']}
+					</li> 
+				</if>				
+				<if test="$this->settings['eco_shopitems_on']">
+					<li class='clear'> 
+						<if test="is_array( $totals['newest_item'] ) && count( $totals['newest_item'] ) ">
+							<span class='value'>{$totals['newest_item']['si_title']}</span> <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=shop&amp;area=single&amp;type=item&amp;id={$totals['newest_item']['si_id']}' class='__item __id{$totals['newest_item']['si_id']}__type_shopitem_Item' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a>
+						<else />
+							<span class='value'>{$totals['newest_item']}</span> 
+						</if>
+						{$this->lang->words['newest_item']}
+					</li>
+				</if>
+				<li class='clear'> 
+					<span class='value'>{$totals['item_count']}</span> 
+					{$this->lang->words['num_shop_items']}
+				</li> 
+				<li class='clear' data-tooltip='{$totals['most_time']}'> 
+					<span class='value'>{$totals['most_online']}</span> 
+					{$this->lang->words['online_at_once']}
+				</li>				
+			</ul> 
+		</div>
+	</if>
+	<if test="showEcoActive:|:$this->settings['eco_general_show_active']">
+		<div id='board_statistics' class='statistics clearfix'> 
+			<ul id='stat_links' class='ipsList_inline right ipsType_small'> 
+				<if test="eco_shopitems_area:|:$this->settings['eco_shopitems_on'] && $this->memberData['g_eco_shopitem']">	
+					<li><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=me&amp;area=my_shopitems' title='{$this->lang->words['view_my_shopitems']}'>{$this->lang->words['my_shopitems']}</a></li>
+				</if>
+			</ul> 
+			<h4 class='statistics_head'>{$active['TOTAL']} {$this->lang->words['active_users_text']} {$this->lang->words['active_users']}</h4> 
+			<p class='statistics_brief desc'> 
+				<span class='desc'>{$active['MEMBERS']} {$this->lang->words['members']}, {$active['GUESTS']} {$this->lang->words['guests']}, {$active['ANON']} {$this->lang->words['anon_users']} </span>
+			</p> <br /> 
+			<if test="activeNames:|:count($active['NAMES'])">
+				<p>
+					<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $active['NAMES'] )"}</span>					
+				</p>
+			</if>
+		</div>
+	</if>
+</if>]]></template_content>
+      <template_name>stats</template_name>
+      <template_data>$active, $totals</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[				<li <if test="active_tab:|:$isActive">class='active'</if>>
+						<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=$tabName' title='{$title}'>{$tabLangName}</a>
+				</li>&nbsp;]]></template_content>
+      <template_name>tab</template_name>
+      <template_data>$isActive, $tabName, $tabLangName, $title</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[		<div class='maintitle ipsFilterbar'>
+			<ul class='ipsList_inline'>
+				{$tabs}
+			</ul>
+		</div>]]></template_content>
+      <template_name>tabs</template_name>
+      <template_data>$active, $tabs</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[			<tr id='{$log['l_id']}'>
+				<td>
+					<img src='{$this->settings['img_url']}/eco_images/{$log['l_image']}' title='{$log['l_action']}' alt='type' />
+				</td>
+				<td>
+					<span>{$log['l_date']}</span>
+				</td>				
+				<td>
+					{parse template="userHoverCard" group="global" params="$log"}
+				</td>			
+				<td>
+					<span>{$log['l_action']}</span>
+				</td>
+				<td>
+					<span>{$log['l_log']}</span>
+				</td>
+			</tr>]]></template_content>
+      <template_name>transactions_row</template_name>
+      <template_data>$log</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[		<div class='maintitle ipsFilterbar'>
+			<ul class='ipsList_inline ipsType_smaller'>
+				<li <if test="$this->request['sort'] == 'l_date'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=transactions&amp;member_id={$this->request['member_id']}&amp;mname={$showMember}&amp;action={$this->request['action']}&amp;sort=l_date&amp;sw={$otherSW}'>{$this->lang->words['date']}</a></li>
+				<li <if test="$this->request['sort'] == 'm.members_display_name'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=transactions&amp;member_id={$this->request['member_id']}&amp;mname={$showMember}&amp;action={$this->request['action']}&amp;sort=m.members_display_name&amp;sw={$otherSW}'>{$this->lang->words['member']}</a></li>
+				<li <if test="$this->request['sort'] == 'l_action'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=transactions&amp;member_id={$this->request['member_id']}&amp;mname={$showMember}&amp;action={$this->request['action']}&amp;sort=l_action&amp;sw={$otherSW}'>{$this->lang->words['action']}</a></li>
+				<li <if test="$this->request['sort'] == 'l_log'"> class='active'</if>><a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=transactions&amp;member_id={$this->request['member_id']}&amp;mname={$showMember}&amp;action={$this->request['action']}&amp;sort=l_log&amp;sw={$otherSW}'>{$this->lang->words['notes']}</a></li>
+				<li <if test="$showMember || $this->request['action']"> class='active'</if>><a href='#custom_menucontent' id='custom'>Custom</a></li>
+			</ul>
+		</div>
+		<div id='custom_menucontent' class='ipbmenu_content ipsPad'>
+			<form action='{$this->settings['base_url']}app=ibEconomy&amp;tab=global&amp;area=transactions' method='post'>
+			<if test="showMemberInput:|:!$this->settings['eco_general_only_my_trans'] || $this->memberData['g_eco_edit_pts']">
+				<strong>{$this->lang->words['member']}</strong><br />
+				<input type="text" class='input_text' id='mem_name1' name="mem_name" value="{$showMember}" />
+				<br /><br />
+			</if>
+			<strong>{$this->lang->words['type']}</strong><br />
+			<select name='action' class='input_select'>
+				<optgroup label='{$this->lang->words['display']}...'>
+					<if test="$this->settings['eco_dons_on']">
+						<option value='donation' <if test="$this->request['action'] == 'donation'">selected='SELECTED'</if>>{$this->lang->words['donations']}</option>
+					</if>
+					<if test="$this->settings['eco_banks_on'] || $this->settings['eco_stocks_on'] || $this->settings['eco_ccs_on'] || $this->settings['eco_lts_on'] || $this->settings['eco_shopitems_on']">
+						<option value='purchase' <if test="$this->request['action'] == 'purchase'">selected='SELECTED'</if>>{$this->lang->words['purchases']}</option>
+					</if>
+					<if test="$this->settings['eco_loans_on']">
+						<option value='loan' <if test="$this->request['action'] == 'loan'">selected='SELECTED'</if>>{$this->lang->words['loans']}</option> 
+					</if>
+					<if test="$this->settings['eco_banks_on']">
+						<option value='bank_withdrawal' <if test="$this->request['action'] == 'bank_withdrawal'">selected='SELECTED'</if>>{$this->lang->words['bank_withdrawals']}</option>
+						<option value='bank_deposit' <if test="$this->request['action'] == 'bank_deposit'">selected='SELECTED'</if>>{$this->lang->words['bank_deposits']}</option>
+					</if>
+					<if test="$this->settings['eco_stocks_on']">
+						<option value='sell_stock' <if test="$this->request['action'] == 'sell_stock'">selected='SELECTED'</if>>{$this->lang->words['sell_stocks']}</option>
+					</if>
+					<if test="$this->settings['eco_ccs_on']">
+						<option value='cc_payment' <if test="$this->request['action'] == 'cc_payment'">selected='SELECTED'</if>>{$this->lang->words['cc_payments']}</option>
+					</if>
+					<if test="$this->settings['eco_lts_on']">
+						<option value='sell_lt' <if test="$this->request['action'] == 'sell_lt'">selected='SELECTED'</if>>{$this->lang->words['sell_lts']}</option>
+					</if>
+					<if test="$this->settings['eco_shopitems_on']">
+						<option value='sell_shopitem' <if test="$this->request['action'] == 'sell_shopitem'">selected='SELECTED'</if>>{$this->lang->words['sell_shopitems']}</option>
+						<option value='trade_shopitem' <if test="$this->request['action'] == 'trade_shopitem'">selected='SELECTED'</if>>{$this->lang->words['trade_shopitems']}</option>
+						<option value='use_shopitem' <if test="$this->request['action'] == 'use_shopitem'">selected='SELECTED'</if>>{$this->lang->words['use_shopitems']}</option>
+					</if>
+					<if test="$this->settings['eco_loans_on']">						
+						<option value='loan_payment' <if test="$this->request['action'] == 'loan_payment'">selected='SELECTED'</if>>{$this->lang->words['loan_payments']}</option>
+					</if>
+					<option value='' <if test="!$this->request['action']">selected='SELECTED'</if>>{$this->lang->words['all']}</option>
+			</select>
+			<br /><br />
+			<input type="submit" value="Submit" class="input_submit" />
+			</form>
+		</div>
+		<script type='text/javascript'>
+			new ipb.Menu( $('custom'), $('custom_menucontent'), { stopClose: true } );
+		</script>
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th width='5%'>&nbsp;</th>
+				<th width='25%'>{$this->lang->words['date']}</th>
+				<th width='15%'>{$this->lang->words['member']}</th>
+				<th width='25%'>{$this->lang->words['action']}</th>
+				<th width='25%'>{$this->lang->words['notes']}</th>
+			</tr>
+            {$content}
+		</table>
+		<div style='margin:10px;'>
+			{$pages}
+		</div>
+<!--<script type="text/javascript">
+	document.observe("dom:loaded", function(){
+		var url = ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=';
+		new ipb.Autocomplete( $('mem_name1'), { multibox: false, url: url, templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+	});
+</script>-->]]></template_content>
+      <template_name>transactions_wrapper</template_name>
+      <template_data><![CDATA[$content='', $otherSW='', $pages='', $showMember]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[<div class='message' style='margin:15px'>{$text}</div>]]></template_content>
+      <template_name>welcome</template_name>
+      <template_data>$text</template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy</template_group>
+      <template_content><![CDATA[{parse js_module="board"}
+<!--JS+CSS-->
+<!--BUTTONS-->
+<!--ANNOUNCE-->
+<h2 class='hide'>{$this->lang->words['ibEconomy_title']}</h2>
+<div id='board_index' class='ipsLayout ipsLayout_withright clearfix <if test="sidebarclosed:|:IPSCookie::get('hide_sidebar') == '1' || !$this->settings['eco_display_sidebar_on'] || in_array($this->registry->output->skin['set_id'], explode(',', $this->settings['eco_display_sb_skins']))">no_sidebar</if>'>
+	<!--SIDE_BAR-->
+	<!--TABS-->
+	<div class='ipsBox'> 
+		<div class='ipsLayout ipsLayout_withleft ipsLayout_smallleft ipsVerticalTabbed clearfix'> 
+			<!--AREAS-->
+			<div class='ipsVerticalTabbed_content ipsLayout_content ipsBox_container' id='usercp_content'> 
+				<div class='ipsPad'>
+					{$showpage}
+				</div>
+			</div>				
+		</div>
+		<br class='clear' />
+	</div>
+</div>
+<!--STATS-->
+<!--FOOTER-->]]></template_content>
+      <template_name>wrapper</template_name>
+      <template_data><![CDATA[$active,$showpage]]></template_data>
+      <template_updated>1252772653</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+  </templategroup>
+  <templategroup group="skin_ibEconomy2">
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=add_to_cart' method='post'>
+	<input type='hidden' name='item_id' value='bank_{$bank['b_id']}_loan' />
+		<p class='message'><img src='{$this->settings['img_url']}/information.png' /> {$this->lang->words['description']}: {$bank['desc']}</p><br />
+		<ul class='ipsForm ipsForm_horizontal'>
+			<li class='ipsField'>{$this->lang->words['overdue_penalty']}: {$bank['b_loans_pen']}{$this->lang->words['%']}</li>
+			<li class='ipsField'>{$this->lang->words['global_outstanding_loan_amount']}: {$this->settings['eco_general_cursymb']}{$bank['outstanding_loan_amt']}</li><br />	
+			<li class='ipsField'>
+				<label class='ipsField_title'>{$this->lang->words['Loan_Amount']} <spanclass='ipsForm_required'>*</span></label>
+				<div class='ipsField_content'>
+					<input type="text" class='input_text' id='quantity' name="quantity" size="3" /><br />
+				</div>
+			</li>
+		</ul>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['request_loan']}' />
+	</fieldset>
+	</form>]]></template_content>
+      <template_name>bankLoanRows</template_name>
+      <template_data>$bank</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=add_to_cart' method='post'>
+	<input type='hidden' name='item_id' value='bank_{$bank['b_id']}_{$bank['type']}' />
+		<p class='message'><img src='{$this->settings['img_url']}/information.png' /> {$this->lang->words['description']}: {$bank['desc']}</p><br />
+		<ul class='ipsForm ipsForm_horizontal'>
+			<li class='ipsField'>{$this->lang->words['apy']}: {$bank['apy']}</li>
+			<li class='ipsField'>
+				<label class='ipsField_title'>{$this->lang->words['dep_amount']} <spanclass='ipsForm_required'>*</span></label>
+				<div class='ipsField_content'>
+					<input type="text" class='input_text' id='quantity' name="quantity" size="3" /><br />
+				</div>
+			</li>
+		</ul>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['add_to_cart']}' />
+	</fieldset>
+	</form>]]></template_content>
+      <template_name>bank_row</template_name>
+      <template_data>$bank</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=add_to_cart' method='post'>
+	<input type='hidden' name='item_id' value='cc_{$cc['cc_id']}' />
+		<if test="$cc['cc_csh_adv']">
+		<ul class='ipsForm ipsForm_horizontal'>
+			<li class='ipsField'>{$this->lang->words['bal_transfer_apr']}: {$cc['cc_bal_trnsfr_apr']}</li>
+			<li class='ipsField'>
+				<label class='ipsField_title'>{$this->lang->words['cash_advance']}</label>
+				<div class='ipsField_content'>
+					<input type="text" class='input_text' id='quantity' name="quantity" size="3" /><br />
+				</div>
+			</li>
+			</if>
+		</ul>
+		</if>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['add_to_cart']}' />
+	</fieldset>
+	</form>]]></template_content>
+      <template_name>cc_row</template_name>
+      <template_data><![CDATA[$cc='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<fieldset style='margin: 0px;padding:0px;'>
+        <div id='member_list' class='clear block_wrap' style='padding:0px;margin:0px;'>
+	        <div id='member_wrap' >
+		        <ul class='members' >		
+					{$content}
+				</ul>
+            </div>
+        </div>
+		<div style='margin:10px;'>
+			{$pages}
+		</div>
+</fieldset>]]></template_content>
+      <template_name>invest_rows_wrapper</template_name>
+      <template_data><![CDATA[$content='',$pages='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+	
+	
+	
+	
+	
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[		<if test="eco_lottery_my_tickets:|:$lotto['your_num_total_tix'] > 0">
+			<if test="eco_lottery_still_open:|:$lotto['your_num_tix'] > 0">
+				<p class='message error'><img src='{$this->settings['img_url']}/eco_images/tag_blue_edit.png' />{$this->lang->words['lotto_pick_remind']}</p>
+				<br />
+			</if>
+			<if test="eco_lottery_still_open:|:$lotto['tix_still_4_sale'] and $lotto['your_num_tix'] > 0">
+				<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=submit_lotto_picks' method='post'>
+			</if>
+			<if test="eco_lottery_still_open:|:$lotto['your_num_tix'] > 0 || $lotto['your_num_picked'] > 0">
+			<div class='maintitle'>{$this->lang->words['your_tickets']}</div>
+			<table class='ipb_table'>
+				<tr class='header'>
+					<th>Ticket</th>
+					<foreach loop="num_lotto_balls:$lotto['lottoBalls'] as $lottoBall">
+						<th>{$lottoBall['header']}</th>
+					</foreach>
+				</tr>
+				<foreach loop="num_lotto_balls:$lotto['myLottoTickets'] as $lottoTicket">
+				<tr id='{$log['l_id']}'>
+					<td>{$lottoTicket['ticketNum']}</td>
+					<foreach loop="num_lotto_balls:$lotto['lottoBalls'] as $lottoBall">
+						<td>{$lottoTicket['ballDD_'.$lottoBall['number']]}</td>
+					</foreach>
+				</tr>
+				</foreach>
+			</table>
+			<if test="eco_lottery_still_open:|:$lotto['tix_still_4_sale'] and $lotto['your_num_tix'] > 0">
+				<fieldset class='submit'>
+					{$this->lang->words['or_get_random_values']}&nbsp;&nbsp;
+					<input type = 'checkbox' name='use_random_nums' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>{$this->lang->words['make_your_picks_then_submit']}...&nbsp;</b>
+					<input type='submit' class='input_submit alt' value='{$this->lang->words['go']}' />
+				</fieldset>	
+				</if>
+				</form>	
+			</if>
+		<else />
+			<if test="eco_lottery_still_open:|:$lotto['tix_still_4_sale']">
+			<p class='message'><img src='{$this->settings['img_url']}/information.png' /> {$this->lang->words['description']}: {$this->lang->words['lotto_description']}</p><br />
+			</if>
+		</if>
+		<br /><br />
+		<if test="eco_lottery_still_open:|:$lotto['tix_still_4_sale']">
+			<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=add_to_cart' method='post'>
+				<input type='hidden' name='item_id' value='lottery_{$lotto['l_id']}' />		
+				<ul class='ipsForm ipsForm_horizontal'>
+					<li class='ipsField'>
+						<label class='ipsField_title'>{$this->lang->words['num_to_purchase']} <spanclass='ipsForm_required'>*</span></label>
+						<div class='ipsField_content'>
+							<input type="text" class='input_text' id='quantity' name="quantity" size="3" /><br />
+						</div>
+					</li>
+				</ul>
+			<fieldset class='submit'>
+				<input type='submit' class='input_submit' value='{$this->lang->words['add_to_cart']}' />
+			</fieldset>
+			</form>
+		<else />
+			{$this->lang->words['winning_numbers']}: {$lotto['winning_numbers']}
+		</if>]]></template_content>
+      <template_name>lottery_row</template_name>
+      <template_data><![CDATA[$lotto]]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<fieldset style='margin: 0px;padding:0px;'>
+				<div id='member_list' class='clear block_wrap' style='padding:0px;margin:0px;'>
+					<div id='member_wrap' >
+						<ul class='members' >		
+							{$content}
+						</ul>
+					</div>
+				</div>
+				<div style='margin:10px;'>
+					{$pages}
+				</div>
+		</fieldset>]]></template_content>
+      <template_name>lottery_wrapper</template_name>
+      <template_data><![CDATA[$content='', $pages='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=add_to_cart' method='post'>
+	<input type='hidden' name='item_id' value='lt_{$lt['lt_id']}' />	
+		<p class='message'><img src='{$this->settings['img_url']}/information.png' /> {$this->lang->words['description']}: {$lt['desc']}<br /><br />
+			<i>{$this->lang->words['risk']}:</i> <strong>{$lt['lt_risk_level']}%</strong> - {$this->lang->words['risk_reward_exp']}<br /></p><br />
+		<ul class='ipsForm ipsForm_horizontal'>
+			<li class='ipsField'>{$this->lang->words['level_of_risk']}: <p style='margin-top:-11px;width:135px' class='progress_bar user_warn'  title='{$this->lang->words['level_of_risk']}: {$lt['lt_risk_level']}%'>
+				<span style='width: {$lt['lt_risk_level']}%'><span>{$this->lang->words['risk_level']}: {$lt['lt_risk_level']}%</span></span></li>
+			<li class='ipsField'>
+				<label class='ipsField_title'>{$this->lang->words['to_invest']}</label>
+				<div class='ipsField_content'>
+					<input type="text" class='input_text' id='quantity' name="quantity" size="3" /><br />
+				</div>
+			</li>
+			</if>
+		</ul>
+		</if>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['add_to_cart']}' />
+	</fieldset>
+	</form>]]></template_content>
+      <template_name>lt_row</template_name>
+      <template_data><![CDATA[$lt='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<h3 class='bar' style='padding:3px;margin:0px'>{$bank['b_title']} - {$bank['type']} <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=bank&amp;id={$bank['b_id']}&amp;bank_type={$bank['type']}' class='__item __id{$bank['b_id']}__type_bank_{$bank['type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h3>		
+					<table class='ipb_table'>
+						<tr>
+							<td>
+								{$bank['image_thumb_link']}
+							</td>
+							<td colspan='4'>
+								<table class='ipb_table'>
+									<tr>
+										<td style='width:33%;text-align:left'>
+											<img src='{$this->settings['img_url']}/eco_images/money_dollar.png' alt='{$this->lang->words['total_funds']}' /> {$this->lang->words['total_balance']}: {$this->settings['eco_general_cursymb']}{$bank['total_value']}
+										</td>
+										<td style='width:1%' >
+											&nbsp;
+										</td>										
+										<td style='width:33%;text-align:center'>
+											<img  src='{$this->settings['img_url']}/eco_images/calendar.png' alt='{$this->lang->words['opened_on']}' /> {$this->lang->words['opened_on']}:  {$bank['open_date']}
+										</td>
+										<td style='width:33%;text-align:right'>
+											<img  src='{$this->settings['img_url']}/eco_images/coins_add.png' alt='{$this->lang->words['apy']}' />	{$this->lang->words['apy']}: {$bank['apy']}
+										</td>										
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>						
+							<td>
+								<strong>{$this->lang->words['dep_fee']}:</strong> {$bank['dep_fee']}<br /><br /><br />
+								<strong>{$this->lang->words['with_fee']}:</strong> {$bank['wth_fee']}
+							</td>
+							<td style='text-align:right'>
+								<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=bank_deposit' method='post'>
+								<input type='hidden' name='item_id' value='{$bank['b_id']}_{$bank['type']}' />
+								<p style='padding-bottom:15px;padding-right:10px;'>
+									<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+								</p>
+								<p class='reputation zero'>
+									<img style='margin:1px 0px 6px 0px' src='{$this->settings['img_url']}/eco_images/money_add.png' alt='{$this->lang->words['make_deposit']}' title='{$this->lang->words['make_deposit']}' />&nbsp;		
+									<input type='submit' class='input_submit' style='padding:2px 0px 2px 0px' name='submit' value='{$this->lang->words['make_deposit']}' />
+								</p>
+								</form>
+							</td>	
+							<td style='text-align:right'>
+								<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=bank_withdrawal' method='post'>
+								<input type='hidden' name='item_id' value='{$bank['b_id']}_{$bank['type']}' />
+								<p style='padding-bottom:15px;padding-right:10px;'>
+									<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+								</p>
+								<p class='reputation zero'>
+									<img style='margin:1px 0px 6px 0px'  src='{$this->settings['img_url']}/eco_images/money_delete.png' alt='{$this->lang->words['make_withdrawal']}' title='{$this->lang->words['make_withdrawal']}' />&nbsp;		
+									<input type='submit' class='input_submit' name='submit' style='padding:2px 0px 2px 0px' value='{$this->lang->words['make_withdrawal']}' />
+								</p>
+								</form>
+							</td>							
+						</tr>
+					</table>]]></template_content>
+      <template_name>myBank</template_name>
+      <template_data>$bank</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<h3 class='bar' style='padding:3px;margin:0px'>{$cc['cc_title']} - {$this->settings['eco_general_cursymb']}{$cc['my_credit_line']} <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=cc&amp;id={$cc['cc_id']}' class='__item __id{$cc['cc_id']}__type_cc_{$cc['type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h3>
+					<table class='ipb_table'>
+						<tr>
+							<td>
+								{$cc['image_thumb_link']}
+							</td>
+							<td colspan='4'>
+								<table class='ipb_table'>
+									<tr>
+										<td style='width:33%;text-align:left'>
+											<img src='{$this->settings['img_url']}/eco_images/money_dollar.png' alt='{$this->lang->words['cur_card_balance']}' /> {$this->lang->words['cur_card_balance']}: {$this->settings['eco_general_cursymb']}{$cc['total_value']}
+										</td>									
+										<td style='width:33%;text-align:center'>
+											<img  src='{$this->settings['img_url']}/eco_images/calendar.png' alt='{$this->lang->words['opened_on']}' /> {$this->lang->words['opened_on']}:  {$cc['open_date']}
+										</td>
+										<td style='width:33%;text-align:right'>
+											<img  src='{$this->settings['img_url']}/eco_images/coins_add.png' alt='{$this->lang->words['apr']}' />	{$this->lang->words['apr']}: {$cc['apr']}
+										</td>										
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='5'>
+								<table class='ipb_table' style='border-bottom:none'>
+									<tr>
+										<td style='width:30%;'>
+											<span style='font-weight: bolder'>{$this->lang->words['min_due']}:</span>
+											<span style='font-size:0.75em;'>{$this->settings['eco_general_cursymb']}{$cc['min_due']}</span><br />
+											<span style='font-weight: bolder'>{$this->lang->words['by']}:</span>
+											<span style='font-size:0.75em;'>{$cc['due_date']}</span>
+										</td>
+										<td style='width:30%;text-align:right'>
+											<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=cc_payment' method='post'>
+											<input type='hidden' name='item_id' value='{$cc['cc_id']}' />
+											<p>
+												<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+											</p>
+										</td>
+										<td style='width:40%;text-align:right'>
+											<p class='reputation zero'>
+												<img src='{$this->settings['img_url']}/eco_images/money_delete.png' alt='{$this->lang->words['make_payment']}' title='{$this->lang->words['make_payment']}' />&nbsp;		
+												<input type='submit' class='input_submit' name='submit' value='{$this->lang->words['make_payment']}' />
+											</p>
+											</form>
+										</td>
+									</tr>
+									<if test="cc_csh_adv:|:$cc['cc_csh_adv']">								
+									<tr>
+										<td>
+											<span style='font-weight: bolder'>{$this->lang->words['csh_adv_fee']}:</span>
+											<span style='font-size:0.75em;'>{$cc['cc_csh_adv_fee']}</span><br />
+											<span style='font-weight: bolder'>{$this->lang->words['max']}:</span>
+											<span style='font-size:0.75em;'>{$this->settings['eco_general_cursymb']}{$cc['cash_adv_max']}</span>
+										</td>										
+										<td style='text-align:right'>											
+											<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=cash_advance' method='post'>
+											<input type='hidden' name='item_id' value='{$cc['cc_id']}' />
+											<p>
+												<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+											</p>
+										</td>
+										<td style='text-align:right'>											
+											<p class='reputation zero'>
+												<img src='{$this->settings['img_url']}/eco_images/bullet_go.png' alt='{$this->lang->words['get_cash_advance']}' title='{$this->lang->words['get_cash_advance']}' />&nbsp;		
+												<input type='submit' class='input_submit' name='submit' value='{$this->lang->words['get_cash_advance']}' />
+											</p>
+											</form>
+										</td>
+									</tr>
+									</if>
+									<if test="cc_bal_trsnr:|:$cc['cc_bal_trnsfr'] && $cc['other_cards_dd']">									
+									<tr>
+										<td>
+											<span style='font-weight: bolder'>{$this->lang->words['bal_transfer_apr']}:</span>
+											<span style='font-size:0.75em;'>{$cc['cc_bal_trnsfr_apr']}</span><br />
+											<span style='font-weight: bolder'>{$this->lang->words['until']}:</span>
+											<span style='font-size:0.75em;'>{$cc['cc_bal_trnsfr_ends']}</span>
+										</td>										
+										<td style='text-align:right'>
+											<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=balance_transfer' method='post'>
+											<p>
+												{$cc['other_cards_dd']}
+											</p><br />
+											<input type='hidden' name='item_id' value='{$cc['cc_id']}' />
+											<p>
+												<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+											</p>
+										</td>
+										<td style='text-align:right'>								
+											<p class='reputation zero'>
+												<img src='{$this->settings['img_url']}/eco_images/money_add.png' alt='{$this->lang->words['transfer_balance']}' title='{$this->lang->words['transfer_balance']}' />&nbsp;		
+												<input type='submit' class='input_submit' name='submit' value='{$this->lang->words['transfer_balance']}' />
+											</p>
+											</form>
+										</td>
+									</tr>
+									</if>
+								</table>
+							</td>							
+						</tr>
+					</table>]]></template_content>
+      <template_name>myCC</template_name>
+      <template_data>$cc</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<h3 class='bar' style='padding:3px;margin:0px'>{$bank['b_title']} - {$this->lang->words['loan']} <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=bank&amp;id={$bank['b_id']}&amp;bank_type={$bank['type']}' class='__item __id{$bank['b_id']}__type_bank_{$bank['type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h3>
+					<table class='ipb_table'>
+						<tr>
+							<td>
+								{$bank['image_thumb_link']}
+							</td>
+							<td colspan='4'>
+								<table class='ipb_table'>
+									<tr>
+										<td style='width:33%;text-align:left'>
+											<img src='{$this->settings['img_url']}/eco_images/money_dollar.png' alt='{$this->lang->words['total_owed']}' /> {$this->lang->words['total_owed']}: {$bank['total_value']} {$this->settings['eco_general_currency']}
+										</td>
+										<td style='width:1%' >
+											&nbsp;
+										</td>										
+										<td style='width:33%;text-align:center'>
+											<img  src='{$this->settings['img_url']}/eco_images/calendar.png' alt='{$this->lang->words['opened_on']}' /> {$this->lang->words['opened_on']}:  {$bank['open_date']}
+										</td>
+										<td style='width:33%;text-align:right'>
+											<img  src='{$this->settings['img_url']}/eco_images/coins_add.png' alt='{$this->lang->words['apy']}' />	{$this->lang->words['apy']}: {$bank['b_loans_fee']}{$this->lang->words['%']}
+										</td>										
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>						
+							<td>
+								<strong>{$this->lang->words['due_date']}:</strong> {$bank['value2']}<br />
+								<strong>{$this->lang->words['overdue_penalty']}:</strong> {$bank['b_loans_pen']}{$this->lang->words['%']}
+							</td>
+							<td style='text-align:right'>
+								<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=loan_payment' method='post'>
+								<input type='hidden' name='item_id' value='{$bank['b_id']}_loan' />
+								<p style='padding-bottom:15px;padding-right:10px;'>
+									<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+								</p>
+								<p class='reputation zero'>
+									<img style='margin:1px 0px 6px 0px' src='{$this->settings['img_url']}/eco_images/money_add.png' alt='{$this->lang->words['make_payment']}' title='{$this->lang->words['make_payment']}' />&nbsp;		
+									<input type='submit' class='input_submit' style='padding:2px 0px 2px 0px' name='submit' value='{$this->lang->words['make_payment']}' />
+								</p>
+								</form>
+							</td>						
+						</tr>
+					</table>]]></template_content>
+      <template_name>myLoan</template_name>
+      <template_data>$bank</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<h3 class='bar' style='padding:3px;margin:0px'>{$LT['lt_title']} <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=lt&amp;id={$LT['lt_id']}' class='__item __id{$LT['lt_id']}__type_lt_{$LT['link_type_type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h3>
+					<table class='ipb_table'>
+						<tr>
+							<td>
+								{$LT['image_thumb_link']}
+							</td>
+							<td colspan='4'>
+								<table class='ipb_table'>
+									<tr>
+										<td style='width:33%;text-align:left'>
+											<img src='{$this->settings['img_url']}/eco_images/money_dollar.png' alt='{$this->lang->words['total_value']}' /> {$this->lang->words['total_value']}: {$LT['total_value']} {$this->settings['eco_general_currency']}
+										</td>
+										<td style='width:33%;text-align:center'>
+											 <img  src='{$this->settings['img_url']}/eco_images/calendar.png' alt='{$this->lang->words['opened_on']}' /> {$this->lang->words['opened_on']}:  {$LT['open_date']}
+										</td>										
+										<td style='width:11%;text-align:center'>
+											 <img  src='{$this->settings['img_url']}/eco_images/stop.png' alt='{$this->lang->words['risk_level']}' /> {$this->lang->words['risk']}: 
+										</td>
+										<td style='width:22%;text-align:right'>
+											<div style='padding:3px'>
+											<p style='width:135px' class='progress_bar user_warn'  title='{$this->lang->words['level_of_risk']}: {$LT['lt_risk_level']}%'>
+											<span style='width: {$LT['lt_risk_level']}%'><span>{$this->lang->words['risk_level']}: {$LT['lt_risk_level']}%</span></span>
+											</p></div>										
+										</td>										
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style='width:5%;'>
+								&nbsp;
+							</td>						
+							<td style='width:40%;'>
+								<table class='ipb_table' style='border-bottom:none;'>
+									<tr>										
+										<td>											
+											<strong>{$this->lang->words['type']}:</strong> 
+										</td>
+										<td>											
+											{$LT['lt_type']}
+										</td>										
+									</tr>								
+									<tr>
+										<td>							
+											<strong>{$this->lang->words['earliest_can_sell']}:</strong> 
+										</td>
+										<td>
+											{$LT['value']}
+										</td>
+									</tr>
+									<tr>
+										<td>											
+											<strong>{$this->lang->words['early_cash_fee']}:</strong> 
+										</td>
+										<td>											
+											{$LT['lt_early_cash']}
+										</td>
+									</tr>
+								</table>								
+							</td>
+							<td style='width:20%;'>
+								<strong>{$this->lang->words['cashout_fee']}:</strong> {$this->settings['eco_lts_sell_fee']}%
+							</td>	
+							<td style='text-align:right;width:35%;'>
+								<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=sell_lt' method='post'>
+								<input type='hidden' name='item_id' value='{$LT['lt_id']}' />
+								<p style='padding-bottom:15px;padding-right:10px;'>
+									<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+								</p>
+								<p class='reputation zero'>
+									<img style='margin:1px 0px 6px 0px'  src='{$this->settings['img_url']}/eco_images/money_delete.png' alt='{$this->lang->words['cashout']}' title='{$this->lang->words['cashout']}' />&nbsp;		
+									<input type='submit' class='input_submit' name='submit' style='padding:2px 0px 2px 0px' value='{$this->lang->words['cashout']}' />
+								</p>
+								</form>
+							</td>							
+						</tr>
+					</table>]]></template_content>
+      <template_name>myLT</template_name>
+      <template_data>$LT</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<h3 class='bar' style='padding:3px;margin:0px'>{$item['si_title']} ({$item['total_value']}) <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=shop&amp;area=single&amp;type=item&amp;id={$item['si_id']}' class='__item __id{$item['si_id']}__type_shopitem_Item' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h3>
+					<table class='ipb_table'>
+						<tr>
+							<td>
+								{$item['image_thumb_link']}
+							</td>
+							<td colspan='3'>
+								<table class='ipb_table'>
+									<tr>
+										<td style='width:33%;text-align:left'>
+											<img src='{$this->settings['img_url']}/eco_images/money_dollar.png' alt='{$this->lang->words['current_cost']}' /> {$this->lang->words['current_cost']}: {$this->settings['eco_general_cursymb']}{$item['si_cost']}
+										</td>									
+										<td style='width:33%;text-align:center'>
+											<img  src='{$this->settings['img_url']}/eco_images/calendar.png' alt='{$this->lang->words['next_restock']}' /> {$this->lang->words['next_restock']}:  {$item['si_restock_date']}
+										</td>
+										<td style='width:33%;text-align:right'>
+											<img  src='{$this->settings['img_url']}/eco_images/coins_add.png' alt='{$this->lang->words['item_limit']}' />	{$this->lang->words['item_limit']}: {$item['si_limit']}
+										</td>										
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='4'>
+								<table class='ipb_table' style='border-bottom:none'>
+									<tr>
+										<td colspan='2' style='width:55%'>
+											<span style='font-weight: bolder'>{$this->lang->words['description']}:</span>
+											<span style='font-size:0.75em;'>{$item['si_desc']}</span><br />
+										</td>
+										<td style='text-align:right;width:10%'>
+											<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=use_shopitem' method='post'>
+											<input type='hidden' name='item_id' value='{$item['si_id']}' />
+											<p>
+												&nbsp;
+											</p>
+										</td>
+										<td style='text-align:right;width:35%'>
+											<if test="item_is_usable:|:$item['si_file'] != 'blank_unusable_item.php'">	
+												<p class='reputation zero'>
+													<img src='{$this->settings['img_url']}/eco_images/bullet_go.png' alt='{$this->lang->words['use_item']}' title='{$this->lang->words['use_item']}' />&nbsp;		
+													<input type='submit' class='input_submit' name='submit' value='{$this->lang->words['use_item']}' />
+												</p>
+											</if>
+											</form>
+										</td>
+									</tr>
+									<if test="item_can_sell:|:$item['can_sell']">								
+									<tr>
+										<td colspan='2'>
+											<span style='font-weight: bolder'>{$this->lang->words['sell_back_fee']}:</span>
+											<span style='font-size:0.75em;'>{$this->settings['eco_shop_sell_fee']}{$this->lang->words['%']}</span><br />
+										</td>										
+										<td style='text-align:right'>											
+											<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=sell_shopitem' method='post'>
+											<input type='hidden' name='item_id' value='{$item['si_id']}' />
+											<p>
+												<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+											</p>
+										</td>
+										<td style='text-align:right'>											
+											<p class='reputation zero'>
+												<img src='{$this->settings['img_url']}/eco_images/cancel.png' alt='{$this->lang->words['sell_back_for_cash']}' title='{$this->lang->words['sell_back_for_cash']}' />&nbsp;		
+												<input type='submit' class='input_submit' name='submit' value='{$this->lang->words['sell_back']}' />
+											</p>
+											</form>
+										</td>
+									</tr>
+									</if>
+									<if test="item_can_trade:|:$item['can_trade']">									
+									<tr>
+										<td>
+											<span style='font-weight: bolder'>{$this->lang->words['trade_tax']}:</span>
+											<span style='font-size:0.75em;'>{$this->settings['eco_shop_trade_tax']}{$this->lang->words['%']}</span><br />
+										</td>
+										<td>
+											<p>
+											<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=trade_shopitem' method='post'>
+											<input type='hidden' name='item_id' value='{$item['si_id']}' />											
+												{$this->lang->words['to']} <input type="text" class='input_text' id='mem_name1' name="mem_name" size="10" value="{$mem_name}" tabindex="0" />
+											</p>
+										</td>										
+										<td style='text-align:right'>
+											<p>
+												<input type='text' name='amount' value='{$this->lang->words['number_icon']}' onfocus="value=''" size='4' />
+											</p>
+										</td>
+										<td style='text-align:right'>								
+											<p class='reputation zero'>
+												<img src='{$this->settings['img_url']}/eco_images/group_go.png' alt='{$this->lang->words['send_item']}' title='{$this->lang->words['send_item']}' />&nbsp;		
+												<input type='submit' class='input_submit' name='submit' value='{$this->lang->words['send_item']}' />
+											</p>
+											</form>
+										</td>
+									</tr>
+									</if>
+								</table>
+							</td>							
+						</tr>
+					</table>	
+		<script type="text/javascript">
+		document.observe("dom:loaded", function(){
+			var url = ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=';
+			new ipb.Autocomplete( $('mem_name1'), { multibox: false, url: url, templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+		});
+		</script>]]></template_content>
+      <template_name>myShopItem</template_name>
+      <template_data>$item</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<h3 class='bar' style='padding:3px;margin:0px'>{$stock['s_title']} - {$stock['s_title_long']} ({$stock['num_shares']} {$this->lang->words['shares']}) <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=stock&amp;id={$stock['s_id']}' class='__item __id{$stock['s_id']}__type_stock_{$stock['link_type_type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h3>	
+					<table class='ipb_table'>
+						<tr>
+							<td>
+								{$stock['image_thumb_link']}
+							</td>
+							<td colspan='4'>
+								<table class='ipb_table'>
+									<tr>
+										<td style='width:33%;text-align:left''>
+											<img src='{$this->settings['img_url']}/eco_images/money_dollar.png' alt='{$this->lang->words['total_value']}' /> {$this->lang->words['total_value']}: {$stock['total_value']} {$this->settings['eco_general_currency']}
+										</td>
+										<td style='width:33%;text-align:center''>
+											 <img  src='{$this->settings['img_url']}/eco_images/calendar.png' alt='{$this->lang->words['opened_on']}' /> {$this->lang->words['opened_on']}:  {$stock['open_date']}
+										</td>										
+										<td style='width:11%;text-align:center'>
+											 <img  src='{$this->settings['img_url']}/eco_images/stop.png' alt='{$this->lang->words['risk_level']}' /> {$this->lang->words['risk']}: 
+										</td>
+										<td style='width:22%;text-align:right'>
+											<div style='padding:3px'>
+											<p style='width:135px' class='progress_bar user_warn'  title='{$this->lang->words['level_of_risk']}: {$stock['s_risk_level']}%'>
+											<span style='width: {$stock['s_risk_level']}%'><span>{$this->lang->words['risk_level']}: {$stock['s_risk_level']}%</span></span>
+											</p></div>										
+										</td>										
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>						
+							<td>
+								<table class='ipb_table' style='border-bottom:none;'>
+									<tr>
+										<td>							
+											<strong>{$this->lang->words['type']}:</strong> 
+										</td>
+										<td>
+											{$stock['s_type']}
+										</td>
+									</tr>
+									<tr>
+										<td>											
+											<strong>{$this->lang->words['variable']}:</strong> 
+										</td>
+										<td>											
+											{$stock['s_type_var']}
+										</td>
+									</tr>
+									<tr>										
+										<td>											
+											<strong>{$this->lang->words['subject']}:</strong> 
+										</td>
+										<td>											
+											{$stock['s_type_var_value']}
+										</td>										
+									</tr>
+								</table>								
+							</td>
+							<td>
+								<strong>{$this->lang->words['share_value']}:</strong> {$stock['cost']}
+								
+                          <if test="can_sell_stock:|:$stock['can_sell']">						
+							<br /><br />
+								<strong>{$this->lang->words['sell_fee']}:</strong> {$this->settings['eco_stocks_sell_fee']}%
+							</td>	
+							<td style='text-align:right'>
+								<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=portfolio_update&amp;type=sell_stock' method='post'>
+								<input type='hidden' name='item_id' value='{$stock['s_id']}' />
+								<p style='padding-bottom:15px;padding-right:10px;'>
+									<input type='text' name='amount' value='{$this->lang->words['shares']}' onfocus="value=''" size='6' />
+								</p>
+								<p class='reputation zero'>
+									<img style='margin:1px 0px 6px 0px'  src='{$this->settings['img_url']}/eco_images/money_delete.png' alt='{$this->lang->words['sell_shares']}' title='{$this->lang->words['sell_shares']}' />&nbsp;		
+									<input type='submit' class='input_submit' name='submit' style='padding:2px 0px 2px 0px' value='{$this->lang->words['sell_shares']}' />
+								</p>
+								</form>
+							</td>
+					      <else />
+							</td>
+                          </if>							
+						</tr>
+					</table>]]></template_content>
+      <template_name>myStock</template_name>
+      <template_data>$stock</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='ipsBox'>
+	<form method='post' action='{$this->settings['base_url']}app=ibEconomy&amp;do=welfare_payback' onsubmit="return confirm('{$this->lang->words['confirm_welfare_payback']}');">	
+		<div class='ipsBox_container ipsPad'>
+			<div class='message' style='margin:10px'>
+				<img title = '{$this->lang->words['youre_on_welfare']}' src = '{$this->settings['img_url']}/accept.png' /> {$text}<br /><br />
+				{$this->lang->words['your_total_welfare_received']}&nbsp;<p class='ipsBadge ipsBadge_red'>{parse format_number="$this->memberData['eco_welfare']"} {$this->settings['eco_general_currency']}<p>
+			</div>
+			<ul class='ipsForm ipsForm_vertical'>
+				<li class='ipsField'>
+					<label class='ipsField_title'>{$this->lang->words['how_much_welfare_payback']} <spanclass='ipsForm_required'>*</span></label>
+					<div class='ipsField_content'>
+						<input type='text' size='10' name='amount' id='amount' /><br />
+					</div>
+				</li>				
+			</ul>
+		</div>
+		<fieldset class='submit'>
+			<input type='submit' class='input_submit' value='{$this->lang->words['make_payment']}' />
+		</fieldset>
+	</form>
+</div>]]></template_content>
+      <template_name>myWelfare</template_name>
+      <template_data><![CDATA[$text]]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[			<tr id='{$item['p_id']}'>
+				<td class='altrow short'>
+					{$item['image_thumb_link']}
+				</td>
+				<td>
+					<span style='font-weight:bolder'>
+						<a style='text-decoration:none;' href="{$this->settings['base_url']}app=ibEconomy&amp;tab=me&amp;area=single&amp;type=<if test="$item['type_type'] == 'Loan'">loan<else />{$item['p_type']}</if>&amp;id={$item['p_type_id']}<if test="$this->request['area'] == 'my_banks'">&amp;type_type={$item['type_type']}</if>">{$item['name']}</a> <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=<if test="$item['p_type'] == 'shopitem'">shop<else />invest</if>&amp;area=single&amp;type={$item['p_type']}&amp;id={$item['p_type_id']}<if test="$item['p_type'] == 'bank'">&amp;bank_type={$item['type_type']}</if>' class='__item __id{$item['p_type_id']}__type_{$item['p_type']}_{$item['link_type_type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a>
+					</span>
+				</td>
+				<td>
+					{$item['type_type']}
+				</td>				
+				<td class='altrow short'>
+					{$item['value']}
+				</td>
+				<td class='short'>
+					{$item['value2']}
+				</td>
+				<td  class='altrow short'>
+					<if test="$this->request['area'] != 'my_shopitems'">{$this->settings['eco_general_cursymb']}</if>{$item['total_value']}
+				</td>
+				<td class='short'>
+					<a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=me&amp;area=single&amp;type=<if test="$item['type_type'] == 'Loan'">loan<else />{$item['p_type']}</if>&amp;id={$item['p_type_id']}<if test="$this->request['area'] == 'my_banks'">&amp;type_type={$item['type_type']}</if>"><img src='{$this->settings['img_url']}/eco_images/folder_magnify.png'></a>
+				</td>
+			</tr>]]></template_content>
+      <template_name>my_items_row</template_name>
+      <template_data>$item</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[		<div class='maintitle'>{$this->lang->words['my_items']}</div>
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th scope='col'>&nbsp;</th>
+				<th scope='col'>{$this->lang->words['name']}</th>
+				<th scope='col'>{$colTitles['two']}</th>
+				<th scope='col' class=' short'>{$colTitles['three']}</th>
+				<th scope='col' class=' short'>{$colTitles['four']}</th>
+				<th scope='col' class=' short'>{$colTitles['five']}</th>
+				<th scope='col' class=' short'>{$this->lang->words['more']}</th>
+			</tr>
+            {$content}
+		</table>
+		<div style='margin:10px;'>
+			{$pages}
+		</div>]]></template_content>
+      <template_name>my_items_wrapper</template_name>
+      <template_data><![CDATA[$content='', $colTitles='', $pages='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<tr id='{$cat['sc_id']}' class='row1'>
+				<td class='altrow short'>
+					{$cat['image_thumb_link']}
+				</td>
+				<td>
+					<span style='font-weight:bolder'>
+						<a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=shop&amp;area=items&amp;cat={$cat['sc_id']}">{$cat['sc_title']}</a>
+					</span>
+				</td>
+				<td>
+					{$cat['sc_desc']}
+				</td>				
+				<td class='altrow short'>
+					{$cat['total_items']}
+				</td>
+				<td class='short'>
+					<a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=shop&amp;area=items&amp;cat={$cat['sc_id']}"><img src='{$this->settings['img_url']}/eco_images/folder_magnify.png'></a>
+				</td>
+			</tr>]]></template_content>
+      <template_name>shop_cats_row</template_name>
+      <template_data>$cat</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[		<div class='maintitle'>{$this->lang->words['categories']}</div>
+		<table class='ipb_table'>
+			<tr class='header'>
+				<th scope='col'>&nbsp;</th>
+				<th scope='col'>{$this->lang->words['name']}</th>
+				<th scope='col'>{$this->lang->words['description']}</th>
+				<th scope='col' class=' short'>{$this->lang->words['item_count']}</th>
+				<th scope='col' class=' short'>{$this->lang->words['view_items']}</th>
+			</tr>
+            {$content}
+		</table>
+		<div style='margin:10px;'>
+			{$pages}
+		</div>]]></template_content>
+      <template_name>shop_cats_wrapper</template_name>
+      <template_data><![CDATA[$content, $pages]]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=add_to_cart' method='post'>
+	<input type='hidden' name='item_id' value='shopitem_{$item['si_id']}' />
+		<p class='message'><img src='{$this->settings['img_url']}/information.png' /> {$this->lang->words['description']}: {$item['si_desc']}</p><br />
+		<ul class='ipsForm ipsForm_horizontal'>
+			<li class='ipsField'>{$this->lang->words['next_restock']}: {$item['si_restock_date']}</li>
+			<li class='ipsField'>{$this->lang->words['item_limit']}: {$item['si_limit']}</li><br />	
+			<li class='ipsField'>
+				<label class='ipsField_title'>{$this->lang->words['num_to_purchase']} <spanclass='ipsForm_required'>*</span></label>
+				<div class='ipsField_content'>
+					<input type="text" class='input_text' id='quantity' name="quantity" size="3" /><br />
+				</div>
+			</li>
+		</ul>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['add_to_cart']}' />
+	</fieldset>
+	</form>]]></template_content>
+      <template_name>shop_items_row</template_name>
+      <template_data><![CDATA[$item='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<fieldset style='margin: 0px;padding:0px;'>
+				<div id='member_list' class='clear block_wrap' style='padding:0px;margin:0px;'>
+					<div id='member_wrap' >
+						<ul class='members' >		
+							{$content}
+						</ul>
+					</div>
+				</div>
+				<div style='margin:10px;'>
+					{$pages}
+				</div>
+		</fieldset>]]></template_content>
+      <template_name>shop_items_wrapper</template_name>
+      <template_data><![CDATA[$content='', $pages='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+	
+	
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[		<div class='maintitle'>{$headerTitle}</div>		
+		<div class='ipsBox table_wrap'> 
+			<div class='ipsBox_container'> 		
+				<table class='ipb_table'>
+					{$content}
+				</table>
+			</div>
+		</div>
+		<div style='margin:10px;'>
+			{$pages}
+		</div>]]></template_content>
+      <template_name>items_wrapper</template_name>
+      <template_data><![CDATA[$content, $headerTitle, $pages='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<tr class='__topic expandable' id='trow_{$item['cart_item_id']}' data-id="{$item['cart_item_id']}_{$item['cart_item_bank_type']}" data-type="{$item['cart_item_type']}" bank-type="{$item['cart_item_bank_type']}">
+	<td class='row2' style='text-align:center;width:10%;margin:5px'>
+		<span>{$item['image_thumb_link']}</span>
+	</td>
+	<td class='col_f_content' style='width:40%;'>
+		<h4>{$item['cart_item_title']} <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab={$item['cart_item_tab']}&amp;area=single&amp;type={$item['cart_item_type']}&amp;id={$item['cart_item_id']}&amp;bank_type={$item['cart_item_bank_type']}' class='__item __id{$item['cart_item_id']}__type_{$item['cart_item_type']}_{$item['cart_item_bank_Type']}' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h4>
+		<br />
+		<span class='desc lighter blend_links'>
+			{$item['cart_item_more_info']}
+		</span>
+	</td>
+	<if test="need_preview_link:|:!$singleItem">
+		<td class='col_f_preview __item_preview'>
+			<a href='{$this->settings['base_url']}app=ibEconomy&amp;tab={$item['cart_item_tab']}&amp;area=single&amp;type={$item['cart_item_type']}&amp;id={$item['cart_item_id']}&amp;bank_type={$item['cart_item_bank_type']}' class='expander closed' title='{$this->lang->words['view_more_and_purchase']}'>&nbsp;</a>
+		</td>
+	</if>
+	<td class='col_f_post'> 
+		<ul>
+			<li class='views desc'><img src='{$this->settings['img_url']}/eco_images/money_dollar.png' />&nbsp;{$item['cost_text']}: {$item['cost']}</li>
+			<li class='views desc'><img src='{$this->settings['img_url']}/user.png' />&nbsp;{$item['num_purchased_text']}: {$item['num_purchased']}</li>
+			<li class='views desc'><img src='{$this->settings['img_url']}/eco_images/{$item['right_fields_1_image']}' />&nbsp;{$item['right_fields_1_text']}: {$item['right_fields_1']}</li>
+		</ul>
+	</td>
+</tr>]]></template_content>
+      <template_name>item_row</template_name>
+      <template_data><![CDATA[$item, $singleItem=False]]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>	
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='vcard userpopup'>
+	<h3><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=bank&amp;id={$bank['b_id']}&amp;bank_type={$bank['type']}">{$bank['b_title']} - {$bank['langed_type']}</a></h3>	
+	<div class='side left ipsPad'>
+		{$bank['image_link_popup']}<br />
+		<div class='reputation zero'>
+			<span class='number'><img src='{$this->settings['img_url']}/eco_images/money_dollar.png' /><span style='font-weight:bolder;font-size:1.3em'>{$this->registry->ecoclass->truncate($bank['funds'], 10)}</span>
+		</div>
+	</div>
+	<div class='ipsPad'>
+		<p class='message user_status'>{$this->registry->ecoclass->truncate($bank['desc'], 100)}</p>
+		<div class='info'>			
+			<dl>
+			<if test="$bank['type'] != 'Loan'">
+				<dt>{$this->lang->words['cost']}</dt>
+				<dd>{$bank['cost']}</dd>
+				<dt>{$this->lang->words['dep_fee']}</dt>
+				<dd>{$bank['dep_fee']}</dd>
+				<dt>{$this->lang->words['wth_fee']}</dt>
+				<dd>{$bank['wth_fee']}</dd>
+				<dt>{$this->lang->words['apy']}</dt>
+				<dd>{$bank['apy']}</dd>
+			<else />
+				<dt>{$this->lang->words['max_loan_short']}</dt>
+				<dd>{$this->settings['eco_general_cursymb']}{$bank['b_loans_max']}</dd>
+				<dt>{$this->lang->words['loan_fee']}</dt>
+				<dd>{$bank['b_loans_fee']}{$this->lang->words['%']}</dd>
+				<dt>{$this->lang->words['loan_time']}</dt>
+				<dd>{$bank['b_loans_days']} {$this->lang->words['days']}</dd>
+				<dt>{$this->lang->words['overdue_penalty_short']}</dt>
+				<dd>{$bank['b_loans_pen']}{$this->lang->words['%']}</dd>		
+			</if>
+			</dl>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>showBankCard</template_name>
+      <template_data><![CDATA[$bank='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='vcard userpopup'>
+	<h3><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=cc&amp;id={$cc['cc_id']}">{$cc['cc_title']}</a> (<span style='font-size:0.95em;' title='{$this->lang->words['credit_line']}'>{$this->settings['eco_general_cursymb']}{$cc['credit_line']}</span>)</h3>	
+	<div class='side left ipsPad'>
+		{$cc['image_link_popup']}<br />
+		<div class='reputation zero'>
+			<span class='number'><img src='{$this->settings['img_url']}/eco_images/money_dollar.png' /><span style='font-weight:bolder;font-size:1.3em'>{$this->registry->ecoclass->truncate($cc['funds'], 10)}</span>
+		</div>
+	</div>
+	<div class='ipsPad'>
+		<p class='message user_status'>{$this->registry->ecoclass->truncate($cc['desc'], 100)}</p>
+		<div class='info'>			
+			<dl>
+				<dt>{$this->lang->words['cost']}</dt>
+				<dd>{$cc['cost']}</dd>
+				<dt>{$this->lang->words['apr']}</dt>
+				<dd>{$cc['apr']}</dd>
+				<dt>{$this->lang->words['csh_adv_fee_short']}</dt>
+				<dd>{$cc['cc_csh_adv_fee']}</dd>
+				<dt>{$this->lang->words['bal_transfer_apr_short']}</dt>
+				<dd>{$cc['cc_bal_trnsfr_apr']}</dd>
+			</dl>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>showCCCard</template_name>
+      <template_data><![CDATA[$cc='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='vcard userpopup'>
+	<h3><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=cash&amp;area=single&amp;type=lottery&amp;id={$lotto['l_id']}">{$lotto['l_draw_date']}</a></h3>	
+	<div class='side left ipsPad'>
+		{$lotto['image_link_popup']}<br />
+		<div class='reputation zero'>
+			<span class='number'><img src='{$this->settings['img_url']}/eco_images/money_dollar.png' /><span style='font-weight:bolder;font-size:1.3em'>{$this->registry->ecoclass->truncate($lotto['l_final_pot_size'], 10)}</span>
+		</div>
+	</div>
+	<div class='ipsPad'>
+		<p class='message user_status'>{$this->lang->words['lotto_description']}</p>
+		<div class='info'>			
+			<dl>
+				<dt>{$this->lang->words['ticket_price']}</dt>
+				<dd >{$this->settings['eco_general_cursymb']}{parse format_number="$this->settings['eco_lotto_ticket_price'], $this->registry->ecoclass->decimal"}</dd>
+				<dt>{$this->lang->words['your_tickets']}</dt>
+				<dd>{$lotto['your_num_total_tix']}</dd>
+				<dt>{$this->lang->words['winner']}</dt>
+				<dd>{$lotto['winner_link']}</dd>
+				<dt>{$this->lang->words['total_sold']}</dt>
+				<dd>{$lotto['l_tix_purchased']}</dd>
+			</dl>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>showLotteryCard</template_name>
+      <template_data><![CDATA[$lotto='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>	
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='vcard userpopup'>
+	<h3><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=lt&amp;id={$lt['lt_id']}">{$lt['lt_title']}</a></h3>	
+	<div class='side left ipsPad'>
+		{$lt['image_link_popup']}<br />
+		<div class='reputation zero'>
+			<span class='number'><img src='{$this->settings['img_url']}/eco_images/money_dollar.png' /><span style='font-weight:bolder;font-size:1.3em'>{$this->registry->ecoclass->truncate($lt['funds'], 10)}</span>
+		</div>
+	</div>
+	<div class='ipsPad'>
+		<p class='message user_status'>{$this->registry->ecoclass->truncate($lt['desc'], 100)}</p>
+		<div class='info'>			
+			<dl>
+				<dt>{$this->lang->words['type']}</dt>
+				<dd >{$lt['lt_type']}</dd>
+				<dt>{$this->lang->words['min_investment_short']}</dt>
+				<dd> {$this->settings['eco_general_cursymb']}{$lt['min_invest']}</dd>
+				<dt>{$this->lang->words['min_invest_time_short']}</dt>
+				<dd>{$lt['min_days']} {$this->lang->words['days']}</dd>
+				<dt>{$this->lang->words['early_cash_fee_short']}</dt>
+				<dd>{$lt['lt_early_cash']}</dd>	
+				<dt>{$this->lang->words['risk']}</dt>
+				<dd>{$lt['lt_risk_level']}{$this->lang->words['%']}</dd>					
+			</dl>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>showLTCard</template_name>
+      <template_data><![CDATA[$lt='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='vcard userpopup'>
+	<h3><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=shop&amp;area=single&amp;type=shopitem&amp;id={$item['si_id']}">{$item['si_title']}</a></h3>	
+	<div class='side left ipsPad'>
+		{$item['image_link_popup']}<br />
+		<div class='reputation zero'>
+			<span class='number'><img src='{$this->settings['img_url']}/eco_images/money_dollar.png' /><span style='font-weight:bolder;font-size:1.3em'>{$this->registry->ecoclass->truncate($item['si_cost'], 10)}</span>
+		</div>
+	</div>
+	<div class='ipsPad'>
+			<p class='message user_status'>{$item['si_desc']}</p>
+		<div class='info'>			
+			<dl>
+				<dt>{$this->lang->words['current_inventory']}</dt>
+				<dd >{$item['si_inventory']}</dd>
+				<dt>{$this->lang->words['next_restock']}</dt>
+				<dd>{$item['si_restock_date']}</dd>
+				<dt>{$this->lang->words['item_limit']}</dt>
+				<dd>{$item['si_limit']}</dd>
+				<dt>{$this->lang->words['total_sold']}</dt>
+				<dd>{$item['si_sold']}</dd>
+			</dl>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>showShopItemCard</template_name>
+      <template_data><![CDATA[$item='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='vcard userpopup'>
+	<h3><a href="{$this->settings['base_url']}app=ibEconomy&amp;tab=invest&amp;area=single&amp;type=stock&amp;id={$stock['s_id']}">{$stock['s_title']} - {$stock['s_title_long']}</a></h3>	
+	<div class='side left ipsPad'>
+		{$stock['image_link_popup']}<br />
+		<div class='reputation zero'>
+			<span class='number'><img src='{$this->settings['img_url']}/eco_images/money_dollar.png' /><span style='font-weight:bolder;font-size:1.3em'>{$this->registry->ecoclass->truncate($stock['s_value'], 10)}</span>
+		</div>
+	</div>
+	<div class='ipsPad'>
+		<p class='message user_status'>{$this->registry->ecoclass->truncate($stock['desc'], 100)}</p>
+		<div class='info'>			
+			<dl>
+				<dt>{$this->lang->words['type']}</dt>
+				<dd >{$stock['s_type']}</dd>
+				<dt>{$this->lang->words['variable']}</dt>
+				<dd>{$stock['s_type_var']}</dd>
+				<dt>{$this->lang->words['subject']}</dt>
+				<dd>{$stock['s_type_var_value']}</dd>
+				<dt>{$this->lang->words['risk']}</dt>
+				<dd>{$stock['s_risk_level']}{$this->lang->words['%']}</dd>
+			</dl>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>showStockCard</template_name>
+      <template_data><![CDATA[$stock='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[	<form action='{$this->settings['base_url']}app=ibEconomy&amp;do=add_to_cart' method='post'>
+	<input type='hidden' name='item_id' value='stock_{$stock['s_id']}' />
+		<p class='message'><img src='{$this->settings['img_url']}/information.png' /> {$this->lang->words['description']}: {$stock['desc']}<br /><br />
+			<i>{$this->lang->words['risk']}:</i> <strong>{$stock['s_risk_level']}%</strong> - {$this->lang->words['risk_reward_exp']}<br /></p><br />
+		<ul class='ipsForm ipsForm_horizontal'>
+			<li class='ipsField'>{$this->lang->words['level_of_risk']}: <p style='margin-top:-11px;width:135px' class='progress_bar user_warn'  title='{$this->lang->words['level_of_risk']}: {$stock['s_risk_level']}%'>
+								<span style='width: {$stock['s_risk_level']}%'><span>{$this->lang->words['risk_level']}: {$stock['s_risk_level']}%</span></span></li>
+			<li class='ipsField'>
+				<label class='ipsField_title'>{$this->lang->words['number_shares']} <spanclass='ipsForm_required'>*</span></label>
+				<div class='ipsField_content'>
+					<input type="text" class='input_text' id='quantity' name="quantity" size="3" /><br />
+				</div>
+			</li>
+		</ul>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['add_to_cart']}' />
+	</fieldset>
+	</form>]]></template_content>
+      <template_name>stock_row</template_name>
+      <template_data><![CDATA[$stock='']]></template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='maintitle'>{$this->lang->words['using_item']}</div>
+<h3 class='bar' style='padding:3px;margin:0px'>{$item['si_title']} <a href='{$this->settings['base_url']}app=ibEconomy&amp;tab=shop&amp;area=single&amp;type=item&amp;id={$item['si_id']}' class='__item __id{$item['si_id']}__type_shopitem_Item' title='{$this->lang->words['view_further_details']}'><img src='{$this->settings['img_url']}/user_popup.png'></a></h3>
+<form method='post' enctype="multipart/form-data" action='{$this->settings['base_url']}app=ibEconomy&amp;tab=me&amp;area=using_shopitem&amp;when=now' onsubmit="return confirm('{$this->lang->words['confirm_item_use']}');">
+	<input type='hidden' name='do' value='save' />
+	<input type='hidden' name='secure_hash' value='{$this->member->form_hash}' />
+	<input type='hidden' name='id' value='{$item['si_id']}' />
+	<table class='ipb_table'>
+	<tr>
+		<td colspan='2'>
+			<div class='message' style='margin:10px'>
+				{$this->lang->words['item']} {$this->lang->words['description']}: {$item['si_desc']}
+			</div>
+		</td>
+	</tr>						
+	<if test="using_item_html:|:is_array( $item['html'] ) AND count( $item['html'] )">
+		<foreach loop="usingitemhtmlrows:$item['html'] as $itemHtml">
+			<tr>
+				<if test="$itemHtml['text'] && $itemHtml['inputs']">
+					<td style='text-align:left;font-weight:bold;padding-left:20px;'>
+						{$itemHtml['text']}
+					</td>
+					<td>
+						{$itemHtml['inputs']}
+					</td>
+				<else />
+					<td colspan='2'>
+						<if test="$itemHtml['text']">{$itemHtml['text']}<else />{$itemHtml['inputs']}</if>
+					</td>
+				</if>
+			</tr>
+		</foreach>
+	</if>
+	</table>
+	<fieldset class='submit'>
+		<input type='submit' class='input_submit' value='{$this->lang->words['use_item']}' />
+	</fieldset>	
+</form>
+
+<script type="text/javascript">
+document.observe("dom:loaded", function(){
+	var url = ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=';
+	new ipb.Autocomplete( $('mem_name1'), { multibox: false, url: url, templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+});
+</script>]]></template_content>
+      <template_name>usingItem</template_name>
+      <template_data>$item</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+    <template>
+      <template_group>skin_ibEconomy2</template_group>
+      <template_content><![CDATA[<div class='ipsBox'>
+	<form method='post' action='{$this->settings['base_url']}app=ibEconomy&amp;do=welfare_signup' onsubmit="return confirm('{$this->lang->words['confirm_welfare_signup']}');">		
+		<div class='ipsBox_container ipsPad'>
+			<div class='message' style='margin:10px'>
+				<img title = '{$this->lang->words['youre_not_on_welfare']}' src = '{$this->settings['img_url']}/cross.png' /> {$text}
+			</div><br />
+			<ul class='ipsForm ipsForm_vertical'>
+				<li class='ipsField'>
+					<label class='ipsField_title'>{$this->lang->words['sign_name_for_welfare']} <spanclass='ipsForm_required'>*</span></label><br /><br />
+					<div class='ipsField_content'>
+						<input type='text' size='20' name='signature' id='signature' /><br />
+					</div>
+				</li>				
+			</ul>
+		</div>
+		<fieldset class='submit'>
+			<input type='submit' class='input_submit' value='{$this->lang->words['sign_up']}' />
+		</fieldset>
+	</form>
+</div>]]></template_content>
+      <template_name>welfareApply</template_name>
+      <template_data>$text</template_data>
+      <template_updated>1252772654</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+    </template>
+  </templategroup>
+</templates>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mod_data>
+	<mod_info>
+		<title>(T23) Mass PM Groups</title>
+		<version>1.2.2</version>
+		<author>Terabyte</author>
+		<website>http://www.invisionbyte.net/</website>
+		<ipbver>2.3</ipbver>
+		<version_file>http://www.invisionbyte.net/check_version.xml</version_file>
+	</mod_info>
+	<components_group>
+		<component>
+			<com_title>(T23) Mass PM Groups</com_title>
+			<com_author>Terabyte</com_author>
+			<com_url>http://www.invisionbyte.net/</com_url>
+			<com_version>1.2.2</com_version>
+			<com_menu_data><![CDATA[a:2:{i:1;a:5:{s:9:"menu_text";s:13:"View Mass PMs";s:8:"menu_url";s:9:"code=view";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:4:"view";s:13:"menu_permlang";s:13:"View Mass PMs";}i:2;a:5:{s:9:"menu_text";s:14:"Create Mass PM";s:8:"menu_url";s:8:"code=new";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:3:"new";s:13:"menu_permlang";s:14:"Create Mass PM";}}]]></com_menu_data>
+			<com_enabled>0</com_enabled>
+			<com_safemode>1</com_safemode>
+			<com_section>t23_mpg</com_section>
+			<com_filename>t23_mpg</com_filename>
+			<com_description>A mod that allow you to send a PM to selected group(s)</com_description>
+			<com_url_title></com_url_title>
+			<com_url_uri></com_url_uri>
+		</component>
+	</components_group>
+	<tables_group>
+		<table>
+			<name>t23_mpg</name>
+			<data><![CDATA[pm_id int(10) NOT NULL auto_increment,
+				pm_subject varchar(255) NOT NULL default '',
+				pm_message mediumtext NOT NULL,
+				pm_groups text NOT NULL,
+				pm_options mediumtext NULL,
+				pm_date int(11) NOT NULL default '0',
+				pm_updated int(11) NOT NULL default '0',
+				pm_totalsent mediumint(11) NOT NULL default '0',
+				pm_msg_id int(11) NOT NULL default '0',
+				pm_override_block tinyint(1) NOT NULL default '0',
+				pm_override_full tinyint(1) NOT NULL default '0',
+				pm_myass_pop tinyint(1) NOT NULL default '0',
+				PRIMARY KEY  (pm_id)]]></data>
+			<type>MyISAM</type>
+		</table>
+	</tables_group>
+</mod_data>

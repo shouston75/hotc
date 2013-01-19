@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Tapatalk</hook_name>
+      <hook_desc>Tapatalk mobile app plugin for IPBoard</hook_desc>
+      <hook_author>QUOORD SYSTEM</hook_author>
+      <hook_email>admin@quoord.com</hook_email>
+      <hook_website>http://tapatalk.com/activate_tapatalk.php?plugin=ipb</hook_website>
+      <hook_update_check>http://tapatalk.com/v.php?sys=ip30</hook_update_check>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:1:{s:6:"forums";a:3:{s:8:"app_name";s:6:"Forums";s:11:"min_version";i:31003;s:11:"max_version";i:0;}}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>1.2.0</hook_version_human>
+      <hook_version_long>12001</hook_version_long>
+      <hook_extra_data><![CDATA[a:4:{s:7:"display";a:2:{s:8:"settings";s:234:"Setting groups: Tapatalk General, Tapatalk Rebranding<br />Settings: Advanved Delete Option, Allow Guest, Enable Tapatalk Notifier in Chrome, Enable Tapatalk Push Notification, Hide Forums, Tapatalk plugin directory, Tapatalk push key";s:8:"database";s:946:"CREATE TABLE tapatalk_users (<br />
+										  `userid` int(10) NOT NULL,  `ann` tinyint(1) NOT NULL DEFAULT '1',  `conv` tinyint(1) NOT NULL DEFAULT '1',  `sub` tinyint(1) NOT NULL DEFAULT '1',  `like` tinyint(1) NOT NULL DEFAULT '1',  `quote` tinyint(1) NOT NULL DEFAULT '1',  `newtopic` tinyint(1) NOT NULL DEFAULT '1',  `tag` tinyint(1) NOT NULL DEFAULT '1',  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  PRIMARY KEY (`userid`)<br />
+										) ENGINE=myisam<br />CREATE TABLE tapatalk_push_data (<br />
+										  `push_id` int(10) NOT NULL AUTO_INCREMENT,  `author` varchar(100) NOT NULL,  `user_id` int(10) NOT NULL,  `data_type` char(20) NOT NULL,  `title` varchar(200) NOT NULL,  `data_id` int(10) NOT NULL,  `create_time` int(10) NOT NULL,  PRIMARY KEY (`push_id`),  KEY `user_id` (`user_id`)<br />
+										) ENGINE=myisam<br />ALTER TABLE tapatalk_push_data ADD sub_id int(10) DEFAULT 0";}s:13:"settingGroups";a:2:{s:0:"";s:16:"tapatalk_general";i:1;s:8:"Tapatalk";}s:8:"settings";a:7:{s:0:"";s:22:"tapatalk_delete_option";i:1;s:19:"tapatalk_guest_okay";i:2;s:24:"tapatalk_chrome_notifier";i:3;s:13:"tapatalk_push";i:4;s:19:"tapatalk_hide_forum";i:5;s:18:"tapatalk_directory";i:6;s:17:"tapatalk_push_key";}s:8:"database";a:2:{s:6:"create";a:2:{i:0;a:3:{s:4:"name";s:14:"tapatalk_users";s:6:"fields";s:426:"  `userid` int(10) NOT NULL,  `ann` tinyint(1) NOT NULL DEFAULT '1',  `conv` tinyint(1) NOT NULL DEFAULT '1',  `sub` tinyint(1) NOT NULL DEFAULT '1',  `like` tinyint(1) NOT NULL DEFAULT '1',  `quote` tinyint(1) NOT NULL DEFAULT '1',  `newtopic` tinyint(1) NOT NULL DEFAULT '1',  `tag` tinyint(1) NOT NULL DEFAULT '1',  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  PRIMARY KEY (`userid`)";s:9:"tabletype";s:6:"myisam";}i:1;a:3:{s:4:"name";s:18:"tapatalk_push_data";s:6:"fields";s:285:"  `push_id` int(10) NOT NULL AUTO_INCREMENT,  `author` varchar(100) NOT NULL,  `user_id` int(10) NOT NULL,  `data_type` char(20) NOT NULL,  `title` varchar(200) NOT NULL,  `data_id` int(10) NOT NULL,  `create_time` int(10) NOT NULL,  PRIMARY KEY (`push_id`),  KEY `user_id` (`user_id`)";s:9:"tabletype";s:6:"myisam";}}s:5:"alter";a:1:{i:0;a:6:{s:9:"altertype";s:3:"add";s:5:"table";s:18:"tapatalk_push_data";s:5:"field";s:6:"sub_id";s:8:"newfield";s:6:"sub_id";s:9:"fieldtype";s:7:"int(10)";s:7:"default";s:1:"0";}}}}]]></hook_extra_data>
+      <hook_key>tapatalk</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>tapatalk_permissions.php</hook_file_real>
+      <hook_type>libraryHooks</hook_type>
+      <hook_classname>tapatalk_permissions</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:4:"core";s:15:"classToOverload";s:22:"classPublicPermissions";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class tapatalk_permissions extends (~extends~)
+{
+    protected function _help_check( $perm, $row, $otherMasks=array() )
+    {
+        if (defined('IN_MOBIQUO'))
+        {
+            global $mobiquo_config;
+            if ($perm == 'view' && isset($row['sub_can_post']) 
+                && isset($row['id']) && isset($mobiquo_config['hide_forum_id']) && is_array($mobiquo_config['hide_forum_id'])
+                && in_array($row['id'], $mobiquo_config['hide_forum_id']))
+            {
+                return false;
+            }
+        }
+        
+        return parent::_help_check( $perm, $row, $otherMasks );
+    }
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>tapatalk_detected_js.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>tapatalk_detected_js</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:12:"isSmallTouch";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class tapatalk_detected_js
+{
+    public function getOutput()
+    {
+    	$settings = ipsRegistry::$settings;
+        $board_url = $this->registry->output->isHTTPS ? $settings['board_url_https'] : $settings['board_url'];
+        $tapatalkdir = isset($settings['tapatalk_directory']) && !empty($settings['tapatalk_directory'])
+                       ? $settings['tapatalk_directory'] : 'mobiquo';
+        $jsfilename = 'tapatalkdetect';
+        $tapatalkdirset = "<script type='text/javascript'>
+        var tapatalkdir = '$tapatalkdir';
+        var tapatalk_ipad_msg = '{$settings['tapatalk_ipad_msg']}';
+        var tapatalk_ipad_url  = '{$settings['tapatalk_ipad_url']}';
+        var tapatalk_iphone_msg = '{$settings['tapatalk_iphone_msg']}';
+        var tapatalk_iphone_url  = '{$settings['tapatalk_iphone_url']}';
+        var tapatalk_android_msg = '{$settings['tapatalk_android_msg']}';
+        var tapatalk_android_url  = '{$settings['tapatalk_android_url']}';
+        var tapatalk_kindle_msg = '{$settings['tapatalk_kindle_msg']}';
+        var tapatalk_kindle_url  = '{$settings['tapatalk_kindle_url']}';
+        var tapatalk_chrome_enable = '{$settings['tapatalk_chrome_notifier']}';
+        </script>\n";
+        
+        return "{$tapatalkdirset}<script type='text/javascript' src='{$board_url}/{$tapatalkdir}/{$jsfilename}.js'></script>";
+    }
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>tapatalk_classPostForms.php</hook_file_real>
+      <hook_type>libraryHooks</hook_type>
+      <hook_classname>tapatalk_classPostForms</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:6:"forums";s:15:"classToOverload";s:14:"classPostForms";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+if (ipsRegistry::$applications['forums']['app_long_version'] < 33000)
+{
+    class tapatalk_classPostForms extends (~extends~)
+    {
+        public function sendOutQuoteNotifications( $post )
+        {
+            if ($this->settings['tapatalk_push']
+                && (function_exists('curl_init') || ini_get('allow_url_fopen'))
+                && file_exists( DOC_IPS_ROOT_PATH . $this->settings['tapatalk_directory'] . '/lib/class_push.php' )
+                && $this->DB->checkForTable( 'tapatalk_users' ))
+            {
+                $classToLoad    = IPSLib::loadLibrary( DOC_IPS_ROOT_PATH . $this->settings['tapatalk_directory'] . '/lib/class_push.php', 'tapatalk_push' );
+                $notifyLibrary  = new $classToLoad( $this->registry );
+                $notifyLibrary->notifyTag( $post );
+            }
+            else if($this->DB->checkForTable( 'tapatalk_users' ))
+            {
+            	$notifyLibrary->notifyTag( $post ,array(),false);
+            }
+            parent::sendOutQuoteNotifications( $post );
+        }
+    }
+}
+else
+{
+    class tapatalk_classPostForms extends (~extends~)
+    {
+        public function sendOutQuoteNotifications( $post, $subscriptionSentTo )
+        {
+            if ($this->settings['tapatalk_push']
+                && (function_exists('curl_init') || ini_get('allow_url_fopen'))
+                && file_exists( DOC_IPS_ROOT_PATH . $this->settings['tapatalk_directory'] . '/lib/class_push.php' )
+                && $this->DB->checkForTable( 'tapatalk_users' ))
+            {
+                $classToLoad    = IPSLib::loadLibrary( DOC_IPS_ROOT_PATH . $this->settings['tapatalk_directory'] . '/lib/class_push.php', 'tapatalk_push' );
+                $notifyLibrary  = new $classToLoad( $this->registry );
+                $notifyLibrary->notifyTag( $post, $subscriptionSentTo );
+            }
+            else if($this->DB->checkForTable( 'tapatalk_users' ))
+            {
+            	$notifyLibrary->notifyTag( $post, $subscriptionSentTo , false);
+            }
+            parent::sendOutQuoteNotifications( $post, $subscriptionSentTo );
+        }
+    }
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>tapatalk_notifications.php</hook_file_real>
+      <hook_type>libraryHooks</hook_type>
+      <hook_classname>tapatalk_notifications</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:4:"core";s:15:"classToOverload";s:13:"notifications";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class tapatalk_notifications extends (~extends~)
+{
+    static public $post = array();
+    static public $alreadyNotifiedUids = array();
+    
+    public function sendNotification()
+    {
+    	$push_status = false;
+    	if(!empty($this->settings['tapatalk_push']) && (function_exists('curl_init') || ini_get('allow_url_fopen'))
+            && file_exists( DOC_IPS_ROOT_PATH . $this->settings['tapatalk_directory'] . '/lib/class_push.php' ))
+    	{
+    		$push_status = true;
+    	}
+        if ( $this->DB->checkForTable( 'tapatalk_users' ))
+        {
+            $classToLoad    = IPSLib::loadLibrary( DOC_IPS_ROOT_PATH . $this->settings['tapatalk_directory'] . '/lib/class_push.php', 'tapatalk_push' );
+            $notifyLibrary  = new $classToLoad( $this->registry );
+            
+            $touids = array();
+            $recipients = empty( $this->_recipients ) ? array( $this->_member ) : $this->_recipients;
+            
+            foreach ( $recipients as $r )
+            {
+                if ( is_array( $r ) )
+                {
+                    if( $r['member_banned'] || ! $r['member_id']) continue;
+                    if (in_array($r['member_id'], self::$alreadyNotifiedUids)) continue;
+                    $touids[] = $r['member_id'];
+                    self::$alreadyNotifiedUids[] = $r['member_id'];
+                }
+            }
+            
+            if (!empty($touids))
+            {
+                switch ($this->_notificationKey)
+                {
+                    case 'new_likes':
+                        if ($this->request['type'] == 'pid')
+                        {
+                            $postid = intval( $this->request['type_id'] );
+                            $post = $this->registry->getClass('topics')->getPostById( $postid );
+                            $notifyLibrary->notifyPost( $post, $touids, 'like' ,$push_status);
+                        }
+                        break;
+                    case 'new_reply':
+                    case 'followed_topics':
+                        $notifyLibrary->notifyPost( $this->getCurrentPost(), $touids, 'sub' ,$push_status);
+                        break;
+                    case 'post_quoted':
+                        // user got tag notification don't need to get quoted notification again
+                        $touids = array_diff($touids, $notifyLibrary->getTagUids());
+                        $notifyLibrary->notifyPost( $this->getCurrentPost(), $touids, 'quote' ,$push_status);
+                        break;
+                    case 'new_private_message':
+                    case 'reply_private_message':
+                        $msg_topic_id = $this->_metaData['meta_id'];
+                        if (empty($msg_topic_id))
+                        {
+                            preg_match('/topicID=(\d+)/', $this->_notificationUrl, $match);
+                            $msg_topic_id = $match[1];
+                        }
+                        
+                        if ($msg_topic_id)
+                        {
+                            $GLOBALS['new_conv_id'] = $msg_topic_id;
+                            $convData = $this->DB->buildAndFetch( array( 'select' => '*',
+                                                                         'from'   => 'message_topics',
+                                                                         'where'  => 'mt_id=' . intval( $msg_topic_id ) ) );
+                            $notifyLibrary->notifyConv( $convData, $touids ,'conv',$push_status);
+                        }
+                        break;
+                    case 'new_topic':
+                    case 'followed_forums':
+                        $notifyLibrary->notifyPost( $this->getCurrentPost(), $touids, 'newtopic',$push_status);
+                        break;
+                }
+            }
+        }
+
+        parent::sendNotification( $post, $subscriptionSentTo );
+    }
+    
+    public function getCurrentPost()
+    {
+        if (empty(self::$post))
+        {
+            if ($this->request['t'])
+            {
+                $topic_id = intval( $this->request['t'] );
+                $topic = $this->DB->buildAndFetch( array( 'select' => '*', 'from' => 'topics', 'where' => 'tid=' . $topic_id ) );
+                $post = $this->DB->buildAndFetch( array(
+                                                        'select'    => '*',
+                                                        'from'      => 'posts',
+                                                        'where'     => 'topic_id=' . $topic_id . ' and author_id=' . $this->memberData['member_id'],
+                                                        'order'     => 'post_date desc',
+                                                        'limit'     => array( 1 ) ));
+                self::$post = array(
+                    'topic_id'  => $topic_id,
+                    'title'     => $topic['title'],
+                    'pid'       => $post['pid'],
+                    'post_date' => $post['post_date'],
+                );
+            }
+            else if ($this->request['f'])
+            {
+                $forum_id = intval( $this->request['f'] );
+                $topic = $this->DB->buildAndFetch( array(
+                                                        'select'    => '*',
+                                                        'from'      => 'topics',
+                                                        'where'     => 'forum_id=' . $forum_id . ' and starter_id=' . $this->memberData['member_id'],
+                                                        'order'     => 'start_date desc',
+                                                        'limit'     => array( 1 ) ));
+                self::$post = array(
+                    'topic_id'  => $topic['tid'],
+                    'title'     => $topic['title'],
+                    'pid'       => 0,
+                    'post_date' => $topic['start_date'],
+                );
+            }
+        }
+        
+        return self::$post;
+    }
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_title>Tapatalk Rebranding</conf_title_title>
+      <conf_title_desc>Tapatalk options</conf_title_desc>
+      <conf_title_noshow>0</conf_title_noshow>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_tab>Tapatalk</conf_title_tab>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_title>Tapatalk General</conf_title_title>
+      <conf_title_desc>Tapatalk Options</conf_title_desc>
+      <conf_title_noshow>0</conf_title_noshow>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_tab>Tapatalk</conf_title_tab>
+    </setting>
+    <setting>
+      <conf_id>339</conf_id>
+      <conf_title>Android Product Message</conf_title>
+      <conf_description>Customize this message if you are Tapatalk Rebranding Customer and has published your App to Google Play</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>tapatalk_android_msg</conf_key>
+      <conf_value/>
+      <conf_default>This forum has an app for Android. Click OK to learn more about Tapatalk.</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>340</conf_id>
+      <conf_title>Android Product URL</conf_title>
+      <conf_description>Change this URL if you are Tapatalk Rebranding Customer and has obtained your App URL from Google Play</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tapatalk_android_url</conf_key>
+      <conf_value/>
+      <conf_default>market://details?id=com.quoord.tapatalkpro.activity</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>325</conf_id>
+      <conf_title>Enable Tapatalk Notifier in Chrome</conf_title>
+      <conf_description><![CDATA[Users of your forum on Chome will be notified with 'Tapatalk Notifier'. Tapatalk Notifier for Chrome is a web browser extension that notify you with a small alert when you received a new Private Message from your forum members.]]></conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tapatalk_chrome_notifier</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>326</conf_id>
+      <conf_title>Advanved Delete Option</conf_title>
+      <conf_description>Enable hard delete post and topic for authorized user.</conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tapatalk_delete_option</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>327</conf_id>
+      <conf_title>Tapatalk plugin directory</conf_title>
+      <conf_description><![CDATA[Never change it if you did not rename the Tapatalk plugin directory. And the default value is 'mobiquo'. If you renamed the Tapatalk plugin directory, you also need to update the same setting for this forum in tapatalk forum owner area.（http://tapatalk.com/landing.php）]]></conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tapatalk_directory</conf_key>
+      <conf_value/>
+      <conf_default>mobiquo</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>334</conf_id>
+      <conf_title>Forum Read Only</conf_title>
+      <conf_description><![CDATA[Set forums you don't want to user have a new topic]]></conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>tapatalk_forum_read</conf_key>
+      <conf_value/>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+        if ( is_array($_POST['tapatalk_forum_read']) )
+	{
+		$_POST['tapatalk_forum_read'] = implode(",",$_POST['tapatalk_forum_read']);
+	}
+	else
+	{
+		$_POST['tapatalk_forum_read'] = "";
+	}
+	$key = 'tapatalk_forum_read';
+}
+if ( $show == 1 )
+{
+$key = 'tapatalk_forum_read[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>328</conf_id>
+      <conf_title>Allow Guest</conf_title>
+      <conf_description>Allow guest to browser your the on tapatalk. If forum was closed for guest, this setting will not work.</conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tapatalk_guest_okay</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>329</conf_id>
+      <conf_title>Hide Forums</conf_title>
+      <conf_description><![CDATA[Hide forums you don't want them to be listed in Tapatalk app.]]></conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>tapatalk_hide_forum</conf_key>
+      <conf_value/>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['tapatalk_hide_forum']) )
+	{
+		$_POST['tapatalk_hide_forum'] = implode(",",$_POST['tapatalk_hide_forum']);
+	}
+	else
+	{
+		$_POST['tapatalk_hide_forum'] = "";
+	}
+	
+	$key = 'tapatalk_hide_forum';
+}
+if ( $show == 1 )
+{
+$key = 'tapatalk_hide_forum[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>335</conf_id>
+      <conf_title>iPad Product Message</conf_title>
+      <conf_description>Customize this message if you are Tapatalk Rebranding Customer and has published your App to Apple App Store</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>tapatalk_ipad_msg</conf_key>
+      <conf_value/>
+      <conf_default>This forum has an app for iPad! Click OK to learn more about Tapatalk.</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>336</conf_id>
+      <conf_title>iPad Product URL</conf_title>
+      <conf_description>Change this URL if you are Tapatalk Rebranding Customer and has obtained your App URL from Apple App Store</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tapatalk_ipad_url</conf_key>
+      <conf_value/>
+      <conf_default>http://itunes.apple.com/us/app/tapatalk-hd-for-ipad/id481579541?mt=8</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>337</conf_id>
+      <conf_title>iPhone Product Message</conf_title>
+      <conf_description>Customize this message if you are Tapatalk Rebranding Customer and has published your App to Apple App Store</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>tapatalk_iphone_msg</conf_key>
+      <conf_value/>
+      <conf_default>This forum has an app for iPhone ! Click OK to learn more about Tapatalk.</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>338</conf_id>
+      <conf_title>iPhone Product URL</conf_title>
+      <conf_description>Change this URL if you are Tapatalk Rebranding Customer and has obtained your App URL from Apple App Store</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tapatalk_iphone_url</conf_key>
+      <conf_value/>
+      <conf_default>http://itunes.apple.com/us/app/tapatalk-forum-app/id307880732?mt=8</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>341</conf_id>
+      <conf_title>Kindle Fire Product Message</conf_title>
+      <conf_description>Customize this message if you are Tapatalk Rebranding Customer and has published your App to Amazon App Store</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>tapatalk_kindle_msg</conf_key>
+      <conf_value/>
+      <conf_default>This forum has an app for Kindle Fire! Click OK to learn more about Tapatalk.</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>342</conf_id>
+      <conf_title>Kindle Fire Product URL</conf_title>
+      <conf_description>Change this URL if you are Tapatalk Rebranding Customer and has obtained your App URL from Amazon App Store</conf_description>
+      <conf_group>37</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tapatalk_kindle_url</conf_key>
+      <conf_value/>
+      <conf_default>http://www.amazon.com/gp/mas/dl/android?p=com.quoord.tapatalkpro.activity</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>Tapatalk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>330</conf_id>
+      <conf_title>Enable Tapatalk Push Notification</conf_title>
+      <conf_description><![CDATA[Tapatalk users will get push notification when it's enabled.]]></conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tapatalk_push</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>331</conf_id>
+      <conf_title>Tapatalk push key</conf_title>
+      <conf_description><![CDATA[Push Key helps us to verify the origin of push notification requests we received from your server, you can obtain this value from Tapatalk Forum Owner Area. This field is optional but very helpful to make sure your requests are delivered to your member's mobile devices.]]></conf_description>
+      <conf_group>36</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tapatalk_push_key</conf_key>
+      <conf_value/>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tapatalk_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </hookextras_settings>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create>
+    <create>
+      <name>tapatalk_users</name>
+      <fields><![CDATA[  `userid` int(10) NOT NULL,  `ann` tinyint(1) NOT NULL DEFAULT '1',  `conv` tinyint(1) NOT NULL DEFAULT '1',  `sub` tinyint(1) NOT NULL DEFAULT '1',  `like` tinyint(1) NOT NULL DEFAULT '1',  `quote` tinyint(1) NOT NULL DEFAULT '1',  `newtopic` tinyint(1) NOT NULL DEFAULT '1',  `tag` tinyint(1) NOT NULL DEFAULT '1',  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  PRIMARY KEY (`userid`)]]></fields>
+      <tabletype>myisam</tabletype>
+    </create>
+    <create>
+      <name>tapatalk_push_data</name>
+      <fields>  `push_id` int(10) NOT NULL AUTO_INCREMENT,  `author` varchar(100) NOT NULL,  `user_id` int(10) NOT NULL,  `data_type` char(20) NOT NULL,  `title` varchar(200) NOT NULL,  `data_id` int(10) NOT NULL,  `create_time` int(10) NOT NULL,  PRIMARY KEY (`push_id`),  KEY `user_id` (`user_id`)</fields>
+      <tabletype>myisam</tabletype>
+    </create>
+  </hookextras_database_create>
+  <hookextras_database_alter>
+    <alter>
+      <altertype>add</altertype>
+      <table>tapatalk_push_data</table>
+      <field>sub_id</field>
+      <newfield>sub_id</newfield>
+      <fieldtype>int(10)</fieldtype>
+      <default>0</default>
+    </alter>
+  </hookextras_database_alter>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

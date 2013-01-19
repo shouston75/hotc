@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<export>
+  <group>
+    <row>
+      <task_id>20</task_id>
+      <task_title>ibEconomy Bank Interest</task_title>
+      <task_file>bank_interest.php</task_file>
+      <task_next_run>1252465200</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>3</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>c118c821369041cb3df2cc46387e3754</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Adds interest for savings accounts for ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>bank_interest</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>21</task_id>
+      <task_title>ibEconomy Credit-Card APR/Fees</task_title>
+      <task_file>cc_balance.php</task_file>
+      <task_next_run>1252468800</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>4</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>bcd23dc84742fa84244b5969675b59a0</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Adds APR interest to card balances and charges any late-fees for ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>cc_balance</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>22</task_id>
+      <task_title>ibEconomy Long-Term Value Adjustments</task_title>
+      <task_file>lt_value.php</task_file>
+      <task_next_run>1252461600</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>2</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>c89837f8993c6c81c783c28f2101898f</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Adjusts the value of long-term investment assets for ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>lt_value</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>23</task_id>
+      <task_title>ibEconomy Stock Price Adjustments</task_title>
+      <task_file>stock_value.php</task_file>
+      <task_next_run>1252676940</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>15</task_minute>
+      <task_cronkey>1e4681539544c666d0da2395a4c86048</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Adjusts the current stock share price for ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>stock_value</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>24</task_id>
+      <task_title>ibEconomy Loan Interest</task_title>
+      <task_file>loan_interest.php</task_file>
+      <task_next_run>1252454400</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>0</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>dc041d5b84fcd7bf56729d1cc37fcefb</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Adds APR interest to outstanding loan balances for ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>loan_interest</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>25</task_id>
+      <task_title>ibEconomy Loan Penalty</task_title>
+      <task_file>loan_penalty.php</task_file>
+      <task_next_run>1252458000</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>1</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>54b44ad81d3064a0e04a57d50380e061</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Adds past-due penalties to loan balances for ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>loan_penalty</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>27</task_id>
+      <task_title>ibEconomy Welfare Check Handouts</task_title>
+      <task_file>welfare_checks.php</task_file>
+      <task_next_run>1252738800</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>7</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>bddf1d059584a1a45e73a10887d278bf</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Disperses welfare checks to the needy for ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>welfare_checks</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>28</task_id>
+      <task_title><![CDATA[Recalculate ibEconomy Member&#39;s Worth]]></task_title>
+      <task_file>member_worth.php</task_file>
+      <task_next_run>1252429200</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>17</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>c8b1f4d376e36312787e39e876589142</task_cronkey>
+      <task_log>1</task_log>
+      <task_description><![CDATA[Sum each member&#39;s total worth and update each for ibEconomy]]></task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>member_worth</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>29</task_id>
+      <task_title>ibEconomy Cleanup</task_title>
+      <task_file>cleanup.php</task_file>
+      <task_next_run>1252801800</task_next_run>
+      <task_week_day>0</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>0</task_hour>
+      <task_minute>30</task_minute>
+      <task_cronkey>7a01ef7f54132b94f992e6f245d287d6</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Deletes orphaned portfolio assets (items owned by now-deleted members)</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>cleanup</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>30</task_id>
+      <task_title>ibEconomy Shop Item Restocking</task_title>
+      <task_file>shopitem_restock.php</task_file>
+      <task_next_run>1252749600</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>10</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>c99a3f44afafd9d97f3500d66d0a2352</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Restocks shop items in ibEconomy</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>shopitem_restock</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>
+    <row>
+      <task_id>31</task_id>
+      <task_title>ibEconomy Lottery</task_title>
+      <task_file>lottery.php</task_file>
+      <task_next_run>1252749600</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>5</task_minute>
+      <task_cronkey>c99a3f44afafd9d97f3500d66d0a2353</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Ends current lottery and start next one</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>lottery</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>ibEconomy</task_application>
+    </row>	
+  </group>
+</export>

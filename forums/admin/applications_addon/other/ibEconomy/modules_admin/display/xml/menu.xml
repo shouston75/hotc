@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Sidebar Blocks</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Blocks</subitemtitle>
+					<subsection>display</subsection>
+					<subitemurl>do=blocks</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>		
+		<item>
+			<title>Display Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Display Settings</subitemtitle>
+					<subsection>display</subsection>
+					<subitemurl>do=display_settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

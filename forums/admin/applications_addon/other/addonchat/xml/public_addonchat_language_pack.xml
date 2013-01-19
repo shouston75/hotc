@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>addonchat</word_app>
+      <word_pack>public_addonchat</word_pack>
+      <word_key>addonchat_wcb_title_paren</word_key>
+      <word_default>(in the past 5 minutes)</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>addonchat</word_app>
+      <word_pack>public_addonchat</word_pack>
+      <word_key>addonchat_wcb_title</word_key>
+      <word_default>User(s) active in chat room</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>addonchat</word_app>
+      <word_pack>public_addonchat</word_pack>
+      <word_key>addonchat_title</word_key>
+      <word_default>Chat Room</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>addonchat</word_app>
+      <word_pack>public_addonchat</word_pack>
+      <word_key>addonchat_err_noperm</word_key>
+      <word_default>You are not permitted to enter this chat room.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+  </languagegroup>
+</languageexport>

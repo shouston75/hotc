@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_title_title>AddonChat</conf_title_title>
+      <conf_title_desc>Configure your AddonChat account and forum integration settings.</conf_title_desc>
+      <conf_title_tab>AddonChat</conf_title_tab>
+      <conf_title_app>addonchat</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Account ID</conf_title>
+      <conf_description><![CDATA[Enter your AddonChat Account ID. Enter the numeric portion only, do not enter the 'SC-' prefix.]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>addonchat_account_id</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if($save==1) {
+   $value = $_POST['addonchat_account_id'] = preg_replace("/[^0-9+]/", "", $_POST['addonchat_account_id']); 
+
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Account Details</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Account Password</conf_title>
+      <conf_description>Enter your AddonChat customer account password</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>addonchat_login_md5pass</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Remote Authentication</conf_title>
+      <conf_description>Professional PLUS or Enterprise account required</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_ras_enabled</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Perform Automated Setup</conf_title>
+      <conf_description>When set to Yes, your Advanced Settings will be automatically configured, and your Remote Authentication settings will be automatically configured in your AddonChat control panel. </conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_configure</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( ($save==1) && $_POST['addonchat_configure']==1) {
+
+   function _addonchat_geturl($rlink) {
+      $rlink = trim($rlink);
+
+      if(ini_get('allow_url_fopen') == 0)
+      {
+         if(!function_exists('curl_init'))
+            return FALSE;
+
+         else
+         {
+            $ch = curl_init($rlink);
+            curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($ch, CURLOPT_HEADER, FALSE);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            curl_setopt($ch, CURLOPT_FAILONERROR, TRUE);
+            curl_setopt($ch, CURLOPT_MAXREDIRS, 2);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, 5000);
+            curl_setopt($ch, CURLOPT_DNS_CACHE_TIMEOUT, 86400);
+
+            if( ($result = curl_exec($ch)) === FALSE)
+               return FALSE;
+
+            curl_close($ch);
+
+            $lines = split("\n", $result);
+
+            // Lets ditch the empty lines here...
+            $new_lines = array();
+            foreach($lines as $linecheck)
+            {
+               if(trim($linecheck)=="") {}
+               else
+                  $new_lines[] = $linecheck . "\n";
+            }
+
+            return $new_lines;
+         }
+      }
+      else
+         return file($rlink);
+   }
+
+   /* Retrieve Settings */
+   $dl = _addonchat_geturl("http://clientx.addonchat.com/queryaccount.php?id=" .
+      intval($_POST['addonchat_account_id']) .
+      "&md5pw=" .
+      urlencode($_POST['addonchat_login_md5pass']));
+
+   if($dl !== FALSE) {
+
+      $_POST['addonchat_server_port'] = intval($dl[8]);
+      $_POST['addonchat_server_name'] = trim($dl[7]);
+
+
+      /* Set or unset RAUTH */
+      if($_POST['addonchat_ras_enabled']==1) {
+         $remote_link = "http://clientx.addonchat.com/setras.php?id=" . intval($_POST['addonchat_account_id']) .
+            "&md5pw=" . urlencode($_POST['addonchat_login_md5pass']) .
+            "&rasurl=" . urlencode($_POST['addonchat_ras_url']);
+         _addonchat_geturl($remote_link);
+      }
+      else {
+         $remote_link = "http://clientx.addonchat.com/setras.php?id=" . intval($_POST['addonchat_account_id']) .
+            "&md5pw=" . urlencode($_POST['addonchat_login_md5pass']) . "&unset=1";
+         _addonchat_geturl($remote_link);
+      }
+   }
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Use Digitally Signed Applet?</conf_title>
+      <conf_description>Use the digitally signed applet to take full advantage of all AddonChat features.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_signed</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>General Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Language</conf_title>
+      <conf_description>Specify the chat interface language you would like to use.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>addonchat_language</conf_key>
+      <conf_default>en</conf_default>
+      <conf_extra><![CDATA[ar=Arabic
+bs=Bosnian
+bg=Bulgarian
+cz=Czech
+da=Danish
+nl=Dutch (Formal)
+nl_i=Dutch (Informal)
+en_uk=English (United Kingdom)
+en=English (United States)
+fr=French
+de=German (Formal)
+de_i=German (Informal)
+fi=Finnish
+he=Hebrew
+hu=Hungarian
+it=Italian
+jp=Japanese
+pl=Polish
+pt_br=Portuguese
+ru=Russian
+sl=Slovenian
+es_mx=Spanish (Mexico)
+es_pe=Spanish (Peru)
+es_es=Spanish (Spain)
+sv=Swedish
+tr=Turkish [1]
+tr2=Turkish [2]]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Width (Embedded)</conf_title>
+      <conf_description>Chat room width (in pixels or percentage value), when embedded on forum page.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>addonchat_width</conf_key>
+      <conf_default>100%</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group><![CDATA[Width &amp; Height]]></conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Height (Embedded)</conf_title>
+      <conf_description>Chat room height (in pixels) when embedded on forum page.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>addonchat_height</conf_key>
+      <conf_default>480</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Automatic Login</conf_title>
+      <conf_description>Automatically log users into the chat room using their forum display name.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_autologin</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group>Forum Integration</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Avatar Integration</conf_title>
+      <conf_description>When possible, use IP.Board user avatars within the chat room. Requires AddonChat Avatar module.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_ipbavatar</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Photo Integration</conf_title>
+      <conf_description>When enabled, IP.Board user profile photos will be used as chat room avatars. If IP.Board avatar integration is also enabled, IPB photos will be shown as chat avatars in place if IPB avatars, when possible.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_ipbphoto</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>0</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>addonchat,avatar,photo</conf_keywords>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Enable Who&#39;s Chatting Feature]]></conf_title>
+      <conf_description><![CDATA[Select Yes to enable the AddonChat Who's Chatting system. Professional, Professional PLUS, or Enterprise edition required.]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_wc_enable</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Profile Integration</conf_title>
+      <conf_description>Enable right-click access to IP.Board user profiles from within chat room?</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_ipbprofile</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Unregistered Guest Access</conf_title>
+      <conf_description>Specify whether or not you would like to permit unregistered users (guests) to access your chat room. This setting only applies when using remote authentication.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>addonchat_ras_guest</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Assigned Server</conf_title>
+      <conf_description>Specify your assigned AddonChat server.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>addonchat_server_name</conf_key>
+      <conf_default>client0.addonchat.com</conf_default>
+      <conf_extra>client0.addonchat.com=client0.addonchat.com&#13;
+client1.addonchat.com=client1.addonchat.com&#13;
+client2.addonchat.com=client2.addonchat.com&#13;
+client3.addonchat.com=client3.addonchat.com&#13;
+client4.addonchat.com=client4.addonchat.com&#13;
+client5.addonchat.com=client5.addonchat.com&#13;
+client6.addonchat.com=client6.addonchat.com&#13;
+client7.addonchat.com=client7.addonchat.com&#13;
+client8.addonchat.com=client8.addonchat.com&#13;
+client9.addonchat.com=client9.addonchat.com&#13;
+client10.addonchat.com=client10.addonchat.com&#13;
+client11.addonchat.com=client11.addonchat.com&#13;
+client12.addonchat.com=client12.addonchat.com&#13;
+client13.addonchat.com=client13.addonchat.com&#13;
+client14.addonchat.com=client14.addonchat.com&#13;
+client15.addonchat.com=client15.addonchat.com&#13;
+client16.addonchat.com=client16.addonchat.com&#13;
+client17.addonchat.com=client17.addonchat.com&#13;
+client18.addonchat.com=client18.addonchat.com&#13;
+client19.addonchat.com=client19.addonchat.com&#13;
+client20.addonchat.com=client20.addonchat.com&#13;
+client21.addonchat.com=client21.addonchat.com&#13;
+client22.addonchat.com=client22.addonchat.com&#13;
+client23.addonchat.com=client23.addonchat.com&#13;
+client24.addonchat.com=client24.addonchat.com&#13;
+client25.addonchat.com=client25.addonchat.com&#13;
+client26.addonchat.com=client26.addonchat.com&#13;
+client27.addonchat.com=client27.addonchat.com&#13;
+client28.addonchat.com=client28.addonchat.com&#13;
+client29.addonchat.com=client29.addonchat.com&#13;
+client30.addonchat.com=client30.addonchat.com&#13;
+betaclient.addonchat.com=betaclient.addonchat.com</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group>Advanced Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Assigned Port</conf_title>
+      <conf_description><![CDATA[Specify your chat server port (necessary for Who's Chatting integration)]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>addonchat_server_port</conf_key>
+      <conf_default>8000</conf_default>
+      <conf_extra>8000=TCP 8000&#13;
+8001=TCP 8001&#13;
+8002=TCP 8002&#13;
+8003=TCP 8003&#13;
+8004=TCP 8004&#13;
+8005=TCP 8005&#13;
+8006=TCP 8006&#13;
+8007=TCP 8007&#13;
+8008=TCP 8008&#13;
+8009=TCP 8009&#13;
+8080=TCP 8080</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote Authentication URL</conf_title>
+      <conf_description>You may specify the location to your acauth.php file here. In most cases, this setting is configured automatically.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>addonchat_ras_url</conf_key>
+      <conf_default>http://</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( ($save==1) && ($_POST['addonchat_ras_url']=="http://") ) {
+$_POST['addonchat_ras_url'] = ipsRegistry::$settings['board_url'] . "/acauth.php";
+}
+else if( ($show==1) && ($value=="http://") ) {
+$value = ipsRegistry::$settings['board_url'] . "/acauth.php";
+}
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>addonchat</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

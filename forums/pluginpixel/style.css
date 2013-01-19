@@ -1,0 +1,77 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font: 13px/150% "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", "Tahoma", "Verdana", "Arial";
+}
+a {
+	text-decoration: none;
+	color: #7B68EE;
+}
+a:hover {
+	text-decoration: underline;
+}
+input {
+	background: #F5F5F5;
+}
+#wrapper {
+	margin: 0px auto;
+	width: 770px;	
+}
+#header {
+	border-bottom: 2px solid #7B68EE; 
+}
+#logo {
+	background: url(images/logopixel.png) no-repeat;
+	height: 40px;
+	width: 131px;
+}
+.titlehead {
+	font-size: 150%;
+	font-weight: bolder;
+	padding: 20px 10px;
+	margin: 0px;
+	display: block;
+}
+.content {
+	padding: 8px;
+}
+.process {
+	text-align: center;
+	padding: 10px;
+	
+}
+.centerbox {
+	border: #7B68EE 1px dashed;
+	width: 500px;
+	margin: 20px auto 100px auto;
+}
+.centerbox .boxhead{
+	background: #C1C1C1;
+	border: solid 0px white;
+}
+.centerbox .maintitle {
+	font-size: 14px;
+	font-weight: bolder;
+	color: #7B68EE;
+	letter-spacing: 1px;
+	margin: 4px;
+	padding: 4px;
+}
+.centerbox .maincontent {
+	margin: 4px;
+	padding: 4px;
+}
+.warning {
+	border: #DC143C;
+}
+.warning .maintitle{
+	color: #DC143C;
+}
+#footer {
+	font-size: 10px;
+	font-weight: normal;
+	font-family: verdana;
+	line-height: 130%;
+	text-align: center;
+	border-top: 1px solid #7B68EE; 
+}

@@ -1,0 +1,87 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#
+#
+#  Syntax :
+#    Comments begin with the # character. This character must be the first character of the line.
+#    A data line has three parts : the data id, the data id description, the data string.
+#      - Data id : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description is not parsed and
+#                           can be any string.
+#      - Data string : The string itself. Parameters are specified using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Er ikke på en kanal
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : ukjent DCC kommando
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : mangler parametere
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : kunne ikke utføre operasjoner her
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] Kunne ikke sende CTCP koder via DCC Chat
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : ukjent konfigureringskommando
+0007 [INTERPRETOR_TIMESTAMP_ON] Klokke aktivert
+0008 [INTERPRETOR_TIMESTAMP_OFF] Klokke deaktivert
+0009 [INTERPRETOR_SMILEYS_ON] Grafiske smilefjes aktivert
+000a [INTERPRETOR_SMILEYS_OFF] Grafiske smilefjes deaktivert
+000b [INTERPRETOR_IGNORE_ON] Du ignorerer nå %1
+000c [INTERPRETOR_IGNORE_OFF] Du ignorerer ikke lenger %1
+000d [INTERPRETOR_MULTISERVER_DISABLED] Støtte for flere server er deaktivert
+  
+0101 [DCC_WAITING_INCOMING] Venter på innkommende tilkobling...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Kunne ikke åpne tilkoblingen : %1
+0103 [DCC_CONNECTION_ESTABLISHED] DCC-forbindelse aktivert
+0104 [DCC_CONNECTION_CLOSED] DCC-forbindelse brutt
+0105 [DCC_ERROR] Feilmelding : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : kunne ikke sende til %2
+0107 [DCC_BAD_CONTEXT] Kunne ikke utføre kommando
+0108 [DCC_NOT_CONNECTED] Ikke tilkoblet
+0109 [DCC_UNABLE_PASSIVE_MODE] Kunne ikke aktivere passiv modus
+010a [CTCP_PING_REPLY] [%1 PING svar] : %2 sekunder
+010b [DCC_STREAM_CLOSED] Forbindelse brutt
+      
+0201 [IDENT_FAILED_LAUNCH] Kunne ikke starte Ident-server : %1
+0202 [IDENT_REQUEST] Identforespørsel fra %1
+0203 [IDENT_ERROR] Feilmelding oppstått
+0204 [IDENT_REPLIED] Svarte %1
+0205 [IDENT_DEFAULT_USER] vanlig bruker
+0206 [IDENT_NO_USER] Ingen bruker i forespørselen
+0207 [IDENT_RUNNING_ON_PORT] Ident-serveren kjører nå på port %1
+0208 [IDENT_LEAVING] Ident-serveren forlater : %1
+0209 [IDENT_NONE] ingen
+020a [IDENT_UNKNOWN] ukjent
+020b [IDENT_UNDEFINED] ukjent resultat
+      
+0301 [FILE_SAVEAS] Lagre fil som
+      
+0401 [ABOUT_ABOUT] Om
+0402 [ABOUT_PROGRAMMING] Programmering
+0403 [ABOUT_DESIGN] Design
+0404 [ABOUT_THANKS] Takk til
+0405 [ABOUT_SUPPORT] for støtte, ideer og testing
+0406 [ABOUT_GPL] Programvaren er lisensiert under GPL-lisensen
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Kunne ikke koble til : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Kunne ikke koble til %1 : prøver istedet å koble til %2
+0503 [SERVER_DISCONNECTING] Kobler fra %1
+0504 [SERVER_CONNECTING] Kobler til...
+0505 [SERVER_NOT_CONNECTED] Ikke tilkoblet
+0506 [SERVER_LOGIN] Logger inn...
+0507 [SERVER_DISCONNECTED] Koblet fra %1
+0508 [SERVER_ERROR] Feilmelding : %1
+     
+      
+071a [GUI_CHANGE_NICK] Endre kallenavn til
+071b [GUI_COPY_WINDOW] Kopier tekst
+
+0801 [ASL_MALE] Mann, %1 år gammel, %2
+0802 [ASL_FEMALE] Kvinne, %1 år gammel, %2
+0803 [ASL_UNKNOWN] %1 år gammel fra %2
+
+ffff [ERROR_NOT_DEFINED] Udefinert streng

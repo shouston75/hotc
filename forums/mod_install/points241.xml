@@ -1,0 +1,1640 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mod_data>
+	<mod_info>
+		<title>iPoints System</title>
+		<version>2.4.1</version>
+		<author>-Calypso-</author>
+		<website>http://www.invisiontweaks.com</website>
+        <ipbver>2.3</ipbver>
+	</mod_info>
+	<sections_group>
+		<section>
+			<conf_title_title>Points System</conf_title_title>
+			<conf_title_desc>Settings for the Points system</conf_title_desc>
+			<conf_title_noshow>0</conf_title_noshow>
+			<conf_title_keyword>points</conf_title_keyword>
+		</section>
+	</sections_group>
+	<settings_group>
+		<setting>
+			<conf_title>System On?</conf_title>
+			<conf_description><![CDATA[Very Simple.<br />
+<span style='color:green'>ON</span> = Yes<br />
+<span style='color:red'>OFF</span> = No]]></conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>points_on</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>1</conf_position>
+			<conf_start_group>iPoints Administration</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>PM Reciever on Transaction</conf_title>
+			<conf_description>If on, person on the recieving hand of a transaction will recieve a pm notification.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>points_pm</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>2</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>PM Member On Edited Points?</conf_title>
+			<conf_description>Send A PM To The Member That Has Had Their Points Edited Through The iPoints System?</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>points_edit_pm</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>3</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Donations On?</conf_title>
+			<conf_description>Turn the donation portion of the system off. If this is set to  no, no one can donate to anyone else.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>donate_on</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>4</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Bank System On/Off</conf_title>
+			<conf_description>The bank system that is built in and whether it should be on or not</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>points_bank</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>5</conf_position>
+			<conf_start_group>Bank</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Intrest Rate</conf_title>
+			<conf_description>Rate of interest for points in the bank.</conf_description>
+			<conf_group>0</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>points_irate</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra>0=0%
+1=1%
+2=2%
+3=3%
+4=4%
+5=5%
+6=6%
+7=7%
+8=8%
+9=9%
+10=10%
+11=11%
+12=12%
+13=13%
+14=14%
+15=15%
+16=16%
+17=17%
+18=18%
+19=19%
+20=20%
+21=21%
+22=22%
+23=23%
+24=24%
+25=25%
+26=26%
+27=27%
+28=28%
+29=29%
+30=30%
+31=31%
+32=32%
+33=33%
+34=34%
+35=35%
+36=36%
+37=37%
+38=38%
+39=39%
+40=40%
+41=41%
+42=42%
+43=43%
+44=44%
+45=45%
+46=46%
+47=47%
+48=48%
+49=49%
+50=50%
+51=51%
+52=52%
+53=53%
+54=54%
+55=55%
+56=56%
+57=57%
+58=58%
+59=59%
+60=60%
+61=61%
+62=62%
+63=63%
+64=64%
+65=65%
+66=66%
+67=67%
+68=68%
+69=69%
+70=70%
+71=71%
+72=72%
+73=73%
+74=74%
+75=75%
+76=76%
+77=77%
+78=78%
+79=79%
+80=80%
+81=81%
+82=82%
+83=83%
+84=84%
+85=85%
+86=86%
+87=87%
+88=88%
+89=89%
+90=90%
+91=91%
+92=92%
+93=93%
+94=94%
+95=95%
+96=96%
+97=97%
+98=98%
+99=99%
+100=100%</conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>6</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Shop On/Off</conf_title>
+			<conf_description>Turn Global Shop On/Off.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>shop_on</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>7</conf_position>
+			<conf_start_group>Shop</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Buy Avatar Permission</conf_title>
+			<conf_description>Allow members to purchase avatar permission? If this is off, they get it automatically.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>buy_ava</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>8</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Permission Price</conf_title>
+			<conf_description>How much to charge for this permission?</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>buy_ava_cost</conf_key>
+			<conf_value></conf_value>
+			<conf_default>100</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>9</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Buy Signature Permission</conf_title>
+			<conf_description>Allow members to purchase signature permission? If this is off, they get it automatically.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>buy_sig</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>10</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Permission Price</conf_title>
+			<conf_description>How much to charge for this permission.</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>buy_sig_cost</conf_key>
+			<conf_value></conf_value>
+			<conf_default>100</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>11</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Can Change Display Name?</conf_title>
+			<conf_description>Can A Member Change His/Her Display Name?</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>change_dname</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>12</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Cost To Change</conf_title>
+			<conf_description>How Much To Charge To Change Display Name? (Whole Numbers)</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>change_dname_amt</conf_key>
+			<conf_value></conf_value>
+			<conf_default>100</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>13</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Can Change Title?</conf_title>
+			<conf_description>Custom Member Title.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>shop_title</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>14</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Cost To Change</conf_title>
+			<conf_description>Cost To Change Member Title.</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>shop_title_amt</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1000</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>15</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title><![CDATA[Change Other Member&#39;s Title?]]></conf_title>
+			<conf_description><![CDATA[Allow One Member To Change Another Member's Title.]]></conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>shop_change_title</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>16</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Amount To Charge</conf_title>
+			<conf_description>How Much To Purchase This Item?</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>change_mem_title_amt</conf_key>
+			<conf_value></conf_value>
+			<conf_default>100</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>17</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Lotto On?</conf_title>
+			<conf_description>Turn Lottery System On/Off.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>lotto_on</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>18</conf_position>
+			<conf_start_group>iLotto Settings</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>PM Lotto Winner?</conf_title>
+			<conf_description>When this is on, whoever wins the lottery will receive an automated private message.</conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>lotto_pm</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>19</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Lotto PM From ID</conf_title>
+			<conf_description>ID of the member that the automated PM will come from. Some sites may elect to create a member titled Lotto_Bot to do this.</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>lotto_pm_id</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>20</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Ticket Price</conf_title>
+			<conf_description>Amount Of Points Each Lottery Ticket Cost.</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>lotto_price</conf_key>
+			<conf_value></conf_value>
+			<conf_default>100</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>21</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Base Jackpot</conf_title>
+			<conf_description>Base Amount That A Member Can Win.</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>lotto_amt</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1000</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>22</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+
+		<setting>
+			<conf_title>Ticket Limit</conf_title>
+			<conf_description>Limit The Number Of Tickets Each Member Can Purchase Per Drawing.</conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>lotto_limit</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>23</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>points</conf_title_keyword>
+		</setting>
+	</settings_group>
+	
+	<languages_group>
+		<language>
+			<key>tb_points</key>
+			<text>Points</text>
+			<file>lang_global</file>
+		</language>
+		<language>
+			<key>points</key>
+			<text>Points</text>
+			<file>lang_topic</file>
+		</language>
+		<language>
+			<key>donate_points</key>
+			<text>Donate Points</text>
+			<file>lang_topic</file>
+		</language>
+		<language>
+			<key>edit_member</key>
+			<text>(Edit Member)</text>
+			<file>lang_topic</file>
+		</language>
+		<language>
+			<key>no_ava_perm</key>
+			<text>You do not have permission to edit your avatar.</text>
+			<file>lang_error</file>
+		</language>
+		<language>
+			<key>no_sig_perm</key>
+			<text>You do not have permission to edit your signature.</text>
+			<file>lang_error</file>
+		</language>
+
+	</languages_group>
+	<components_group>
+		<component>
+			<com_title>iPoints System</com_title>
+			<com_author>-Calypso-</com_author>
+			<com_url>http://www.invisiontweaks.com</com_url>
+			<com_version>2.4.1</com_version>
+			<com_menu_data><![CDATA[a:4:{i:1;a:5:{s:9:"menu_text";s:15:"Manage Settings";s:8:"menu_url";s:13:"code=settings";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:8:"settings";s:13:"menu_permlang";s:15:"Manage Settings";}i:2;a:5:{s:9:"menu_text";s:14:"Group Settings";s:8:"menu_url";s:11:"code=groups";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:6:"groups";s:13:"menu_permlang";s:14:"Group Settings";}i:3;a:5:{s:9:"menu_text";s:15:"Member Settings";s:8:"menu_url";s:12:"code=members";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:7:"members";s:13:"menu_permlang";s:15:"Member Settings";}i:4;a:5:{s:9:"menu_text";s:14:"Forum Settings";s:8:"menu_url";s:11:"code=forums";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:6:"forums";s:13:"menu_permlang";s:14:"Forum Settings";}}]]></com_menu_data>
+			<com_enabled>1</com_enabled>
+			<com_safemode>0</com_safemode>
+			<com_section>points</com_section>
+			<com_filename>points</com_filename>
+			<com_description><![CDATA[Points + Points Transfer System Including Individual &amp; Global Transactions Tables.]]></com_description>
+			<com_url_title>{ipb.lang['tb_points']}</com_url_title>
+			<com_url_uri>{ipb.base_url}autocom=points</com_url_uri>
+		</component>
+	</components_group>
+	<tables_group>
+		<table>
+			<name>points_log</name>
+			<data><![CDATA[editedby_id mediumint(11) NOT NULL default '0',
+				member_id mediumint(11) NOT NULL default '0',
+				opoints int(11) NOT NULL default '0',
+				npoints int(11) NOT NULL default '0',
+				obank int(11) NOT NULL default '0',
+				nbank int(11) NOT NULL default '0',
+				time int(10) NOT NULL default '0',
+				reason varchar(255) default NULL]]></data>
+			<type>MyISAM</type>
+		</table>
+		<table>
+			<name>transactions</name>
+			<data><![CDATA[tid int(11) NOT NULL auto_increment,
+				sentfrom mediumint(8) NOT NULL default '0',
+				sentto mediumint(8) NOT NULL default '0',
+				amount int(11) NOT NULL default '0',
+				reason varchar(255) default NULL,
+				time int(10) NOT NULL default '0',
+				PRIMARY KEY  (`tid`),
+				KEY sentfrom (`sentfrom`)]]></data>
+			<type>MyISAM</type>
+		</table>
+		<table>
+			<name>lotto_champs</name>
+			<data><![CDATA[round int(10) NOT NULL auto_increment,
+				c_id int(10) NOT NULL default '0',
+				c_amount int(20) NOT NULL default '0',
+				time int(10) NOT NULL default '0',
+				PRIMARY KEY  (`round`),
+				KEY c_id (`c_id`)]]></data>
+			<type>MyISAM</type>
+		</table>
+		<table>
+			<name>lotto</name>
+			<data><![CDATA[m_id int(10) NOT NULL default '0',
+				ticket_price int(10) NOT NULL default '0',
+				round int(10) NOT NULL default '0',
+				time int(10) NOT NULL default '0']]></data>
+			<type>MyISAM</type>
+		</table>
+	</tables_group>
+	<alters_group>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>points</field_name>
+			<field_type>int(11)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>deposited_points</field_name>
+			<field_type>int(11)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>pava</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>members</table>
+			<field_name>psig</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>g_access_pts</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>g_admin_pts</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>g_gtrans_pts</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>groups</table>
+			<field_name>g_tools_pts</field_name>
+			<field_type>tinyint(1)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>forums</table>
+			<field_name>replypoints</field_name>
+			<field_type>int(10)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+		<alter>
+			<alter_type>add</alter_type>
+			<table>forums</table>
+			<field_name>newthreadpoints</field_name>
+			<field_type>int(10)</field_type>
+			<field_default>'0'</field_default>
+		</alter>
+	</alters_group>
+	<templates_group>
+   <template>
+  <group_name>skin_points</group_name>
+   <section_content>
+   <![CDATA[<div class="maintitle">
+<{CAT_IMG}>&nbsp;{$this->ipsclass->lang['welcome']}{$this->ipsclass->member['members_display_name']}
+</div>
+<div class="row1" style="padding:5px">
+<div class='borderwrap'>
+<table class="ipbtable" cellspacing="1" colspan="2">
+	<tr>
+		<th width="50%" style='text-align: center;'>{$this->ipsclass->lang['on_hand']}</th>
+		<th width="50%" style='text-align: center;'>{$this->ipsclass->lang['in_bank']}</th>
+	</tr>
+	<tr>
+		<td class='row1' style='text-align: center;' width='50%'><strong>{$data['points']}</strong></td>
+		<td class='row1' style='text-align: center;' width='50%'><strong>{$data['bank']}</strong></td>
+	</tr>
+</div>
+</table>
+</div></div>]]> 
+  </section_content>
+  <func_name>bank</func_name> 
+   <func_data><![CDATA[$data]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+<{CAT_IMG}>&nbsp;{$this->ipsclass->lang['welcome']}{$this->ipsclass->member['members_display_name']}
+</div>
+<div class="row1" style="padding:5px">
+<div class='borderwrap'>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_deposit" method='post'>
+<table class="ipbtable" cellspacing="1" colspan="2">
+	<tr>
+		<th width="50%" style='text-align: center;'>{$this->ipsclass->lang['on_hand']}</th>
+		<th width="50%" style='text-align: center;'>{$this->ipsclass->lang['in_bank']}</th>
+	</tr>
+	<tr>
+		<td class='row1' style='text-align: center;' width='50%'><strong>{$data['points']}</strong></td>
+		<td class='row1' style='text-align: center;' width='50%'><strong>{$data['bank']}</strong></td>
+	</tr>
+</div>
+</table>
+<table class="ipbtable" cellspacing="0" colspan="2">
+		<tr>
+			<td class='row2' width='100%' align='center'><strong>{$this->ipsclass->lang['dep_amt']}</strong>&nbsp;<input type='text' name='points' /></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'>
+				<input type='submit' name='submit' value="{$this->ipsclass->lang['dep']}" class='forminput' />
+			</td>
+		</tr>
+</table>
+	</form>
+</div></div>]]> 
+  </section_content>
+  <func_name>bank_depo</func_name> 
+   <func_data><![CDATA[$data]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+<{CAT_IMG}>&nbsp;{$this->ipsclass->lang['welcome']}{$this->ipsclass->member['members_display_name']}
+</div>
+<div class="row1" style="padding:5px">
+<div class='borderwrap'>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_withdraw" method='post'>
+<table class="ipbtable" cellspacing="1" colspan="2">
+	<tr>
+		<th width="50%" style='text-align: center;'>{$this->ipsclass->lang['on_hand']}</th>
+		<th width="50%" style='text-align: center;'>{$this->ipsclass->lang['in_bank']}</th>
+	</tr>
+	<tr>
+		<td class='row1' style='text-align: center;' width='50%'><strong>{$data['points']}</strong></td>
+		<td class='row1' style='text-align: center;' width='50%'><strong>{$data['bank']}</strong></td>
+	</tr>
+</div>
+</table>
+<table class="ipbtable" cellspacing="0" colspan="2">
+		<tr>
+			<td class='row2' width='100%' align='center'><strong>{$this->ipsclass->lang['withdraw_amt']}</strong>&nbsp;<input type='text' name='points' /></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'>
+				<input type='submit' name='submit' value="{$this->ipsclass->lang['wd']}" class='forminput' />
+			</td>
+		</tr>
+</table>
+	</form>
+</div></div>]]> 
+  </section_content>
+  <func_name>bank_withdraw</func_name> 
+   <func_data><![CDATA[$data]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<{CAT_IMG}>&nbsp;{$this->ipsclass->lang['buy_ava']}
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_buy_avatar" method='post'>
+		<tr>
+			<td class='row1' colspan='2' align='center'><b>{$this->ipsclass->lang['buy_ava']}: {$this->ipsclass->vars['buy_ava_cost']} {$this->ipsclass->lang['points']}</b></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'>
+				<input type='submit' name='submit' value="{$this->ipsclass->lang['buy_ava']}" class='forminput' />
+			</td>
+		</tr>
+	</form>
+</table>]]> 
+  </section_content>
+  <func_name>buy_ava</func_name> 
+   <func_data></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<{CAT_IMG}>&nbsp;{$this->ipsclass->lang['buy_sig']}
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_buy_signature" method='post'>
+		<tr>
+			<td class='row1' colspan='2' align='center'><b>{$this->ipsclass->lang['buy_sig']}: {$this->ipsclass->vars['buy_sig_cost']} {$this->ipsclass->lang['points']}</b></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'>
+				<input type='submit' name='submit' value="{$this->ipsclass->lang['buy_sig']}" class='forminput' />
+			</td>
+		</tr>
+	</form>
+</table>]]> 
+  </section_content>
+  <func_name>buy_sig</func_name> 
+   <func_data></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<{CAT_IMG}>&nbsp;{$this->ipsclass->lang['buy_ticket']}
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_purchase_ticket" method='post'>
+		<tr>
+			<td class='row1' colspan='2' align='center'><b>{$this->ipsclass->lang['ticket_price']}{$this->ipsclass->vars['lotto_price']}</b></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'>
+				<input type='submit' name='submit' value="{$this->ipsclass->lang['buy_ticket']}" class='forminput' />
+			</td>
+		</tr>
+	</form>
+</table> ]]> 
+  </section_content>
+  <func_name>buy_tickets</func_name> 
+   <func_data></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['change_other_title']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_change_m_title&amp;userid={$r['id']}" method='post'>
+		<input type="hidden" name="username" value="{$r['name']} " />
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><b>{$this->ipsclass->lang['member2changetitle']}</b></td>
+			<td class='row1' width='50%'><a href='{$this->ipsclass->base_url}showuser={$r['id']}'><b>{$r['name']}</b></a>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['ctitle']}</b></td>
+			<td class='row1'><b>{$r['title']}</b></a>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['cost_to_buy']}</b></td>
+			<td class='row1'><b>{$r['price']}</b></a>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['c_title_to']}</b></td>
+			<td class='row1'><input type='text' name='title' value="{$this->ipsclass->input['title']}" /></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['buy']}" /></td>
+		</tr>
+	</form>
+</table>]]> 
+  </section_content>
+  <func_name>change_m_title</func_name> 
+   <func_data><![CDATA[$r="", $shop=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['welcome']}{$this->ipsclass->member['members_display_name']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_change_title" method='post'>
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><b>{$this->ipsclass->lang['cost_to_buy']}{$data['price']}</b></td>
+			<td class='row1' width='50%'>
+				<input type='text' name='change_title' value="{$data['title']}" />
+			</td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['save_title']}" /></td>
+		</tr>
+	</form>
+</table>]]> 
+  </section_content>
+  <func_name>change_title</func_name> 
+   <func_data><![CDATA[$data]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['donating_to']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_donate&amp;userid={$data['id']}" method='post'>
+		<input type="hidden" name="username" value="{$data['name']} " />
+		<tr>
+			<td class='row1' width='100%' style='text-align: center;'>{$this->ipsclass->lang['donate_to']}<a href='{$this->ipsclass->base_url}showuser={$data['id']}'>{$data['name']}</a></td>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: center;'>{$this->ipsclass->lang['donate_amount']}<input type='text' name='amount' value="{$this->ipsclass->input['donate_amount']}" size='10' /></td>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: center;'>{$this->ipsclass->lang['message_to']}<br /><textarea name='message' width='30' cols='40' rows='5'></textarea></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['submit']}" /></td>
+		</tr>
+	</form>
+</table>]]> 
+  </section_content>
+  <func_name>donate_link</func_name> 
+   <func_data><![CDATA[$data=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['edit_member']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_edit" method='post' onsubmit="return confirm('{$this->ipsclass->lang['donate_check']}');">
+		<input type="hidden" name="userid" value="{$data['id']} " />
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><b>{$this->ipsclass->lang['m_to_edit']}</b></td>
+			<td class='row1' width='50%'><a href='{$this->ipsclass->base_url}showuser={$data['id']}'>{$data['name']}</a>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['on_hand']}:&nbsp;</b></td>
+			<td class='row1'>{$data['points']}</td>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['edit_amt']}</b></td>
+			<td class='row1'><input type='text' name='points' value="{$data['points']}" /></td>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['in_bank']}:&nbsp;</b></td>
+			<td class='row1'>{$data['deposited_points']}</td>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['edit_amt']}</b></td>
+			<td class='row1'><input type='text' name='bank' value="{$data['deposited_points']}" /></td>
+		</tr>
+		<tr>
+			<td class='row1' style='text-align: right;'><b>{$this->ipsclass->lang['edit_reason']}</b></td>
+			<td class='row1'><textarea name='reason' width='30' cols='40' rows='5'></textarea></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['edit_member']}" /></td>
+		</tr>
+	</form>
+</table>]]> 
+  </section_content>
+  <func_name>edit_link</func_name> 
+   <func_data><![CDATA[$data=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$data['title']}</p>
+</div>
+<script type="text/javascript" src='jscripts/ipb_xhr_findnames.js'></script>
+<div id='ipb-get-members' style='border:1px solid #000; background:#FFF; padding:2px;position:absolute;width:210px;display:none;z-index:1'></div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd={$data['form_code']}" method='post' id='postingform'>
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><b>{$data['text']}</b></td>
+			<td class='row1' width='50%'><input type='text' name='mem_name' value="{$this->ipsclass->input['name']}" autocomplete='off' id='entered_name' /></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['findmem']}" /></td>
+		</tr>
+	</form>
+</table>
+<script type="text/javascript">
+init_js( 'postingform', 'entered_name', 'get-member-names');
+setTimeout( 'main_loop()', 10 );
+</script>]]> 
+  </section_content>
+  <func_name>find_member</func_name> 
+   <func_data><![CDATA[$data=array()]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[</div>
+		</td>
+	</tr>
+</table>
+<br style="clear: all;" />
+<div class="copyright" align="center">
+iPoints System 2.4.1 Copyright &copy; 2007 <a href="http://www.invisiontweaks.com" target="_blank"><b>-Calypso-</b></a>
+</div>]]> 
+  </section_content>
+  <func_name>footer</func_name> 
+   <func_data></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['g_trans']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="100%" style='text-align: center;'>{$this->ipsclass->lang['g_trans']}</th>
+	</tr>
+<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row2' style='text-align: left;'>
+<div class='row2' style='padding-bottom:5px'>
+{$row['ename']}{$this->ipsclass->lang['dmid']}<strong>{$row['amount']}</strong>{$this->ipsclass->lang['ptmid']}{$row['name']} {$this->ipsclass->lang['on']}&nbsp;{$row['time']}.<br />
+</div>
+<div class="borderwrap">
+<table class="ipbtable" cellspacing="1" colspan="2">
+	<tr>
+		<th width="100%" style='text-align: center;'>{$this->ipsclass->lang['reason']}</th>
+	</tr>
+	<tr>
+		<td class='row1' style='text-align: left;' width='1005%'>{$row['reason']}</td>
+	</tr>
+</table>
+</div>
+</td>
+	</tr>
+	</foreach>
+</if>
+</table>
+<div class='catend'></div>
+<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>global_transactions</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp; {$this->ipsclass->lang['l_status']}</p>
+</div>
+<div class='row1' style='padding:5px'>
+<div class='borderwrap'>
+<table class="ipbtable" cellspacing="0">
+	<tr>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['base_prize']}</th>
+		<th width="5%" style='text-align: center;'>{$this->ipsclass->lang['tickets_sold']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['ticket_value']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['total_purse']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['l_winner']}</th>
+	</tr>
+	<tr>
+		<td class='row1' style='text-align: center;'><b>{$data['base']}</b></td>
+		<td class='row1' style='text-align: center;'><b>{$data['tickets']}</b></td>
+		<td class='row1' style='text-align: center;'><b>{$data['amount']}</b></td>
+		<td class='row1' style='text-align: center;'><b>{$data['in_pot']}</b></td>
+		<td class='row1' style='text-align: center;'>{$data['name']}</td>
+	</tr>
+</table>
+</div></div>
+<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp; {$this->ipsclass->lang['current_tickets']}</p>
+</div>
+<div class='row1' style='padding:5px'>
+<div class='borderwrap'>
+<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="50%" style='text-align: center;'>{$this->ipsclass->lang['t_holder']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['t_price']}</th>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['t_purchased']}</th>
+	</tr>
+<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'>{$row['name']}</td>
+		<td class='row1' style='text-align: center;'><strong>{$row['ticket_price']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['tim']}</strong></td>
+	</tr>
+	</foreach>
+</if>
+</table>
+</div></div>
+<div class='catend'></div>
+<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>lotto_status</func_name> 
+   <func_data><![CDATA[$data, $content="", $pages=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['lotto_winners']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="10%" style='text-align: center;'>{$this->ipsclass->lang['round_num']}</th>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['l_win']}</th>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['purse']}</th>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['on']}</th>
+	</tr>
+<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'><strong>{$row['round']}</strong></td>
+		<td class='row1' style='text-align: center;'>{$row['name']}</td>
+		<td class='row1' style='text-align: center;'><strong>{$row['c_amount']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['time']}</strong></td>
+	</tr>
+	</foreach>
+</if>
+</table>
+<div class='catend'></div>
+<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>lotto_winners</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td valign="top" class="nopad" width="20%">
+			<div id="ucpmenu">
+			<div class="maintitle">{$this->ipsclass->lang['menutop']}</div>
+<div class='nopad' style='padding:2px'>
+<div class='borderwrap'>
+<div class='row2' style='padding:3px' align='center'>
+{$this->ipsclass->lang['current']}$current
+</div></div></div>
+			<p>
+<if="$this->ipsclass->member['g_admin_pts']">
+				<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['a_centre']}</u></b><br />
+<if="$this->ipsclass->member['g_tools_pts']">
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=tools">{$this->ipsclass->lang['atools']}</a><br />
+</if>
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=find_member_to_edit">{$this->ipsclass->lang['find_edit']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=points_edit_log">{$this->ipsclass->lang['e_log']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}> <a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=points_rundown">{$this->ipsclass->lang['p_rundown']}</a><br />
+</if>
+				<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['p_centre']}</u></b><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points">{$this->ipsclass->lang['p_stats']}</a><br />
+<if="$this->ipsclass->vars['donate_on']">
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=find_member">{$this->ipsclass->lang['m_search']}</a><br />
+</if>
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=richest">{$this->ipsclass->lang['richest_m']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=my_transactions">{$this->ipsclass->lang['my_trans']}</a><br />
+<if="$this->ipsclass->member['g_gtrans_pts']">
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=global_transactions">{$this->ipsclass->lang['g_trans']}</a><br />
+</if>
+<if="$this->ipsclass->vars['points_bank']">				<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['b_centre']}</u></b><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=bank">{$this->ipsclass->lang['bank']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=deposit">{$this->ipsclass->lang['deposit']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=withdraw">{$this->ipsclass->lang['withdraw']}</a><br />
+</if>
+<if="$this->ipsclass->vars['shop_on']">
+				<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['s_centre']}</u></b><br />
+<if="$this->ipsclass->vars['buy_ava'] AND $this->ipsclass->member['pava'] == 0">
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=buy_avatar">{$this->ipsclass->lang['buy_ava']}</a><br />
+</if>
+<if="$this->ipsclass->vars['buy_sig'] AND $this->ipsclass->member['psig'] == 0">
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=buy_signature">{$this->ipsclass->lang['buy_sig']}</a><br />
+</if>
+<if="$this->ipsclass->vars['change_dname']">
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=change_display_name">{$this->ipsclass->lang['change_name']}</a><br />
+</if>
+<if="$this->ipsclass->vars['shop_title']">
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=change_title">{$this->ipsclass->lang['change_title']}</a><br />
+</if>
+<if="$this->ipsclass->vars['shop_change_title']">
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=change_other_members_title">{$this->ipsclass->lang['change_other_title']}</a><br />
+</if>
+</if>
+<if="$this->ipsclass->vars['lotto_on']">				<{ITEM_START}>&nbsp;<b><u>{$this->ipsclass->lang['l_centre']}</u></b><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=lotto_status">{$this->ipsclass->lang['l_status']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=purchase_ticket">{$this->ipsclass->lang['buy_ticket']}</a><br />
+				&nbsp;&nbsp;<{ITEM_START}>&nbsp;<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=winners">{$this->ipsclass->lang['p_winners']}</a><br />
+</if>
+			</p>
+		</td>
+		<td class="nopad" width="1%"><!-- --></td>
+		<td valign="top" class="nopad" width="75%">
+			<div id="ucpcontent">]]> 
+  </section_content>
+  <func_name>menu</func_name> 
+   <func_data><![CDATA[$current=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['my_trans']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="100%" style='text-align: center;'>{$this->ipsclass->lang['my_trans']}</th>
+	</tr>
+<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row2' style='text-align: left;'>
+<div class='row2' style='padding-bottom:5px'>
+{$this->ipsclass->lang['dtop']}<strong>{$row['amount']}</strong>{$this->ipsclass->lang['ptmid']}{$row['name']} {$this->ipsclass->lang['on']}&nbsp;{$row['time']}.<br />
+</div>
+<div class="borderwrap">
+<table class="ipbtable" cellspacing="1" colspan="2">
+	<tr>
+		<th width="100%" style='text-align: center;'>{$this->ipsclass->lang['reason']}</th>
+	</tr>
+	<tr>
+		<td class='row1' style='text-align: left;' width='1005%'>{$row['reason']}</td>
+	</tr>
+</table>
+</div>
+</td>
+	</tr>
+	</foreach>
+</if>
+</table>
+<div class='catend'></div>
+<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>my_transactions</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p>$title</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+			<td class='row1' width='100%' align='center'>$data</td>
+		</tr>
+</table>]]> 
+  </section_content>
+  <func_name>none</func_name> 
+   <func_data><![CDATA[$title, $data]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['e_log']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="100%" style='text-align: center;'>{$this->ipsclass->lang['e_log']}</th>
+	</tr>
+<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row2' style='text-align: left;'>
+<div class='row2' style='padding-bottom:5px'>
+{$row['ename']}{$this->ipsclass->lang['emid']}{$row['name']}{$this->ipsclass->lang['sacc']}{$row['time']}.<br />
+<strong>{$this->ipsclass->lang['reason']}:</strong>&nbsp;{$row['reason']}
+</div>
+<div class="borderwrap">
+<table class="ipbtable" cellspacing="1" colspan="2">
+	<tr>
+		<th width="25%" style='text-align: center;'>{$this->ipsclass->lang['op_amt']}</th>
+		<th width="25%" style='text-align: center;'>{$this->ipsclass->lang['np_amt']}</th>
+		<th width="25%" style='text-align: center;'>{$this->ipsclass->lang['ob_amt']}</th>
+		<th width="25%" style='text-align: center;'>{$this->ipsclass->lang['nb_amt']}</th>
+	</tr>
+	<tr>
+		<td class='row1' style='text-align: center;' width='25%'>{$row['opoints']}</td>
+		<td class='row2' style='text-align: center;' width='25%'><strong>{$row['npoints']}</strong></td>
+		<td class='row1' style='text-align: center;' width='25%'>{$row['obank']}</td>
+		<td class='row2' style='text-align: center;' width='25%'><strong>{$row['nbank']}</strong></td>
+	</tr>
+</table>
+</div>
+</td>
+	</tr>
+	</foreach>
+</if>
+</table>
+<div class='catend'></div>
+<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>points_edit_log</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp; {$this->ipsclass->lang['p_stats']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['tf_mems']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$data['members']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['tf_points']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$data['total_points']}</b></td>
+		</tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['avg_per']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$data['per_user']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['tb_pts']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$row['in_bank']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['tb_users']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$row['bank_users']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['b_rate']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$this->ipsclass->vars['points_irate']}%</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['your_trans']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$trans['your_trans']}</b></td>
+		</tr>
+		<tr>
+			<td class='row1' width='25%' style='text-align: right;'><b>{$this->ipsclass->lang['t_trans']}</b></td>
+			<td class='row1' width='75%' style='text-align: left;'><b>{$trans['total']}</b></td>
+		</tr>
+</table>]]> 
+  </section_content>
+  <func_name>points_stats</func_name> 
+   <func_data><![CDATA[$data="", $row="", $trans=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['richest_m']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="35%" style='text-align: center;'>{$this->ipsclass->lang['mem_name']}</th>
+		<th width="35%" style='text-align: center;'>{$this->ipsclass->lang['mem_group']}</th>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['points']}</th>
+	</tr>
+<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'><strong>{$row['name']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['group']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['points']}</strong></td>
+	</tr>
+</foreach>
+</if>
+</table>]]> 
+  </section_content>
+  <func_name>richest_members</func_name> 
+   <func_data><![CDATA[$content=""]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['welcome']}{$this->ipsclass->member['members_display_name']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=do_change_name" method='post'>
+		<tr>
+			<td class='row1' width='50%' style='text-align: right;'><b>{$this->ipsclass->lang['cost_to_buy']}{$shop['price']}</b></td>
+			<td class='row1' width='50%'><input type='text' name='change_name' value="{$shop['name']}" /></td>
+		</tr>
+		<tr>
+			<td class='formbuttonrow' align='center' colspan='2'><input type='submit' name='submit' value="{$this->ipsclass->lang['save_name']}" /></td>
+		</tr>
+	</form>
+</table>]]> 
+  </section_content>
+  <func_name>shop</func_name> 
+   <func_data><![CDATA[$shop]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['atools']}</p>
+</div>
+<if="$status != """>
+<div class='darkrow1' style='padding:2px'>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+		<td id="userlinksguest" width="100%" style='text-align: center;'>
+<div style='padding:3px'>
+{$status}
+</div>
+</td>
+		</tr>
+</table>
+</div>
+</if>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+		<th width="100%" style='text-align: center;'>{$this->ipsclass->lang['tmain']}</th>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="0">
+		<tr>
+		<td class='row1' style='text-align: left;' width='40%'>{$this->ipsclass->lang['md_all']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=mass_donate" method='post'>
+		<input type="hidden" name="status" value="1" />
+		<td class='row1' style='text-align: center;' width='30%'><strong>{$this->ipsclass->lang['points']}</strong>&nbsp;&nbsp;<input type='text' name='points' size='10' value="0" /></td>
+		<td class='row1' style='text-align: center;' width='30%'><input type='submit' name='submit' value="{$this->ipsclass->lang['mdonate']}" /></td>
+</form>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+		<td class='row1' style='text-align: left;' width='30%'>{$this->ipsclass->lang['md_group']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=group_donate" method='post'>
+		<input type="hidden" name="status" value="2" />
+		<td class='row1' style='text-align: center;' width='30%'><strong>{$this->ipsclass->lang['points']}</strong>&nbsp;&nbsp;<input type='text' name='points' size='10' value="0" /></td>
+		<td class='row1' style='text-align: center;' width='20%'>{$groups}</td>
+		<td class='row1' style='text-align: center;' width='15%'><input type='submit' name='submit' value="{$this->ipsclass->lang['gdonate']}" /></td>
+</form>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="0">
+		<tr>
+		<td class='row1' style='text-align: left;' width='80%'>{$this->ipsclass->lang['ptrans']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=dump_transactions" method='post'>
+		<input type="hidden" name="status" value="3" />
+		<td class='row1' style='text-align: center;' width='20%'><input type='submit' name='submit' value="{$this->ipsclass->lang['ratrans']}" /></td>
+</form>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+		<td class='row1' style='text-align: left;' width='75%'>{$this->ipsclass->lang['plotto']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=dump_lotto_champs" method='post'>
+		<input type="hidden" name="status" value="4" />
+		<td class='row1' style='text-align: center;' width='25%'><input type='submit' name='submit' value="{$this->ipsclass->lang['ralotto']}" /></td>
+</form>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="0">
+		<tr>
+		<td class='row1' style='text-align: left;' width='80%'>{$this->ipsclass->lang['pavas']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=dump_avatar" method='post'>
+		<input type="hidden" name="status" value="5" />
+		<td class='row1' style='text-align: center;' width='20%'><input type='submit' name='submit' value="{$this->ipsclass->lang['raa']}" /></td>
+</form>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+		<td class='row1' style='text-align: left;' width='80%'>{$this->ipsclass->lang['psigs']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=dump_signature" method='post'>
+		<input type="hidden" name="status" value="6" />
+		<td class='row1' style='text-align: center;' width='20%'><input type='submit' name='submit' value="{$this->ipsclass->lang['ras']}" /></td>
+</form>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="0">
+		<tr>
+		<td class='row1' style='text-align: left;' width='80%'>{$this->ipsclass->lang['ponhand']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=reset_points" method='post'>
+		<input type="hidden" name="status" value="7" />
+		<td class='row1' style='text-align: center;' width='20%'><input type='submit' name='submit' value="{$this->ipsclass->lang['rohp']}" /></td>
+</form>
+		</tr>
+</table>
+<table class="ipbtable" cellspacing="1">
+		<tr>
+		<td class='row1' style='text-align: left;' width='80%'>{$this->ipsclass->lang['pinbank']}</td>
+	<form action="{$this->ipsclass->base_url}autocom=points&amp;cmd=reset_bank" method='post'>
+		<input type="hidden" name="status" value="8" />
+		<td class='row1' style='text-align: center;' width='20%'><input type='submit' name='submit' value="{$this->ipsclass->lang['ribp']}" /></td>
+</form>
+		</tr>
+</table>]]> 
+  </section_content>
+  <func_name>tools</func_name> 
+   <func_data><![CDATA[$groups, $status]]></func_data>
+  </template>
+  <template>
+  <group_name>skin_points</group_name> 
+   <section_content>
+   <![CDATA[<div class="maintitle">
+	<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['p_rundown']}</p>
+</div>
+<table class="ipbtable" cellspacing="1">
+	<tr>
+		<th width="30%" style='text-align: center;'>{$this->ipsclass->lang['mem_name']}</th>
+		<th width="25%" style='text-align: center;'>{$this->ipsclass->lang['mem_group']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['points']}</th>
+		<th width="20%" style='text-align: center;'>{$this->ipsclass->lang['in_bank']}</th>
+		<th width="1%" style='text-align: center;'>{$this->ipsclass->lang['edt']}</th>
+	</tr>
+<if="is_array( $content ) and count( $content )">
+	<foreach="$content as $row">
+	<tr>
+		<td class='row1' style='text-align: center;'><strong>{$row['name']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['group']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['points']}</strong></td>
+		<td class='row1' style='text-align: center;'><strong>{$row['deposited_points']}</strong></td>
+		<td class='row1' style='text-align: center;'><a href='{$this->ipsclass->base_url}autocom=points&amp;cmd=edit&amp;userid={$row['id']}'><img src='style_images/<#IMG_DIR#>/edit.png' /></a></td>
+	</tr>
+</foreach>
+</if>
+</table>
+<div class='catend'></div>
+<div class='row2' style='padding:5px'>{$pages}</div>]]> 
+  </section_content>
+  <func_name>total_pts</func_name> 
+   <func_data><![CDATA[$content="", $pages=""]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_topic</group_name> 
+   <section_content>
+   <![CDATA[<if="$this->ipsclass->vars['points_on'] == 1 && $this->ipsclass->member['id']">
+<if="$this->ipsclass->member['g_admin_pts'] == 1">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=edit&amp;userid={$id}"><b>{$this->ipsclass->lang['edit_member']}</b></a><br />
+</if>
+        		{$this->ipsclass->lang['points']}: {$points}
+<br />
+<if="$id != $this->ipsclass->member['id'] AND $this->ipsclass->vars['donate_on']">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=donate&amp;userid={$id}"><b>{$this->ipsclass->lang['donate_points']}</b></a><br />
+</if>
+</if>]]> 
+  </section_content>
+  <func_name>member_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_mlist</group_name> 
+   <section_content>
+   <![CDATA[<if="$this->ipsclass->vars['points_on'] == 1 && $this->ipsclass->member['id']">
+<if="$this->ipsclass->member['g_admin_pts'] == 1">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=edit&amp;userid={$id}"><b>{$this->ipsclass->lang['edit_member']}</b></a><br />
+</if>
+        		{$this->ipsclass->lang['points']}: {$points}
+<br />
+<if="$id != $this->ipsclass->member['id'] AND $this->ipsclass->vars['donate_on']">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=donate&amp;userid={$id}"><b>{$this->ipsclass->lang['donate_points']}</b></a><br />
+</if>
+</if>]]> 
+  </section_content>
+  <func_name>member_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_msg</group_name> 
+   <section_content>
+   <![CDATA[<if="$this->ipsclass->vars['points_on'] == 1 && $this->ipsclass->member['id']">
+<if="$this->ipsclass->member['g_admin_pts'] == 1">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=edit&amp;userid={$id}"><b>{$this->ipsclass->lang['edit_member']}</b></a><br />
+</if>
+        		{$this->ipsclass->lang['points']}: {$points}
+<br />
+<if="$id != $this->ipsclass->member['id'] AND $this->ipsclass->vars['donate_on']">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=donate&amp;userid={$id}"><b>{$this->ipsclass->lang['donate_points']}</b></a><br />
+</if>
+</if>]]> 
+  </section_content>
+  <func_name>member_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_search</group_name> 
+   <section_content>
+   <![CDATA[<if="$this->ipsclass->vars['points_on'] == 1 && $this->ipsclass->member['id']">
+<if="$this->ipsclass->member['g_admin_pts'] == 1">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=edit&amp;userid={$id}"><b>{$this->ipsclass->lang['edit_member']}</b></a><br />
+</if>
+        		{$this->ipsclass->lang['points']}: {$points}
+<br />
+<if="$id != $this->ipsclass->member['id'] AND $this->ipsclass->vars['donate_on']">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=donate&amp;userid={$id}"><b>{$this->ipsclass->lang['donate_points']}</b></a><br />
+</if>
+</if>]]> 
+  </section_content>
+  <func_name>member_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+   <template>
+  <group_name>skin_calendar</group_name> 
+   <section_content>
+   <![CDATA[<if="$this->ipsclass->vars['points_on'] == 1 && $this->ipsclass->member['id']">
+<if="$this->ipsclass->member['g_admin_pts'] == 1">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=edit&amp;userid={$id}"><b>{$this->ipsclass->lang['edit_member']}</b></a><br />
+</if>
+        		{$this->ipsclass->lang['points']}: {$points}
+<br />
+<if="$id != $this->ipsclass->member['id'] AND $this->ipsclass->vars['donate_on']">
+        		<a href="{$this->ipsclass->base_url}autocom=points&amp;cmd=donate&amp;userid={$id}"><b>{$this->ipsclass->lang['donate_points']}</b></a><br />
+</if>
+</if>]]> 
+  </section_content>
+  <func_name>member_points</func_name> 
+  <func_data><![CDATA[$points=0, $id=0]]></func_data>
+  </template>
+	</templates_group>
+	<tasks_group>
+		<task>
+			<task_title>iPoints Interest</task_title>
+			<task_file>points.php</task_file>
+			<task_week_day>-1</task_week_day>
+			<task_month_day>-1</task_month_day>
+			<task_hour>0</task_hour>
+			<task_minute>0</task_minute>
+			<task_cronkey></task_cronkey>
+			<task_log>1</task_log>
+			<task_description>Automatically collect bank interest for the iPoints system</task_description>
+			<task_enabled>1</task_enabled>
+			<task_key>points</task_key>
+			<task_safemode>0</task_safemode>
+		</task>
+		<task>
+			<task_title>iLotto Selector</task_title>
+			<task_file>lotto.php</task_file>
+			<task_week_day>-1</task_week_day>
+			<task_month_day>-1</task_month_day>
+			<task_hour>0</task_hour>
+			<task_minute>0</task_minute>
+			<task_cronkey></task_cronkey>
+			<task_log>1</task_log>
+			<task_description>Select Random Winner From Tickets Purchased</task_description>
+			<task_enabled>1</task_enabled>
+			<task_key>points</task_key>
+			<task_safemode>0</task_safemode>
+		</task>
+	</tasks_group>
+</mod_data>

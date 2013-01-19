@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<name>123 Flash Chat</name>
+		<public_name>123 Flash Chat</public_name>
+		<author>TopCMM</author>
+		<description><![CDATA[123 Flash Chat adds a feature rich chat to your existing IP.Board&#33;]]></description>
+		<templategroups>
+			<template match="exact">skin_123flashchat</template>
+			<template match="exact">skin_123flashchat_hooks</template>
+		</templategroups>
+	</data>
+</information>

@@ -1,0 +1,1 @@
+[11-Nov-2008 20:29:16] PHP Fatal error:  Call to undefined method skin_topic_2::ait_row() in /home/ad187420/public_html/chiefschat.com/sources/lib/func_topic_linear.php on line 429

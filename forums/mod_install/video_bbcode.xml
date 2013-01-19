@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mod_data>
+	<mod_info>
+		<title>(B23) Video BBCode</title>
+		<version>1.0.1</version>
+		<author>Bort</author>
+		<website>http://www.aztec-clan.com</website>
+		<ipbver>2.2</ipbver>
+	</mod_info>
+	<languages_group>
+		<language>
+			<key>js_rte_lite_video</key>
+			<text>Insert Flash Video</text>
+			<file>lang_editors</file>
+		</language>	
+		<language>
+			<key>js_rte_video</key>
+			<text><![CDATA[Insert <strong>Flash Video...</strong>]]></text>
+			<file>lang_editors</file>
+		</language>	
+		<language>
+			<key>jscode_text_enter_video</key>
+			<text>Enter the complete URL for the video</text>
+			<file>lang_editors</file>
+		</language>
+	</languages_group>
+</mod_data>

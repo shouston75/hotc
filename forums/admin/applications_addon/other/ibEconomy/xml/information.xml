@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<name><![CDATA[(e32) ibEconomy]]></name>
+		<public_name>ibEconomy</public_name>
+		<author>emoney</author>
+		<description><![CDATA[Complete economy system for IPB, including points, shops, banks, welfare, credit, etc.]]></description>
+		<ipskey></ipskey>
+		<templategroups>
+			<template match="contains">skin_ibEconomy</template>
+		</templategroups>
+	</data>
+</information>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_title_title>iArcade</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab/>
+      <conf_title_app>iArcade</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable iArcade</conf_title>
+      <conf_description>Turn on the iArcade application</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>iArcade-enable</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>iArcade Settings</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>iArcade Home Information</conf_title>
+      <conf_description>Welcome your members to the arcade system with a nice greeting.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>iArcade-general</conf_key>
+      <conf_default><![CDATA[Oh dear, looks like the administrator hasn't added any information for you to see, or maybe the owner is keeping it private. The Administrator might want to read this as it could help him/her to edit this - Login to your AdminCP, then click on "My Apps", then click on "iArcade" and edit the settings and then finally, click "Update Settings" at the bottom of the page.]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>iArcade Latest News</conf_title>
+      <conf_description>A global message shown at the top of all arcade pages. Useful for news, announcements, rules, etc. </conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>iArcade-news</conf_key>
+      <conf_default>Congratulation, iArcade System has been successfully installed!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Groups that can use iArcade Application</conf_title>
+      <conf_description>Specify the groups that are able to use the iArcade Application</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>iArcade-allowedGroup</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[$key = 'iArcade-allowedGroup';
+		if ( $save == 1 )
+{
+if ( is_array( $_POST[ $key ] ) )
+{
+	$_POST[ $key ] = implode( ",", $_POST[ $key ] );
+}
+else
+{
+	$_POST[ $key ] = "";
+}
+
+$key = $key;
+}
+if ( $show == 1 )
+{
+$key = $key . '[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default Page</conf_title>
+      <conf_description>Default page to send members to when loading the arcade tab</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>iArcade-defaultpage</conf_key>
+      <conf_default>gamescp</conf_default>
+      <conf_extra>gamescp=GamesCP&#13;
+gamelist=Game List&#13;
+arcadeinfo=Arcade Info</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Top Games?</conf_title>
+      <conf_description>Number of top games to show on the gameslist page.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>iArcade-topgamelistnum</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra>3=3&#13;
+5=5&#13;
+7=7</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Games Per Page</conf_title>
+      <conf_description>Number of games to show per page on the games list.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>iArcade-gamesperpage</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra>10=10&#13;
+15=15&#13;
+20=20</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>High scores to show</conf_title>
+      <conf_description>How many high scores should be shown on the scores page?</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>iArcade-howmanyscores</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra>10=10&#13;
+20=20&#13;
+30=30&#13;
+40=40&#13;
+50=50&#13;
+100=100&#13;
+200=200</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Sort Method</conf_title>
+      <conf_description>Method to sort games in the games list.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>iArcade-sortmethod</conf_key>
+      <conf_default>OrderAdded</conf_default>
+      <conf_extra>OrderAdded=OrderAdded&#13;
+Alphabetical=Alphabetical</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Games Path</conf_title>
+      <conf_description><![CDATA[Path to your games directory. This allows you to move your games outside the admin directory as to not expose a renamed admin directory. <br><br> This is the path that uploaded games via the ACP will be imported to. It should be root to your webserver, and not have a trailing slash. <br><br>Example: /home/USER/public_html/FORUMPATH/admin/applications_addon/other/iArcade/games/all]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>iArcade-path</conf_key>
+      <conf_default>/home/USER/public_html/FORUMPATH/admin/applications_addon/other/iArcade/games/all</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Web Location</conf_title>
+      <conf_description><![CDATA[The complete web accessable path to where your games are stored. If hosting using photobucket, use your album URL.
+<br><br>
+ IE, http://YOURSITE.com/admin/applications_addon/other/iArcade/games/all <br><br><b> FULL PATH,NO TRAILING SLASH!</b>]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>iArcade-webpath</conf_key>
+      <conf_default>/admin/applications_addon/other/iArcade/games/all</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Member ID for reported games</conf_title>
+      <conf_description>What is the ID of the member who should get a PM when a game is reported?</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>iArcade-reportmemberid</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Registration Key</conf_title>
+      <conf_description><![CDATA[Please register your board <a href='http://www.iarcademod.com/lcm/'/>Here</a> and then enter your registration key.]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>iArcade-regkey</conf_key>
+      <conf_default>none</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iArcade</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

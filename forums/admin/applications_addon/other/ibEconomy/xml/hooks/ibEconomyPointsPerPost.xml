@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name><![CDATA[(e32) ibEconomy Points Per Post]]></hook_name>
+      <hook_desc>An ibEconomy hook to handle the various points-per-post mechanisms</hook_desc>
+      <hook_author>emoney</hook_author>
+      <hook_email>emoney33@gmail.com</hook_email>
+      <hook_website>http://emoneycodes.com</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>0.5.0</hook_version_human>
+      <hook_version_long>050</hook_version_long>
+      <hook_extra_data><![CDATA[a:1:{s:8:"database";a:0:{}}]]></hook_extra_data>
+      <hook_key>ibEconomyPostPoints</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>ibEconomyPostPoints.php</hook_file_real>
+      <hook_type>dataHooks</hook_type>
+      <hook_classname>ibEconomyPostPoints</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:12:"postAddReply";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class ibEconomyPostPoints
+{
+	/**
+	 * Handle data for a reply (not for a new topic, need another file for that)
+	 **/
+    public function handleData($data)
+    {
+		#construct stuff
+		$this->registry     =  ipsRegistry::instance();
+		$this->DB           =  $this->registry->DB();
+		$this->settings     =& $this->registry->fetchSettings();
+		$this->request      =& $this->registry->fetchRequest();
+		$this->lang         =  $this->registry->getClass('class_localization');
+		$this->member       =  $this->registry->member();
+		$this->memberData   =& $this->registry->member()->fetchMemberData();
+		$this->cache        =  $this->registry->cache();
+		$this->caches       =& $this->registry->cache()->fetchCaches();
+		$this->forumData    =  $this->registry->getClass('class_forums')->forum_by_id[ $this->request['f'] ];
+				
+		#perms and what not...
+		if ( !$this->memberData['member_id'] || !$this->memberData['g_eco'] || !$this->settings['eco_pts_per_reply'] || $this->memberData['g_eco_frm_ptsx'] < 0)
+		{
+			return $data;
+		}	
+	
+		#grab ibEconomy SQL queries
+		require_once( IPSLib::getAppDir( 'ibEconomy' ) . '/sql/mysql_ibEconomy.php' );
+		$this->ibEcoSql = new ibEconomyMySQL( $this->registry );
+
+		#pts per reply
+		if ( $this->forumData['eco_rply_pts'] && $this->settings['eco_pts_per_reply'] )
+		{ 
+			#give me my reply points
+			if ($this->forumData['eco_rply_pts'] < 0)
+			{	
+				$points2Add = ( $this->memberData['g_eco_frm_ptsx'] == 0 ) ? $this->forumData['eco_rply_pts'] : $this->forumData['eco_rply_pts'] / $this->memberData['g_eco_frm_ptsx'];			
+			}
+			else
+			{
+				$points2Add = ( $this->memberData['g_eco_frm_ptsx'] == 0 ) ? $this->forumData['eco_rply_pts'] : $this->memberData['g_eco_frm_ptsx'] * $this->forumData['eco_rply_pts'];	
+			}
+				
+			#not allow the post at all if the member doesn't have enough points and admin chooses to use the new setting(new to 1.6)
+			if ($this->settings['eco_pts_disallow_post'] && $points2Add < 0 && $this->memberData[ $this->settings['eco_general_pts_field'] ] + $points2Add < 0)
+			{
+				$this->lang->words['not_enough_points_to_post_in_this_forum'] = str_replace("<%POINTS_NAME%>", $this->settings['eco_general_currency'], $this->lang->words['not_enough_points_to_post_in_this_forum']);
+				$this->lang->words['not_enough_points_to_post_in_this_forum'] = str_replace("<%AMOUNT%>", $this->registry->getClass('class_localization')->formatNumber($points2Add * -1), $this->lang->words['not_enough_points_to_post_in_this_forum']);
+				
+				#if this is a normal post...
+				if ($this->request['attach_post_key'])
+				{
+					$this->registry->output->showError( $this->lang->words['not_enough_points_to_post_in_this_forum'] );			
+				}
+				else
+				{		
+					throw new Exception( $this->lang->words['not_enough_points_to_post_in_this_forum'] );			
+				}
+			}
+
+			$this->ibEcoSql->updateMemberPts( $this->memberData['member_id'], $points2Add, '+', TRUE );
+		}
+
+		#pts to topic starter for replies
+		$topic = $this->ibEcoSql->grabTopicByID($data['topic_id']);
+		
+		if ( $topic['starter_id'] > 0 && $this->forumData['eco_get_rply_pts']  && $topic['starter_id'] != $this->memberData['member_id'] && $this->settings['eco_pts_per_get_reply'] )
+		{
+			#grab topic starter group
+			$topicStarter = $this->DB->buildAndFetch( array( 'select' => 'member_group_id','from' => 'members','where'  => 'member_id='.$topic['starter_id'] ) );
+
+			#topic starter's forum pts multiplier is..
+			$topicStarter['g_eco_frm_ptsx'] = $this->caches['group_cache'][ $topicStarter['member_group_id'] ]['g_eco_frm_ptsx'];
+
+			#add points to topic starter
+			if ($this->forumData['eco_get_rply_pts'] < 0)
+			{	
+				$points2Add = ( $topicStarter['g_eco_frm_ptsx'] == 0 ) ? $this->forumData['eco_get_rply_pts'] : $this->forumData['eco_get_rply_pts'] / $topicStarter['g_eco_frm_ptsx'];			
+			}
+			else
+			{
+				$points2Add = ( $topicStarter['g_eco_frm_ptsx'] == 0 ) ? $this->forumData['eco_get_rply_pts'] : $topicStarter['g_eco_frm_ptsx'] * $this->forumData['eco_get_rply_pts'];	
+			}
+			
+			$this->ibEcoSql->updateMemberPts( $topic['starter_id'], $points2Add, '+', TRUE );
+			
+			return $data;
+		}
+		
+		return $data;
+	}
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>ibEconomyPostPointsTopic.php</hook_file_real>
+      <hook_type>dataHooks</hook_type>
+      <hook_classname>ibEconomyPostPointsTopic</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:12:"postAddTopic";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+class ibEconomyPostPointsTopic
+{
+	/**
+	 * Handle data for a new topic
+	 **/
+    public function handleData($data)
+    {
+		#construct stuff
+		$this->registry     =  ipsRegistry::instance();
+		$this->DB           =  $this->registry->DB();
+		$this->settings     =& $this->registry->fetchSettings();
+		$this->request      =& $this->registry->fetchRequest();
+		$this->lang         =  $this->registry->getClass('class_localization');
+		$this->member       =  $this->registry->member();
+		$this->memberData   =& $this->registry->member()->fetchMemberData();
+		$this->cache        =  $this->registry->cache();
+		$this->caches       =& $this->registry->cache()->fetchCaches();
+		$this->forumData    =  $this->registry->getClass('class_forums')->forum_by_id[ $this->request['f'] ];
+				
+		#perms and what not...
+		if ( !$this->memberData['member_id'] || !$this->memberData['g_eco'] || !$this->settings['eco_pts_per_topic'] || $this->memberData['g_eco_frm_ptsx'] < 0)
+		{
+			return $data;
+		}	
+	
+		#grab ibEconomy SQL queries
+		require_once( IPSLib::getAppDir( 'ibEconomy' ) . '/sql/mysql_ibEconomy.php' );
+		$this->ibEcoSql = new ibEconomyMySQL( $this->registry );
+
+		#pts per new topic
+		if ( $this->forumData['eco_tpc_pts'] && $this->settings['eco_pts_per_topic'] )
+		{
+			#give me my new topic points
+			if ($this->forumData['eco_tpc_pts'] < 0)
+			{	
+				$points2Add = ( $this->memberData['g_eco_frm_ptsx'] == 0 ) ? $this->forumData['eco_tpc_pts'] : $this->forumData['eco_tpc_pts'] / $this->memberData['g_eco_frm_ptsx'];			
+			}
+			else
+			{
+				$points2Add = ( $this->memberData['g_eco_frm_ptsx'] == 0 ) ? $this->forumData['eco_tpc_pts'] : $this->memberData['g_eco_frm_ptsx'] * $this->forumData['eco_tpc_pts'];	
+			}			
+			
+			#not allow the post at all if the member doesn't have enough points and admin chooses to use the new setting(new to 1.6)
+			if ($this->settings['eco_pts_disallow_post'] && $points2Add < 0 && $this->memberData[ $this->settings['eco_general_pts_field'] ] + $points2Add < 0)
+			{
+				$this->lang->words['not_enough_points_to_start_topic_in_this_forum'] = str_replace("<%POINTS_NAME%>", $this->settings['eco_general_currency'], $this->lang->words['not_enough_points_to_start_topic_in_this_forum']);
+				$this->lang->words['not_enough_points_to_start_topic_in_this_forum'] = str_replace("<%AMOUNT%>", $points2Add * -1, $this->lang->words['not_enough_points_to_start_topic_in_this_forum']);
+				$this->registry->output->showError( $this->lang->words['not_enough_points_to_start_topic_in_this_forum'] );
+			}
+			
+			$this->ibEcoSql->updateMemberPts( $this->memberData['member_id'], $points2Add, '+', TRUE );
+		}
+		
+		return $data;
+	}
+}
+]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language>
+    <language>
+      <word_app>forums</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>not_enough_points_to_post_in_this_forum</word_key>
+      <word_default><![CDATA[Sorry, you don't have enough <%POINTS_NAME%> to post a reply in this forum. You need <%AMOUNT%> <%POINTS_NAME%> to post a reply in this forum.]]></word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>
+    <language>
+      <word_app>forums</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>not_enough_points_to_start_topic_in_this_forum</word_key>
+      <word_default><![CDATA[Sorry, you don't have enough <%POINTS_NAME%> to create a topic in this forum. You need <%AMOUNT%> <%POINTS_NAME%> to create a new topic in this forum.]]></word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>	
+  </hookextras_language>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

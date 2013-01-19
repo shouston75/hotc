@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name><![CDATA[(e32) ibEconomy Point Button]]></hook_name>
+      <hook_desc>Displays a button for ibEconomy pt total/donate/profile link for each member in topics/PMs</hook_desc>
+      <hook_author>emoney</hook_author>
+      <hook_email/>
+      <hook_website/>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>0.5.0</hook_version_human>
+      <hook_version_long>050</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";N;s:8:"database";a:0:{}}]]></hook_extra_data>
+      <hook_key>ibEconomyPointButton</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>ibEconomyPointButtonClassic.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>ibEconomyPointButtonClassic</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:12:"userInfoPane";s:4:"type";s:2:"if";s:2:"id";s:9:"postCount";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class ibEconomyPointButtonClassic
+{
+	/**
+	 * CONSTRUCTOR
+	 **/
+	function __construct()
+	{
+		/* Make registry objects */
+		$this->registry		=  ipsRegistry::instance();
+		$this->settings     =& $this->registry->fetchSettings();
+		$this->request		=& $this->registry->fetchRequest();
+		$this->member       =  $this->registry->member();
+        $this->memberData   =& $this->registry->member()->fetchMemberData();		
+	}
+	
+	public function getOutput()
+	{
+		return <<<HTML
+			
+HTML;
+	}
+	
+	public function replaceOutput($output, $key)
+	{
+		if (!$this->settings['eco_general_on'] || $this->settings['eco_pts_button_normal'] || !$this->settings['eco_pts_button_on'] || !$this->memberData['g_eco'])
+		{
+			return $output;
+		}
+
+		$postData 	= $this->registry->output->getTemplate('topic')->functionData['post'];
+		
+        if( is_array($postData) AND count($postData) )
+        {
+			$tag    = '<!--hook.' . $key . '-->';
+			$last   = 0;
+			$zeroOrTwo = ( $this->settings['eco_pts_button_decimal'] ) ? 2 : 0;
+			
+			foreach( $postData as $pid => $post )
+			{
+				$pos    = strpos( $output, $tag, $last );
+				
+				if( $pos )
+				{
+					$post['post']['author']['eco_points'] = $this->registry->getClass('class_localization')->formatNumber($post['post']['author'][ $this->settings['eco_general_pts_field'] ], $zeroOrTwo);
+					$string = $this->registry->output->getTemplate('ibEconomy')->pointButton($post['post']['author']);									
+
+					$output = substr_replace( $output, $string . $tag, $pos, strlen( $tag ) );
+						
+					$last   = $pos + strlen( $tag . $string );
+					
+					$string = "";
+				}
+			}
+        }
+		else
+		{
+			#showConversation - ($topic, $replies, $members, $jump="")
+			$replyData 	= $this->registry->output->getTemplate('messaging')->functionData['showConversation'][0]['replies'];
+			$memberData = $this->registry->output->getTemplate('messaging')->functionData['showConversation'][0]['members'];
+			#echo("<pre>");print_r($memberData);echo("</pre>");exit;
+
+			if( is_array($replyData) AND count($replyData) )
+			{
+				$tag    = '<!--hook.' . $key . '-->';
+				$last   = 0;
+				$zeroOrTwo = ( $this->settings['eco_pts_button_decimal'] ) ? 2 : 0;
+				
+				foreach( $replyData as $pid => $post )
+				{
+					$pos    = strpos( $output, $tag, $last );
+					
+					if( $pos )
+					{
+						if (!$memberData[ $post['msg_author_id'] ]['formatted_points'])
+						{
+							$memberData[ $post['msg_author_id'] ]['eco_points'] = $this->registry->getClass('class_localization')->formatNumber($memberData[ $post['msg_author_id'] ][ $this->settings['eco_general_pts_field'] ], $zeroOrTwo);					
+							$memberData[ $post['msg_author_id'] ]['formatted_points'] = TRUE;
+						}
+						$string = $this->registry->output->getTemplate('ibEconomy')->pointButton($memberData[ $post['msg_author_id'] ]);									
+
+						$output = substr_replace( $output, $string . $tag, $pos, strlen( $tag ) );
+							
+						$last   = $pos + strlen( $tag . $string );
+						
+						$string = "";
+					}
+				}
+			}
+		}
+
+		return $output;
+	}
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>ibEconomyPointButtonPM.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>ibEconomyPointButtonPM</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:14:"skin_messaging";s:12:"skinFunction";s:16:"showConversation";s:4:"type";s:2:"if";s:2:"id";s:8:"viewSigs";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class ibEconomyPointButtonPM
+{
+	/**
+	 * CONSTRUCTOR
+	 **/
+	function __construct()
+	{
+		/* Make registry objects */
+		$this->registry		=  ipsRegistry::instance();
+		$this->settings     =& $this->registry->fetchSettings();
+		$this->request		=& $this->registry->fetchRequest();
+		$this->member       =  $this->registry->member();
+        $this->memberData   =& $this->registry->member()->fetchMemberData();		
+	}
+	
+	public function getOutput()
+	{
+		return <<<HTML
+			
+HTML;
+	}
+	
+	public function replaceOutput($output, $key)
+	{
+		if (!$this->settings['eco_general_on'] || !$this->settings['eco_pts_button_normal'] || !$this->settings['eco_pts_button_on'] || !$this->memberData['g_eco'])
+		{
+			return $output;
+		}
+
+		$postData 	= $this->registry->output->getTemplate('messaging')->functionData['showConversation'][0]['replies'];
+		$members 	= $this->registry->output->getTemplate('messaging')->functionData['showConversation'][0]['members'];
+		
+        if( is_array($postData) AND count($postData) )
+        {
+			$tag    = '<!--hook.' . $key . '-->';
+			$last   = 0;
+			$zeroOrTwo = ( $this->settings['eco_pts_button_decimal'] ) ? 2 : 0;
+			
+			foreach( $postData as $pid => $post )
+			{
+				$pos    = strpos( $output, $tag, $last );
+				
+				if( $pos )
+				{
+					$post['eco_points'] = $this->registry->getClass('class_localization')->formatNumber($members[ $post['msg_author_id'] ][ $this->settings['eco_general_pts_field'] ], $zeroOrTwo);
+					$post['member_id']  = $post['msg_author_id'];
+					
+					$string = $this->registry->output->getTemplate('ibEconomy')->pointButton($post);									
+
+					$output = substr_replace( $output, $string . $tag, $pos, strlen( $tag ) );
+						
+					$last   = $pos + strlen( $tag . $string );
+					
+					$string = "";
+				}
+			}
+        }
+
+		return $output;
+	}
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>ibEconomyPointButton.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>ibEconomyPointButton</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:10:"skin_topic";s:12:"skinFunction";s:4:"post";s:4:"type";s:2:"if";s:2:"id";s:13:"postSignature";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class ibEconomyPointButton
+{
+	/**
+	 * CONSTRUCTOR
+	 **/
+	function __construct()
+	{
+		/* Make registry objects */
+		$this->registry		=  ipsRegistry::instance();
+		$this->settings     =& $this->registry->fetchSettings();
+		$this->request		=& $this->registry->fetchRequest();
+		$this->member       =  $this->registry->member();
+        $this->memberData   =& $this->registry->member()->fetchMemberData();		
+	}
+	
+	public function getOutput()
+	{
+		return <<<HTML
+			
+HTML;
+	}
+	
+	public function replaceOutput($output, $key)
+	{
+		if (!$this->settings['eco_general_on'] || !$this->settings['eco_pts_button_normal'] || !$this->settings['eco_pts_button_on'] || !$this->memberData['g_eco'])
+		{
+			return $output;
+		}
+
+		$postData 	= $this->registry->output->getTemplate('topic')->functionData['post'];
+		
+        if( is_array($postData) AND count($postData) )
+        {
+			$tag    = '<!--hook.' . $key . '-->';
+			$last   = 0;
+			$zeroOrTwo = ( $this->settings['eco_pts_button_decimal'] ) ? 2 : 0;
+			
+			foreach( $postData as $pid => $post )
+			{
+				$pos    = strpos( $output, $tag, $last );
+				
+				if( $pos )
+				{
+					$post['post']['author']['eco_points'] = $this->registry->getClass('class_localization')->formatNumber($post['post']['author'][ $this->settings['eco_general_pts_field'] ], $zeroOrTwo);
+					$string = $this->registry->output->getTemplate('ibEconomy')->pointButton($post['post']['author']);									
+
+					$output = substr_replace( $output, $string . $tag, $pos, strlen( $tag ) );
+						
+					$last   = $pos + strlen( $tag . $string );
+					
+					$string = "";
+				}
+			}
+        }
+
+		return $output;
+	}
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>ibEconomyGetPointFields.php</hook_file_real>
+      <hook_type>dataHooks</hook_type>
+      <hook_classname>ibEconomyGetPointFields</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:14:"topicViewQuery";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class ibEconomyGetPointFields
+{
+	public $registry;
+	
+	public function __construct()
+	{
+		$this->registry 	= ipsRegistry::instance();
+		$this->settings     =& $this->registry->fetchSettings();
+		$this->member       =  $this->registry->member();
+        $this->memberData   =& $this->registry->member()->fetchMemberData();
+		$this->DB           =  $this->registry->DB();
+	}
+	
+	public function handleData($postData)
+	{
+		$additionalFields = array();
+		if ($this->settings['eco_general_on'] && $this->settings['eco_pts_button_on'] && $this->settings['eco_general_pts_field'] != 'eco_points' && $this->memberData['g_eco'])
+		{
+			$additionalFields['members'] = array($this->settings['eco_general_pts_field']);
+		}
+				
+		return $additionalFields;
+	}	
+}?>]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_global</word_pack>
+      <word_key>view_my</word_key>
+      <word_default>View My</word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_global</word_pack>
+      <word_key>stats_and_donate_me_some</word_key>
+      <word_default>Stats or Send Me</word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_global</word_pack>
+      <word_key>profile</word_key>
+      <word_default>Profile</word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>	
+  </hookextras_language>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

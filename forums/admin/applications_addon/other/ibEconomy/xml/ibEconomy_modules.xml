@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduleexport>
+  <modulegroup>
+    <module>
+      <sys_module_title>ibEconomy</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>ibEconomy</sys_module_key>
+      <sys_module_description>ibEconomy</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>1</sys_module_position>
+      <sys_module_admin>0</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Ajax</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>ajax</sys_module_key>
+      <sys_module_description>ibEconomy Ajax</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>2</sys_module_position>
+      <sys_module_admin>0</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Frontpage</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>frontpage</sys_module_key>
+      <sys_module_description>ibEconomy Frontpage</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>1</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Manage Members</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>members</sys_module_key>
+      <sys_module_description>Manage ibEconomy Users</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>2</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Group Permissions</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>group_perms</sys_module_key>
+      <sys_module_description>ibEconomy Group Perms</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>3</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Forum Points</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>forum_points</sys_module_key>
+      <sys_module_description>ibEconomy Forum Points</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>4</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Shop</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>shop</sys_module_key>
+      <sys_module_description>The shop component of ibEconomy</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>5</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Investing</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>investing</sys_module_key>
+      <sys_module_description>ibEconomy Investing</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>6</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Appearance</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>display</sys_module_key>
+      <sys_module_description>Manage ibEconomy Appearance</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>7</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Quick Cash</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>quickcash</sys_module_key>
+      <sys_module_description>Quick Cash ibEconomy Settings</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>8</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Ajax</sys_module_title>
+      <sys_module_application>ibEconomy</sys_module_application>
+      <sys_module_key>ajax</sys_module_key>
+      <sys_module_description>ibEconomy ACP Ajax</sys_module_description>
+      <sys_module_version>0.0.1</sys_module_version>
+      <sys_module_parent/>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_tables/>
+      <sys_module_hooks/>
+      <sys_module_position>9</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>	
+  </modulegroup>
+</moduleexport>

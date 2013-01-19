@@ -1,0 +1,716 @@
+<html>
+	<head>
+		<title>(FSY23) Universal Mod Installer :: ReadMe</title>
+		<style type='text/css'>
+			BODY { font-size:11px; font-family:Verdana,Arial; color:#000; margin:0px; padding:0px; background-image:url(./../images/fadebg.jpg); background-repeat:no-repeat; background-position:right bottom; }
+			TABLE, TR, TD { font-family:Verdana,Arial;font-size:11px; color:#000; }
+			TEXTAREA { background-color:#DFE6EF; font-size:11px; overflow:hidden; }
+			a:link, a:visited, a:active { color:#000055; }
+			a:hover { color:#333377; text-decoration:underline; }
+			.tdrow1 { background-color:#EEF2F7; border-bottom:1px solid #D1DCEB; border-right:1px solid #D1DCEB; border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:12px; }
+			.tdrow2 { background-color:#F5F9FD; border-bottom:1px solid #D1DCEB; border-right:1px solid #D1DCEB; border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:12px; }
+			.warnbox { border:1px solid #F00; background:#FFE0E0; padding:6px; margin-right:10%; margin-left:10%; text-align:left; }
+			.pformstrip { background-color:#D1DCEB; color:#3A4F6C; font-weight:bold; padding:7px; margin-top:1px; text-align:left; }
+			.tableborder { border:1px solid #345487; background-color:#FFF; padding:0px; margin:0px; width:100%; }
+			.maintitle { text-align:left; vertical-align:middle; font-weight:bold; color:#FFF; letter-spacing:1px; padding:8px 0px 8px 5px; background-image:url(./../images/tile_back.gif); }
+			.fade { background-image:url(./../images/fade.jpg); background-repeat:repeat-x; }
+			#copy { font-size:10px; }
+			#button { background-color:#4C77B6; color:#FFFFFF; font-family:Verdana,Arial; font-size:11px; }
+			#logostrip { padding:0px; margin:0px; background:#3860BB url(./../images/tile_back.gif); }
+		</style>
+	</head>
+	<body marginheight='0' marginwidth='0' leftmargin='0' topmargin='0' bgcolor='#FFFFFF'>
+		<div id='logostrip'><img src='./../images/title.gif' border='0' alt='Invision Power Board Universal Mod Installer' /></div>
+		<div class='fade'>&nbsp;</div>
+		<div style='padding:10px'>
+			<div class='tableborder'>
+				<div class='maintitle'>Welcome!</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							If you're reading this, it most likely means you are a mod maker interested in 
+							using this installer script in your own mods. If that's the case, then this 
+							script should meet your needs just fine. I welcome any and all mod makers to 
+							use this script as their installer, all I ask is that you don't redistribute it 
+							on their own, just link to a site to download it in your mod's instructions. 
+							You can link to either link to <a href='http://www.ipsbeyond.com/forums/index.php?automodule=downloads&showfile=616'
+								target='_blank'>IPSBeyond</a>, and/or <a href='http://www.invisionmodding.com/index.php?automodule=downloads&showfile=494'
+								target='_blank'>Invision Modding</a>.
+							<br />
+							<br />
+							Apart from linking to this script, all you'd then need to include in your mods 
+							would be the XML files necessary, any custom PHP scripts, and the file edits. 
+							This document will walk you through the process of creating the XML files and 
+							the custom PHP scripts. The rest is up to you, good luck!
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Creating an XML file for your mod</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							Any mods that use this script must include an XML file. This file will hold all 
+							of the necessary information that your mod requires for operation. Remember 
+							that you only need to create this XML file if your mod needs to do one of the 
+							tasks listed in the 'What can it do?' section of the script's main ReadMe file. 
+							If your mod consists of just file edits and skin edits, you don't need this 
+							script.
+							<br />
+							<br />
+							Start off by examining the included XML file in this directory, sample.xml. 
+							This XML file gives an example of each of the sections that can be included in 
+							the XML file for your mod. As you can see from this file, under the mod_data 
+							node, there are a total of 13 sections. The only one of which that is required 
+							is the very top section, mod_info. Apart from that, you will have to fill out 
+							at least one other section, otherwise there is nothing for the installer to do. 
+							But you can have as many of the other sections as you wish. And remember that 
+							for most of the sections, you can add multiple items for the script to perform 
+							(such as adding multiple language strings if needed). You add multiple items to 
+							a section by just duplicating the code inside the section tags and adding it to 
+							the existing code. Taking the example of the Languages section, if you wanted 
+							to add two language string installations to your script, you'd copy the code <i>inside</i>
+							the &lt;languages_group&gt; section and duplicate it, keeping it inside that 
+							same section still.
+							<br />
+							<br />
+							For example, this code will allow you to add a single language string as part 
+							of your mod install:
+							<br />
+							<br />
+							<center>
+								<textarea rows="8" cols="100" wrap="SOFT" READONLY>	<languages_group>
+		<language>
+			<key></key>
+			<text></text>
+			<file></file>
+		</language>
+	</languages_group></textarea>
+							</center>
+							<br />
+							<br />
+							While this block of code would be used for adding two language strings:
+							<br />
+							<br />
+							<center>
+								<textarea rows="13" cols="100" wrap="SOFT" READONLY>	<languages_group>
+		<language>
+			<key></key>
+			<text></text>
+			<file></file>
+		</language>
+		<language>
+			<key></key>
+			<text></text>
+			<file></file>
+		</language>
+	</languages_group></textarea>
+							</center>
+							<br />
+							So let me guide you through the process of creating your XML.
+							<br />
+							<br />
+							<strong>Creating the file</strong>
+							<br />
+							There is no simple way (yet) to just generate your XML based on some user 
+							input, the file must be created manually. This may seem daunting at first, but 
+							as you do it it should make more and more sense. I'm assuming that as part of 
+							the mod creating process you have a folder set aside for your mod. Inside that 
+							folder you will need to either create a mod_install subfolder for the XML file 
+							to go in to, or put the XML just in the mod's folder and include instructions 
+							to upload it into the site's mod_install directory. Copy the sample.xml file 
+							that comes in this documentation folder into the appropriate folder for your 
+							mod and rename the file. The file name should be something that will be unique 
+							to your mod, as users may be using this script for many mods and all XML files 
+							in this folder will need their own unique names.
+							<br />
+							<br />
+							<strong>Using CDATA</strong>
+							<br />
+							If you're not that familiar with the structure of XML, you need to at least 
+							understand the CDATA tag, it is used to make the XML parser ignore characters 
+							that may break the XML structure. You can read up on the use of this tag on 
+							W3Schools, <a href='http://www.w3schools.com/xml/xml_cdata.asp' target='_blank'>here</a>. 
+							As you create your XML file, be sure to remember this. You may think that 
+							everything is going along fine, but the script fails to read the XML, and it is 
+							most likely due to this tag not being used when it should. If you get errors 
+							that there was an error reading the XML file, go back and look through your 
+							code to determine if you need to CDATA an element of the file.
+							<br />
+							<br />
+							<strong>mod_info</strong>
+							<br />
+							Now that you have your file ready to hold the info, let's start plugging in our 
+							info. In the top section of our file, the mod_info section, we have the 
+							following elements. Remember that this section <u>must</u> be completed.
+							<ul>
+								<li>
+									<strong>title</strong> - This is the name of the mod. You may need to use CDATA 
+									here if you use any characters such as '&amp;' in your mod title.</li>
+								<li>
+									<strong>version</strong> - The current version number of the mod.</li>
+								<li>
+									<strong>author</strong> - This is just your name or forum User Name.</li>
+								<li>
+									<strong>website</strong> - And this is your website.</li>
+								<li>
+									<strong>ipbver</strong> - This is the IPB version the mod is compatible with. 
+									You only need to specify the first point release, not the full version string. 
+									For example, 2.2, and not 2.2.0.</li>
+								<li>
+									<strong>version_file</strong> - If you want to host your own XML file for 
+									storing the version numbers of your mods, this is the full URL to that file 
+									(see the "Mod Version Control" section below)</li>
+							</ul>
+							<strong>sections_group</strong>
+							<br />
+							This is where you set up the ACP Settings Sections. These Settings Sections are 
+							the things that show up in your Tools & Settings page of the ACP. Generally 
+							speaking, if you need to set up these for your mod, you'll only be creating 
+							one. But if for some reason you need to set up more than one for your mod, that 
+							is also possible. To do that, just follow the steps above for creating multiple 
+							sections here. Just remember in which order you add them here as it will affect 
+							how you set up the settings for them. Here are the elements to the 
+							sections_group section:
+							<ul>
+								<li>
+									<strong>conf_title_title</strong> - This is the title of Settings Section. May 
+									need to use CDATA depending on the text.</li>
+								<li>
+									<strong>conf_title_desc</strong> - This is the description text that appears 
+									below the Section title. Again, CDATA may be necessary.</li>
+								<li>
+									<strong>conf_title_noshow</strong> - This will be either a 1 or 0. 1 means that 
+									you don't show it on the Tools & Settings page, 0 means that you do show it 
+									there. You'd only want to not show it (a value of 1) if you are showing it 
+									elsewhere, such as in a component.</li>
+								<li>
+									<strong>conf_title_keyword</strong> - This is just a keyword that will be used 
+									to refer to these sections, most likely used in conjunction with components. 
+									It's optional, not required. And remember that it must be a single word, no 
+									spaces, but using an underscore is permitted.</li>
+								<li>
+									<strong>conf_title_module</strong> - This is used with the new settings group 
+									modules system, where you can specify a custom script file that works with this 
+									setting group. Fill in the file name of this script file here, and upload the 
+									file to your \sources\components_acp\setting_plugins\ file, or leave this field 
+									blank if you aren't using this.</li>
+							</ul>
+							<strong>settings_group</strong>
+							<br />
+							Most mod authors will simply export these settings after adding them via the 
+							ACP. You can do that and just copy-paste the result of that into this section 
+							here, but I prefer to build this section manually. If you do paste in the 
+							generated XML, make sure you remove any blocks that refer to the settings 
+							group, as that is already covered above.
+							<ul>
+								<li>
+									<strong>conf_title</strong> - This is the text that shows up as the main name 
+									of the setting. May need to use CDATA depending on the text.</li>
+								<li>
+									<strong>conf_description</strong> - This is the optional description text below 
+									the main setting name. Again, may need to use CDATA depending on the text.</li>
+								<li>
+									<strong>conf_group</strong> - Leave this blank unless you are creating multiple 
+									settings sections. If you are, put a 0 in for settings that should appear in 
+									the first settings section, 1 for the next, etc. Also, if you want to create a 
+									new setting that will go into an existing settings section, you can put the 
+									conf_key of any existing setting from that conf_group in this field. The script 
+									will automatically see that and assign the correct conf_group value for this 
+									setting.</li>
+								<li>
+									<strong>conf_type</strong> - This will be either input, dropdown, yes_no, 
+									textarea, multi, or editor, depending on how the setting works.</li>
+								<li>
+									<strong>conf_key</strong> - This needs to be a unique single word (underscores 
+									allowed) key for identifying the setting. It's a good idea to make it unique by 
+									putting an acronym of the mod somewhere in the key.</li>
+								<li>
+									<strong>conf_default</strong> - The default value of the settings.</li>
+								<li>
+									<strong>conf_extra</strong> - Often used for dropdown boxes, but there are 
+									other built-in uses here such as #show_groups# that can generate a list of the 
+									groups on your board for use in a dropdown or multi setting.</li>
+								<li>
+									<strong>conf_evalphp</strong> - This is for any PHP code you need to execute 
+									related to this setting. This is advanced stuff and there is no easy way to 
+									explain all of its uses.</li>
+								<li>
+									<strong>conf_position</strong> - The order in the settings section which this 
+									will appear in.</li>
+								<li>
+									<strong>conf_start_group</strong> - On the settings section pages, you can 
+									create boxes of related settings. To do that, put some descriptive text into 
+									this field for the setting to start that box, otherwise leave this blank.</li>
+								<li>
+									<strong>conf_end_group</strong> - Related to the setting above, put a 1 here to 
+									indicate that this setting ends a box, otherwise leave it blank.</li>
+								<li>
+									<strong>conf_help_key</strong> - Links the setting to a section in the board's 
+									Help system, rarely used. (Only exists in IPB 2.2, removed in IPB 2.3)</li>
+							</ul>
+							<strong>components_group</strong>
+							<br />
+							This is another that will often be copy-pasted from an export from the board 
+							after creating this yourself. I again build this manually except for the 
+							com_menu_data element, that ones too complicated to build manually.
+							<ul>
+								<li>
+									<strong>com_title</strong> - The name of your component as you want it to 
+									appear on the components page. May need to use CDATA depending on the text.</li>
+								<li>
+									<strong>com_author</strong> - Your user name.</li>
+								<li>
+									<strong>com_url</strong> - Your website. May need to use CDATA depending on the 
+									text.</li>
+								<li>
+									<strong>com_version</strong> - The version number of this particular component.</li>
+								<li>
+									<strong>com_menu_data</strong> - This is a serialized array of your component's 
+									ACP menu commands. You will build this menu when you create the component in 
+									the ACP. If you're going to do a component that uses the ACP you should always 
+									develop it by using the Register New Component command in the ACP so that it 
+									will build this for you.</li>
+								<li>
+									<strong>com_enabled</strong> - Most likely going to be 1, meaning it's enabled.</li>
+								<li>
+									<strong>com_safemode</strong> - 1 means safe mode is on, which means that end 
+									users will not be able to edit the component in their ACPs. I never like to 
+									turn this on, but that's up to you.</li>
+								<li>
+									<strong>com_section</strong> - This is the section code for your component, 
+									which is the same as the file name.</li>
+								<li>
+									<strong>com_filename</strong> - Like above, this is just the file name (without 
+									the .php extension) of the files used by your component.</li>
+								<li>
+									<strong>com_description</strong> - A short description of the component. May 
+									need to use CDATA depending on the text.</li>
+								<li>
+									<strong>com_url_title</strong> - If the component adds a header link to its own 
+									page, this is the text that will display there. You can use text or 
+									{ipb.lang['some_words']} here. May need to use CDATA depending on the text.</li>
+								<li>
+									<strong>com_url_uri</strong> - In conjunction with the setting above, this is 
+									the URL of the new page. You can use {ipb.base_url} in it.</li>
+							</ul>
+							<strong>languages_group</strong>
+							<br />
+							This is used for adding new language strings. You can just include instructions 
+							for editing the language files directly, but this method makes the mod install 
+							easier for the people installing it.
+							<ul>
+								<li>
+									<strong>key</strong> - A unique key for that particular language string. This 
+									is the code on the left in the language files.</li>
+								<li>
+									<strong>text</strong> - The actual on-screen text. This is the text on the 
+									right in the language files. May need to use CDATA depending on the text.</li>
+								<li>
+									<strong>file</strong> - This is the name of the language file the text will go 
+									in to, without the .php extension, such as lang_global.</li>
+							</ul>
+							<strong>templates_group</strong>
+							<br />
+							These are used for the skin templates in the mod. Depending on the size of your 
+							mod, you may have a lot of these and you could be tempted to just include a 
+							language file, fight that urge. This is really best as it is a (nearly) 
+							foolproof method of setting up the skins for your mod.
+							<ul>
+								<li>
+									<strong>group_name</strong> - This is the name of the skin file the template 
+									will go in, without the .php extension, such as skin_global.</li>
+								<li>
+									<strong>section_content</strong> - This is the actual HTML code for the 
+									template. Always use CDATA here.</li>
+								<li>
+									<strong>func_name</strong> - This is the unique name for this skin template. It 
+									must be unique to the skin group, you can use a name that exists in another 
+									skin group.</li>
+								<li>
+									<strong>func_data</strong> - Used for any incoming data variables. Always use 
+									CDATA.</li>
+							</ul>
+							<strong>tasks_group</strong>
+							<br />
+							Tasks are rarely used in mods, but they can often be some of the coolest mods 
+							as they work without you having to do anything to them. I tend to create my 
+							tasks using the Add New Task link in the ACP and then just look in the database 
+							for the values to out in here.
+							<ul>
+								<li>
+									<strong>task_title</strong> - The name of your task, obviously. May need to use 
+									CDATA depending on the text.</li>
+								<li>
+									<strong>task_file</strong> - The name of the file used by the task, this one 
+									actually does want you to leave the .php extension on it.</li>
+								<li>
+									<strong>task_week_day</strong> - A numerical representation of the day of the 
+									week for it to run, best to get this and the next 3 settings from the database.</li>
+								<li>
+									<strong>task_month_day</strong> - A numerical representation of the day of the 
+									month for it to run.</li>
+								<li>
+									<strong>task_hour</strong> - A numerical representation of the hour in the day 
+									for it to run.</li>
+								<li>
+									<strong>task_minute</strong> - A numerical representation of the minute of the 
+									hours for it to run.</li>
+								<li>
+									<strong>task_log</strong> - 1 means yes, log the task runs, 0 means do not log 
+									it.</li>
+								<li>
+									<strong>task_description</strong> - A short description of the task. May need 
+									to use CDATA depending on the text.</li>
+								<li>
+									<strong>task_enabled</strong> - 1 means the task is enabled, 0 means it is not.</li>
+								<li>
+									<strong>task_key</strong> - Optional unique key for the task. Must be one word, 
+									but underscores are allowed.</li>
+								<li>
+									<strong>task_safemode</strong> - You'll almost certainly want this to be 0, so 
+									users can adjust the schedule if they want.</li>
+							</ul>
+							<strong>helps_group</strong>
+							<br />
+							This allows you to add entries to your board's Help system, to create articles 
+							to instruct your users on board features, or features in the mod. Please note 
+							that you cannot use language strings here, each of these needs to be filled out 
+							in plain text in your board's language.
+							<ul>
+								<li>
+									<strong>title</strong> - This is the title of the entry as it will show in the 
+									Help system.</li>
+								<li>
+									<strong>text</strong> - The fully formatted text of the article. 
+									BBcode/emoticons do not work, but HTML does. CDATA is almost certainly 
+									required.</li>
+								<li>
+									<strong>description</strong> - The description of the article, shows on the 
+									main Help page.</li>
+								<li>
+									<strong>position</strong> - The order on the main Help page this will show up 
+									in (lower number = higher on the list).</li>
+							</ul>
+							<strong>acp_helps_group</strong>
+							<br />
+							This feature specific to IP.Board 2.3.x allows you to add entries to your 
+							board's ACP Help system to add notes at the top of sections in your Admin CP to 
+							assist users of the mod. This feature will be ignored when mods are installed 
+							on IP.Board v2.2.x.
+							<ul>
+								<li>
+									<strong>is_setting</strong> - Set this to 1 if the ACP Help entry to be added 
+									is help for a specific conf_setting, or 0 if the help is for any other ACP 
+									section.</li>
+								<li>
+									<strong>page_key</strong> - If the is_setting value is 1, this will be the 
+									conf_key of the setting to add help to. If not, this key will be made up of the 
+									parts of the URL to this ACP section, namely the section, act, and code values, 
+									with each of those separated by an underscore. If you are making a component 
+									mod with a component file called mymod, and a code in it called settings, the 
+									page_key for that page would be components_mymod_settings.</li>
+								<li>
+									<strong>help_title</strong> - The title that shows up at the top of the ACP 
+									Help section.</li>
+								<li>
+									<strong>help_body</strong> - The full body of the ACP Help message to display. 
+									This supports HTML< and as such should be enclosed in CDATA.</li>
+								<li>
+									<strong>help_mouseover</strong> - This only ever applies for entries that have 
+									is_setting set to 1, it is the text that should display if a user hovers their 
+									mouse over the icon for ACP Help for this setting.</li>
+							</ul>
+							<strong>tables_group</strong>
+							<br />
+							This section of the XML will let you create new tables in the database. 
+							Remember that this functionality is only verified to be supported in MySQL, 
+							with un-tested support for MSSQL implemented, so be warned that you may have 
+							people that use Oracle or MSSQL come to you and say this doesn't work for them; 
+							it definitely won't work for Oracle and might not work for MSSQL, it's an IPB 
+							limitation at this point.
+							<ul>
+								<li>
+									<strong>name</strong> - This is just the name of the table. By convention, the 
+									table name is always lower case. It also has to be one word, with underscores 
+									allowed. Remember to leave off the ibf_ prefix, very important!</li>
+								<li>
+									<strong>data</strong> - This section will contain the definition of the table, 
+									the column names and data types as well as key information. Always use CDATA. 
+									An example of what this should look like is as follows, this is how the 
+									ibf_admin_logs table would look:
+									<center>
+										<textarea rows="9" cols="100" wrap="SOFT" READONLY>			<data><![CDATA[id bigint(20) NOT NULL auto_increment,
+				act varchar(255) default NULL,
+				code varchar(255) default NULL,
+				member_id int(10) default NULL,
+				ctime int(10) default NULL,
+				note text,
+				ip_address varchar(255) default NULL,
+				PRIMARY KEY  (id)]]></data></textarea>
+									</center>
+								</li>
+								<li>
+									<strong>type</strong> - Most often going to be MyISAM, but there are other 
+									possibilities, such as InnoDB and HEAP.</li>
+							</ul>
+							<strong>alters_group</strong>
+							<br />
+							This section will let you add or remove columns from database tables. Remember 
+							to fill out all of these sections even if the job of the installer is to remove 
+							an existing column; the uninstall may need to re-add it.
+							<ul>
+								<li>
+									<strong>alter_type</strong> - add means you are adding a new column to a 
+									database table, remove means (you guessed it) you're removing a column.</li>
+								<li>
+									<strong>table</strong> - The name of the table (without the table prefix) where 
+									the column will be added/removed.</li>
+								<li>
+									<strong>field_name</strong> - The name of the database column. Remember it must 
+									be unique to that table.</li>
+								<li>
+									<strong>field_type</strong> - A definition of the data type of the field, such 
+									as int(10).</li>
+								<li>
+									<strong>field_default</strong> - The default value of the field.</li>
+							</ul>
+							<strong>inserts_group</strong>
+							<br />
+							This section will allow you to insert rows into the database. Again, it is 
+							important to fill out all sections so both the install and uninstall will work 
+							correctly.
+							<ul>
+								<li>
+									<strong>table</strong> - The name of the table (without the table prefix) where 
+									the row will be inserted.</li>
+								<li>
+									<strong>fields</strong> - This will contain an array of other XML elements 
+									below it, representing the column names and corresponding values that we want 
+									to insert. For example, if we were entering a row into our ibf_titles table for 
+									a new rank, we would set this section up like this:
+									<center>
+										<textarea rows="6" cols="100" wrap="SOFT" READONLY>			<fields>
+				<posts>1000</posts>
+				&lt;title&gt;Big ass poster&lt;/title&gt;
+				<pips>25</pips>
+			</fields></textarea>
+									</center>
+									This shows the three database columns we are inserting values for, and the 
+									values of those columns. Remember that all columns should have some sort of 
+									default value, so for this section all you need to do is set the fields and 
+									values that you must have for this new row.
+								</li>
+								<li>
+									<strong>delete_key</strong> - Here you'll want to come up with a unique 
+									statement that would go into the WHERE part of a query for it to delete the row 
+									you added above. This is used for the uninstall process. You'll always want to 
+									use CDATA here. Using the example listed above, a good delete_key statement for 
+									that would be:
+									<center>
+										<textarea rows="2" cols="100" wrap="SOFT" READONLY>			<delete_key><![CDATA[pips=25]]></delete_key></textarea>
+									</center>
+								</li>
+							</ul>
+							<strong>updates_group</strong>
+							<br />
+							Using this section, you can update values for existing database entries. 
+							Remember to fill out all sections so the uninstall script will work.
+							<ul>
+								<li>
+									<strong>table</strong> - The database table (without the ibf_ prefix) that 
+									you'll be updating.</li>
+								<li>
+									<strong>key</strong> - The name of the column in the table that needs updated</li>
+								<li>
+									<strong>new_value</strong> - The new value to set this column to. I would 
+									always use CDATA here.</li>
+								<li>
+									<strong>old_value</strong> - This should be filled out with an old value to set 
+									the column to after the mod is uninstalled. I would always use CDATA here.</li>
+								<li>
+									<strong>where</strong> - An optional WHERE part of the query, to narrow down 
+									what you are updating. Always use CDATA.</li>
+							</ul>
+							<strong>customs_group</strong>
+							<br />
+							The most powerful part of this installer script, with this section you can add 
+							a custom PHP script to be executed for any steps that are not covered in the 
+							sections above. Remember that you can only have up to one script per mod, but 
+							that script can do whatever you need it to. Refer to the section below for 
+							actually building that file.
+							<ul>
+								<li>
+									<strong>script_name</strong> - This is the name of the custom script file, 
+									without the .php extension</li>
+								<li>
+									<strong>has_init</strong> - Set this to 1 if your custom script file will have 
+									functions to run at the start of the install/uninstall process, otherwise set 
+									it to 0.</li>
+								<li>
+									<strong>recache</strong> - Set this to 1 if you are doing some action inside 
+									the custom script file that would require the IPB caches to be rebuilt, or set 
+									it to 0 if that does not apply.</li>
+								<li>
+									<strong>templatesrecache</strong> - Set this to 1 if you are doing some action 
+									inside the custom script file that would require the skin caches to be rebuilt, 
+									or set it to 0 if that does not apply.</li>
+							</ul>
+							<strong>Finalizing your XML file</strong>
+							<br />
+							Once you have each of the relevant sections above filled out, your XML should 
+							be complete. Remember that any of the above sections that do not apply to your 
+							mod can (and should) be left out of your XML. Also remember that it doesn't 
+							matter what order you put the various sections in, you can start off by 
+							defining the tasks_group then below that add some new settings; the script will 
+							handle putting all of the tasks in the correct order. All you have left to do 
+							then is package your XML file inside your mod and refer to this script in your 
+							instructions!
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Creating a custom PHP script for your mod</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							You may find that the options that the script and XML files this tool gives you 
+							just won't accomplish certain things that are needed by your mod. To deal with 
+							this, I created the concept of custom PHP scripts that can be added in to your 
+							mod installations. Creating these is a bit advanced, so keep that in mind as 
+							you make it. I have included a basic sample.php file that you can use as a base 
+							for your own custom install script.
+							<br />
+							<br />
+							The first thing you need to do is complete the &lt;customs_group&gt; section in 
+							the XML file as outlined above. Fill out the script_name tag with the name of 
+							the PHP file that will be used, remembering to leave off the .php extension. If 
+							your custom installation script need to execute certain actions before the rest 
+							of the XML file processes are run, then be sure to set the has_init key to 1. 
+							If your script will do work that will require the IPB caches or skins be 
+							re-cached, be sure to set those tags to 1 as appropriate as well.
+							<br />
+							<br />
+							Next, rename the sample.php file in this directory to the file name specified 
+							above and include it in your mod's mod_install directory with the XML file. 
+							Open up this PHP file and check out it's contents. Be sure to first change the 
+							class name of this file, making that class name be the same as the file name, 
+							again <strong>without</strong> the .php extension. Note that the file contains 
+							4 functions:
+							<ul>
+								<li>
+									<strong>init_install()</strong> - Steps to be taken during an installation <i>before</i>
+									any tasks from the XML file are completed.</li>
+								<li>
+									<strong>init_uninstall()</strong> - Steps to be taken during an uninstallation <i>before</i>
+									any tasks from the XML file are completed.</li>
+								<li>
+									<strong>install()</strong> - Steps to be taken during an installation <i>after</i>
+									any tasks from the XML file are completed.</li>
+								<li>
+									<strong>uninstall()</strong> - Steps to be taken during an uninstallation <i>after</i>
+									any tasks from the XML file are completed.</li>
+							</ul>
+							The sample file contains some basic code that will be required by each of these 
+							functions. First, remember that you have to always increment the 
+							$this->ipsclass->input['step'] value <u>just once</u> during each of these 
+							functions. At the end of the function's execution, you can either perform a 
+							redirect (which will display a redirect screen explaining what was just done 
+							during the installation) or you can perform a boink_it (which will send the 
+							installation to the next page without the redirect screen).
+							<br />
+							<br />
+							If doing a redirect, be sure to include some descriptive text explaining what 
+							work was done, you would put your text in the place where I have "Custom Script 
+							Redirect Text...." in the sample file. And remember, you only want to do either 
+							a call to $this->ipsclass->admin->redirect() or $this->ipsclass->boink_it(), 
+							not both. If you actually have work to execute for that step, it's best to use 
+							$this->ipsclass->admin->redirect() and explain what was done, and if you don't 
+							have any work to perform for that step, you'd use $this->ipsclass->boink_it() 
+							to just make it seem like you're skipping the step. The way this second option 
+							would come in to play would be if you did have custom script to run on 
+							installation, but none on uninstallation.
+							<br />
+							<br />
+							As far as actually executing your custom code, how you do that is going to 
+							depend on what you need to do. Most often, the code you need to execute will go 
+							at the beginning of the function, before you call 
+							$this->ipsclass->input['step']++;. Remember that this script has access to the 
+							$this->ipsclass object, so it has access to all of it's associated functions 
+							and members, meaning you can perform database queries or any one of the dozens 
+							of other actions in $ipsclass.
+							<br />
+							<br />
+							The final piece of advice I can give you about using this is to be sure to test 
+							it out thoroughly. Using custom scripts in this manner is very tricky for less 
+							experienced modders to do, but it is very powerful.
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<div class='tableborder'>
+				<div class='maintitle'>Mod Version Control</div>
+				<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
+					<tr>
+						<td class='tdrow1' width='100%' valign='middle'>
+							This new feature allows you as a Developer to update users when there is a new 
+							version of your mod out and available to them. The first step is to create the 
+							XML file that will hold your mods' version info. Check out the mods.xml file 
+							included in this folder:
+							<br />
+							<br />
+							<center>
+								<textarea rows="16" cols="100" wrap="SOFT" READONLY><?xml version="1.0" encoding="ISO-8859-1"?>
+<mods>
+	<ipb22>
+		<mod>
+			<version>1.0</version>
+			<file>my_mod</file>
+		</mod>
+	</ipb22>
+	<ipb23>
+		<mod>
+			<version>1.0</version>
+			<file>my_mod</file>
+		</mod>
+	</ipb23>
+</mods></textarea>
+							</center>
+							<br />
+							<br />
+							Rename this file to whatever you want, and host the file on some publicly 
+							accessible location. Keep track of the URL to that file, you'll need it. For 
+							each mod you create to use this system, just add a new 'mod' section to this 
+							XML file. As you can see, each 'mod' section has just two pieces of info: the 
+							version number and the file name. Just change the version number here when you 
+							update your mods, and put the name of the mod's main XML file in as the file 
+							value (without the .xml extension).
+							<br />
+							<br />
+							Now you have your remote XML file holding the version number, plug the URL of 
+							that file in the top of the XML file, in the version_file section. The 
+							Universal Mod Installer will do all the work of then finding your file and 
+							reading the version info to store into its internal variables. Then you just 
+							have to remember to update this XML file on your site each time you release a 
+							new mod or update an existing one, and when you do that then the users of your 
+							mods will see that there is an update available.
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<br />
+			<center>
+				<span id='copy'>
+					(FSY23) Universal Mod Installer v2.6.4, by <a href='http://www.invisionmodding.com/' target='_blank'>
+						Invision Modding</a>, &copy; 2008
+				</span>
+			</center>
+		</div>
+	</body>
+</html>

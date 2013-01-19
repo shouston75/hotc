@@ -1,0 +1,2440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_title_title>ibEconomy Appearance</conf_title_title>
+      <conf_title_desc>Display settings for the (e32) ibEconomy Application</conf_title_desc>
+      <conf_title_tab>ibEconomy</conf_title_tab>
+      <conf_title_app>ibEconomy</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable Sidebar?</conf_title>
+      <conf_description>Show the ibEconomy sidebar by default?</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_display_sidebar_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Sidebar</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Skins to NOT display sidebar on</conf_title>
+      <conf_description>Any skins that you select here will not display the ibEconomy sidebar</conf_description>
+      <conf_group>57</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>eco_display_sb_skins</conf_key>
+      <conf_default/>
+      <conf_extra>#show_skins#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['eco_display_sb_skins']) )
+	{
+		$_POST['eco_display_sb_skins'] = implode(",",$_POST['eco_display_sb_skins']);
+	}
+	else
+	{
+		$_POST['eco_display_sb_skins'] = "";
+	}
+	
+	$key = 'eco_display_sb_skins';
+}
+if ( $show == 1 )
+{
+    $key='eco_display_sb_skins[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Marquee Speed</conf_title>
+      <conf_description>Speed of the marquee, if you happen to add a sidebar block with the a marquee display type</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_display_marq_spd</conf_key>
+      <conf_default>6</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>		
+    <setting>
+      <conf_title>Enable Announcement?</conf_title>
+      <conf_description>Show announcement above application on every page?</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_ance_on</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Global</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Announcment</conf_title>
+      <conf_description>Enter announcment to display.  BBCode is OK.</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>eco_general_ance</conf_key>
+      <conf_default>Welcome to ibEconomy!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Leftside Buttons</conf_title>
+      <conf_description>Select buttons to show on the top left of ibEconomy.  </conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>eco_left_buttons</conf_key>
+      <conf_default>don</conf_default>
+      <conf_extra>don=Quick Donate&#13;
+bank=Open Bank Account&#13;
+stock=Buy Stock&#13;
+cc=Buy Credit Card&#13;
+lt=Invest&#13;
+loan=Apply for a Loan&#13;
+shopitem=Shop&#13;
+lottery=Lottery&#13;
+</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['eco_left_buttons']) )
+	{
+		$_POST['eco_left_buttons'] = implode(",",$_POST['eco_left_buttons']);
+	}
+	else
+	{
+		$_POST['eco_left_buttons'] = "";
+	}
+	
+	$key = 'eco_left_buttons';
+}
+if ( $show == 1 )
+{
+$key = 'eco_left_buttons[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Larger Thumbnails</conf_title>
+      <conf_description>If enabled, custom item images thumbs will show a bit larger (80X80)</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_display_lrg_thmb</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Profile Tab</conf_title>
+      <conf_description>Enable profile tab?</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_display_profile_tab_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Enable Welcome Frontpage</conf_title>
+      <conf_description>Turn on the below welcome message?</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_welcome_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group>Welcome</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Frontpage Message</conf_title>
+      <conf_description>Enter the contents to display as the ibEconomy Frontpage.  </conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>eco_general_welcome</conf_key>
+      <conf_default>Invest wisely and shop frivolously! :)</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+   <setting>
+      <conf_title>Landing Page</conf_title>
+      <conf_description>Select which page will be first presented when visiting ibEconomy.  If not set to default, make sure that page is enabled</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_display_landing_page</conf_key>
+      <conf_default>global.frontpage</conf_default>
+      <conf_extra>global.frontpage=Default&#13;
+global.overview=Global Overview&#13;
+global.portfolio=Global Assets&#13;
+global.transactions=Global Transactions&#13;
+global.settings=Settings&#13;
+me.my_overview=My Overview&#13;
+me.my_shopitems=My Shop Items&#13;
+me.my_banks=My Banks&#13;
+me.my_stocks=My Stocks&#13;
+me.my_ccs=My Credit&#13;
+me.my_lts=My Long-Term&#13;
+me.my_loans=My Loans&#13;
+me.my_welfare=My Welfare&#13;
+shop.all=Shop Categories&#13;
+shop.items=Shop Items&#13;
+cash.lottery=Lotteries&#13;
+</conf_extra> 
+      <conf_evalphp></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Show Stats Box?</conf_title>
+      <conf_description>Show the box above the copyright that shows active users and various ibEconomy stats?</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_show_stats</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group>Stats Footer</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Totals</conf_title>
+      <conf_description>Show the various stats in the right side of the stats box? (total points, global debt, etc).</conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_show_totals</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Active Users?</conf_title>
+      <conf_description>Show a formatted list of users active in ibEconomy? </conf_description>
+      <conf_group>181</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_show_active</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_display</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_title_title>ibEconomy General</conf_title_title>
+      <conf_title_desc>General settings for the (e32) ibEconomy Application</conf_title_desc>
+      <conf_title_tab>ibEconomy</conf_title_tab>
+      <conf_title_app>ibEconomy</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>ibEconomy Enabled?</conf_title>
+      <conf_description>On/Off</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_on</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>General Config</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Name for Application</conf_title>
+      <conf_description><![CDATA[What do you want to call ibEconomy?<br />To change the title of the tab on the public side, you need to edit the public name of this app directly: ACP->System->Manage Apps->ibEconomy->Edit Application Details->Application Public Title]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_general_name</conf_key>
+      <conf_default>ibEconomy</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Currency Name</conf_title>
+      <conf_description>What do you want to name the currency used in this app?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_general_currency</conf_key>
+      <conf_default>Points</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Currency Symbol</conf_title>
+      <conf_description>What symbol do you want to use to denote currency?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_general_cursymb</conf_key>
+      <conf_default>$</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Use decimal?</conf_title>
+      <conf_description><![CDATA[If enabled, values, costs, point totals, net worth, etc will all be formatted with a decimal, for more of a money feel]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_use_decimal</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Round Up or Round Down?</conf_title>
+      <conf_description><![CDATA[If decimal is disabled, when calculating fees and taxes, should the number be rounded down or up?]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_general_round_direction</conf_key>
+      <conf_default>FLOOR</conf_default>
+      <conf_extra>FLOOR=Down&#13;
+CEILING=Up&#13;
+ROUND=Nearest Whole Number&#13;
+</conf_extra>      
+	<conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>		
+    <setting>
+      <conf_title>Points System</conf_title>
+      <conf_description><![CDATA[Which points system do you wish to use with ibEconomy?<br />(`MEMBERS` database field)]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_general_pts_field</conf_key>
+      <conf_default>eco_points</conf_default>
+      <conf_extra>eco_points=ibEconomy Points&#13;
+points=iPoints/IBstore/ibMarket/Perfect Points (`points`)&#13;
+ibbookie_points=ibBookie (`ibbookie_points`)&#13;
+money=IBProBattle (`money`)&#13;
+utr_points=Ultimate Referrals (`utr_points`)&#13;
+</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Settings</conf_title>
+      <conf_description><![CDATA[Show a page that provides many global settings (which you select here) as well as a member's personal settings (max pts, can use banks, can shop, etc)?]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_settings_page_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Public Items Per Page</conf_title>
+      <conf_description><![CDATA[Enter the number that will act as the global "Per Page" setting (Bank lists can have double, as there can be 2 types of banks per bank).]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_general_pp</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>ACP Portfolio Per Page</conf_title>
+      <conf_description>Enter the number of portfolio items to show per page in the ACP Manage Portfolio section of ibEconomy</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_acp_pp</conf_key>
+      <conf_default>50</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Skip Welfare in Total Worth?</conf_title>
+      <conf_description><![CDATA[When the task runs to recalculate every member's total worth, should their total welfare received also count in the figure? Leaving on No will force the system to subtract a member's welfare from their total worth.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_worth_incl_wf</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Update Checker?</conf_title>
+      <conf_description>Leave on so that you know when a new version is released just by visiting the frontpage of ibEconomy. </conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_update_checker</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Active Users Time Cutoff</conf_title>
+      <conf_description><![CDATA[Input the cutoff time (in minutes) for a user to considered "active" in ibEconomy]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_general_au_cutoff</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable One-Click Buy</conf_title>
+      <conf_description><![CDATA[If enabled, users will be able to choose an Amazon style 1-Click purchase instead of the conventional checkout screen]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_general_one_click_buy</conf_key>
+      <conf_default>on</conf_default>
+      <conf_extra>off=Disabled&#13;
+on=Optional&#13;
+only=ONLY show 1-click buy&#13;
+</conf_extra>      
+<conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Copyright-Removal</conf_title>
+      <conf_description><![CDATA[If a $29.99 license has been purchased to remove Copyright, input it here.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_general_license</conf_key>
+      <conf_default></conf_default>    
+	  <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Enable the Cashier</conf_title>
+      <conf_description><![CDATA[If off, the Cashier tab will not show, so if you have this off you better also have all investments and all shop items off too.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_cashier_on</conf_key>
+      <conf_default>1</conf_default>    
+	  <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group></conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Cache Portfolio</conf_title>
+      <conf_description><![CDATA[If off, member's portfolios (assets) will not be stored in cache.  This will add a query to certain pages, but might be more efficient overall for large boards.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_cache_portfolio</conf_key>
+      <conf_default>1</conf_default>    
+	  <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+	<setting>
+      <conf_title>Enable Member Worth</conf_title>
+      <conf_description><![CDATA[If off, Member Worth/Rankins won't show, only on-hand points.  So banks/stocks/shop item values, etc don't get counted.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_worth_on</conf_key>
+      <conf_default>1</conf_default>    
+	  <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+	<setting>
+      <conf_title>Disallow Negative Points (only for hooks)</conf_title>
+      <conf_description><![CDATA[REMEMBER: shopping, banking, etc already have built-in checks.  This is for random things like Points Per Rep if you have it giving negative.
+	  <br />In some cases (not Points Per Rep) this adds one query if enabled, so it is recommended to leave this setting off.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_not_allow_negative</conf_key>
+      <conf_default>0</conf_default>    
+	  <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Only Show Own Transactions</conf_title>
+      <conf_description><![CDATA[If ON, only members in groups with the ibEconomy Adminsistrate access (edit points) can view all transactions.  All other members can only view their own.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_only_my_trans</conf_key>
+      <conf_default>0</conf_default>    
+	  <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Enable Rankings</conf_title>
+      <conf_description><![CDATA[If ON, there will be a Standings/Rankings page within the Global Economy tab and member's point rankings will be viewable on their profile.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_rankings_on</conf_key>
+      <conf_default>1</conf_default>    
+	  <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Donations?</conf_title>
+      <conf_description>Turn on Donations?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_dons_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>23</conf_position>
+      <conf_start_group>Donations</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow Smilies</conf_title>
+      <conf_description>Allow members to post emoticons in donation comments?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_dons_emo</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow BBCode?</conf_title>
+      <conf_description>Allow members to use bbcode in donation comments?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_dons_bbc</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>25</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Send PM?</conf_title>
+      <conf_description>Send a PM to the donation receiver?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_general_dons_pm_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>26</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Donation PM Title</conf_title>
+      <conf_description>Enter the title of the donation PM.  The same macros below also work here.</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_general_pm_title</conf_key>
+      <conf_default><![CDATA[You have received a donation of <#DONATION_AMOUNT#> Points!]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>27</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Body</conf_title>
+      <conf_description><![CDATA[Enter the contents of the donation PM.  Replaceable Macros:<br />
+<b><#TO_NAME#></b> - Name of donation receiver
+<b><#MESSAGE#></b> - Donation reason
+<b><#DONATION_AMOUNT#></b> - Amount of donation
+<b><#FROM_NAME#></b> - Donator ]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>eco_general_pm_body</conf_key>
+      <conf_default><![CDATA[<#TO_NAME#>,<br /><br />
+
+<#MESSAGE#><br /><br />
+
+Enjoy the <#DONATION_AMOUNT#> points!<br /><br />
+
+<#FROM_NAME#>]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>28</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Transactions?</conf_title>
+      <conf_description><![CDATA[Allow users to browse ALL user's transactions (donations, purchases, etc)?]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_transactions_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>29</conf_position>
+      <conf_start_group><![CDATA[Transactions &amp; Assets]]></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Asset Viewing?</conf_title>
+      <conf_description><![CDATA[Allow users to browse ALL user's assets/portfolio (banks, shop items, etc)?]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_assets_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Per New Topic</conf_title>
+      <conf_description>Enable Points Per New Topic?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_pts_per_topic</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>31</conf_position>
+      <conf_start_group>Posting for Points</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Per Reply</conf_title>
+      <conf_description>Enable Points Per Reply?</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_pts_per_reply</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>32</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Replies to Own Topic</conf_title>
+      <conf_description><![CDATA[Enable Points Per Replies in One's Own Topic?]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_pts_per_get_reply</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>33</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Disallow Post</conf_title>
+      <conf_description><![CDATA[If the number of points being given is negative and the poster would go negative after posting, enable this setting to restrict the user from posting.]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_pts_disallow_post</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>34</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Group Percentage Adjustment?</conf_title>
+      <conf_description><![CDATA[Factor in a member's group's "Forum Points Percentage" for the below point values?]]></conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_ppr_grp_adj</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>35</conf_position>
+      <conf_start_group>Points Per Reputation</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Points Per Positive Rep (giver)</conf_title>
+      <conf_description>How many points shall be awarded to to users when giving positive reputation?&#13;
+(leave blank/0 to disable)</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_ppr_pos_giver</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>36</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Points Per Positive Rep (receiver)</conf_title>
+      <conf_description>How many points shall be awarded to to users when receiving positive reputation?&#13;
+(leave blank/0 to disable)</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_ppr_pos_recr</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>37</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Points Per Negative Rep (giver)</conf_title>
+      <conf_description>How many points shall be awarded to to users when giving negative reputation?&#13;
+(leave blank/0 to disable)</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_ppr_neg_giver</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>38</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Points Per Negative Rep (receiver)</conf_title>
+      <conf_description>How many points shall be awarded to to users when receiving negative reputation? (leave blank/0 to disable)</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_ppr_neg_recr</conf_key>
+      <conf_default>-50</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>39</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>On/Off?</conf_title>
+      <conf_description>Turn on the Points button beneath Posts/PMs?  (better to leave the hooks enabled and use this setting instead)</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_pts_button_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>45</conf_position>
+      <conf_start_group>Donate/Points Button</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Where?</conf_title>
+      <conf_description>Display as a button beneath post?  Set to No to instead show button above in Member Pane (the default style from ibEconomy 1.0).</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_pts_button_normal</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>46</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Decimal and Cents</conf_title>
+      <conf_description>Show decimal and cents?  (leave set to No to save valuable space</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_pts_button_decimal</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>47</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>On/Off?</conf_title>
+      <conf_description>If on, owned shop items will be displayed next to posts/PMs</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_show_my_items_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>48</conf_position>
+      <conf_start_group>Show Off User Shop Items</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Max to Show</conf_title>
+      <conf_description>This is the max number of shop items that will be displayed next to posts/PMs</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_show_my_items_max</conf_key>
+      <conf_default>12</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>49</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Disallow Specific Item Types?</conf_title>
+      <conf_description>Items of selected types will NOT be displayed</conf_description>
+      <conf_group>182</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>eco_disallowed_box_items</conf_key>
+      <conf_default></conf_default>
+      <conf_extra>add_color_topic_title=Add Color Topic Title&#13;
+adjust_member_post_count=Adjust Member Post Count&#13;
+adjust_member_rep=Adjust Member Rep&#13;
+award_item=Award Item&#13;
+ban_member=Ban Member&#13;
+blank_unusable_item=Blank Unusable Item&#13;
+change_member_avatar=Change member Avatar&#13;
+change_member_group=Change Member Group&#13;
+change_member_name=Change Member Name&#13;
+change_member_signature=Change Member Signature&#13;
+change_member_skin=Change Member Skin&#13;
+change_member_status=Change Member Status&#13;
+change_member_title=Change Member Title&#13;
+close_topic=Close Topic&#13;
+open_topic=Open Topic&#13;
+password_to_forum=Password to Forum&#13;
+pin_topic=Pin Topic&#13;
+promote_to_vip=Promote to VIP&#13;
+random_points=Random Points&#13;
+random_shop_item=Random Shop Item&#13;
+scratch_off=Scratch Off&#13;
+secret_message=Secret Message&#13;
+send_pm_to_id=Send PM to ID&#13;
+steal_points=Steal Points&#13;
+steal_rep=Steal Rep&#13;
+unban_member=Unban Member&#13;
+unpin_topic=Unpin Topic&#13;
+upload_emoticon=Upload Emoticon</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['eco_disallowed_box_items']) )
+	{
+		$_POST['eco_disallowed_box_items'] = implode(",",$_POST['eco_disallowed_box_items']);
+	}
+	else
+	{
+		$_POST['eco_disallowed_box_items'] = "";
+	}
+	
+	$key = 'eco_disallowed_box_items';
+}
+if ( $show == 1 )
+{
+    $key='eco_disallowed_box_items[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>50</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_title_title>ibEconomy Investing</conf_title_title>
+      <conf_title_desc>Investment settings for the (e32) ibEconomy Application</conf_title_desc>
+      <conf_title_tab>ibEconomy</conf_title_tab>
+      <conf_title_app>ibEconomy</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Investment Frontpage</conf_title>
+      <conf_description>Which page should be default within the investments tab?</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_banking_fp</conf_key>
+      <conf_default>banks</conf_default>
+      <conf_extra>banks=Banks&#13;
+stocks=Stocks&#13;
+ccs=Credit-Cards&#13;
+lts=Long-Terms</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>General</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Banks?</conf_title>
+      <conf_description>Turn on Banks?</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_banks_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group>Banks</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Savings Account APY Cycle</conf_title>
+      <conf_description>Enter the rate at which interest is disbursed for savings accounts. (in days)</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_banks_cycle</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Stocks?</conf_title>
+      <conf_description>Turn on Stocks?</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_stocks_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Stocks</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Stock Purchase Fee</conf_title>
+      <conf_description>Enter the percentage that will be taken from every stock purchase</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_stocks_buy_fee</conf_key>
+      <conf_default>4.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Selling Stocks Fee</conf_title>
+      <conf_description>Input the percentage charged for every stock sell</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_stocks_sell_fee</conf_key>
+      <conf_default>2.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Low End of Share Price Adjustment Factor</conf_title>
+      <conf_description><![CDATA[The low end of the stock price adjustment range.  Mostly important for "Basic" stock, which is done randomly.  See the long-term setting for more description.]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_stocks_curve</conf_key>
+      <conf_default>-5</conf_default>
+      <conf_extra>10=10&#13;
+9=9&#13;
+8=8&#13;
+7=7&#13;
+6=6&#13;
+5=5&#13;
+4=4&#13;
+3=3&#13;
+2=2&#13;
+1=1&#13;
+0=0&#13;
+-1=-1&#13;
+-2=-2&#13;
+-3=-3&#13;
+-4=-4&#13;
+-5=-5&#13;
+-6=-6&#13;
+-7=-7&#13;
+-8=-8&#13;
+-9=-9&#13;
+-10=-10&#13;
+-11=-11&#13;
+-12=-12&#13;
+-13=-13&#13;
+-14=-14&#13;
+-15=-15&#13;
+-16=-16&#13;
+-17=-18&#13;
+-18=-18&#13;
+-19=-19</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Stock Value Adjustment Cycle</conf_title>
+      <conf_description><![CDATA[Enter the rate at which stock values are adjusted. (IN MINUTES, so keep it pretty high if your forum can't handle the relatively high load process throughout the day! 1440=1 Day)]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_stocks_cycle</conf_key>
+      <conf_default>1440</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Maximum Stock Share Value</conf_title>
+      <conf_description>Share values cannot exceed this value.  Leave blank/0 to disable.</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_stocks_max_value</conf_key>
+      <conf_default>100000</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of Posts Required to Earn Max Value Increase</conf_title>
+      <conf_description>This is the number that will be used when POST based stock values are adjusted.  If 25 posts per stock cycle would be a GREAT day on your board, then leave it around 25.  
+	  If only a few posts per day is good, then set lower.  The LOWER the number the EASIER it is to increase the value.</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_stocks_posts_max</conf_key>
+      <conf_default>25</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Number of Points Required to Earn Max Value Increase</conf_title>
+      <conf_description>This is the number that will be used when POINT based stock values are adjusted.  Same as above, except base this on your board's points.</conf_description>      
+	  <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_stocks_points_max</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Number of Registrations Required to Earn Max Value Increase</conf_title>
+      <conf_description>This is the number that will be used when REGISTRATION based stock values are adjusted.  Same as above, except base this on your board's registrations.</conf_description>      
+	  <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_stocks_regs_max</conf_key>
+      <conf_default>25</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Enable Credit-Cards</conf_title>
+      <conf_description>Turn on Credit-Cards</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_ccs_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group>Credit-Cards</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Credit Card Minimum Due</conf_title>
+      <conf_description><![CDATA[Enter the percentage of a credit-card's total debt that must be paid each cycle (set below).  ]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_ccs_min_pay</conf_key>
+      <conf_default>1.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Credit-Card Billing Cycle</conf_title>
+      <conf_description>Enter the number of days per credit-card billing cycle</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_ccs_cycle</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Long-Terms?</conf_title>
+      <conf_description>Turn on Long-Term Investments?</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_lts_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group>Long-Term Investments</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Long-Term Purchase Fee</conf_title>
+      <conf_description>Enter the percentage that will be taken from every long-term investment buy-in or cash-in</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lts_buy_fee</conf_key>
+      <conf_default>9.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Long-term Sell Fee</conf_title>
+      <conf_description>Input the percentage charged for every long-term cashout</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lts_sell_fee</conf_key>
+      <conf_default>3.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Low End of Balance Adjustment Factor</conf_title>
+      <conf_description><![CDATA[The value adjustment of a long-term is done randomly.  A number is picked between XX and 10.  Select what XX is here.  For example, selecting -10 would make the range -10 => 10, so it is equal odds that a positive number is picked as a negative number.  If you were to pick 0, then EVERY adjustment would be positive.  ]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_lts_curve</conf_key>
+      <conf_default>-5</conf_default>
+      <conf_extra>10=10&#13;
+9=9&#13;
+8=8&#13;
+7=7&#13;
+6=6&#13;
+5=5&#13;
+4=4&#13;
+3=3&#13;
+2=2&#13;
+1=1&#13;
+0=0&#13;
+-1=-1&#13;
+-2=-2&#13;
+-3=-3&#13;
+-4=-4&#13;
+-5=-5&#13;
+-6=-6&#13;
+-7=-7&#13;
+-8=-8&#13;
+-9=-9&#13;
+-10=-10&#13;
+-11=-11&#13;
+-12=-12&#13;
+-13=-13&#13;
+-14=-14&#13;
+-15=-15&#13;
+-16=-16&#13;
+-17=-18&#13;
+-18=-18&#13;
+-19=-19</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>21</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Investment Balance Adjustment Cycle</conf_title>
+      <conf_description>Enter the rate at which investment balance totals are adjusted. (in days)</conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lts_cycle</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>22</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Interest Restrictions?</conf_title>
+      <conf_description><![CDATA[Select the investment types for which you wish to enable the below interest restrictions.  Good so that members can't get huge interest-driven accounts and then go inactive from the forum but continue to collect interest checks.  Or (in the case of APR/debt and only for the activity setting) so that members don't pile up huge sums of debt if they are absent from the forum.<br />Welfare has it's own settings and is not included here.]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>eco_interest_restrict_on</conf_key>
+      <conf_default>bank,cc,lt,loan</conf_default>
+      <conf_extra>bank=Banks&#13;
+cc=Credit Cards&#13;
+lt=Long-Term Investments&#13;
+loan=Loan</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['eco_interest_restrict_on']) )
+	{
+		$_POST['eco_interest_restrict_on'] = implode(",",$_POST['eco_interest_restrict_on']);
+	}
+	else
+	{
+		$_POST['eco_interest_restrict_on'] = "";
+	}
+	
+	$key = 'eco_interest_restrict_on';
+}
+if ( $show == 1 )
+{
+$key = 'eco_interest_restrict_on[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>23</conf_position>
+      <conf_start_group>Interest Disbursement </conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Posts Per Day</conf_title>
+      <conf_description><![CDATA[Anyone below this number in PPD will NOT receive their due interest (if interest restrictions are enabled)<br />0 to disable]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_interest_restrict_ppd</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Activity</conf_title>
+      <conf_description><![CDATA[Anyone who has not signed into the forum within the last this number of days will not receive their due interest (if interest restrictions are enabled)<br />0 to disable]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_interest_restrict_act</conf_key>
+      <conf_default>7</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>25</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow Interest on Disabled/Deleted Items?</conf_title>
+      <conf_description><![CDATA[If left on, savings accounts/creditcards/long-terms, etc in user's portfolios will continue to build interest/debt EVEN if the item has been deleted from ibEconomy OR turned off.  ]]></conf_description>
+      <conf_group>183</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_interest_on4off</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>26</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_banking</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>eco_loan</conf_title_keyword>
+      <conf_title_title>ibEconomy Loans</conf_title_title>
+      <conf_title_desc>Loan settings for the (e32) ibEconomy Application</conf_title_desc>
+      <conf_title_tab>ibEconomy</conf_title_tab>
+      <conf_title_app>ibEconomy</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable Loans?</conf_title>
+      <conf_description>Turn on the loan component of ibEconomy?</conf_description>
+      <conf_group>184</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_loans_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_loan</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Loan APR Cycle</conf_title>
+      <conf_description>Enter the rate at which interest on unpaid loans is collected. (in days)</conf_description>
+      <conf_group>184</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_loans_apr_cycle</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_loan</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Loan Penalty Rate</conf_title>
+      <conf_description><![CDATA[Enter the collection rate at which a loan's penalty is levied on unpaid past-due loans. (in days)]]></conf_description>
+      <conf_group>184</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_loans_pen_rate</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_loan</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_title_title>ibEconomy Shop</conf_title_title>
+      <conf_title_desc>Shop settings for the (e32) ibEconomy Application</conf_title_desc>
+      <conf_title_tab>ibEconomy</conf_title_tab>
+      <conf_title_app>ibEconomy</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Shop Enabled?</conf_title>
+      <conf_description>Turn on the Shop component of ibEconomy?</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_shopitems_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>General Shop Settings</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Shop Tax</conf_title>
+      <conf_description>What percentage of the total cost will be charged as Sales Tax?</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_shop_tax</conf_key>
+      <conf_default>7.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Sell Back Fee</conf_title>
+      <conf_description>What percentage of the current item price should be deducted from the total returned amount when a user sells back a shop item?</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_shop_sell_fee</conf_key>
+      <conf_default>29.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Trade Tax</conf_title>
+      <conf_description>Input the percentage (of the current item cost) to be charged to a user when they send an item to another user.  % is deducted from on-hand points.</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_shop_trade_tax</conf_key>
+      <conf_default>6.99</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Item Trading</conf_title>
+      <conf_description>Allow users to send shop items in their portfolio to other users?  (group settings must allow as well)</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_shop_trading</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>Item Trading</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Item Received PM</conf_title>
+      <conf_description>Send PM to item recipient?</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_shop_trading_pm</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Title</conf_title>
+      <conf_description>Title of PM sent to item recipient</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_shop_trading_pm_title</conf_key>
+      <conf_default><![CDATA[You've received a shop item!]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Body</conf_title>
+      <conf_description><![CDATA[Body of PM sent to item recipient.<br />Macros:<br /><br />
+<#RECIPIENT#>: Item Recipient's Name
+<#SENDER#>: Item Sender's Name
+<#ITEM#>: Item Title
+<#QUANTITY#>: Item Quantity
+]]></conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>eco_shop_trading_pm_body</conf_key>
+      <conf_default><![CDATA[<#RECIPIENT#>,<br /><br />
+
+I've sent you <#QUANTITY#> <#ITEM#> shop items!<br /><br />
+
+<#SENDER#>]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow negative in stealing/adjusting?</conf_title>
+      <conf_description><![CDATA[If enabled, members will be able to fully use the various shop items which decrease a value (points, posts, etc) on members who don't have enough to cover the amount being adjusted, and therefore will go negative.]]></conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_shopitems_steal_neg</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group>Shop Item Extra Settings</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default to zero?</conf_title>
+      <conf_description>If above is disabled, how do you want to handle instances where the member would go negative?  Enable so that it will steal all their ____ (zero out their total).  Disable to prohibit the the action from occurring at all (an error will be displayed). </conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_shopitems_steal_zero</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Sender</conf_title>
+      <conf_description>Some shop items may send a PM upon use, enter the ID of the member from whom the PM will come.  Remember a user cannot send themselves a PM, so the member whose ID is entered will not be able to use any shop item which sends a PM.</conf_description>
+      <conf_group>185</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_shopitems_pm_sender</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_shop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_title_title>ibEconomy Welfare</conf_title_title>
+      <conf_title_desc>Welfare settings for the (e32) ibEconomy Application</conf_title_desc>
+      <conf_title_tab>ibEconomy</conf_title_tab>
+      <conf_title_app>ibEconomy</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable Welfare?</conf_title>
+      <conf_description>Turn on the welfare component of ibEconomy?</conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_welfare_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>General Configuration</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Welfare Cycle</conf_title>
+      <conf_description>How many days between each welfare disbursement? (in days)</conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_cycle</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Restictions Enforcement</conf_title>
+      <conf_description>Leave on Yes to ALWAYS enforce the welfare restrictions below.  Set to No to only enforce the restrictions during the application process but not later on (such as during each welfare check disbursement).</conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_welfare_res_alwys</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Max points to Qualify</conf_title>
+      <conf_description><![CDATA[If a member has over this number of points, they will not qualify for welfare.<br />Leave at 0 to skip]]></conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_max_pts</conf_key>
+      <conf_default>1000</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Restrictions</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Max Worth to Qualify</conf_title>
+      <conf_description><![CDATA[If a member has over this number of points (in total worth), they will not qualify for welfare.<br />Leave at 0 to skip]]></conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_max_worth</conf_key>
+      <conf_default>5000</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Max Welfare to Qualify</conf_title>
+      <conf_description><![CDATA[If a member has over this number of welfare points, they will not qualify for further welfare.<br />Leave at 0 to skip]]></conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_max_wf</conf_key>
+      <conf_default>50000</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Minimum Posts</conf_title>
+      <conf_description><![CDATA[A member must have above this number of posts to qualify for welfare checks.<br />Leave at 0 to skip]]></conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_min_posts</conf_key>
+      <conf_default>200</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Minimum Posts-Per-Day</conf_title>
+      <conf_description><![CDATA[A member's post per day average must be above this number to qualify for welfare.<br />Leave at 0 to skip]]></conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_min_ppd</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Join Date</conf_title>
+      <conf_description><![CDATA[Minimum days as a member to be eligible for welfare.<br />Leave at 0 to skip]]></conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_min_join</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Activity</conf_title>
+      <conf_description><![CDATA[Anyone who has not been signed into the forum for at least this number of days will not receive their due check.<br />Leave at 0 to skip]]></conf_description>
+      <conf_group>186</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_welfare_act</conf_key>
+      <conf_default>7</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_welfare</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_title_title>ibEconomy Lottery</conf_title_title>
+      <conf_title_desc>Lottery settings for the (e32) ibEconomy Application</conf_title_desc>
+      <conf_title_tab>ibEconomy</conf_title_tab>
+      <conf_title_app>ibEconomy</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable Lottery?</conf_title>
+      <conf_description>Turn on the lottery component of ibEconomy?</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_lotterys_on</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>General Config</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Lottery Cycle</conf_title>
+      <conf_description>Enter the rate at which each lottery will last. (in days)</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lotto_cycle</conf_key>
+      <conf_default>7</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Always a Winner?</conf_title>
+      <conf_description>Force a winner when the lottery ends?</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_lotto_force_winner</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Rollover Jackpot?</conf_title>
+      <conf_description>If no winner, enable this setting to rollover the jackpot to the next lottery.</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_lotto_rollover</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Initial Pot Size</conf_title>
+      <conf_description>Before any tickets are purchased, how many points should be included in the winnings?</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lotto_init_pot_size</conf_key>
+      <conf_default>500</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ticket Cost</conf_title>
+      <conf_description>Enter the price for 1 lottery ticket</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lotto_ticket_price</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Default Max Tickets per User</conf_title>
+      <conf_description>How many tickets can each user purchase for each lottery? (group permission overrides this)</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lotto_def_max_tix</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>How Many Numbers/Balls?</conf_title>
+      <conf_description>Enter the number of balls used, the more you use the lower the chance of winning.  Keep around 2 or 3 for most boards.</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_lotto_num_balls</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra>1=1
+2=2
+3=3
+4=4
+5=5
+6=6
+</conf_extra> 
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group>Odds</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>How Many Different Numbers to Choose From?</conf_title>
+      <conf_description>Enter the top number to pick from for each ball.  Use smallish numbers, unless you sell A LOT of tickets.  
+	  An example of odds: If you pick 3 balls above and 29 for this setting, that is already 3,654 different winning combinations.  To google the odds search for: "29 choose 3" (replacing 29 and 3 with your settings).</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>eco_lotto_top_num</conf_key>
+      <conf_default>9</conf_default>
+      <conf_extra>5=5
+9=9
+19=19
+29=29
+39=39
+49=49
+69=69
+89=89
+99=99
+</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Send Winner a PM?</conf_title>
+      <conf_description>If Yes, the below PM will be sent to the winner.</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>eco_lotto_send_pm</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>PM</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Sender</conf_title>
+      <conf_description>Input the account ID of the member who the PM will come from, if this ID is also the recipient, it will default to the ShopItem PM Sender (see the Shop Settings).</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lotto_pm_sender</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>11</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+    <setting>
+      <conf_title>Lotto Winner PM Title</conf_title>
+      <conf_description>Enter the title of the lotto winner PM.  The same macros below also work here.</conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>eco_lotto_pm_title</conf_key>
+      <conf_default><![CDATA[You have won the lottery, worth <#AMOUNT#> Points!]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Body</conf_title>
+      <conf_description><![CDATA[Enter the contents of the lotto winner PM.  Replaceable Macros:<br />
+<b><#NAME#></b> - Name of winner
+<b><#AMOUNT#></b> - Amount of Lottery Winnings ]]></conf_description>
+      <conf_group>189</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>eco_lotto_pm_body</conf_key>
+      <conf_default><![CDATA[<#NAME#>,<br /><br />
+
+You've won the lottery!<br /><br />
+
+Enjoy the <#AMOUNT#> points!<br /><br />
+
+-Administration]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ibEconomy</conf_keywords>
+      <conf_title_keyword>eco_lotto</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>	
+  </settinggroup>
+</settingexport>

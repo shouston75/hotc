@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<templates application="iArcade" templategroups="a:1:{s:12:&quot;skin_iArcade&quot;;s:5:&quot;exact&quot;;}">
+
+  <templategroup group="skin_iArcade">
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<table width="100%" height="255" border="0">
+  <tr>
+    <td width="74%" height="251" valign="top"><table width="100%" height="63" border="0">
+      
+      <tr>
+        <td height="38" valign="top"><div class='message user_status in_profile' id='status_box'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="21%" align="center" valign="top"><a href="{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}" title='{$this->lang->words['your_profile']}'><img src='{$this->memberData['pp_main_photo']}' alt="{$this->memberData['members_display_name']}{$this->lang->words['users_photo']}" width='150' height='150' class='photo' /></a></td>
+              <td width="79%"><p>Welcome <strong>{$this->memberData['members_display_name']}</strong>, </p>
+                <p>{$this->settings['iArcade-news']}</p></td>
+            </tr>
+          </table>
+        </div>
+          </td>
+        </tr>
+      </table>
+
+
+      <table width="100%" height="175" border="0">
+        <tr>
+          <th height="38" valign="top" scope="col"><div class='recent_activity'>
+            <ol class='tab_bar no_title mini'>
+              <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamelist' title='Game List'>Game List</a></li>
+              <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamescp' title='Games CP'>Games CP</a></li>
+             <li class='tab_toggle'><a href='index.php?app=iArcade&view=arcadeinfo' title='Information'>Information</a></li>
+            </ol>
+            <div id='tab_content' class='row1 profile_pane'>
+          <div id='tab_aboutme'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="74%" valign="top"><h3 class='bar'>Games List</h3>
+  <div class='general_box'><p align="center">
+
+<div class='vcard'> 
+	<h2 class='maintitle'>
+		<span class='left'>Available Games</span>
+	</h2>
+					<div class='border'><table cellspacing='0' class='ipb_table' summary="Game List">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Game Information</th>
+								<th scope='col' class='col_c_stats stats'>Stats</th>
+								<th scope='col' class='col_c_post'>Score Info</th>
+							</tr>
+
+							<!-- / CAT HEADER -->
+<foreach loop="$info as $i">
+<tr class='row1'>
+										<td class='altrow'>
+											
+												<img src="{$this->settings['iArcade-webpath']}/img/{$i['imgname']}" />   
+								</td>
+										<td>
+											<h4><a href="index.php?app=iArcade&view=playgame&gameid={$i['id']}">{$i['name']}</a></h4>
+											<p class='desc'>{$i['description']}<br /></p></td>
+										<td class='altrow stats'>
+											<ul>
+												<li>Total Plays: {$i['playcount']} <br> Game Rating: {$i['f1']}<br> 
+
+<if test="memberbox:|:$this->memberData['member_id']">
+<a href="index.php?app=iArcade&view=vote&gameid={$i['id']}&score=positive"><img src="public/style_images/iarcade/plush.png" /></a> <a href="index.php?app=iArcade&view=vote&gameid={$i['id']}&score=negative"><img src="public/style_images/iarcade/minusa.png" /></a> <a href="index.php?app=iArcade&view=vote&gameid={$i['id']}&score=favorite"><img src="public/style_images/iarcade/heata.png" /></a>  
+</if>
+</li>
+
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												
+		<li class='topic_date'>
+<a href="index.php?app=iArcade&view=gotopage&gameid={$i['id']}&des=comments">View Comments</a><br><br>
+<a href="index.php?app=iArcade&view=gotopage&gameid={$i['id']}&des=scores">View Scores</a>
+</li>
+											</ul>
+										</td>
+									</tr>
+</foreach>
+	  </table>
+     <div class='topic_controls'>
+	<center><a href='index.php?app=iArcade&view=gamelist&page={$pagedown}'><-- Prev</a> | <a href='index.php?app=iArcade&view=gamelist&page={$pageup}'>Next --></a></center>
+</div>
+      </div>
+					</div>
+</div></td>
+             
+
+    <td width="26%" valign="top"><h3 class='bar'>Top Games</h3>
+    <div class='general_box'>
+
+
+<foreach loop="$topgames as $tg">
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><strong>{$tg['name']}</strong>, with <strong>{$tg['playcount']}</strong> plays!<br />
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="82%"><a href='index.php?app=iArcade&view=playgame&gameid={$tg['id']}'>Play Now!</a></td>
+          <td width="18%" align="center" valign="middle"><img src="{$this->settings['iArcade-webpath']}/img/{$tg['imgname']}" /></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+
+</foreach>
+
+
+
+</div>
+
+</div></td>
+
+
+
+
+            </tr>
+          </table></th>
+        </tr>
+       
+      </table></td>
+  </tr>
+</table>]]></template_content>
+
+      <template_name>gamelist</template_name>
+
+      <template_data><![CDATA[$info,$topgames,$startnum,$stopnum,$pageup,$pagedown,$mostpos,$page='',$url='']]></template_data>
+
+      <template_updated>1266760147</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<table width="100%" height="255" border="0">
+  <tr>
+    <td width="74%" height="251" valign="top"><table width="100%" height="63" border="0">
+      
+      <tr>
+        <td height="38" valign="top"><div class='message user_status in_profile' id='status_box'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="21%" align="center" valign="top"><a href="{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}" title='{$this->lang->words['your_profile']}'><img src='{$this->memberData['pp_main_photo']}' alt="{$this->memberData['members_display_name']}{$this->lang->words['users_photo']}" width='150' height='150' class='photo' /></a></td>
+              <td width="79%"><p>Welcome <strong>{$this->memberData['members_display_name']}</strong>, </p>
+                <p>{$this->settings['iArcade-news']}</p></td>
+            </tr>
+          </table>
+        </div>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" height="175" border="0">
+         <tr>
+          <th height="38" valign="top" scope="col"><div class='recent_activity'>
+            <ol class='tab_bar no_title mini'>
+              <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamelist' title='Game List'>Game List</a></li>
+             
+            </ol>
+            <div id='tab_content' class='row1 profile_pane'>
+          <div id='tab_aboutme'>
+          <table width="100%" border="0">
+  <tr>
+    <td valign="top"><div class='general_box'><p align="center">
+<div class='vcard'> 
+	<h2 class='maintitle'>
+<div id='scores'>
+
+		<span class='left'>High&nbsp;Score&nbsp;Listing&nbsp;For&nbsp;{$stats['name']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	</h2>
+					<div class='border'><table cellspacing='0' class='ipb_table' summary="High Scores">
+							<tr class='header'>
+								<th scope='col' class='col_c_forum'>Name</th>
+								<th scope='col' class='col_c_stats stats'>Scores</th>
+							</tr>
+
+							<!-- / CAT HEADER -->
+<if test="count($info)">
+<foreach loop="$info as $i">
+         <tr class='row1'>
+										<td>
+											<h4> {$i['member']} --- {parse date="$i['time']" format="short"} </h4></td>
+										<td class='altrow stats'>
+											<ul>
+												<li>{$i['score']}</li>
+
+											</ul>
+										</td>
+									</tr>
+</foreach>
+</if>
+</table></td>
+   <td valign="top"><div class='general_box'><div class='border'><div class='vcard'> 
+	<h2 class='maintitle'>Comments For: {$stats['name']}</h3>
+<table cellspacing='0' width="100%" maxwidth="100%" class='ipb_table' summary="High Scores">
+							<tr class='header'>
+								<th scope='col' class='col_c_forum'>Comment</th>
+							
+							</tr>
+<if test="$nocoms != 'true'"> 
+
+<foreach loop="$coms as $c">
+         <tr class='row1'>
+										<td>
+	{$c['username']}: &nbsp;										<h4>
+{$c['post']}
+<if test="$this->memberData['g_access_cp']">
+<div align='right'> <a href="index.php?app=iArcade&view=deletecomment&com={$c['id']}"/><img src='public/style_images/iarcade/Button%20Delete.png'/></a>  <a href="index.php?app=iArcade&view=editcomment&com={$c['id']}"/><img src='public/style_images/iarcade/Edit.png'/></a></div>
+</if>
+</h4></td>
+									</tr>
+</foreach>
+</if></td>
+  </tr>
+</table>
+
+	<div class='generic_bar'></div>
+    </div>
+</div>
+
+</td>
+ <td width="26%" valign="top"><h3 class='bar'>Game Stats</h3>
+  <div class='general_box'><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="45%" align="center" valign="middle"><img src="{$this->settings['iArcade-webpath']}/img/{$stats['imgname']}" /><br />{$stats['name']}</td>
+    <td width="74%"><b>Game Rating:</b> {$stats['f1']} <br />
+<if test="memberbox:|:$this->memberData['member_id']"> 
+<a href="index.php?app=iArcade&view=vote&gameid={$stats['id']}&score=positive"><img src="public/style_images/iarcade/plush.png" /></a> <a href="index.php?app=iArcade&view=vote&gameid={$stats['id']}&score=negative"><img src="public/style_images/iarcade/minusa.png" /></a> <a href="index.php?app=iArcade&view=vote&gameid={$stats['id']}&score=favorite"><img src="public/style_images/iarcade/heata.png" /></a>  
+<else />
+You must be logged in to rate a game!
+</if>
+<br />
+<b>Total Plays:</b> {$stats['playcount']}
+<br><a href="index.php?app=iArcade&view=playgame&gameid={$stats['id']}"/>Play Again</a>
+</td>
+  </tr>
+</table>
+</div>
+<br><hr>
+<h3 class='bar'>Your Ranking</h3>
+  <div class='general_box'>
+<if test="memberbox:|:$this->memberData['member_id']">
+<b>Personal Best:</b> {$personal['best']} <br>
+
+<if test="$hcomp['topscore']['score'] == $personal['best']"> 
+<!-- <img src='http://img168.imageshack.us/img168/762/number1trophie.png'/> -->
+<img src='public/style_images/iarcade/bestscoreu.png'/> <br><b>You have the highest score!</b>
+</if>
+
+<else />
+You must be logged in to view your personal stats!
+</if>
+ </div>
+<br><hr>
+
+<h3 class='bar'>New Challenge</h3>
+  <div class='general_box'>
+
+<if test="memberbox:|:$this->memberData['member_id']">
+<b>Your Last Score:</b> {$personal['lastscore']['score']} <br>
+<script type="text/javascript">
+        document.observe("dom:loaded", function(){
+                new ipb.Autocomplete( $('entered_name'), { multibox: false, url: ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=', templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+        });
+</script>
+<form id='msgForm' action="index.php?app=iArcade&view=chal_create" method="post" enctype='multipart/form-data'>
+<input type="text" class='input_text' id='entered_name' name="entered_name" size="30" value="" tabindex="0" />
+<input type="hidden" id='gname' name="gname" value="{$stats['gname']}" />
+<input type="hidden" id='gameid' name="gameid" value="{$stats['id']}" />
+<input type='submit' name="submit" class='input_submit' value='Submit' id='submit_post' />
+</form>
+<else />
+You must be logged in to send a challenge!
+</if>
+
+ </div></td>
+
+
+            </tr>
+          </table>
+          <div class='general_box'><div class='border'><div class='vcard'> 
+	<h2 class='maintitle'>Comment on {$this->request['game']}</h2>
+		<form action="index.php?app=iArcade&view=submitcomment" method="post">
+			<fieldset>
+				<input type="hidden" name="game" value="{$this->request['game']}" />
+                                <input type="hidden" name="user" value="{$this->memberData['members_seo_name']}" />
+				{parse template="editorShell" group="editors" params="'fast-reply', 'Post', '', 1"}
+			</fieldset>
+			<fieldset class='submit'>
+				<if test="memberbox:|:$this->memberData['member_id']">
+
+				<input type='submit' name="submit" class='input_submit' value='Submit' tabindex='0' accesskey='s' id='submit_post' />&nbsp;&nbsp;<input type='button' name="button" class='input_submit alt' value='Clear' tabindex='0' id='full_compose' />
+                                <else />
+    You must log in to submit comments!
+</if>
+			</fieldset>
+
+		</form>
+	</div>
+<script type="text/javascript">
+	if( $('fast-reply_textarea') ){
+		$('fast-reply_textarea').addClassName('unloaded_editor').setStyle('height: 70px');
+		$('fast-reply_textarea').value = "{$this->lang->words['editor_unloaded_atm']}";
+	}
+	
+	if( $('fast-reply_toolbar_1') ){
+		$('fast-reply_toolbar_1').hide();
+	}
+	if( $('fast-reply_toolbar_2') ){
+		$('fast-reply_toolbar_2').hide();
+	}
+	
+	var removeTip = function(e){
+		if( $('fast-reply_textarea').hasClassName('unloaded_editor') ){
+			$('fast-reply_textarea').value='Tip: click inside this box to load the editor';
+		}
+	};
+	
+	$('full_compose').observe( 'click', removeTip );
+	$('submit_post').observe( 'click', removeTip );
+	
+	in_use = 0;
+	
+	$('fast-reply_textarea').observe( 'focus', function(e){
+		if( !in_use )
+		{
+			if( $('fast-reply_toolbar_1') ){
+				$('fast-reply_toolbar_1').show();
+			}
+			if( $('fast-reply_toolbar_2') ){
+				$('fast-reply_toolbar_2').show();
+			}
+			
+			$('fast-reply_textarea').removeClassName('unloaded_editor').value = '';
+			
+			ipb.editors[ 'fast-reply' ] = new ipb.editor( 'fast-reply', USE_RTE );
+			$( ipb.editors['fast-reply'] ).resize_to( 250 );
+			
+			try {
+				ipb.editors[ 'fast-reply' ].editor_window.focus();
+			} catch(err) { }
+			in_use = 1;
+		}
+	});
+</script>
+          </th>
+        </tr>
+      </table></td>
+  </tr>
+</table>]]></template_content>
+
+      <template_name>viewscores</template_name>
+
+      <template_data>$info,$member,$coms,$nocoms,$stats,$personal,$hcomp</template_data>
+
+      <template_updated>1266121074</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>
+	    <meta http-equiv="content-type" content="text/html; charset=<% CHARSET %>" /> 
+		<title>Score Added, Please Wait</title>
+
+			<meta http-equiv="refresh" content="5; url=index.php?app=iArcade&view=viewscores&game={$_REQUEST['game']}" />
+
+		<link rel="shortcut icon" href='<if test="$this->registry->output->isHTTPS">{$this->settings['board_url_https']}<else />{$this->settings['board_url']}</if>/favicon.ico' />
+		<if test="redirectcssimport:|:is_array( $css['import'] )">
+			<foreach loop="redirectcssImport:$css['import'] as $data">
+				<link rel="stylesheet" type="text/css" {$data['attributes']} href="{$data['content']}">
+			</foreach>
+		</if>
+		<if test="redirectcssinline:|:is_array( $css['inline'] ) AND count( $css['inline'] )">
+			<foreach loop="redirctcssInline:$css['inline'] as $data">
+				<style type="text/css" {$data['attributes']}>
+					/* Inline CSS */
+					{$data['content']}
+				</style>
+			</foreach>
+		</if>
+		<!--[if lte IE 7]>
+			<link rel="stylesheet" type="text/css" title='Main' media="screen" href="{$this->settings['public_dir']}style_css/{$this->registry->output->skin['_csscacheid']}/ipb_ie.css" />
+		<![endif]-->
+		
+
+		<!--/CSS-->
+		
+	</head>
+<body>
+		<div id='ipbwrapper'>
+			<h1>{$this->settings['site_name']}</h1>
+			<h2>{$this->lang->words['thanks']}</h2>
+			<p class='message'>
+
+				<strong>Score Saved!</strong>
+				<br /><br />
+				Great job, {$this->memberData['members_display_name']}! 
+You earned {$_REQUEST['n']} in that game! Congrats!
+<br>
+Please wait while we redirect you.......
+				<br />
+	
+			</p>
+		</div>
+	</body>
+</html>]]></template_content>
+
+      <template_name>redirect</template_name>
+
+      <template_data>$data</template_data>
+
+      <template_updated>1265485424</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<h2>Error</h2>
+<div class='message error'>
+	 {$msg}
+</div>
+<br />
+]]></template_content>
+
+      <template_name>error</template_name>
+
+      <template_data>$msg</template_data>
+
+      <template_updated>1265500938</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<form action="index.php?app=iArcade&view=updatecomment" method="post">
+<fieldset>
+<input type="hidden" name="com" value="{$this->request['com']}" />
+<textarea name="Post" cols="40" rows="5">
+{$com['post']}
+</textarea><br>
+<input type="submit" value="Submit" />
+</form>]]></template_content>
+
+      <template_name>editcomment</template_name>
+
+      <template_data>$com</template_data>
+
+      <template_updated>1265514958</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<table width="100%" height="255" border="0">
+  <tr>
+    <td width="74%" height="251" valign="top"><table width="100%" height="63" border="0">
+      
+      <tr>
+        <td height="38" valign="top"><div class='message user_status in_profile' id='status_box'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="21%" align="center" valign="top"><a href="{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}" title='{$this->lang->words['your_profile']}'><img src='{$this->memberData['pp_main_photo']}' alt="{$this->memberData['members_display_name']}{$this->lang->words['users_photo']}" width='150' height='150' class='photo' /></a></td>
+              <td width="79%"><p>Welcome <strong>{$this->memberData['members_display_name']}</strong>, </p>
+                <p>{$this->settings['iArcade-news']}</p></td>
+            </tr>
+          </table>
+        </div>
+<ol class='tab_bar no_title mini'>
+              <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamelist' title='Game List'>Game List</a></li>
+              <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamescp' title='Games CP'>Games CP</a></li>
+             <li class='tab_toggle'><a href='index.php?app=iArcade&view=arcadeinfo' title='Information'>Information</a></li>
+            </ol>
+</td>
+        </tr>
+      </table>
+<div class='vcard'> 
+<h2 class='maintitle'>
+		<span class='left'>GamesCP</span>
+	</h2> 
+					<div class='border'>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					  <tr>
+					    <td width="24%" height="171" valign="top"><h3 class='bar'>Global Last Score</h3>
+    <div class='general_box'><table width="100%" border="0">
+  <tr>
+    <td><strong>{$lastscore['member']}</strong> scored <strong>{$lastscore['score']}</strong> on <strong>{$fetchinfo['lastscoregame']['name']}</strong>
+      <table width="100%" border="0">
+        <tr>
+          <td width="22%" align="center" valign="top"><img src="{$this->settings['iArcade-webpath']}/img/{$fetchinfo['lastscoregame']['imgname']}" /></td>
+          <td width="78%"><a href="index.php?app=iArcade&view=playgame&gameid={$fetchinfo['lastscoregame']['id']}">Play {$fetchinfo['lastscoregame']['name']}</a></td>
+        </tr>
+    </table></td>
+  </tr>
+</table></div>
+  <br>  <h3 class='bar'>Newest Games</h3>
+    <div class='general_box'>The newest game to the arcade is: {$misc['newestgame']['tarfile_name']}</div>
+
+<br>
+
+<h3 class='bar'>Random Leader</h3>
+    <div class='general_box'><center><b><img src='public/style_images/iarcade/number1trophie.png'/><br>The best score in {$fetchinfo['lastscoregame']['name']} of {$global['trophy']['score']} was set by {$global['trophy']['member']}</center></b></div>
+
+
+<br>
+<h3 class='bar'>Game Search</h3>
+    <div class='general_box'>
+
+<form action="index.php?app=iArcade&do=search&view=gamescp" method='POST'>
+
+		&nbsp;&nbsp; <b> <a href="index.php?app=iArcade&view=playgame&gameid={$global['sgn']['id']}">{$global['sgn']['name']}</a><br><br></b>
+
+
+	<input type="text" size="20" name="searchname"  onfocus="this.value=''" value='Enter name of game...' />
+	<input class="input_submit" type="submit" value="Go"/>
+</form>
+</div>
+
+
+</div>
+</div>
+
+
+</td>
+					    <td width="52%" valign="top"><h3 class='bar'>Recent Activity</h3>
+    <div class='general_box'>
+#1: {$global['lastscore']['member']} scored {$global['lastscore']['score']} in {$global['lastscore']['gname']}
+<br>
+#2: {$global['lastscore2']['member']} scored {$global['lastscore2']['score']} in {$global['lastscore2']['gname']}
+<br>
+#3: {$global['lastscore3']['member']} scored {$global['lastscore3']['score']} in {$global['lastscore3']['gname']}
+</div><br /></td>
+				<td width="24%" valign="top">
+
+   <h3 class='bar'>Your Favourites</h3>
+
+<if test="$favs!='none'">
+    <div class='general_box'>
+<foreach loop="$favs as $f">
+<a href="index.php?app=iArcade&view=playgame&gameid={$f['gameid']}">{$f['name']}</a> <a href="index.php?app=iArcade&view=vote&gameid={$f['gameid']}&score=un-favorite">(Unfavorite)</a><br>
+</foreach>
+</div>
+</if>
+
+<if test="$favs=='none'">
+    <div class='general_box'>
+You have no favorites! Go add some!
+</div>
+</if>
+
+  <br>  <h3 class='bar'>Your Last Score</h3>
+    <div class='general_box'><a href='index.php?app=iArcade&view=viewscores&game={$personal['lastscore']['gname']}' />{$personal['lastscore']['score']} in {$personal['lastscore']['gname']}</a></div></td>
+				      </tr>
+</table>
+</div>]]></template_content>
+
+      <template_name>gamescp</template_name>
+
+      <template_data>$lastscore,$fetchinfo,$personal,$favs,$misc,$global</template_data>
+
+      <template_updated>1266948253</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<br>
+
+]]></template_content>
+
+      <template_name>chal_create</template_name>
+
+      <template_data/>
+
+      <template_updated>1265775429</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<table width="100%" height="255" border="0">
+  <tr>
+    <td width="74%" height="251" valign="top"><table width="100%" height="63" border="0">
+      
+      <tr>
+        <td height="38" valign="top"><div class='message user_status in_profile' id='status_box'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="21%" align="center" valign="top"><a href="{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}" title='{$this->lang->words['your_profile']}'><img src='{$this->memberData['pp_main_photo']}' alt="{$this->memberData['members_display_name']}{$this->lang->words['users_photo']}" width='150' height='150' class='photo' /></a></td>
+              <td width="79%"><p>Welcome <strong>{$this->memberData['members_display_name']}</strong>, </p>
+                <p>{$this->settings['iArcade-news']}</p></td>
+            </tr>
+          </table>
+        </div>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" height="175" border="0">
+        <tr>
+          <th height="38" valign="top" scope="col"><div class='recent_activity'>
+            <ol class='tab_bar no_title mini'>
+              <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamelist' title='Game List'>Game List</a></li>
+             
+              <li class='tab_toggle active'><a href="index.php?app=iArcade&view=playgame&gameid={$swf['id']}" title="Playing {$swf['name']}">Playing {$swf['name']}</a></li>
+              
+            </ol>
+            <div id='tab_content' class='row1 profile_pane'>
+          <div id='tab_aboutme'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="74%" valign="top"><h3 class='bar'>Now Playing - {$swf['name']}</h3>
+  <div class='general_box'><p align="center">
+<embed src="{$this->settings['iArcade-webpath']}/{$swf['swf']}" scale="noscale" quality="high" bgcolor="#000000" width="{$swf['width']}" height="{$swf['height']}" name="games" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+
+
+</div></td>
+        <hr>     
+ <td width="26%" valign="top"><h3 class='bar'>Game Info</h3>
+  <div class='general_box'>{$swf['description']} <br><br><a href="index.php?app=iArcade&view=reportgame&gameid={$swf['id']}" />Report issue with game</a>
+
+<br><br>
+
+
+<script type="text/javascript">
+function newGameScreen(url) {
+	gameWindow = window.open(
+		url,'gameWindow',"height={$swf['height']},width={$swf['width']},left=1,top=1,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=no")
+}
+</script>
+<a href="JavaScript:newGameScreen('index.php?app=iArcade&view=fullscreen&gameid={$swf[id]}');">New Window</a>
+
+ </div>
+
+<br><hr>
+
+<h3 class='bar'>Score To Beat</h3>
+  <div class='general_box'>The highest score in this game is <b>{$ginfo['highscore']['score']}</b>, Set By {$ginfo['highscore']['member']} <br><br>
+
+ </div>
+
+
+
+            </td>
+
+<br>
+<!-- Removed in beta5 
+ <h3 class='bar'>Game Info</h3>
+  <div class='general_box'>{$swf['description']}<br></div>
+--> </td>
+            </tr>
+          </table></th>
+        </tr>
+      </table></td>
+  </tr>
+</table>]]></template_content>
+
+      <template_name>playgame</template_name>
+
+      <template_data>$swf,$ginfo</template_data>
+
+      <template_updated>1267145743</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<table width="100%" height="255" border="0">
+  <tr>
+    <td width="74%" height="251" valign="top"><table width="100%" height="63" border="0">
+      
+      <tr>
+        <td height="38" valign="top"><div class='message user_status in_profile' id='status_box'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="21%" align="center" valign="top"><a href="{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}" title='{$this->lang->words['your_profile']}'><img src='{$this->memberData['pp_main_photo']}' alt="{$this->memberData['members_display_name']}{$this->lang->words['users_photo']}" width='150' height='150' class='photo' /></a></td>
+              <td width="79%"><p>Welcome <strong>{$this->memberData['members_display_name']}</strong>, </p>
+                <p>{$this->settings['iArcade-news']}</p></td>
+            </tr>
+          </table>
+        </div>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" height="110" border="0">
+        <tr>
+          <th height="38" valign="top" scope="col"><div class='recent_activity'>
+            <ol class='tab_bar no_title mini'>
+              <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamelist' title='Game List'>Game List</a></li>
+            <li class='tab_toggle'><a href='index.php?app=iArcade&view=gamescp' title='Games CP'>Games CP</a></li>
+             <li class='tab_toggle'><a href='index.php?app=iArcade&view=arcadeinfo' title='Information'>Information</a></li>
+            </ol>
+              <ul class='topic_buttons'>
+		<li><a href='index.php?app=iArcade&view=gamelist' title='View Game List' id='use_filters'><img src='{$this->settings['img_url']}/cog.png' alt='Icon' /> View Game List</a></li>
+	</ul>
+            <div id='tab_content' class='row1 profile_pane'>
+          <div id='tab_aboutme'>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+  <h3 class='bar'>Arcade Home</h3>
+  <div class='general_box'>{$this->settings['iArcade-general']}
+
+  </div></th>
+        </tr>
+        
+      </table></td>
+  </tr>
+</table>]]></template_content>
+
+      <template_name>show_page</template_name>
+
+      <template_data>$data</template_data>
+
+      <template_updated>1266005521</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+        <head>
+            <meta http-equiv="content-type" content="text/html; charset=<% CHARSET %>" /> 
+                <title>Score Added, Please Wait</title>
+
+                        <meta http-equiv="refresh" content="5; url=index.php?app=iArcade&view=gamelist" />
+
+                <link rel="shortcut icon" href='<if test="$this->registry->output->isHTTPS">{$this->settings['board_url_https']}<else />{$this->settings['board_url']}</if>/favicon.ico' />
+                <if test="redirectcssimport:|:is_array( $css['import'] )">
+                        <foreach loop="redirectcssImport:$css['import'] as $data">
+                                <link rel="stylesheet" type="text/css" {$data['attributes']} href="{$data['content']}">
+                        </foreach>
+                </if>
+                <if test="redirectcssinline:|:is_array( $css['inline'] ) AND count( $css['inline'] )">
+                        <foreach loop="redirctcssInline:$css['inline'] as $data">
+                                <style type="text/css" {$data['attributes']}>
+                                        /* Inline CSS */
+                                        {$data['content']}
+                                </style>
+                        </foreach>
+                </if>
+                <!--[if lte IE 7]>
+                        <link rel="stylesheet" type="text/css" title='Main' media="screen" href="{$this->settings['public_dir']}style_css/{$this->registry->output->skin['_csscacheid']}/ipb_ie.css" />
+                <![endif]-->
+                
+
+                <!--/CSS-->
+                
+        </head>
+<body>
+                <div id='ipbwrapper'>
+                        <h1>{$this->settings['site_name']}</h1>
+                        <h2>{$this->lang->words['thanks']}</h2>
+                        <p class='message'>
+
+                                <strong>Vote Added!</strong>
+                                <br /><br />
+                                Thanks for voting, {$this->memberData['members_seo_name']}! 
+Your vote has been saved. 
+<br>
+Please wait while we redirect you.......
+                                <br />
+        
+                        </p>
+                </div>
+        </body>
+</html>
+<br>
+
+]]></template_content>
+
+      <template_name>vote</template_name>
+
+      <template_data>$info</template_data>
+
+      <template_updated>1266724381</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+    <template>
+
+      <template_group>skin_iArcade</template_group>
+
+      <template_content><![CDATA[<h1>Pending Challenges:</h1>
+<hr>
+<foreach loop="$info as $i">
+<a href='index.php?app=iArcade&view=playgame&gameid={$i['g1']}'>Play Now!</a>
+<br><br>
+</foreach>
+<br>
+
+]]></template_content>
+
+      <template_name>chal_pending</template_name>
+
+      <template_data>$chals,$info</template_data>
+
+      <template_updated>1266724381</template_updated>
+
+      <template_removable>1</template_removable>
+
+      <template_user_added>1</template_user_added>
+
+      <template_user_edited>1</template_user_edited>
+
+    </template>
+
+  </templategroup>
+
+</templates>

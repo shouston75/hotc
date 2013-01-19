@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Find Member</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Find Member</subitemtitle>
+					<subsection>members</subsection>
+					<subitemurl>do=find_member</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Portfolio</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Edit Portfolio</subitemtitle>
+					<subsection>members</subsection>
+					<subitemurl>do=portfolio</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Send Items</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Send Items</subitemtitle>
+					<subsection>members</subsection>
+					<subitemurl>do=send_items</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>		
+	</tabitems>
+</menu>

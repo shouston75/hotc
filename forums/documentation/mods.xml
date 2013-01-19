@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mods>
+	<ipb22>
+		<mod>
+			<version>1.0</version>
+			<file>my_mod</file>
+		</mod>
+	</ipb22>
+	<ipb23>
+		<mod>
+			<version>1.0</version>
+			<file>my_mod</file>
+		</mod>
+	</ipb23>
+</mods>

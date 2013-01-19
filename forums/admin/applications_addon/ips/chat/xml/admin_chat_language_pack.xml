@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>enter_chatid</word_key>
+      <word_default>enter your AddonChat Account ID here...</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>free_evaluation</word_key>
+      <word_default>Free Instant Evaluation</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>ordered_ipchat</word_key>
+      <word_default>Ordered IP Chat?</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>enter_siteid</word_key>
+      <word_default>enter your Site ID here...</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>btn_continue</word_key>
+      <word_default>Continue...</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>own_addonchat</word_key>
+      <word_default>Own AddOn Chat?</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>para_help_title</word_key>
+      <word_default>Invision Power Chat (ParaChat)</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>para_invalid_key</word_key>
+      <word_default>Sorry, that is not a valid IP Chat account number</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>addon_invalid_key</word_key>
+      <word_default>Sorry, that is not a valid IP Chat account number</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>chat</word_app>
+      <word_pack>admin_chat</word_pack>
+      <word_key>addon_help_title</word_key>
+      <word_default>Invision Power Chat (AddonChat)</word_default>
+      <word_custom/>
+      <word_default_version>30012</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+  </languagegroup>
+</languageexport>

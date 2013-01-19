@@ -1,0 +1,44 @@
+div#calendar_list{width:17%;padding:10px}div#calendar_list
+ol{margin-top:10px;margin-bottom:15px}#calendar_list
+li{margin:2px
+0;text-align:left}#calendar_list li
+a{background:#CCC;text-decoration:none;padding:5px
+7px;display:block;color:#000 !important}div#current_calendar{width:77%;margin-top: -20px}div#current_calendar
+table{border-collapse:collapse;border-top:0;margin-bottom:10px;clear:both}div#current_calendar table
+td{font-size:0.9em;vertical-align:top;border:1px
+solid #000;padding:5px;height:85px;width:14%}div#current_calendar table
+td.selected{background-color:#e1e7ee}div#current_calendar table td
+ul{margin:5px}#current_calendar table th,
+#mini_calendars table
+th{border:0px
+solid #b6c7db}.calendar_wrap table
+td.blank{background-color:#eee}#ipboard_body .calendar_wrap table
+td.today{border:2px
+solid #800000;color:#FFF;background-color:#777}#ipboard_body .calendar_wrap table td.today
+a{color:#800000;text-decoration:none}.calendar_wrap table td
+strong{font-size:0.9em;font-weight:bold}#ipboard_body table
+th.head_week{width:2% !important}#ipboard_body table
+th.view_week{background-color:#b6c7db;text-align:center;border:1px
+solid #000}div#current_calendar ol#week_view
+li.day{margin-bottom:2px}div#current_calendar ol#week_view li.day
+div{padding:4px
+10px 4px 75px;min-height:60px;position:relative}div#current_calendar ol#week_view li.day
+.date{color:#1d3652;font-size:1.2em;text-align:center;padding-top:10px;top:0px;bottom:0px;left:0px;width:65px;display:block;position:absolute}div#mini_calendars{margin:20px
+0 15px 0;width:20%}div#mini_calendars table,.mini_cal{border-top:0}div#mini_calendars
+th.view_week{padding:6px
+2px}div#mini_calendars th, div#mini_calendars td,
+.mini_cal th, .mini_cal
+td{font-size:0.85em;text-align:center;padding:6px}div#mini_calendars td,
+.mini_cal
+td{border:1px
+solid #000;padding:6px
+0}.cal_color{margin-right:8px;padding:0
+7px;-moz-border-radius:2px;-webkit-border-radius:2px}.cal{background-color:#800000;color:#FFF;font-size:0.8em;-moz-border-radius:2px;-webkit-border-radius:2px;padding:2px
+5px;margin-bottom:3px}#ipboard_body .cal
+a{color:#FFF;text-decoration:none}#ipboard_body .cal a:hover{color:#FFF;text-decoration:underline}.today
+.cal{background-color:#800000}.today .cal
+a{color:#FFF !important}.cal_1{background-color:#971a48}.cal_2{background-color:#3fa711}.cal_3{background-color:#cd8b24}.calrow1{background:#ffded2 url(http://www.homeofthechiefs.com/forums/public/style_images/HotC_beta/calrow1.png) repeat-x}.calrow2{background:#ffded2 url(http://www.homeofthechiefs.com/forums/public/style_images/HotC_beta/calrow1.png) repeat-x}.minicalrow1{background:#ffded2 url(http://www.homeofthechiefs.com/forums/public/style_images/HotC_beta/minicalrow1.png) repeat-x}.minicalrow2{background:#ffded2 url(http://www.homeofthechiefs.com/forums/public/style_images/HotC_beta/minicalrow1.png) repeat-x}.minicalrow1 a,
+.minicalrow2
+a{color:#000;font-weight:bold;text-decoration:none}.minicalrow1 a:hover,
+.minicalrow2 a:hover{color:#800000;font-weight:bold;text-decoration:underline}.calranged
+a{color:#000;text-decoration:none}.calranged a:hover{color:#000;text-decoration:underline}

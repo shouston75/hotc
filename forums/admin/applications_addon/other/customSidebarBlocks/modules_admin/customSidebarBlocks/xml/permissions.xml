@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Custom Sidebar Blocks</grouptitle>
+		<items>
+			<item>
+				<key>customSideBarBlocks_settings</key>
+				<string>Can edit settings in (e$30) Custom Sidebar Blocks?</string>
+			</item>
+			<item>
+				<key>customSideBarBlocks_add</key>
+				<string>Can add/edit blocks in (e$30) Custom Sidebar Blocks?</string>
+			</item>
+			<item>
+				<key>customSideBarBlocks_delete</key>
+				<string>Can delete blocks in (e$30) Custom Sidebar Blocks?</string>
+			</item>
+			<item>
+				<key>customSideBarBlocks_view</key>
+				<string>Can view blocks in (e$30) Custom Sidebar Blocks?</string>
+			</item>	
+		</items>
+	</group>
+</permissions>

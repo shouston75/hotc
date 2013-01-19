@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_title_title>123 Flash Chat</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>IPS Apps</conf_title_tab>
+      <conf_title_app>123flashchat</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Chat Api URL</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_api_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Status Updatetime</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_status_update_time</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Rooms Updatetime</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_rooms_update_time</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Users Updatetime</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_users_update_time</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Server Mode</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fc_server</conf_key>
+      <conf_default>2</conf_default>
+      <conf_extra>0=Host by own&#13;
+1=Host by 123 Flash Chat&#13;
+2=Host by 123 Flash Chat for free</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>Basic Settings</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Client Location</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_client_loc</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Group</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_group</conf_key>
+      <conf_default>default</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Room Name</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_room</conf_key>
+      <conf_default>Lobby</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Chat Status</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>fc_status</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Room List</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>fc_room_list</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show User List</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>fc_user_list</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Server Host</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_server_host</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group>Advanced Settings</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Server Port</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_server_port</conf_key>
+      <conf_default>51127</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Server HTTP Port</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_http_port</conf_key>
+      <conf_default>35555</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Client Mode</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fc_client</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra>0=Standard Chat&#13;
+1=Html Chat&#13;
+2=Avatar Chat</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Present Mode</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fc_client_present</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra>0=Popup&#13;
+1=Embed</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Client Width</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_client_width</conf_key>
+      <conf_default>779</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Client Height</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fc_client_height</conf_key>
+      <conf_default>505</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Client Language</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fc_client_lang</conf_key>
+      <conf_default>en</conf_default>
+      <conf_extra>*    =Auto detect&#13;
+en   =English&#13;
+zh-CN=GB Chinese&#13;
+zh-TW=Big5 Chinese&#13;
+fr   =French&#13;
+it   =Italian&#13;
+de   =German&#13;
+nl   =Dutch&#13;
+hu   =Hungarian&#13;
+es   =Spanish&#13;
+hr   =Croatian&#13;
+tr   =Turkish&#13;
+ar   =Arabic&#13;
+pt   =Portuguese&#13;
+ru   =Russian&#13;
+ko   =Korean&#13;
+serbian=Serbian&#13;
+no   =Norwegian&#13;
+ja   =Japanese&#13;
+</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Chat Client Skin</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fc_client_skin</conf_key>
+      <conf_default>default</conf_default>
+      <conf_extra>default=Default&#13;
+green=Green&#13;
+orange=Orange&#13;
+red=Red&#13;
+black=Black&#13;
+beige=Beige&#13;
+standard=Standard&#13;
+clean=Clean&#13;
+artistic=Artistic</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fc</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

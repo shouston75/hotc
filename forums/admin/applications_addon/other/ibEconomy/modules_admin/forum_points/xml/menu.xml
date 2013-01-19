@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Forum Points</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Forum Points</subitemtitle>
+					<subsection>forum_points</subsection>
+					<subitemurl>do=forum_points</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

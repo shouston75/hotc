@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Government</grouptitle>
+		<items>
+			<item>
+				<key>ibEconomy_loan_settings_edit</key>
+				<string>Can edit ibEconomy loan settings?</string>
+			</item>
+			<item>
+				<key>ibEconomy_welfare_settings_edit</key>
+				<string>Can edit ibEconomy welfare settings?</string>
+			</item>
+			<item>
+				<key>ibEconomy_lottery_settings_edit</key>
+				<string>Can edit ibEconomy lottery settings?</string>
+			</item>			
+		</items>		
+	</group>
+</permissions>

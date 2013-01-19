@@ -1,0 +1,2 @@
+AuthName "test"
+AuthUserFile "/home/penguin/.htpasswds/public_html/test/passwd"

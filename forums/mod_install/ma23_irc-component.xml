@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mod_data>
+	<mod_info>
+		<title>[MA23] iRC-Component</title>
+		<version>1.1</version>
+		<author>Martin</author>
+		<website>http://www.invisionmodding.com</website>
+		<ipbver>2.3</ipbver>
+		<version_file>http://ma.rtin.no/ipbmod/mods.xml</version_file>
+	</mod_info>
+	<sections_group>
+		<section>
+			<conf_title_title>[MA23] iRC-Component</conf_title_title>
+			<conf_title_desc><![CDATA[Setting for the IRC-applet component]]></conf_title_desc>
+			<conf_title_noshow>0</conf_title_noshow>
+			<conf_title_keyword>ma23_irc</conf_title_keyword>
+		</section>
+	</sections_group>
+	<settings_group>
+		<setting>
+			<conf_title>Enable IRC-component</conf_title>
+			<conf_description><![CDATA[Turn on the IRC-component]]></conf_description>
+			<conf_group></conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>ma23-irc_enable</conf_key>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_position>1</conf_position>
+			<conf_start_group>General settings</conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		<setting>
+			<conf_title>Groups that can use IRC-component</conf_title>
+			<conf_description><![CDATA[Specify the groups that are able to use the IRC-component]]></conf_description>
+			<conf_group></conf_group>
+			<conf_type>multi</conf_type>
+			<conf_key>ma23-irc_allowed_group</conf_key>
+			<conf_default></conf_default>
+			<conf_extra>#show_groups#</conf_extra>
+			<conf_evalphp><![CDATA[if ( $save == 1 )
+{
+	if ( is_array( $_POST['ma23-irc_allowed_group'] ) )
+	{
+		$_POST['ma23-irc_allowed_group'] = implode( ",", $_POST['ma23-irc_allowed_group'] );
+	}
+	else
+	{
+		$_POST['ma23-irc_allowed_group'] = "";
+	}
+	
+	$key = 'ma23-irc_allowed_group';
+}
+if ( $show == 1 )
+{
+	$key = 'ma23-irc_allowed_group[]';
+}]]></conf_evalphp>
+			<conf_position>2</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		
+		<setting>
+			<conf_title>IRC server</conf_title>
+			<conf_description><![CDATA[What server to connect to?]]></conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>ma23-irc_server</conf_key>
+			<conf_default></conf_default>
+			<conf_position>3</conf_position>
+			<conf_start_group>PJIRC-settings</conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		<setting>
+			<conf_title>IRC channel</conf_title>
+			<conf_description><![CDATA[Channel to join on connect]]></conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>ma23-irc_channel</conf_key>
+			<conf_default></conf_default>
+			<conf_position>4</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		<setting>
+			<conf_title>Quit message</conf_title>
+			<conf_description><![CDATA[Quitmessage on disconnect]]></conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>ma23-irc_quitmsg</conf_key>
+			<conf_default></conf_default>
+			<conf_position>5</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		<setting>
+			<conf_title>Language</conf_title>
+			<conf_description><![CDATA[Language Options, if you want PJIRC in another language.<br />By default only english and french are available.<br />Visit <a href="http://www.pjirc.com/" target="_blank">PJIRC website</a> for more languages.]]></conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>ma23-irc_lang</conf_key>
+			<conf_default>english</conf_default>
+			<conf_position>6</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		<setting>
+			<conf_title>Nickfield</conf_title>
+			<conf_description><![CDATA[Experimental: Recommended "Off" because the field is the wrong color most of the time.<br /> Only works on default Skin by default.]]></conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>ma23-irc_nickfield</conf_key>
+			<conf_default>0</conf_default>
+			<conf_position>7</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		<setting>
+			<conf_title>Use smileys?</conf_title>
+			<conf_description><![CDATA[Convert common smileys into images]]></conf_description>
+			<conf_type>yes_no</conf_type>
+			<conf_key>ma23-irc_smilies</conf_key>
+			<conf_default>1</conf_default>
+			<conf_position>8</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		<setting>
+			<conf_title>Appletpath</conf_title>
+			<conf_description><![CDATA[The complete path to you appletsfolder.]]></conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>ma23-irc_appletpath</conf_key>
+			<conf_default>pjirc/</conf_default>
+			<conf_evalphp></conf_evalphp>
+			<conf_position>9</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group></conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		
+		<setting>
+			<conf_title>Jar-files</conf_title>
+			<conf_description><![CDATA[If you need to run different applet for some reason change these values.]]></conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>ma23-irc_jarfiles</conf_key>
+			<conf_default>irc.jar,pixx.jar</conf_default>
+			<conf_position>10</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		<setting>
+			<conf_title>Rules title</conf_title>
+			<conf_description><![CDATA[This will show above the rules]]></conf_description>
+			<conf_type>input</conf_type>
+			<conf_key>ma23-irc_rules_title</conf_key>
+			<conf_default>Channel Rules</conf_default>
+			<conf_position>11</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		<setting>
+			<conf_title>Channel rules</conf_title>
+			<conf_description><![CDATA[Some people have own rules for their chat room. Enter those rules here, and it will be displayed on either the left or right side of the chat applet. HTML and BBcode is allowed.]]></conf_description>
+			<conf_type>editor</conf_type>
+			<conf_key>ma23-irc_rules</conf_key>
+			<conf_default></conf_default>
+			<conf_position>12</conf_position>
+			<conf_start_group>Rules</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+		<setting>
+			<conf_title>Rules position</conf_title>
+			<conf_description><![CDATA[Choose where you'd like the rules to be displayed]]></conf_description>
+			<conf_type>dropdown</conf_type>
+			<conf_key>ma23-irc_rules_pos</conf_key>
+			<conf_default>left</conf_default>
+			<conf_extra>left=Left
+						right=Right</conf_extra>
+			<conf_position>13</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_help_key></conf_help_key>
+		</setting>
+	</settings_group>
+	<templates_group>
+		<template>
+			<group_name>skin_irc</group_name>
+			<section_content><![CDATA[<script type="text/javascript" src="jscripts/pjirc.js"></script>
+
+<table class="ipbtable" align="center" cellspacing="0" cellpadding="0" style="width: 100%; height: 400px;">
+	<tr>
+		<if="$data['rule_pos'] == 'left'">
+		<td width="25%" valign="top">
+			<div class="borderwrap">
+				<div class="maintitle">
+					<p>{$this->ipsclass->vars['ma23-irc_rules_title']}</p>
+				</div>
+				{$data['rules']}
+			</div>
+		</td>
+		</if>
+		<td width="{$data['applet_width']}" align="center" valign="top">
+			<applet codebase="{$this->ipsclass->vars['ma23-irc_appletpath']}" name="pjirc" code="IRCApplet.class" archive="{$this->ipsclass->vars['ma23-irc_jarfiles']}" width="100%" height="100%">
+				<param name="CABINETS" value="{$data['cabfiles']}" />
+				<!-- Mandatory parameters -->
+				<param name="nick" value="{$data['prinick']}" />
+				<param name="name" value="{$data['prinick']}" />
+				<param name="alternatenick" value="{$data['altnick']}" />
+				<param name="host" value="{$this->ipsclass->vars['ma23-irc_server']}" />
+				<param name="gui" value="pixx" />
+				<param name="userid" value="{$data['userid']}" />
+				<param name="command1" value="/join {$this->ipsclass->vars['ma23-irc_channel']}" />
+				<param name="quitmessage" value="{$this->ipsclass->vars['ma23-irc_quitmsg']}" />
+				<if="$this->ipsclass->vars['ma23-irc_nickfield'] == 1">
+				<param name="pixx:nickfield" value="true" />
+				</if>
+				<param name="language" value="{$this->ipsclass->vars['ma23-irc_lang']}" />
+				<param name="lngextension" value="lng" />
+				<param name="style:sourcefontrule1" value="all all Monospaced 12" />
+				<param name="pixx:language" value="english" />
+				<param name="pixx:lngextension" value="lng" />
+				<param name="pixx:showhelp" value="true" />
+				<!-- Optional parameters -->
+				<if="$this->ipsclass->vars['ma23-irc_smilies'] == 1">
+				<param name="style:bitmapsmileys" value="true" />
+				</if>]]></section_content>
+			<func_name>show_applet</func_name>
+			<func_data><![CDATA[$data=""]]></func_data>
+		</template>
+		<template>
+			<group_name>skin_irc</group_name>
+			<section_content><![CDATA[\t\t\t\t<param name="{$k}" value="{$v}" />\r]]></section_content>
+			<func_name>other_param</func_name>
+			<func_data><![CDATA[$k, $v]]></func_data>
+		</template>
+		<template>
+			<group_name>skin_irc</group_name>
+			<section_content><![CDATA[\t\t\t</applet>
+		</td>
+		<if="$data['rule_pos'] == 'right'">
+		<td width="25%" valign="top">
+			<div class="borderwrap">
+				<div class="maintitle">
+					<p>{$this->ipsclass->vars['ma23-irc_rules_title']}</p>
+				</div>
+				{$data['rules']}
+			</div>
+		</td>
+		</if>
+	</tr>
+</table>]]></section_content>
+			<func_name>end_applet</func_name>
+			<func_data><![CDATA[$data=""]]></func_data>
+		</template>
+	</templates_group>
+	<languages_group>
+		<language>
+			<key>ma23-irc_title</key>
+			<text><![CDATA[IRC Chat]]></text>
+			<file>lang_global</file>
+		</language>
+		<language>
+			<key>ma23-irc_not_enabled</key>
+			<text><![CDATA[The IRC Chat is not enabled!]]></text>
+			<file>lang_error</file>
+		</language>
+	</languages_group>
+</mod_data>

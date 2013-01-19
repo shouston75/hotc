@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Chat Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Chat Settings</subitemtitle>
+					<subsection>settings</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Chat Admin Panel</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Chat Admin Panel</subitemtitle>
+					<subsection>admin_panel</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

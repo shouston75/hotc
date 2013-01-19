@@ -1,0 +1,68 @@
+[05-Nov-2012 15:03:58] PHP Warning:  file_put_contents() [<a href='function.file-put-contents'>function.file-put-contents</a>]: Filename cannot be empty in /home/penguin/public_html/forums/cache/0ef154291a49c66721e399c71ab18e85.php on line 7
+[09-Nov-2012 01:57:12] PHP Warning:  file_put_contents(../public/min/ipb_converge.php) [<a href='function.file-put-contents'>function.file-put-contents</a>]: failed to open stream: Permission denied in /home/penguin/public_html/forums/cache/ipbcache.php(4) : eval()'d code on line 1
+[09-Nov-2012 01:57:12] PHP Warning:  touch() [<a href='function.touch'>function.touch</a>]: Unable to create file ../public/min/ipb_converge.php because Permission denied in /home/penguin/public_html/forums/cache/ipbcache.php(4) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Parse error:  syntax error, unexpected ',' in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[11-Nov-2012 01:35:15] PHP Parse error:  syntax error, unexpected ',' in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Parse error:  syntax error, unexpected ',' in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[12-Nov-2012 06:31:51] PHP Parse error:  syntax error, unexpected ',' in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Parse error:  syntax error, unexpected ',' in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[13-Nov-2012 03:01:57] PHP Parse error:  syntax error, unexpected ',' in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 1
+[16-Nov-2012 07:09:28] PHP Warning:  rand() expects parameter 1 to be long, string given in /home/penguin/public_html/forums/cache/xx.php on line 44
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Parse error:  syntax error, unexpected ';' in /home/penguin/public_html/forums/cache/zx.php(7) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 2
+[18-Nov-2012 10:15:40] PHP Parse error:  syntax error, unexpected ';' in /home/penguin/public_html/forums/cache/zx.php(19) : eval()'d code on line 2

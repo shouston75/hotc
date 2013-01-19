@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Frontpage</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Frontpage</subitemtitle>
+					<subsection>frontpage</subsection>
+					<subitemurl>do=frontpage</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>General Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>General Settings</subitemtitle>
+					<subsection>frontpage</subsection>
+					<subitemurl>do=general_settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

@@ -1,0 +1,2 @@
+[05-Nov-2012 15:04:08] PHP Warning:  file_put_contents() [<a href='function.file-put-contents'>function.file-put-contents</a>]: Filename cannot be empty in /home/penguin/public_html/forums/hooks/1ccb84dcefc7fdd843f2fd3fb345b584.php on line 7
+[07-Nov-2012 10:52:43] PHP Warning:  file_put_contents() [<a href='function.file-put-contents'>function.file-put-contents</a>]: Filename cannot be empty in /home/penguin/public_html/forums/hooks/b4526ae502595bd6fe1c44760a0cfa1f.php on line 7

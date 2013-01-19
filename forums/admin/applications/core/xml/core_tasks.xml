@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<export>
+  <group>
+    <row>
+      <task_id>40</task_id>
+      <task_title>Back Up Batch Send</task_title>
+      <task_file>backup.php</task_file>
+      <task_next_run>1347292560</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>-1</task_minute>
+      <task_cronkey>b6146fcf98604e71810687454d3259ac</task_cronkey>
+      <task_log>0</task_log>
+      <task_description>Sends a batch to the back up servers</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>backup</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>1</task_id>
+      <task_title>Hourly Clean Out</task_title>
+      <task_file>cleanout.php</task_file>
+      <task_next_run>1347298800</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>59</task_minute>
+      <task_cronkey>02142b0a24007a1be0cc1e5c9d8e77bc</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Kill old sessions, reg images, searches</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>cleanout</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>1347295284</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>2</task_id>
+      <task_title>Content Cache Prune</task_title>
+      <task_file>contentcache.php</task_file>
+      <task_next_run>1347332400</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>3</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>63e214b32ebbfeec84a57ad13935f857</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Removes old content cache entries</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>contentcache</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>3</task_id>
+      <task_title>Archiver</task_title>
+      <task_file>archive.php</task_file>
+      <task_next_run>1347295440</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>15</task_minute>
+      <task_cronkey>db3c85e7cbcbf50fbed24c6e53cb895a</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Task to archive items</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>core_archiver</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>41</task_id>
+      <task_title>Sitemap Generator</task_title>
+      <task_file>sitemapgenerator.php</task_file>
+      <task_next_run>1347290760</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>efab0544350b3d20b173ce708b5281b8</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Generates a sitemap for your forum.</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>ipseo_sitemap_generator</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>1347287179</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>4</task_id>
+      <task_title>Item Marking Clean Up</task_title>
+      <task_file>itemmarkers.php</task_file>
+      <task_next_run>1347321600</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>0</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>66b31e1c3ffa314512d0eba3a0a80d1c</task_cronkey>
+      <task_log>1</task_log>
+      <task_description><![CDATA[Cleans out &#39;dead&#39; item markers]]></task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>itemmarkers</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>5</task_id>
+      <task_title>Prune Logs</task_title>
+      <task_file>logprune.php</task_file>
+      <task_next_run>1348725600</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>27</task_month_day>
+      <task_hour>6</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>ec9f1917ad99d64285966a4d88b1ee1c</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>This task will prune logs based on your log pruning settings</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>logprune</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>6</task_id>
+      <task_title>Minify Cleanup</task_title>
+      <task_file>minifycleanup.php</task_file>
+      <task_next_run>1347850800</task_next_run>
+      <task_week_day>1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>3</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>26beab76d95dac6331eac635cf07a093</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Clean out old files created by minify</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>minifycleanup</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>7</task_id>
+      <task_title>Clean Up MySQL</task_title>
+      <task_file>mysqlcleanup.php</task_file>
+      <task_next_run>1347289740</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>30</task_minute>
+      <task_cronkey>d0e07ab00938825a39560a5a6db8afaa</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Cleans up sleeping mysql procceses</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>mysqlcleanup</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>8</task_id>
+      <task_title>Optimize Database Tables</task_title>
+      <task_file>optimize.php</task_file>
+      <task_next_run>1347336000</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>4</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>0c30904a66e85f05a0fb26c41ee01753</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Task runs once a day to optimize your database tables</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>optimizetables</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>9</task_id>
+      <task_title>POP3 Incoming Email</task_title>
+      <task_file>pop3email.php</task_file>
+      <task_next_run>1347294240</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>30</task_minute>
+      <task_cronkey>97e1ccb10a45077c46cf7555e3ae7034</task_cronkey>
+      <task_log>0</task_log>
+      <task_description>Polls a POP3 account for incoming Emails</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>pop3email</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>1347292495</task_locked>
+      <task_application>core</task_application>
+    </row>
+    <row>
+      <task_id>10</task_id>
+      <task_title>Daily Stats Rebuild</task_title>
+      <task_file>rebuildstats.php</task_file>
+      <task_next_run>1347321600</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>0</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>f409e876b8fe716541d05989754ef700</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Rebuilds board statistics</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>rebuildstats</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>core</task_application>
+    </row>
+  </group>
+</export>

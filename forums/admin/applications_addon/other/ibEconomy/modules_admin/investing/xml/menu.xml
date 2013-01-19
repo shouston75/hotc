@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Banks</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Banks</subitemtitle>
+					<subsection>investing</subsection>
+					<subitemurl>do=institutions</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Credit Cards</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Credit Cards</subitemtitle>
+					<subsection>investing</subsection>
+					<subitemurl>do=credit_cards</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Stocks</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Stocks</subitemtitle>
+					<subsection>investing</subsection>
+					<subitemurl>do=stocks</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>	
+		<item>
+			<title>Long-Term Investments</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Long-term</subitemtitle>
+					<subsection>investing</subsection>
+					<subitemurl>do=long_terms</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>			
+		<item>
+			<title>Investment Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Investment Settings</subitemtitle>
+					<subsection>investing</subsection>
+					<subitemurl>do=banking_settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

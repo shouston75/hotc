@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Manage Games</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Games</subitemtitle>
+					<subsection>configure</subsection>
+					<subitemurl/>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>TAR Import Games</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>TAR Import Games</subitemtitle>
+					<subsection>import</subsection>
+					<subitemurl/>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>
